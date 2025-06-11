@@ -5,6 +5,12 @@ const nextConfig = {
     images: {
       unoptimized: true,
     },
+    // React Compiler is still experimental, disabling for now
+    // experimental: {
+    //   reactCompiler: {
+    //     compilationMode: 'annotation',
+    //   },
+    // },
   };
   
 export default nextConfig;

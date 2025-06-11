@@ -26,7 +26,10 @@
         "./src/*"
       ]
     },
-    "target": "ES2017"
+    "target": "ES2022",
+    "useDefineForClassFields": true,
+    "allowSyntheticDefaultImports": true,
+    "forceConsistentCasingInFileNames": true
   },
   "include": [
     "next-env.d.ts",

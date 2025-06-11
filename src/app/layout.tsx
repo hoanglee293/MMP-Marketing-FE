@@ -17,6 +17,7 @@ export default function RootLayout({
     defaultOptions: {
       queries: {
         refetchOnMount: false,
+        staleTime: 5 * 60 * 1000, // 5 minutes
       },
     },
   }));
@@ -35,9 +36,9 @@ export default function RootLayout({
       <body className="antialiased">
         <QueryClientProvider client={queryClient}>
           <LangProvider>
-              <div className="min-h-screen bg-[#747474] dark:bg-gray-950 transition-colors duration-300">
-                <main className="min-h-[calc(100vh-64px)]">{children}</main>
-              </div>
+            <div className="min-h-screen bg-[#747474] dark:bg-gray-950 transition-colors duration-300">
+              <main className="min-h-[calc(100vh-64px)]">{children}</main>
+            </div>
             <ToastContainer theme="dark" />
           </LangProvider>
         </QueryClientProvider>
