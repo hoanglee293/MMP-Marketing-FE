@@ -2,7 +2,7 @@
 
 import { useState } from "react"
 import { motion, AnimatePresence } from "framer-motion"
-import { ChevronDown, Clock, ArrowUpDown, ArrowDown } from "lucide-react"
+import { ChevronDown, Clock, ArrowUpDown, ArrowDown, Users, Shield } from "lucide-react"
 import { Button } from "@/app/ui/button"
 import { Card } from "@/app/ui/card"
 import { DropdownMenu, DropdownMenuContent, DropdownMenuItem, DropdownMenuTrigger } from "@/app/ui/dropdown-menu"
@@ -33,6 +33,7 @@ export default function SwapInterface() {
   const [buyToken, setBuyToken] = useState(tokens[1])
   const [sellAmount, setSellAmount] = useState("0.00")
   const [buyAmount, setBuyAmount] = useState("0.00")
+  const [activeTab, setActiveTab] = useState("swap")
 
   const toggleHistory = () => {
     setShowHistory(!showHistory)
@@ -47,57 +48,208 @@ export default function SwapInterface() {
     setBuyAmount(tempAmount)
   }
 
-  return (
-    <div className="min-h-screen flex items-center justify-center p-4 z-20">
+  const renderTabContent = () => {
+    switch (activeTab) {
+      case "swap":
+        return (
+          <div className="space-y-4">
+            <h2 className="bg-gradient-purple-cyan bg-clip-text text-3xl font-bold leading-7 kati-font text-center mb-4">Swap History</h2>
 
-      <div className="relative flex items-center gap-6">
-         {/* History Panel */}
-         <div className=" bg-black rounded-xl"
-        >
-          <Card className="w-[600px]  border-[#d7d7d7]/20 p-6 ">
-            <div className="space-y-4">
-              <h2 className="bg-gradient-purple-cyan bg-clip-text text-3xl font-bold leading-7 kati-font text-center">Swap History</h2>
-
-              <div className="overflow-hidden rounded-lg">
-                {/* Table Header */}
-                <div className="px-4 py-3 grid grid-cols-3 gap-4">
-                  <div className="text-neutral font-medium text-sm flex items-center gap-1">
-                    Time
-                    <ChevronDown className="w-3 h-3" />
-                  </div>
-                  <div className="text-neutral font-medium text-sm flex items-center gap-1">
-                    Sell
-                    <ChevronDown className="w-3 h-3" />
-                  </div>
-                  <div className="text-neutral font-medium text-sm flex items-center gap-1">
-                    Buy
-                    <ChevronDown className="w-3 h-3" />
-                  </div>
+            <div className="overflow-hidden rounded-lg">
+              {/* Table Header */}
+              <div className="px-4 py-3 grid grid-cols-3 gap-4">
+                <div className="text-neutral font-medium text-sm flex items-center gap-1">
+                  Time
+                  <ChevronDown className="w-3 h-3" />
                 </div>
+                <div className="text-neutral font-medium text-sm flex items-center gap-1">
+                  Sell
+                  <ChevronDown className="w-3 h-3" />
+                </div>
+                <div className="text-neutral font-medium text-sm flex items-center gap-1">
+                  Buy
+                  <ChevronDown className="w-3 h-3" />
+                </div>
+              </div>
 
-                {/* Table Body */}
-                <div className="max-h-[400px] overflow-y-auto">
-                  {swapHistory.map((item, index) => (
-                    <motion.div
-                      key={index}
-                      initial={{ opacity: 0, y: 20 }}
-                      animate={{ opacity: 1, y: 0 }}
-                      transition={{ delay: index * 0.05 }}
-                      className=" hover:bg-[#d7d7d7]/5 px-4 py-3 grid grid-cols-3 gap-4 border-b border-[#d7d7d7]/10 transition-colors"
-                    >
-                      <div className="text-[#fcfcfc] text-sm">{item.time}</div>
-                      <div className="text-[#fcfcfc] text-sm">{item.sell}</div>
-                      <div className="text-[#fcfcfc] text-sm">{item.buy}</div>
-                    </motion.div>
-                  ))}
+              {/* Table Body */}
+              <div className="max-h-[400px] overflow-y-auto">
+                {swapHistory.map((item, index) => (
+                  <motion.div
+                    key={index}
+                    initial={{ opacity: 0, y: 20 }}
+                    animate={{ opacity: 1, y: 0 }}
+                    transition={{ delay: index * 0.05 }}
+                    className=" hover:bg-[#d7d7d7]/5 px-4 py-3 grid grid-cols-3 gap-4 border-b border-[#d7d7d7]/10 transition-colors"
+                  >
+                    <div className="text-[#fcfcfc] text-sm">{item.time}</div>
+                    <div className="text-[#fcfcfc] text-sm">{item.sell}</div>
+                    <div className="text-[#fcfcfc] text-sm">{item.buy}</div>
+                  </motion.div>
+                ))}
+              </div>
+            </div>
+          </div>
+        )
+
+      case "guild":
+        return (
+          <div className="space-y-6">
+            <h2 className="bg-gradient-purple-cyan bg-clip-text text-3xl font-bold leading-7 kati-font text-center mb-6">Guild System</h2>
+
+            <div className="space-y-4">
+              <div className="bg-[#191A1A] rounded-xl p-6">
+                <div className="flex items-center gap-3 mb-4">
+                  <div className="w-10 h-10 bg-gradient-violet-blue rounded-full flex items-center justify-center">
+                    <Users className="w-5 h-5 text-white" />
+                  </div>
+                  <h3 className="text-[#fcfcfc] text-xl font-bold">Guild Membership</h3>
+                </div>
+                <p className="text-[#d7d7d7] text-sm leading-relaxed">
+                  Join our exclusive guild system to unlock premium features, earn rewards, and connect with other traders.
+                  Guild members enjoy reduced fees, priority support, and exclusive trading opportunities.
+                </p>
+                <div className="mt-4 flex gap-2">
+                  <Button className="bg-gradient-violet-blue text-white text-sm px-4 py-2">
+                    Join Guild
+                  </Button>
+                  <Button variant="outline" className="border-[#d7d7d7]/20 text-[#fcfcfc] text-sm px-4 py-2">
+                    View Benefits
+                  </Button>
+                </div>
+              </div>
+
+              <div className="bg-[#191A1A] rounded-xl p-6">
+                <h4 className="text-[#fcfcfc] text-lg font-semibold mb-3">Guild Tiers</h4>
+                <div className="space-y-3">
+                  <div className="flex items-center justify-between p-3 bg-black/30 rounded-lg">
+                    <div className="flex items-center gap-3">
+                      <div className="w-6 h-6 bg-yellow-500 rounded-full"></div>
+                      <span className="text-[#fcfcfc] font-medium">Gold Tier</span>
+                    </div>
+                    <span className="text-[#d7d7d7] text-sm">0.1% Fee Reduction</span>
+                  </div>
+                  <div className="flex items-center justify-between p-3 bg-black/30 rounded-lg">
+                    <div className="flex items-center gap-3">
+                      <div className="w-6 h-6 bg-gray-400 rounded-full"></div>
+                      <span className="text-[#fcfcfc] font-medium">Platinum Tier</span>
+                    </div>
+                    <span className="text-[#d7d7d7] text-sm">0.2% Fee Reduction</span>
+                  </div>
+                  <div className="flex items-center justify-between p-3 bg-black/30 rounded-lg">
+                    <div className="flex items-center gap-3">
+                      <div className="w-6 h-6 bg-purple-500 rounded-full"></div>
+                      <span className="text-[#fcfcfc] font-medium">Diamond Tier</span>
+                    </div>
+                    <span className="text-[#d7d7d7] text-sm">0.3% Fee Reduction</span>
+                  </div>
                 </div>
               </div>
             </div>
+          </div>
+        )
+
+      case "policy":
+        return (
+          <div className="space-y-6">
+            <h2 className="bg-gradient-purple-cyan bg-clip-text text-3xl font-bold leading-7 kati-font text-center mb-6">Trading Policy</h2>
+
+            <div className="space-y-4">
+              <div className="bg-[#191A1A] rounded-xl p-6">
+                <div className="flex items-center gap-3 mb-4">
+                  <div className="w-10 h-10 bg-gradient-violet-blue rounded-full flex items-center justify-center">
+                    <Shield className="w-5 h-5 text-white" />
+                  </div>
+                  <h3 className="text-[#fcfcfc] text-xl font-bold">Security & Compliance</h3>
+                </div>
+                <div className="space-y-3 text-[#d7d7d7] text-sm">
+                  <p>• All transactions are secured with industry-standard encryption</p>
+                  <p>• KYC/AML compliance for regulatory requirements</p>
+                  <p>• Multi-signature wallet protection for user funds</p>
+                  <p>• 24/7 monitoring for suspicious activities</p>
+                </div>
+              </div>
+              <div className="bg-[#191A1A] rounded-xl p-6">
+                <h4 className="text-[#fcfcfc] text-lg font-semibold mb-3">Terms of Service</h4>
+                <div className="space-y-3 text-[#d7d7d7] text-sm">
+                  <p>• Users must be 18+ years old to use this service</p>
+                  <p>• All trades are final and cannot be reversed</p>
+                  <p>• Platform reserves the right to suspend suspicious accounts</p>
+                  <p>• Users are responsible for maintaining account security</p>
+                  <p>• Market volatility may affect swap rates</p>
+                </div>
+                <Button className="mt-4 bg-gradient-violet-blue text-white text-sm px-4 py-2">
+                  Read Full Terms
+                </Button>
+              </div>
+            </div>
+          </div>
+        )
+
+      default:
+        return null
+    }
+  }
+
+  return (
+    <div className="h-full flex items-center justify-center p-4 z-20">
+
+      <div className="relative flex items-center justify-center gap-8 w-full">
+        {/* History Panel */}
+        <div className=" max-w-[800px] flex-1 flex flex-col gap-8 rounded-xl"
+        >
+          <Card className="w-full border-[#d7d7d7]/20 p-6 bg-black/60">
+            {/* Tab Navigation */}
+
+
+            {/* Tab Content */}
+            <AnimatePresence mode="wait">
+              <motion.div
+                key={activeTab}
+                initial={{ opacity: 0, y: 20 }}
+                animate={{ opacity: 1, y: 0 }}
+                exit={{ opacity: 0, y: -20 }}
+                transition={{ duration: 0.3 }}
+              >
+                {renderTabContent()}
+              </motion.div>
+            </AnimatePresence>
           </Card>
+          <div className="flex mb-6 border-b max-w-[400px] mx-auto bg-black/60 rounded-full border-[#d7d7d7]/20">
+            <button
+              onClick={() => setActiveTab("swap")}
+              className={`flex min-w-[100px] items-center cursor-pointer border-none text-neutral gap-2 px-4 py-3 text-sm font-medium transition-colors ${activeTab === "swap"
+                ? "bg-gradient-purple-cyan bg-clip-text"
+                : "bg-transparent"
+                }`}
+            >
+             
+              Swap
+            </button>
+            <button
+              onClick={() => setActiveTab("guild")}
+              className={`flex min-w-[100px] items-center cursor-pointer border-none text-neutral gap-2 px-4 py-3 text-sm font-medium transition-colors ${activeTab === "guild"
+                ? "bg-gradient-purple-cyan bg-clip-text"
+                : "bg-transparent"
+                }`}
+            >
+              Guild
+            </button>
+            <button
+              onClick={() => setActiveTab("policy")}
+              className={`flex min-w-[100px] items-center cursor-pointer border-none text-neutral gap-2 px-4 py-3 text-sm font-medium transition-colors ${activeTab === "policy"
+                ? "bg-gradient-purple-cyan bg-clip-text"
+                : "bg-transparent"
+                }`}
+            >
+              Policy
+            </button>
+          </div>
         </div>
+
         {/* Main Swap Interface */}
-        <Card className="w-[540px] bg-black flex flex-col gap-4">
-          <div className="   p-6 border-[1px] border-solid  rounded-xl">
+        <Card className="w-[540px] bg-black/6060 flex flex-col gap-4">
+          <div className=" bg-black/60  p-6 border-[1px] border-solid  rounded-xl">
             {/* Header */}
             <div className="text-center mb-5">
               <h1 className="bg-gradient-purple-cyan bg-clip-text text-3xl font-bold leading-7 kati-font">Free Swap</h1>
@@ -170,7 +322,7 @@ export default function SwapInterface() {
                 <div className="flex items-center justify-between">
                   <button className="flex items-center bg-transparent border-none gap-2 text-[#fcfcfc] hover:text-[#9747ff] transition-colors">
                     <div
-                      className={`w-6 h-6 rounded-full bg-black flex items-center justify-center text-xs`}
+                      className={`w-6 h-6 rounded-full bg-black/60 flex items-center justify-center text-xs`}
                     >
                       <img src={"/mmp-logo.png"} alt={"mmp"} width={24} height={24} />
                     </div>

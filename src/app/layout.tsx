@@ -45,7 +45,7 @@ export default function RootLayout({
             <div className="min-h-screen bg-[#747474] dark:bg-gray-950 transition-colors duration-300 font-gothic-a1">
               <Header />
               <VideoBackground />
-              <main className="min-h-[calc(100vh-64px)]">{children}</main>
+              <main className="h-[calc(100vh-64px)] relative z-40">{children}</main>
             </div>
             <ToastContainer theme="dark" />
           </LangProvider>
