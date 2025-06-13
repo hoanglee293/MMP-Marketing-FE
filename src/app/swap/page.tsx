@@ -413,6 +413,22 @@ export default function SwapInterface() {
     return myWallet?.balance_sol || 0;
   };
 
+  // Get balance for specific token
+  const getTokenBalance = (tokenSymbol: string) => {
+    if (!myWallet) return 0;
+    
+    switch (tokenSymbol) {
+      case "SOL":
+        return myWallet.balance_sol || 0;
+      case "USDT":
+        return myWallet.balance_usdt || 0;
+      case "USDC":
+        return myWallet.balance_usdc || 0;
+      default:
+        return 0;
+    }
+  };
+
   const toggleHistory = () => {
     setShowHistory(!showHistory)
   }
@@ -486,15 +502,11 @@ export default function SwapInterface() {
               <h1 className="bg-gradient-purple-cyan bg-clip-text text-3xl font-bold leading-7 mt-2 kati-font">{t("swap.instantExchange")}</h1>
             </div>
 
-            <div className="text-neutral text-sm text-right leading-5">
-              {t("swap.myBalance")}: <span className="bg-gradient-purple-cyan bg-clip-text">{getCurrentBalance()} </span>SOL
-              {loginMethod === 'phantom' && (
-                <button 
-                  onClick={getPhantomBalance}
-                  className="ml-2 text-xs text-blue-400 hover:text-blue-300 underline"
-                >
-                  Refresh
-                </button>
+            <div className="text-neutral text-sm text-right leading-5 gap-2">
+              {sellToken && (
+                <>
+                  {t("swap.myBalance")}: <span className="bg-gradient-purple-cyan bg-clip-text">{getTokenBalance(sellToken.symbol)}</span> {sellToken.symbol}
+                </>
               )}
             </div>
             {/* Sell Section */}
@@ -596,7 +608,7 @@ export default function SwapInterface() {
                     {loginMethod === 'phantom' ? 'Signing Transaction...' : t("swap.processing")}
                   </div>
                 ) : (
-                   t("swap.swap")
+                  t("swap.swap") 
                 )}
               </Button>
             ) : (
