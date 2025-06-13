@@ -1,6 +1,6 @@
 "use client"
 
-import { useState } from "react"
+import { useState, useEffect } from "react"
 import { motion, AnimatePresence } from "framer-motion"
 import { ChevronDown, Clock, ArrowUpDown, ArrowDown, Users, Shield } from "lucide-react"
 import { Button } from "@/app/ui/button"
@@ -11,27 +11,9 @@ import { ConnectWalletModal } from "@/components/ConnectWalletModal"
 import { useQuery } from "@tanstack/react-query"
 import { SwapService, TelegramWalletService } from "@/services/api"
 import { createSwapOrder } from "@/services/api/SwapService"
+import { Web3WalletService } from "@/services/api/Web3WalletService"
 import notify from "@/components/notify"
-
-// Mock data for swap history
-const swapHistory = [
-  { time: "22:00 12/05/2025", sell: "0.5 SOL", buy: "2 MMP" },
-  { time: "22:00 12/05/2025", sell: "0.5 SOL", buy: "2 MMP" },
-  { time: "22:00 12/05/2025", sell: "0.5 SOL", buy: "2 MMP" },
-  { time: "22:00 12/05/2025", sell: "0.5 SOL", buy: "2 MMP" },
-  { time: "22:00 12/05/2025", sell: "0.5 SOL", buy: "2 MMP" },
-  { time: "22:00 12/05/2025", sell: "0.5 SOL", buy: "2 MMP" },
-  { time: "22:00 12/05/2025", sell: "0.5 SOL", buy: "2 MMP" },
-  { time: "22:00 12/05/2025", sell: "0.5 SOL", buy: "2 MMP" },
-  { time: "22:00 12/05/2025", sell: "0.5 SOL", buy: "2 MMP" },
-  { time: "22:00 12/05/2025", sell: "0.5 SOL", buy: "2 MMP" },
-  { time: "22:00 12/05/2025", sell: "0.5 SOL", buy: "2 MMP" },
-  { time: "22:00 12/05/2025", sell: "0.5 SOL", buy: "2 MMP" },
-  { time: "22:00 12/05/2025", sell: "0.5 SOL", buy: "2 MMP" },
-  { time: "22:00 12/05/2025", sell: "0.5 SOL", buy: "2 MMP" },
-  { time: "22:00 12/05/2025", sell: "0.5 SOL", buy: "2 MMP" },
-  { time: "22:00 12/05/2025", sell: "0.5 SOL", buy: "2 MMP" },
-]
+import { useLang } from "@/lang/useLang"
 
 const tokens = [
   { symbol: "SOL", name: "Solana", color: "bg-green-500", icon: "/solana.png" },
@@ -40,6 +22,7 @@ const tokens = [
 ]
 
 export default function SwapInterface() {
+  const { t } = useLang()
   const [showHistory, setShowHistory] = useState(false)
   const [sellToken, setSellToken] = useState(tokens[0])
   const [buyToken, setBuyToken] = useState(tokens[1])
@@ -48,12 +31,13 @@ export default function SwapInterface() {
   const [activeTab, setActiveTab] = useState("swap")
   const [showConnectModal, setShowConnectModal] = useState(false)
   const [isSubmitting, setIsSubmitting] = useState(false)
-  const { isAuthenticated } = useAuth()
-  const toggleHistory = () => {
-    setShowHistory(!showHistory)
-  }
+  const [isWeb3Swap, setIsWeb3Swap] = useState(false)
+  const [web3OrderId, setWeb3OrderId] = useState<number | null>(null)
+  const [web3SerializedTx, setWeb3SerializedTx] = useState<string | null>(null)
+  const [phantomBalance, setPhantomBalance] = useState<number | null>(null)
+  const { isAuthenticated, loginMethod } = useAuth()
 
-  const { data: myWallet } = useQuery({
+  const { data: myWallet, refetch: refetchMyWallet } = useQuery({
     queryKey: ['myWallet'],
     queryFn: () => TelegramWalletService.getmyWallet(),
   })
@@ -62,6 +46,34 @@ export default function SwapInterface() {
     queryKey: ['solPrice'],
     queryFn: () => SwapService.gerSolPrice(),
   })
+
+  const { data: swapOrderHistory, refetch: refetchSwapOrderHistory } = useQuery({
+    queryKey: ['swapOrder'],
+    queryFn: () => SwapService.getSwapOrder(),
+  })
+
+  // Format swap order history data for display
+  const formatSwapHistory = () => {
+    if (!swapOrderHistory || !Array.isArray(swapOrderHistory)) return []
+    
+    return swapOrderHistory.map(order => ({
+      time: new Date(order.created_at).toLocaleString('vi-VN', {
+        day: '2-digit',
+        month: '2-digit', 
+        year: 'numeric',
+        hour: '2-digit',
+        minute: '2-digit'
+      }),
+      sell: `${order.input_amount} ${order.input_token}`,
+      buy: `${order.mmp_received} MMP`,
+      status: order.status,
+      swap_rate: order.swap_rate,
+      tx_hash_ref: order.tx_hash_ref,
+      tx_hash_send: order.tx_hash_send
+    }))
+  }
+
+  const swapHistoryData = formatSwapHistory()
 
   // Calculate token price in USD
   const getTokenPriceUSD = () => {
@@ -105,23 +117,23 @@ export default function SwapInterface() {
   const listPolicy = [
     {
       icon: "/ethereum.png",
-      title: "Users can transfer SOL, USDT, or USDC directly from their personal wallets (Phantom) into their exchange wallet.",
+      title: t("swap.policyItems.0"),
     },
     {
       icon: "/ethereum.png",
-      title: "They can use SOL, USDT, or USDC to swap for MMP tokens at the IDO price of $0.001.",
+      title: t("swap.policyItems.1"),
     },
     {
       icon: "/ethereum.png",
-      title: "Users may stake MMP to earn periodic rewards (reward details are currently being updated).",
+      title: t("swap.policyItems.2"),
     },
     {
       icon: "/ethereum.png",
-      title: "If they choose not to stake, they can withdraw MMP/MPB from their exchange wallet back to their personal wallet, paying only the network fee.s",
+      title: t("swap.policyItems.3"),
     },
     {
       icon: "/ethereum.png",
-      title: "When withdrawing SOL, USDT, or USDC from the exchange wallet to a personal wallet, a flat $1 withdrawal fee applies.",
+      title: t("swap.policyItems.4"),
     }
   ]
 
@@ -130,28 +142,28 @@ export default function SwapInterface() {
       case "swap":
         return (
           <div className="space-y-4">
-            <h2 className="bg-gradient-purple-cyan bg-clip-text text-3xl font-bold leading-7 kati-font text-center mb-4">Swap History</h2>
+            <h2 className="bg-gradient-purple-cyan bg-clip-text text-3xl font-bold leading-7 kati-font text-center mb-4">{t("swap.swapHistory")}</h2>
 
             <div className="overflow-hidden rounded-lg">
               {/* Table Header */}
               <div className="px-4 py-3 grid grid-cols-3 gap-4">
                 <div className="text-neutral font-medium text-sm flex items-center gap-1">
-                  Time
+                  {t("swap.time")}
                   <ChevronDown className="w-3 h-3" />
                 </div>
                 <div className="text-neutral font-medium text-sm flex items-center gap-1">
-                  Sell
+                  {t("swap.sell")}
                   <ChevronDown className="w-3 h-3" />
                 </div>
                 <div className="text-neutral font-medium text-sm flex items-center gap-1">
-                  Buy
+                  {t("swap.buy")}
                   <ChevronDown className="w-3 h-3" />
                 </div>
               </div>
 
               {/* Table Body */}
               <div className="h-[500px] overflow-y-auto custom-scroll">
-                {swapHistory.map((item, index) => (
+                {swapHistoryData.map((item, index) => (
                   <motion.div
                     key={index}
                     initial={{ opacity: 0, y: 20 }}
@@ -172,7 +184,7 @@ export default function SwapInterface() {
       case "guild":
         return (
           <div className="space-y-6">
-            <h2 className="bg-gradient-purple-cyan bg-clip-text text-3xl font-bold leading-7 kati-font text-center mb-6">Swap Guide</h2>
+            <h2 className="bg-gradient-purple-cyan bg-clip-text text-3xl font-bold leading-7 kati-font text-center mb-6">{t("swap.swapGuide")}</h2>
 
             <div className="space-y-4">
               <div className=" rounded-xl p-6">
@@ -180,18 +192,17 @@ export default function SwapInterface() {
                   <div className="w-10 h-10 bg-gradient-violet-blue rounded-full flex items-center justify-center">
                     <Users className="w-5 h-5 text-neutral bg-gradient-purple-cyan bg-clip-text" />
                   </div>
-                  <h3 className="text-neutral text-xl font-bold">Guild Membership</h3>
+                  <h3 className="text-neutral text-xl font-bold">{t("swap.guildMembership")}</h3>
                 </div>
                 <p className="text-neutral text-sm leading-relaxed">
-                  Join our exclusive guild system to unlock premium features, earn rewards, and connect with other traders.
-                  Guild members enjoy reduced fees, priority support, and exclusive trading opportunities.
+                  {t("swap.guildDescription")}
                 </p>
                 <div className="mt-4 flex gap-2">
                   <Button className="bg-gradient-violet-blue text-neutral cursor-pointer text-sm px-4 py-2 transition-all duration-300 hover:scale-105 hover:shadow-lg hover:shadow-purple-500/25 hover:bg-gradient-to-r hover:from-purple-600 hover:to-blue-600 active:scale-95">
-                    Join Guild
+                    {t("swap.joinGuild")}
                   </Button>
                   <Button variant="outline" className="border-[#d7d7d7]/20 text-black cursor-pointer text-sm px-4 py-2 transition-all duration-300 hover:scale-105 hover:bg-white/10 hover:border-purple-500/50 active:scale-95">
-                    View Benefits
+                    {t("swap.viewBenefits")}
                   </Button>
                 </div>
               </div>
@@ -205,12 +216,12 @@ export default function SwapInterface() {
       case "policy":
         return (
           <div className="space-y-6">
-            <h2 className="bg-gradient-purple-cyan bg-clip-text text-3xl font-bold leading-7 kati-font text-center mb-8">Policy</h2>
+            <h2 className="bg-gradient-purple-cyan bg-clip-text text-3xl font-bold leading-7 kati-font text-center mb-8">{t("swap.policy")}</h2>
 
             <ul className="space-y-4 leading-6 flex flex-col gap-4 pb-5">
               {listPolicy.map((item, index) => (
-                <li className="text-neutral text-sm flex items-start  gap-2">
-                  <img src={item.icon} alt={item.icon} className="w-4 h-4" />
+                <li key={index} className="text-neutral text-sm flex items-start  gap-2">
+                  <img src={item.icon} alt="ethereum" className="w-4 h-4" />
                   <span>{item.title}</span>
                 </li>
               ))}
@@ -227,110 +238,191 @@ export default function SwapInterface() {
   const handleSwapSubmit = async () => {
     // Validate input
     if (!sellAmount || Number(sellAmount) <= 0) {
-      notify({ message: "Please enter a valid amount swap", type: "error" })
+      notify({ message: t("swap.errors.enterValidAmount"), type: "error" })
       return
     }
 
     if (!sellToken || !sellToken.symbol) {
-      notify({ message: "Please select a token to swap", type: "error" })
+      notify({ message: t("swap.errors.selectToken"), type: "error" })
       return
     }
-
-    // // Check minimum amount (e.g., 0.001 for any token)
-    // const minAmount = 0.001
-    // if (Number(sellAmount) < minAmount) {
-    //   notify({ message: `Minimum swap amount is ${minAmount} ${sellToken.symbol}`, type: "error" })
-    //   return
-    // }
 
     setIsSubmitting(true)
 
     try {
-      const response = await createSwapOrder(sellToken.symbol, Number(sellAmount))
-
-      // Check if response has success status or specific status codes
-      if (response && (response.success || response.status === 200 || response.status === 201)) {
-        notify({
-          message: "Swap order created successfully! You will receive your MMP tokens shortly.",
-          type: "success"
-        })
-        // Reset form
-        setSellAmount("0")
+      // Check if user is using Web3 wallet (Phantom)
+      if (loginMethod === 'phantom') {
+        await handleWeb3Swap()
       } else {
-        notify({
-          message: response?.message || "Failed to create swap order. Please try again.",
-          type: "error"
-        })
+        // Traditional wallet swap (Telegram, Google)
+        await handleTraditionalSwap()
       }
     } catch (error: any) {
       console.error("Swap order error:", error)
-
-      // Handle different types of errors
-      if (error.response) {
-        // Server responded with error status
-        const status = error.response.status
-        const errorMessage = error.response.data?.message || error.response.data?.error
-
-        switch (status) {
-          case 400:
-            notify({
-              message: errorMessage || "Invalid request. Please check your input.",
-              type: "error"
-            })
-            break
-          case 401:
-            notify({
-              message: "Authentication required. Please connect your wallet.",
-              type: "error"
-            })
-            break
-          case 403:
-            notify({
-              message: "Insufficient balance or permission denied.",
-              type: "error"
-            })
-            break
-          case 404:
-            notify({
-              message: "Service not available. Please try again later.",
-              type: "error"
-            })
-            break
-          case 429:
-            notify({
-              message: "Too many requests. Please wait before trying again.",
-              type: "error"
-            })
-            break
-          case 500:
-            notify({
-              message: "Server error. Please try again later.",
-              type: "error"
-            })
-            break
-          default:
-            notify({
-              message: errorMessage || "An unexpected error occurred. Please try again.",
-              type: "error"
-            })
-        }
-      } else if (error.request) {
-        // Network error
-        notify({
-          message: "Network error. Please check your connection and try again.",
-          type: "error"
-        })
-      } else {
-        // Other errors
-        notify({
-          message: "An unexpected error occurred. Please try again.",
-          type: "error"
-        })
-      }
+      handleSwapError(error)
     } finally {
       setIsSubmitting(false)
     }
   }
+
+  // Handle traditional wallet swap
+  const handleTraditionalSwap = async () => {
+    const response = await createSwapOrder(sellToken.symbol, Number(sellAmount))
+    
+    notify({
+      message: t("swap.errors.swapSuccess"),
+      type: "success"
+    })
+    refetchMyWallet()
+    refetchSwapOrderHistory()
+    // Reset form
+    setSellAmount("0")
+  }
+
+  // Handle Web3 wallet swap
+  const handleWeb3Swap = async () => {
+    try {
+      const { solana } = window as any;
+      
+      if (!solana || !solana.isPhantom) {
+        throw new Error('Phantom wallet is not installed');
+      }
+
+      // Get connected account
+      const publicKey = localStorage.getItem('publicKey');
+      if (!publicKey) {
+        throw new Error('Please connect your Phantom wallet');
+      }
+
+      // Step 1: Initialize Web3 swap
+      const { orderId, serializedTx } = await Web3WalletService.initWeb3Swap(
+        publicKey,
+        sellToken.symbol,
+        Number(sellAmount)
+      );
+
+      setWeb3OrderId(orderId);
+      setWeb3SerializedTx(serializedTx);
+
+      // Step 2: Sign and send transaction
+      const signature = await Web3WalletService.signAndSendTransaction(serializedTx);
+
+      // Step 3: Complete swap
+      await Web3WalletService.completeWeb3Swap(orderId, signature);
+
+      notify({
+        message: t("swap.errors.swapSuccess"),
+        type: "success"
+      });
+
+      refetchSwapOrderHistory();
+      setSellAmount("0");
+      setWeb3OrderId(null);
+      setWeb3SerializedTx(null);
+
+    } catch (error: any) {
+      console.error("Web3 swap error:", error);
+      throw error;
+    }
+  }
+
+  // Handle swap errors
+  const handleSwapError = (error: any) => {
+    if (error.response) {
+      // Server responded with error status
+      const status = error.response.status
+      const errorMessage = error.response.data?.message || error.response.data?.error
+
+      switch (status) {
+        case 400:
+          notify({
+            message: t("swap.errors.insufficientBalance") || t("swap.errors.invalidRequest") || errorMessage,
+            type: "error"
+          })
+          break
+        case 401:
+          notify({
+            message: t("swap.errors.authenticationRequired"),
+            type: "error"
+          })
+          break
+        case 403:
+          notify({
+            message: t("swap.errors.insufficientBalance"),
+            type: "error"
+          })
+          break
+        case 404:
+          notify({
+            message: t("swap.errors.serviceUnavailable"),
+            type: "error"
+          })
+          break
+        case 429:
+          notify({
+            message: t("swap.errors.tooManyRequests"),
+            type: "error"
+          })
+          break
+        case 500:
+          notify({
+            message: t("swap.errors.serverError"),
+            type: "error"
+          })
+          break
+        default:
+          notify({
+            message: errorMessage || t("swap.errors.unexpectedError"),
+            type: "error"
+          })
+      }
+    } else if (error.request) {
+      // Network error
+      notify({
+        message: t("swap.errors.networkError"),
+        type: "error"
+      })
+    } else {
+      // Other errors (including Web3 errors)
+      notify({
+        message: error.message || t("swap.errors.unexpectedError"),
+        type: "error"
+      })
+    }
+  }
+
+  // Get Phantom wallet balance
+  const getPhantomBalance = async () => {
+    if (loginMethod === 'phantom' && Web3WalletService.isPhantomInstalled()) {
+      try {
+        const { solana } = window as any;
+        const balance = await solana.connection.getBalance(solana.publicKey);
+        setPhantomBalance(balance / 1e9); // Convert lamports to SOL
+      } catch (error) {
+        console.error('Error getting Phantom balance:', error);
+        setPhantomBalance(null);
+      }
+    }
+  };
+
+  // Get current balance based on login method
+  const getCurrentBalance = () => {
+    if (loginMethod === 'phantom') {
+      return phantomBalance !== null ? phantomBalance : 0;
+    }
+    return myWallet?.balance_sol || 0;
+  };
+
+  const toggleHistory = () => {
+    setShowHistory(!showHistory)
+  }
+
+  // Fetch Phantom balance when login method is phantom
+  useEffect(() => {
+    if (loginMethod === 'phantom' && isAuthenticated) {
+      getPhantomBalance();
+    }
+  }, [loginMethod, isAuthenticated]);
 
   return (
     <div className="flex-1 flex items-center justify-center p-4 z-20">
@@ -362,7 +454,7 @@ export default function SwapInterface() {
                 }`}
             >
 
-              Swap
+              {t("swap.swap")}
             </button>
             <button
               onClick={() => setActiveTab("guild")}
@@ -371,7 +463,7 @@ export default function SwapInterface() {
                 : "bg-transparent"
                 }`}
             >
-              Guild
+              {t("swap.guild")}
             </button>
             <button
               onClick={() => setActiveTab("policy")}
@@ -380,7 +472,7 @@ export default function SwapInterface() {
                 : "bg-transparent"
                 }`}
             >
-              Policy
+              {t("swap.policy")}
             </button>
           </div>
         </div>
@@ -390,16 +482,26 @@ export default function SwapInterface() {
           <div className=" bg-black/60  p-6 border-[1px] border-solid  rounded-xl">
             {/* Header */}
             <div className="text-center mb-5">
-              <h1 className="bg-gradient-purple-cyan bg-clip-text text-3xl font-bold leading-7 kati-font">Free Swap</h1>
-              <h1 className="bg-gradient-purple-cyan bg-clip-text text-3xl font-bold leading-7 mt-2 kati-font">Instant Exchange</h1>
+              <h1 className="bg-gradient-purple-cyan bg-clip-text text-3xl font-bold leading-7 kati-font">{t("swap.freeSwap")}</h1>
+              <h1 className="bg-gradient-purple-cyan bg-clip-text text-3xl font-bold leading-7 mt-2 kati-font">{t("swap.instantExchange")}</h1>
             </div>
 
-            <div className="text-neutral text-sm text-right leading-5">My Balance: {myWallet?.balance_sol} SOL</div>
+            <div className="text-neutral text-sm text-right leading-5">
+              {t("swap.myBalance")}: <span className="bg-gradient-purple-cyan bg-clip-text">{getCurrentBalance()} </span>SOL
+              {loginMethod === 'phantom' && (
+                <button 
+                  onClick={getPhantomBalance}
+                  className="ml-2 text-xs text-blue-400 hover:text-blue-300 underline"
+                >
+                  Refresh
+                </button>
+              )}
+            </div>
             {/* Sell Section */}
             <div className="space-y-3 mb-5 mt-2">
               <div className="bg-dark-100 rounded-xl p-4">
                 <div className="flex items-center justify-between mb-1">
-                  <label className="text-[#fcfcfc] text-sm font-medium">From</label>
+                  <label className="text-[#fcfcfc] text-sm font-medium">{t("swap.from")}</label>
                 </div>
                 <div className="flex items-start justify-between">
                   <DropdownMenu>
@@ -460,7 +562,7 @@ export default function SwapInterface() {
             <div className="">
               <div className="bg-dark-100 rounded-xl p-4">
                 <div className="flex items-center justify-between mb-2">
-                  <label className="text-[#fcfcfc] text-sm font-medium">To</label>
+                  <label className="text-[#fcfcfc] text-sm font-medium">{t("swap.to")}</label>
 
                 </div>
                 <div className="flex items-center justify-between">
@@ -491,10 +593,10 @@ export default function SwapInterface() {
                 {isSubmitting ? (
                   <div className="flex items-center justify-center gap-2">
                     <div className="w-4 h-4 border-2 border-white border-t-transparent rounded-full animate-spin"></div>
-                    Processing...
+                    {loginMethod === 'phantom' ? 'Signing Transaction...' : t("swap.processing")}
                   </div>
                 ) : (
-                  "SWAP"
+                   t("swap.swap")
                 )}
               </Button>
             ) : (
@@ -502,9 +604,16 @@ export default function SwapInterface() {
                 onClick={() => setShowConnectModal(true)}
                 className="w-full bg-gradient-violet-blue cursor-pointer rounded-full text-white font-bold py-3 text-base kati-font transition-all duration-300 hover:scale-105 hover:shadow-lg hover:shadow-purple-500/25 hover:bg-gradient-to-r hover:from-purple-600 hover:to-blue-600 active:scale-95"
               >
-                Connect Wallet
+                {t("swap.connectWallet")}
               </Button>
             )}
+
+            {/* Wallet Type Info */}
+            {/* {loginMethod === 'phantom' && (
+              <div className="text-center text-xs text-blue-400 mt-2">
+                Using Web3 Wallet - Transaction will be signed in Phantom
+              </div>
+            )} */}
 
             {/* Transaction Info */}
             <div className="bg-black/60 rounded-xl flex items-center justify-between  space-y-2">
