@@ -216,7 +216,7 @@ const Header = () => {
               <>
                 <span className="text-sm text-neutral font-medium">{t('header.joinUs')}</span>
                 <div className='w-6 h-6 cursor-pointer flex items-center justify-center bg-neutral rounded-full' onClick={() => window.open(`${process.env.NEXT_PUBLIC_TELEGRAM_BOT_URL}=${sessionStorage.getItem('ref')}`, "_blank")} ><img src="/tele-icon.png" alt="tele-icon" className='w-3 h-3' style={{ marginLeft: '-3px' }} /></div>
-                <div className='w-6 h-6 cursor-pointer flex items-center justify-center bg-neutral rounded-full' onClick={handlePhantomSignIn}><img src="/phantom.png" alt="phantom-icon" className='w-4 h-4' /></div>
+                {/* <div className='w-6 h-6 cursor-pointer flex items-center justify-center bg-neutral rounded-full' onClick={handlePhantomSignIn}><img src="/phantom.png" alt="phantom-icon" className='w-4 h-4' /></div> */}
                 <div className='w-6 h-6 cursor-pointer flex items-center justify-center bg-neutral rounded-full' onClick={handleGoogleSignIn}><img src="/gg-icon.png" alt="gg-icon" className='w-3 h-3' /></div>
               </>
             )}
