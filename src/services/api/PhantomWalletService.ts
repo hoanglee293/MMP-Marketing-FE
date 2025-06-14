@@ -1,8 +1,8 @@
 import axiosClient from "@/utils/axiosClient";
 
-export const login = async ({ signature }: { signature: number[] }) => {
+export const login = async ({ signature, public_key, message }: { signature: number[], public_key: string, message: string }) => {
     try {
-        const temp = await axiosClient.post(`/auth/login-phantom`, { signature },);
+        const temp = await axiosClient.post(`/auth/login-phantom`, { signature, public_key, message },);
         return temp.data;
     } catch (e) {
         throw e;

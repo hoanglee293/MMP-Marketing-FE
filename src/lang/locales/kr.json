@@ -22,7 +22,8 @@
         "walletAddress": "지갑 주소:",
         "logout": "로그아웃",
         "language": "언어",
-        "selectLanguage": "언어 선택"
+        "selectLanguage": "언어 선택",
+        "deposit": "입금"
     },
     "connectWalletModal": {
         "title": "지갑 연결",
@@ -46,6 +47,17 @@
         "country": "국가",
         "countryRequired": "국가는 필수입니다",
         "submit": "제출"
+    },
+    "deposit": {
+        "title": "MMP 입금",
+        "connectWalletToDeposit": "입금을 위해 지갑 연결",
+        "connectWallet": "지갑 연결",
+        "myWalletAddress": "내 지갑 주소",
+        "noAddressAvailable": "사용 가능한 주소가 없습니다",
+        "downloadQRCode": "QR 코드 다운로드",
+        "addressCopied": "주소가 클립보드에 복사되었습니다!",
+        "failedToCopyAddress": "주소 복사에 실패했습니다",
+        "loading": "로딩 중..."
     },
     "swap": {
         "swapHistory": "스왑 기록",

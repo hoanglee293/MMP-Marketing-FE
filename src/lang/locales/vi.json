@@ -22,7 +22,8 @@
         "walletAddress": "Địa chỉ ví:",
         "logout": "Đăng xuất",
         "language": "Ngôn ngữ",
-        "selectLanguage": "Chọn ngôn ngữ"
+        "selectLanguage": "Chọn ngôn ngữ",
+        "deposit": "Nạp"
     },
     "connectWalletModal": {
         "title": "Kết nối Ví",
@@ -45,6 +46,17 @@
         "country": "Quốc gia",
         "countryRequired": "Quốc gia là bắt buộc",
         "submit": "Gửi"
+    },
+    "deposit": {
+        "title": "Nạp MMP",
+        "connectWalletToDeposit": "Kết nối Ví để Nạp",
+        "connectWallet": "Kết nối Ví",
+        "myWalletAddress": "Địa chỉ Ví của tôi",
+        "noAddressAvailable": "Không có địa chỉ khả dụng",
+        "downloadQRCode": "Tải xuống Mã QR",
+        "addressCopied": "Đã sao chép địa chỉ vào clipboard!",
+        "failedToCopyAddress": "Không thể sao chép địa chỉ",
+        "loading": "Đang tải..."
     },
     "swap": {
         "swapHistory": "Lịch sử Swap",

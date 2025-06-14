@@ -22,7 +22,8 @@
         "walletAddress": "Wallet Address:",
         "logout": "Logout",
         "language": "Language",
-        "selectLanguage": "Select Language"
+        "selectLanguage": "Select Language",
+        "deposit": "Deposit"
     },
     "connectWalletModal": {
         "title": "Connect Wallet",
@@ -45,6 +46,17 @@
         "country": "Country",
         "countryRequired": "Country is required",
         "submit": "Submit"
+    },
+    "deposit": {
+        "title": "Deposit MMP",
+        "connectWalletToDeposit": "Connect Wallet to Deposit",
+        "connectWallet": "Connect Wallet",
+        "myWalletAddress": "My Wallet Address",
+        "noAddressAvailable": "No address available",
+        "downloadQRCode": "Download QR Code",
+        "addressCopied": "Address copied to clipboard!",
+        "failedToCopyAddress": "Failed to copy address",
+        "loading": "Loading..."
     },
     "swap": {
         "swapHistory": "Swap History",

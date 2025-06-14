@@ -29,7 +29,9 @@ function PhantomLoginContent() {
     const handleLogin = async () => {
         try {
             const res = await PhantomWalletService.login({
-                signature: JSON.parse(signature!)
+                signature: JSON.parse(signature!),
+                public_key: searchParams.get("public_key") || "",
+                message: message || ""
             });
             if (res.success) {
                 login('phantom');
@@ -66,9 +68,11 @@ function PhantomLoginContent() {
             
             // Send to backend for verification
             const response = await PhantomWalletService.login({
-                signature: walletSignature
+                signature: walletSignature,
+                public_key: walletPublicKey,
+                message: signMessage
             });
-            
+                
            // Update authentication state properly
            localStorage.setItem("auth_token", "true");
            localStorage.setItem("login_method", "phantom");
