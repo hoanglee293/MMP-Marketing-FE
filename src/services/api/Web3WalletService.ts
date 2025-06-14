@@ -19,7 +19,7 @@ export class Web3WalletService {
     return null;
   }
 
-  // Initialize Web3 swap
+  // Initialize Web3 swap and get unsigned transaction
   static async initWeb3Swap(publicKey: string, inputToken: string, inputAmount: number) {
     try {
       const response = await axiosClient.post('/swap-orders/web3-wallet', {
@@ -35,46 +35,57 @@ export class Web3WalletService {
     }
   }
 
-  // Sign and send transaction
-  static async signAndSendTransaction(serializedTx: string): Promise<string> {
+  // Sign transaction using Phantom wallet
+  static async signTransaction(serializedTx: string): Promise<string> {
     try {
       const { solana } = window as any;
       
-      if (!solana || !solana.isPhantom) {
-        throw new Error('Phantom wallet is not installed');
-      }
-
-      // Deserialize transaction from base64
-      // We'll use the browser's built-in atob function and create a Uint8Array
-      const decoded = atob(serializedTx);
-      const bytes = new Uint8Array(decoded.length);
-      for (let i = 0; i < decoded.length; i++) {
-        bytes[i] = decoded.charCodeAt(i);
-      }
-
-      // Create transaction object that Phantom can understand
-      const transaction = {
-        serializedMessage: bytes,
-        signatures: []
-      };
-      
-      // Sign transaction
+      // Deserialize transaction từ base64
+      const { Transaction, Connection } = await import('@solana/web3.js');
+      const transaction = Transaction.from(
+        Buffer.from(serializedTx, 'base64')
+      );
+      console.log("run 2", transaction);
+      // Ký transaction
       const signedTx = await solana.signTransaction(transaction);
       
-      // Send transaction to blockchain
-      const signature = await solana.sendTransaction(signedTx, {
-        skipPreflight: false,
-        preflightCommitment: 'confirmed'
-      });
+      // Try multiple reliable RPC endpoints to avoid 403 errors
+      const rpcEndpoints = [
+        'https://solana-api.projectserum.com',
+        'https://rpc.ankr.com/solana',
+        'https://solana.public-rpc.com',
+        'https://api.mainnet-beta.solana.com'
+      ];
       
-      return signature;
+      let lastError;
+      for (const endpoint of rpcEndpoints) {
+        try {
+          const connection = new Connection(endpoint, {
+            commitment: 'confirmed',
+            confirmTransactionInitialTimeout: 60000
+          });
+          
+          const signature = await connection.sendTransaction(signedTx, [], {
+            skipPreflight: false,
+            preflightCommitment: 'confirmed'
+          });
+          
+          return signature;
+        } catch (error) {
+          console.warn(`Failed with endpoint ${endpoint}:`, error);
+          lastError = error;
+          continue;
+        }
+      }
+      
+      throw lastError || new Error('All RPC endpoints failed');
     } catch (error) {
-      console.error('Error signing Web3 transaction:', error);
+      console.error('Error signing transaction:', error);
       throw error;
     }
   }
 
-  // Complete Web3 swap
+  // Complete Web3 swap after transaction is signed
   static async completeWeb3Swap(orderId: number, signature: string) {
     try {
       const response = await axiosClient.post('/swap-orders/web3-wallet/complete', {
