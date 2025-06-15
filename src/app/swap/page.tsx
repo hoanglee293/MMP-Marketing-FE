@@ -41,6 +41,7 @@ export default function SwapInterface() {
   const [web3OrderId, setWeb3OrderId] = useState<number | null>(null)
   const [web3SerializedTx, setWeb3SerializedTx] = useState<string | null>(null)
   const [phantomBalance, setPhantomBalance] = useState<number | null>(null)
+  const [activePolicyTab, setActivePolicyTab] = useState("mmp")
   const { isAuthenticated, loginMethod } = useAuth()
 
   const { data: myWallet, refetch: refetchMyWallet } = useQuery({
@@ -123,6 +124,136 @@ export default function SwapInterface() {
   const listPolicy = [
     {
       icon: "/ethereum.png",
+      title: t("swap.policyContent.seedRound.title"),
+     
+    },
+    {
+      icon: "/ethereum.png",
+      title: t("swap.policyContent.communityRewards.title"),
+    },
+    {
+      icon: "/ethereum.png",
+      title: t("swap.policyContent.liquidityFund.title"),
+    },
+    {
+      icon: "/ethereum.png",
+      title: t("swap.policyContent.marketingPartnership.title"),
+    },
+    {
+      icon: "/ethereum.png",
+      title: t("swap.policyContent.operationalCosts.title"),
+    },
+    {
+      icon: "/ethereum.png",
+      title: t("swap.policyContent.reserveFund.title"),
+    },
+    {
+      icon: "/ethereum.png",
+      title: t("swap.policyContent.goalsLaunch.title"),
+      content: t("swap.policyContent.goalsLaunch.content"),
+    },
+    {
+      icon: "/ethereum.png",
+      title: t("swap.policyContent.whyChooseMMP.title"),
+      content: t("swap.policyContent.whyChooseMMP.content"),
+    },
+    {
+      icon: "/ethereum.png",
+      title: t("swap.policyContent.strongGrowth.title"),
+      content: t("swap.policyContent.strongGrowth.content"),
+    },
+    {
+      icon: "/ethereum.png",
+      title: t("swap.policyContent.beginnerFriendly.title"),
+      content: t("swap.policyContent.beginnerFriendly.content"),
+    },
+    {
+      icon: "/ethereum.png",
+      title: t("swap.policyContent.investmentBenefits.title"),
+      content: t("swap.policyContent.investmentBenefits.content"),
+    },
+    {
+      icon: "/ethereum.png",
+      title: t("swap.policyContent.flexibleInvestment.title"),
+      content: t("swap.policyContent.flexibleInvestment.content"),
+    },
+    {
+      icon: "/ethereum.png",
+      title: t("swap.policyContent.highGrowthPotential.title"),
+      content: t("swap.policyContent.highGrowthPotential.content"),
+    },
+    {
+      icon: "/ethereum.png",
+      title: t("swap.policyContent.airdropBenefits.title"),
+      content: t("swap.policyContent.airdropBenefits.content"),
+    },
+    {
+      icon: "/ethereum.png",
+      title: t("swap.policyContent.limitedOpportunity.title"),
+      content: t("swap.policyContent.limitedOpportunity.content"),
+    },
+    {
+      icon: "/ethereum.png",
+      title: t("swap.policyContent.tokenValueAppreciation.title"),
+      content: t("swap.policyContent.tokenValueAppreciation.content"),
+    },
+    {
+      icon: "/ethereum.png",
+      title: t("swap.policyContent.mmpInvestmentAdvantage.title"),
+      content: t("swap.policyContent.mmpInvestmentAdvantage.content"),
+    },
+    {
+      icon: "/ethereum.png",
+      title: t("swap.policyContent.visionConclusion.title"),
+      content: t("swap.policyContent.visionConclusion.content"),
+    },
+    {
+      icon: "/ethereum.png",
+      title: t("swap.policyContent.callToAction.title"),
+    }
+  ]
+
+  const listPolicy2 = [
+    {
+      icon: "/ethereum.png",
+      title: t("swap.mpbPolicyContent.projectOverview.title"),
+      content: t("swap.mpbPolicyContent.projectOverview.content"),
+    },
+    {
+      icon: "/ethereum.png",
+      title: t("swap.mpbPolicyContent.marketPotential.title"),
+      content: t("swap.mpbPolicyContent.marketPotential.content"),
+    },
+    {
+      icon: "/ethereum.png",
+      title: t("swap.mpbPolicyContent.investmentBenefits.title"),
+      content: t("swap.mpbPolicyContent.investmentBenefits.content"),
+    },
+    {
+      icon: "/ethereum.png",
+      title: t("swap.mpbPolicyContent.growthOpportunities.title"),
+      content: t("swap.mpbPolicyContent.growthOpportunities.content"),
+    },
+    {
+      icon: "/ethereum.png",
+      title: t("swap.mpbPolicyContent.investmentHolding.title"),
+      content: t("swap.mpbPolicyContent.investmentHolding.content"),
+    },
+    {
+      icon: "/ethereum.png",
+      title: t("swap.mpbPolicyContent.limitedInvestmentOpportunity.title"),
+      content: t("swap.mpbPolicyContent.limitedInvestmentOpportunity.content"),
+    },
+    {
+      icon: "/ethereum.png",
+      title: t("swap.mpbPolicyContent.riskWarning.title"),
+      content: t("swap.mpbPolicyContent.riskWarning.content"),
+    }
+  ]
+
+  const guild = [
+    {
+      icon: "/ethereum.png",
       title: t("swap.policyItems.0"),
     },
     {
@@ -152,7 +283,7 @@ export default function SwapInterface() {
 
             <div className="overflow-hidden rounded-lg flex-1 flex flex-col">
               {/* Table Header */}
-              <div className="px-2 lg:px-4 py-2 lg:py-3 grid grid-cols-3 gap-2 lg:gap-4 bg-black/20">
+              <div className="px-2 lg:px-4 py-2 lg:py-3 grid grid-cols-3 gap-2 lg:gap-4 bg-dark-100">
                 <div className="text-neutral font-medium text-xs lg:text-sm flex items-center gap-1">
                   {t("swap.time")}
                   <ChevronDown className="w-2 h-2 lg:w-3 lg:h-3" />
@@ -176,7 +307,7 @@ export default function SwapInterface() {
                       initial={{ opacity: 0, y: 20 }}
                       animate={{ opacity: 1, y: 0 }}
                       transition={{ delay: index * 0.05 }}
-                      className="hover:bg-[#d7d7d7]/5 px-2 lg:px-4 py-2 lg:py-3 grid grid-cols-3 gap-2 lg:gap-4 border-b border-[#d7d7d7]/10 transition-colors"
+                      className={`hover:bg-[#737373] cursor-pointer px-2 lg:px-4 py-2 lg:py-3 grid grid-cols-3 gap-2 lg:gap-4 border-b border-[#d7d7d7]/10 transition-colors ${index % 2 === 0 ? "bg-black/20" : "bg-dark-100/60"}`}
                     >
                       <div className="text-[#fcfcfc] text-xs lg:text-sm">{item.time}</div>
                       <div className="text-[#fcfcfc] text-xs lg:text-sm flex justify-center">{item.sell}</div>
@@ -195,25 +326,22 @@ export default function SwapInterface() {
 
       case "guild":
         return (
-          <div className="flex-col justify-between h-full">
-            <h2 className="bg-gradient-purple-cyan bg-clip-text text-xl lg:text-3xl font-bold leading-7 kati-font text-center mb-1">{t("swap.swapGuide")}</h2>
+          <div className="flex gap-2 flex-col justify-between flex-1">
+            <h2 className="bg-gradient-purple-cyan bg-clip-text text-xl lg:text-3xl font-bold leading-7 kati-font text-center mb-6">{t("swap.swapGuide")}</h2>
 
-            <div className="flex-1">
-              <div className=" rounded-xl pb-3 px-4 lg:pb-6">
-                <div className="flex items-center gap-2 lg:gap-3 mb-2 lg:mb-3">
-                  <div className="w-8 h-8 lg:w-10 lg:h-10 bg-gradient-violet-blue rounded-full flex items-center justify-center">
-                    <Users className="w-4 h-4 lg:w-5 lg:h-5 text-neutral bg-gradient-purple-cyan bg-clip-text" />
-                  </div>
-                  <h3 className="text-neutral text-lg lg:text-xl font-bold">{t("swap.guildMembership")}</h3>
-                </div>
-                <p className="text-neutral text-xs lg:text-xs leading-relaxed">
-                  {t("swap.guildDescription")}
-                </p>
-              
+            <div className="flex-1 flex flex-col justify-around ">
+              <div className=" rounded-xl pb-2 px-4">
+                <ul className=" leading-6 flex flex-col gap-3">
+                  {guild.map((item, index) => (
+                    <li key={index} className="text-neutral text-xs lg:text-sm flex items-start  gap-2">
+                      <img src={item.icon} alt="ethereum" className="w-3 h-3 lg:w-4 lg:h-4" />
+                      <span>{item.title}</span>
+                    </li>
+                  ))}
+                </ul>
+
               </div>
-
-
-              <div className="flex-1">
+              <div className="">
                 <img src="/swap-guide.png" alt="swap-guide" className="w-full h-auto " />
               </div>
             </div>
@@ -222,17 +350,92 @@ export default function SwapInterface() {
 
       case "policy":
         return (
-          <div className="flex flex-col h-full gap-3 min-h-[67.4vh]">
+          <div className="flex flex-col gap-3 h-full">
             <h2 className="bg-gradient-purple-cyan bg-clip-text text-xl lg:text-3xl font-bold leading-7 kati-font text-center mb-4">{t("swap.policy")}</h2>
 
-            <ul className="space-y-3 lg:space-y-4 leading-6 flex flex-col gap-3 lg:gap-4 pb-3 lg:pb-5">
-              {listPolicy.map((item, index) => (
-                <li key={index} className="text-neutral text-xs lg:text-sm flex items-start  gap-2">
-                  <img src={item.icon} alt="ethereum" className="w-3 h-3 lg:w-4 lg:h-4" />
-                  <span>{item.title}</span>
-                </li>
-              ))}
-            </ul>
+            {/* Policy Tab Navigation */}
+            <div className="flex mb-2 border-b max-w-[300px] lg:max-w-[400px] mx-auto bg-dark-100 rounded-full border-[#d7d7d7]/20 ">
+              <button
+                onClick={() => setActivePolicyTab("mmp")}
+                className={`flex min-w-[80px] lg:min-w-[100px] rounded-full items-center cursor-pointer border-none text-neutral gap-1 lg:gap-2 px-2 lg:px-5 kati-font py-2 justify-center text-xs lg:text-sm font-medium transition-colors ${activePolicyTab === "mmp"
+                  ? "bg-gradient-violet-blue cursor-pointer"
+                  : "bg-transparent"
+                  }`}
+              >
+                {t("swap.mmpTab")}
+              </button>
+              <button
+                onClick={() => setActivePolicyTab("mpb")}
+                className={`flex min-w-[80px] lg:min-w-[100px] rounded-full items-center cursor-pointer border-none text-neutral gap-1 lg:gap-2 px-2 lg:px-5 kati-font py-2 justify-center text-xs lg:text-sm font-medium transition-colors ${activePolicyTab === "mpb"
+                  ? "bg-gradient-violet-blue cursor-pointer"
+                  : "bg-transparent"
+                  }`}
+              >
+                {t("swap.mpbTab")}
+              </button>
+            </div>
+
+            {/* Policy Content */}
+            <AnimatePresence mode="wait">
+              <motion.div
+                key={activePolicyTab}
+                initial={{ opacity: 0, y: 20 }}
+                animate={{ opacity: 1, y: 0 }}
+                exit={{ opacity: 0, y: -20 }}
+                transition={{ duration: 0.3 }}
+                className="h-[53vh] custom-scroll overflow-y-auto overflow-x-hidden"
+              >
+                {activePolicyTab === "mmp" ? (
+                  <div className="flex flex-col gap-3 lg:gap-4">
+                    <p className="text-neutral text-xs lg:text-sm leading-7 ">
+                      {t("swap.projectDescriptions.mmpProjectIntro")}
+                    </p>
+                    <p className="text-neutral text-xs lg:text-sm leading-7" dangerouslySetInnerHTML={{ __html: t("swap.projectDescriptions.mmpProjectOverview") }} />
+
+                    <span className="text-neutral text-sm lg:text-base leading-7">
+                      {t("swap.projectDescriptions.mmpTokenDistribution")}
+                    </span>
+                    <ul className=" leading-7 flex flex-col gap-3 pb-3 lg:pb-5">
+                      {listPolicy.map((item, index) => (
+                        <li key={index} className="text-neutral text-xs lg:text-sm flex items-start gap-2">
+                          <img src={item.icon} alt="ethereum" className="w-3 h-3 lg:w-4 lg:h-4" />
+                          <div className="flex flex-col gap-1">
+                            <span className="text-neutral text-xs lg:text-sm leading-7">{item.title}</span>
+                            <span
+                              className="text-neutral text-xs lg:text-sm leading-7"
+                              dangerouslySetInnerHTML={{ __html: item.content }}
+                            />
+                          </div>
+                        </li>
+                      ))}
+                    </ul>
+                  </div>
+                ) : (
+                  <div className="flex flex-col gap-3 lg:gap-4">
+                    <p className="text-neutral text-xs lg:text-sm leading-7">
+                      {t("swap.projectDescriptions.mpbProjectIntro")}
+                    </p>
+                    <p className="text-neutral text-xs lg:text-sm leading-7">
+                      {t("swap.projectDescriptions.mpbProjectDescription")}
+                    </p>
+                    <ul className="leading-7 flex flex-col gap-4   pb-3 lg:pb-5">
+                      {listPolicy2.map((item, index) => (
+                        <li key={index} className="text-neutral text-xs lg:text-sm flex items-start gap-2">
+                          <img src={item.icon} alt="ethereum" className="w-3 h-3 lg:w-4 lg:h-4" />
+                          <div className="flex flex-col gap-1">
+                            <span className="text-neutral text-xs lg:text-sm leading-7">{item.title}</span>
+                            <span
+                              className="text-neutral text-xs lg:text-sm leading-7"
+                              dangerouslySetInnerHTML={{ __html: item.content }}
+                            />
+                          </div>
+                        </li>
+                      ))}
+                    </ul>
+                  </div>
+                )}
+              </motion.div>
+            </AnimatePresence>
           </div>
         )
 
@@ -455,12 +658,12 @@ export default function SwapInterface() {
         {/* History Panel */}
         <div className="w-full lg:flex-1 flex flex-col gap-4 lg:gap-8 rounded-xl order-2 lg:order-1"
         >
-          <Card className="w-full border-[#d7d7d7]/20 p-3 md:p-6 bg-black/60 min-h-[400px] lg:min-h-[70.5vh]">
+          <Card className="w-full border-[#d7d7d7]/20 p-3 md:p-6 bg-black/60 min-h-[400px] lg:min-h-[70.5vh] flex flex-col">
             {/* Tab Content */}
             <AnimatePresence mode="wait">
               <motion.div
                 key={activeTab}
-                className="h-full"
+                className="flex-1 flex flex-col"
                 initial={{ opacity: 0, y: 20 }}
                 animate={{ opacity: 1, y: 0 }}
                 exit={{ opacity: 0, y: -20 }}
