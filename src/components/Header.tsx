@@ -9,7 +9,7 @@ import { TelegramWalletService, PhantomWalletService } from '@/services/api'
 import { useAuth } from '@/hooks/useAuth'
 import { useQuery } from '@tanstack/react-query'
 import { truncateString } from '@/utils/format'
-import { ArrowDownIcon, ChevronDown, CopyIcon, LogOut, Globe, Menu, X } from 'lucide-react'
+import { ArrowDownIcon, ChevronDown, CopyIcon, LogOut, Globe, Menu, X, ArrowDownUp } from 'lucide-react'
 import { useLang } from '@/lang/useLang'
 import { toast } from 'react-toastify'
 
@@ -24,7 +24,7 @@ const Header = () => {
 
   const tabs = [
     // { id: 'overview', href: '/', label: t('header.overview'), icon: '📊' },
-    { id: 'swap', href: '/swap', label: t('header.swap'), icon: '🔄' },
+    { id: 'swap', href: '/swap', label: t('header.swap'), icon: <ArrowDownUp className='w-3 h-3 sm:w-4 sm:h-4' /> },
     { id: 'deposit', href: '/deposit', label: t('header.deposit'), icon: '💰' },
     // { id: 'stake', href: '/stake', label: t('header.stake'), icon: '🔒' },
     // { id: 'referral', href: '/referral', label: t('header.referral'), icon: '👥' },
@@ -147,7 +147,7 @@ const Header = () => {
             {tabs.map((tab) => (
               <Link 
                 className={cn(
-                  'text-xs sm:text-sm text-neutral font-medium cursor-pointer hover:opacity-80 transition-opacity', 
+                  'text-xs sm:text-sm text-neutral font-medium cursor-pointer hover:opacity-80 transition-opacity rounded-lg px-2 py-1', 
                   pathname === tab.href && 'bg-gradient-purple-cyan bg-clip-text'
                 )} 
                 href={tab.href} 
@@ -230,7 +230,7 @@ const Header = () => {
                 )}
               </div>
             ) : (
-              <>
+              <div className='lg:flex gap-3 hidden'>
                 <span className="hidden sm:inline text-xs sm:text-sm text-neutral font-medium">{t('header.joinUs')}</span>
                 <div className='w-5 h-5 sm:w-6 sm:h-6 cursor-pointer flex items-center justify-center bg-neutral rounded-full' onClick={() => window.open(`${process.env.NEXT_PUBLIC_TELEGRAM_BOT_URL}=${sessionStorage.getItem('ref')}`, "_blank")} >
                   <img src="/tele-icon.png" alt="tele-icon" className='w-2.5 h-2.5 sm:w-3 sm:h-3' style={{ marginLeft: '-3px' }} />
@@ -241,7 +241,7 @@ const Header = () => {
                 <div className='w-5 h-5 sm:w-6 sm:h-6 cursor-pointer flex items-center justify-center bg-neutral rounded-full' onClick={handleGoogleSignIn}>
                   <img src="/gg-icon.png" alt="gg-icon" className='w-2.5 h-2.5 sm:w-3 sm:h-3' />
                 </div>
-              </>
+              </div>
             )}
 
             {/* Mobile Menu Button */}
@@ -260,15 +260,15 @@ const Header = () => {
             {/* Mobile Language Selector */}
             <div className="px-4 py-2 border-b border-gray-100">
               <div className="text-xs text-gray-500 mb-2">{t('header.selectLanguage')}</div>
-              <div className="flex gap-2">
+              <div className="flex gap-2 justify-between">
                 {langConfig.listLangs.map((language) => (
                   <button
                     key={language.code}
                     onClick={() => {
                       setLang(language.code)
                     }}
-                    className={`flex items-center bg-transparent gap-1 px-2 py-1 rounded text-xs ${
-                      lang === language.code ? 'text-blue-600 bg-blue-50/10' : 'text-neutral'
+                    className={`flex items-center  border-none bg-black/40 gap-1 px-3 py-[6px] rounded text-xs ${
+                      lang === language.code ? 'text-primary' : 'text-neutral'
                     }`}
                   >
                     <img src={getLanguageFlag(language.code)} alt={language.code} className="w-4 h-3" />
@@ -285,8 +285,8 @@ const Header = () => {
                 {tabs.map((tab) => (
                   <Link 
                     className={cn(
-                      'flex items-center gap-2 px-3 py-2 rounded-lg text-xs text-neutral hover:bg-gray-100/10 transition-colors', 
-                      pathname === tab.href && 'bg-gradient-purple-cyan bg-clip-text font-medium'
+                      'flex items-center gap-2 px-3 py-2 rounded-lg text-xs text-neutral hover:bg-gray-100/10 bg-black/40 transition-colors', 
+                      pathname === tab.href && 'text-primary font-medium'
                     )} 
                     href={tab.href} 
                     key={tab.id}
@@ -302,24 +302,24 @@ const Header = () => {
             {/* Mobile Login Options */}
             {!isAuthenticated && (
               <div className="px-4 py-2 border-t border-gray-100">
-                <div className="text-xs text-gray-500 mb-2">{t('header.joinUs')}</div>
-                <div className="flex gap-2">
+                <div className="text-xs text-neutral mb-2">{t('header.joinUs')}</div>
+                <div className="flex gap-2 justify-between">
                   <button 
-                    className="flex items-center gap-2 px-3 py-2 lg:bg-neutral rounded-lg text-xs text-white"
+                    className="flex items-center gap-2 px-4 py-2 bg-black/40 border-none rounded-lg text-xs text-white"
                     onClick={() => window.open(`${process.env.NEXT_PUBLIC_TELEGRAM_BOT_URL}=${sessionStorage.getItem('ref')}`, "_blank")}
                   >
                     <img src="/tele-icon.png" alt="tele-icon" className="w-3 h-3" />
                     Telegram
                   </button>
                   <button 
-                    className="flex items-center gap-2 px-3 py-2 lg:bg-neutral rounded-lg text-xs text-white"
+                    className="flex items-center gap-2 px-4 py-2 bg-black/40 border-none rounded-lg text-xs text-white"
                     onClick={handlePhantomSignIn}
                   >
                     <img src="/phantom.png" alt="phantom-icon" className="w-3 h-3" />
                     Phantom
                   </button>
                   <button 
-                    className="flex items-center gap-2 px-3 py-2 lg:bg-neutral rounded-lg text-xs text-white"
+                    className="flex items-center gap-2 px-4 py-2 bg-black/40 border-none rounded-lg text-xs text-white"
                     onClick={handleGoogleSignIn}
                   >
                     <img src="/gg-icon.png" alt="gg-icon" className="w-3 h-3" />

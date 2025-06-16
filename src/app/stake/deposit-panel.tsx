@@ -34,8 +34,8 @@ export default function DepositPanel() {
     return (
         <div className="bg-black/40 backdrop-blur-xl rounded-2xl p-6 border border-purple-500/20  flex-1 flex flex-col justify-between">
             <div className="text-center mb-5">
-                <h2 className="bg-gradient-purple-cyan bg-clip-text text-3xl font-bold leading-7 kati-font text-center mb-2">Deposit MMP</h2>
-                <h3 className="bg-gradient-purple-cyan bg-clip-text text-3xl font-bold leading-7 kati-font text-center mb-2">Earn Continuously</h3>
+                <h2 className="bg-gradient-purple-cyan bg-clip-text text-3xl font-bold leading-7  text-center mb-2 font-tektur">Deposit MMP</h2>
+                <h3 className="bg-gradient-purple-cyan bg-clip-text text-3xl font-bold leading-7 font-tektur text-center mb-2">Earn Continuously</h3>
             </div>
 
             <div className="flex-1 flex flex-col">

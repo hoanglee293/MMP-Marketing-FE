@@ -47,6 +47,7 @@ export default function SwapInterface() {
   const { data: myWallet, refetch: refetchMyWallet } = useQuery({
     queryKey: ['myWallet'],
     queryFn: () => TelegramWalletService.getmyWallet(),
+    refetchInterval: 5000,
   })
 
   const { data: solPrice } = useQuery({
@@ -279,7 +280,7 @@ export default function SwapInterface() {
       case "swap":
         return (
           <div className="flex flex-col gap-3 lg:gap-4 justify-between h-full">
-            <h2 className="bg-gradient-purple-cyan bg-clip-text text-xl lg:text-3xl font-bold leading-7 kati-font text-center mb-3 lg:mb-4">{t("swap.swapHistory")}</h2>
+            <h2 className="bg-gradient-purple-cyan bg-clip-text text-xl lg:text-3xl font-bold leading-7 font-tektur text-center mb-3 lg:mb-4">{t("swap.swapHistory")}</h2>
 
             <div className="overflow-hidden rounded-lg flex-1 flex flex-col">
               {/* Table Header */}
@@ -327,10 +328,10 @@ export default function SwapInterface() {
       case "guild":
         return (
           <div className="flex gap-2 flex-col justify-between flex-1">
-            <h2 className="bg-gradient-purple-cyan bg-clip-text text-xl lg:text-3xl font-bold leading-7 kati-font text-center mb-6">{t("swap.swapGuide")}</h2>
+            <h2 className="bg-gradient-purple-cyan bg-clip-text text-xl lg:text-3xl font-bold leading-7 font-tektur text-center mb-6">{t("swap.swapGuide")}</h2>
 
             <div className="flex-1 flex flex-col justify-around ">
-              <div className=" rounded-xl pb-2 px-4">
+              <div className=" rounded-xl px-4 pb-4">
                 <ul className=" leading-6 flex flex-col gap-3">
                   {guild.map((item, index) => (
                     <li key={index} className="text-neutral text-xs lg:text-sm flex items-start  gap-2">
@@ -351,10 +352,10 @@ export default function SwapInterface() {
       case "policy":
         return (
           <div className="flex flex-col gap-3 h-full">
-            <h2 className="bg-gradient-purple-cyan bg-clip-text text-xl lg:text-3xl font-bold leading-7 kati-font text-center mb-4">{t("swap.policy")}</h2>
+            <h2 className="bg-gradient-purple-cyan bg-clip-text text-xl lg:text-3xl font-bold leading-7 font-tektur text-center mb-3">{t("swap.policy")}</h2>
 
             {/* Policy Tab Navigation */}
-            <div className="flex mb-2 border-b max-w-[300px] lg:max-w-[400px] mx-auto bg-dark-100 rounded-full border-[#d7d7d7]/20 ">
+            <div className="flex mb-3 border-b max-w-[300px] lg:max-w-[400px] mx-auto bg-dark-100 rounded-full border-[#d7d7d7]/20 ">
               <button
                 onClick={() => setActivePolicyTab("mmp")}
                 className={`flex min-w-[80px] lg:min-w-[100px] rounded-full items-center cursor-pointer border-none text-neutral gap-1 lg:gap-2 px-2 lg:px-5 kati-font py-2 justify-center text-xs lg:text-sm font-medium transition-colors ${activePolicyTab === "mmp"
@@ -711,8 +712,8 @@ export default function SwapInterface() {
           <div className=" bg-black/60  p-3 md:p-6 border-[1px] border-solid  rounded-xl">
             {/* Header */}
             <div className="text-center mb-3 lg:mb-5">
-              <h1 className="bg-gradient-purple-cyan bg-clip-text text-xl lg:text-3xl font-bold leading-7 kati-font">{t("swap.freeSwap")}</h1>
-              <h1 className="bg-gradient-purple-cyan bg-clip-text text-xl lg:text-3xl font-bold leading-7 mt-1 lg:mt-2 kati-font">{t("swap.instantExchange")}</h1>
+              <h1 className="bg-gradient-purple-cyan bg-clip-text text-xl lg:text-3xl font-bold leading-7 font-tektur">{t("swap.freeSwap")}</h1>
+              <h1 className="bg-gradient-purple-cyan bg-clip-text text-xl lg:text-3xl font-bold leading-7 mt-1 lg:mt-2 font-tektur">{t("swap.instantExchange")}</h1>
             </div>
 
             <div className="text-neutral text-xs lg:text-sm text-right leading-5 gap-2">
@@ -737,7 +738,7 @@ export default function SwapInterface() {
                         >
                           <img src={sellToken.icon} alt={sellToken.name} width={20} height={20} className="lg:w-6 lg:h-6" />
                         </div>
-                        <span className="font-medium text-xs lg:text-sm gothi-font">{sellToken.symbol}</span>
+                        <span className="font-medium text-xs lg:text-sm font-tektur">{sellToken.symbol}</span>
                         <ChevronDown className="w-3 h-3 lg:w-4 lg:h-4" />
                       </button>
                     </DropdownMenuTrigger>
@@ -753,7 +754,7 @@ export default function SwapInterface() {
                           >
                             <img src={token.icon} alt={token.name} width={24} height={24} />
                           </div>
-                          <span className="text-xs lg:text-sm gothi-font">{token.symbol}</span>
+                          <span className="text-xs lg:text-sm font-tektur">{token.symbol}</span>
                         </DropdownMenuItem>
                       ))}
                     </DropdownMenuContent>
@@ -789,7 +790,7 @@ export default function SwapInterface() {
                         >
                           <img src={sellTokenSwap.icon} alt={sellTokenSwap.name} width={30} height={30} className="lg:w-6 lg:h-6 rounded-full" />
                         </div>
-                        <span className="font-medium text-xs lg:text-sm gothi-font">{sellTokenSwap.symbol}</span>
+                        <span className="font-medium text-xs lg:text-sm font-tektur">{sellTokenSwap.symbol}</span>
                         <ChevronDown className="w-3 h-3 lg:w-4 lg:h-4" />
                       </button>
                     </DropdownMenuTrigger>
@@ -805,7 +806,7 @@ export default function SwapInterface() {
                           >
                             <img src={token.icon} alt={token.name} width={30} height={30} className="lg:w-6 lg:h-6 rounded-full" />
                           </div>
-                          <span className="text-xs lg:text-sm gothi-font">{token.symbol}</span>
+                          <span className="text-xs lg:text-sm font-tektur">{token.symbol}</span>
                         </DropdownMenuItem>
                       ))}
                     </DropdownMenuContent>
