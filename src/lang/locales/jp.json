@@ -225,7 +225,8 @@
         },
         "networkFee": {
             "message": "スワップ時にSolanaネットワーク手数料（{fee}）が発生します。 <br /> SOLでの直接購入をお勧めします。",
-            "recommendation": "SOLでの直接購入をお勧めします。"
+            "recommendation": "SOLでの直接購入をお勧めします。",
+            "firstTimeFee": "初回のIDO購入時、ATA作成のために約0.0025 SOLのネットワーク手数料が必要です。 <br />以降の購入では、1回のスワップあたりのネットワーク手数料が約0.00005 SOLに減少します。"
         },
         "specialOpportunity": {
             "title": "特別な機会",

@@ -225,7 +225,8 @@
         },
         "networkFee": {
             "message": "Solana network fee ({fee}) will be charged when swapping. <br /> We recommend purchasing directly with SOL.",
-            "recommendation": "We recommend purchasing directly with SOL."
+            "recommendation": "We recommend purchasing directly with SOL.",
+            "firstTimeFee": "For first-time IDO purchase, a network fee of approximately 0.0025 SOL is required for ATA creation. <br />For subsequent purchases, the network fee per swap will be reduced to approximately 0.00005 SOL."
         },
         "specialOpportunity": {
             "title": "Special Opportunity",

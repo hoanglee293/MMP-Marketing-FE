@@ -43,7 +43,7 @@ export default function SwapInterface() {
   const [phantomBalance, setPhantomBalance] = useState<number | null>(null)
   const [activePolicyTab, setActivePolicyTab] = useState("mmp")
   const { isAuthenticated, loginMethod } = useAuth()
-  
+
   let gasPriceLanguage;
   switch (lang) {
     case "vi":
@@ -247,7 +247,7 @@ export default function SwapInterface() {
       title: t("swap.mpbPolicyContent.projectOverview2.title"),
       content: t("swap.mpbPolicyContent.projectOverview2.content"),
     },
-   
+
     {
       icon: "/ethereum.png",
       title: t("swap.mpbPolicyContent.growthOpportunities.title"),
@@ -735,7 +735,7 @@ export default function SwapInterface() {
               <span className="text-[#bf46d7] text-base ">(*) &ensp;</span>
               {t("swap.holdingBenefits.title")} <br />
               {t("swap.holdingBenefits.synergyProject")}&ensp;
-              {t("swap.holdingBenefits.airdropDistribution")}<br/>
+              {t("swap.holdingBenefits.airdropDistribution")}<br />
               <span className="text-[#bf46d7] text-base ">(*) &ensp;</span>
               {t("swap.holdingBenefits.earlyParticipants")}
             </div>
@@ -744,12 +744,12 @@ export default function SwapInterface() {
           <div className="flex flex-col gap-4">
             <div className=" bg-black/60  p-3 md:py-6 md:px-5 border-[1px] border-solid  rounded-xl">
               {/* Header */}
-              <div className="text-center mb-3">
+              <div className={`text-center ${!isAuthenticated ? 'pb-10' : 'pb-3'}`}>
                 <h1 className="bg-gradient-purple-cyan bg-clip-text text-xl lg:text-3xl font-bold leading-7 ">{t("swap.instantExchange")}</h1>
               </div>
 
               <div className="text-neutral text-xs lg:text-sm text-right leading-5 gap-2">
-                {sellToken && (
+                {sellToken && isAuthenticated && (
                   <div className="flex flex-col gap-[6px]">
                     <span className="text-xs lg:text-sm ">{t("swap.myBalance")}: <span className="bg-gradient-purple-cyan bg-clip-text">{getTokenBalance(sellToken.symbol)}</span>&ensp;{sellToken.symbol}</span>
                     <span className="text-xs lg:text-sm "> <span className="bg-gradient-purple-cyan bg-clip-text">{myWallet?.balance_mmp}</span>&ensp;MMP</span>
@@ -854,7 +854,7 @@ export default function SwapInterface() {
               <div className="text-xs lg:text-sm text-right leading-5 gap-2 pt-4">
                 <span className="text-primary text-base ">(*) &ensp;</span>
                 <span className="text-yellow-500 text-sm" dangerouslySetInnerHTML={{
-                  __html: t("swap.networkFee.message").replace("{fee}", gasPriceLanguage)
+                  __html: t("swap.networkFee.firstTimeFee")
                 }} />
               </div>
             </div>

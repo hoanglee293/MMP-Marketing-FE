@@ -114,7 +114,7 @@ export class Web3WalletService {
         if (!hasAccount) {
           const created = await this.createTokenAccountIfNeeded(publicKey, outputMint);
           if (!created) {
-            throw new Error('Failed to create token account');
+            throw new Error("Failed to create token account");
           }
         }
       }

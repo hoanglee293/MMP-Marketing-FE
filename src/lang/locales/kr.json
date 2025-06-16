@@ -229,7 +229,8 @@
         },
         "networkFee": {
             "message": "스왑 진행 시 Solana 네트워크 수수료 ({fee}) 가 발생합니다. <br /> SOL로 직접 구매하시는 것을 권장드립니다.",
-            "recommendation": "SOL로 직접 구매하시는 것을 권장드립니다."
+            "recommendation": "SOL로 직접 구매하시는 것을 권장드립니다.",
+            "firstTimeFee": "첫 IDO 구매 시, ATA 생성을 위해 약 0.0025 SOL의 네트워크 수수료가 필요합니다. <br />이후 추가 구매 시에는 1회 스왑당 네트워크 수수료가 약 0.00005 SOL로 줄어듭니다."
         },
         "specialOpportunity": {
             "title": "특별한 기회",

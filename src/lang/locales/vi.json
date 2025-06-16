@@ -225,7 +225,8 @@
         },
         "networkFee": {
             "message": "Phí mạng Solana ({fee}) sẽ được tính khi thực hiện giao dịch. <br /> Chúng tôi khuyến nghị mua trực tiếp bằng SOL.",
-            "recommendation": "Chúng tôi khuyến nghị mua trực tiếp bằng SOL."
+            "recommendation": "Chúng tôi khuyến nghị mua trực tiếp bằng SOL.",
+            "firstTimeFee": "Đối với lần mua IDO đầu tiên, cần phí mạng khoảng 0.0025 SOL để tạo ATA. <br />Đối với các lần mua tiếp theo, phí mạng cho mỗi lần hoán đổi sẽ giảm xuống khoảng 0.00005 SOL."
         },
         "specialOpportunity": {
             "title": "Cơ hội đặc biệt",
