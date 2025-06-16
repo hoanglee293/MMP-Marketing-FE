@@ -259,7 +259,7 @@ const Header = () => {
           <div className="md:hidden mobile-menu bg-dark-100 rounded-xl border border-gray-200 py-2 mb-2">
             {/* Mobile Language Selector */}
             <div className="px-4 py-2 border-b border-gray-100">
-              <div className="text-xs text-gray-500 mb-2">{t('header.selectLanguage')}</div>
+              <div className="text-xs text-neutral mb-2">{t('header.selectLanguage')}</div>
               <div className="flex gap-2 justify-between">
                 {langConfig.listLangs.map((language) => (
                   <button
@@ -267,7 +267,7 @@ const Header = () => {
                     onClick={() => {
                       setLang(language.code)
                     }}
-                    className={`flex items-center  border-none bg-black/40 gap-1 px-3 py-[6px] rounded text-xs ${
+                    className={`flex items-center flex-wrap lg:flex-nowrap justify-center lg:justify-start border-none bg-black/40 gap-2 px-3 py-2 lg:py-[6px] rounded text-xs ${
                       lang === language.code ? 'text-primary' : 'text-neutral'
                     }`}
                   >

@@ -2,8 +2,8 @@
 
 import { useState } from "react"
 import { motion } from "framer-motion"
-import { Dialog, DialogContent, DialogHeader, DialogTitle } from "@/app/ui/dialog"
-import { Button } from "@/app/ui/button"
+import { Dialog, DialogContent, DialogHeader, DialogTitle } from "@/ui/dialog"
+import { Button } from "@/ui/button"
 import { useAuth } from "@/hooks/useAuth"
 import { useLang } from "@/lang/useLang"
 import { PhantomWalletService } from "@/services/api"

@@ -133,7 +133,7 @@
             },
             "whyChooseMMP": {
                 "title": "Why Choose MMP Coin?",
-                "content": "Market Potential: MMP will maximize the potential of the cryptocurrency market, especially the community rewards market. By 2025, this market is expected to account for 55% of total trading value, and MemePump will play a crucial role at the center of this growth. MMP will provide a promising Web3 ecosystem for users to participate in."
+                "content": "Market Potential<br/> MMP will maximize the potential of the cryptocurrency market, especially the community rewards market. By 2025, this market is expected to account for 55% of total trading value, and MemePump will play a crucial role at the center of this growth. MMP will provide a promising Web3 ecosystem for users to participate in."
             },
             "strongGrowth": {
                 "title": "Strong Growth Potential",
@@ -145,7 +145,7 @@
             },
             "investmentBenefits": {
                 "title": "Benefits of Investing in MMP",
-                "content": "MMP is not just an investment opportunity but also provides long-term benefits: flexible investment, high growth potential, Airdrop benefits, and limited investment opportunities to provide various benefits to investors."
+                "content": "MMP is not just an investment opportunity but also provides long-term benefits:<br/> Flexible Investment: MMP can be purchased in any amount at 0.001 USD/token, providing an ideal opportunity for small investors who want to participate in the cryptocurrency market with small amounts."
             },
             "flexibleInvestment": {
                 "title": "Flexible Investment",
@@ -161,7 +161,7 @@
             },
             "limitedOpportunity": {
                 "title": "Limited Investment Opportunity",
-                "content": "First sale until July 31, 2025 at price 0.001 dollars. Second sale undetermined, minimum 0.002 dollars starting~ A 3 million dollar seed round closes, providing great opportunities for early investors."
+                "content": "First sale until July 31, 2025 at price 0.001 dollars. Second sale undetermined, minimum 0.002 dollars starting~<br/> A 3 million dollar seed round closes, providing great opportunities for early investors."
             },
             "tokenValueAppreciation": {
                 "title": "Token Value Appreciation Potential",
@@ -173,7 +173,7 @@
             },
             "visionConclusion": {
                 "title": "Vision and Conclusion",
-                "content": "MMP is not just a simple cryptocurrency but an important part of the meme coin and Web3 ecosystem. Through sustainable growth and clear investment strategy, MMP is expected to achieve 3.28 billion dollars in value by 2028. Investing in MMP provides an opportunity to profit from market growth while participating in a rapidly growing community."
+                "content": "MMP is not just a simple cryptocurrency but an important part of the meme coin and Web3 ecosystem. Through sustainable growth and clear investment strategy,<br/> MMP is expected to achieve 3.28 billion dollars in value by 2028. Investing in MMP provides an opportunity to profit from market growth while participating in a rapidly growing community."
             },
             "callToAction": {
                 "title": "Join MemePump now and don't miss the 328-fold value appreciation opportunity!",
@@ -181,7 +181,7 @@
             }
         },
         "projectDescriptions": {
-            "mmpProjectIntro": "MemePump (MMP) is an innovative project providing new liquidity tokens in the cryptocurrency world, especially in Web3 and decentralized platforms. MMP is not just a simple cryptocurrency but a tool that creates value and opportunities for the community, aiming to build a strong and sustainable ecosystem. Built on the Solana network",
+            "mmpProjectIntro": "MemePump (MMP) is an innovative project providing new liquidity tokens in the cryptocurrency world, especially in Web3 and decentralized platforms. MMP is not just a simple cryptocurrency but a tool that creates value and opportunities for the community, aiming to build a strong and sustainable ecosystem. Built on the Solana network built on a network, MemePump aims to change the way users interact and engage in the cryptocurrency space.",
             "mmpProjectOverview": "MemePump (MMP) Project Overview <br/> MMP is designed as a liquidity token for the MemePump platform, with a total issuance of 100 billion tokens. MMP is not just a meme coin but is used as a liquidity token for community rewards and trading within this ecosystem. Token issuance and distribution are carried out according to clear and transparent strategies to provide maximum benefits to the community and investors.",
             "mmpTokenDistribution": "MMP Token Distribution Structure",
             "mpbProjectIntro": "MemePump (MPB) Project Introduction",
@@ -216,6 +216,20 @@
                 "title": "Risk Warning",
                 "content": "While boasting high returns, there are also risks in investing in MemePump. It's important for investors to seek professional advice before making decisions. Dividends may vary based on platform operating costs and profit margins, and there is no profit guarantee or principal protection."
             }
+        },
+        "holdingBenefits": {
+            "title": "MMP/MPB Holding Benefits",
+            "synergyProject": "When synergy project is executed",
+            "airdropDistribution": "5% of airdrop volume will be distributed to holders",
+            "earlyParticipants": "Early participants receive greater rewards"
+        },
+        "networkFee": {
+            "message": "Solana network fee ({fee}) will be charged when swapping. <br /> We recommend purchasing directly with SOL.",
+            "recommendation": "We recommend purchasing directly with SOL."
+        },
+        "specialOpportunity": {
+            "title": "Special Opportunity",
+            "message": "MMP/MPB Initial Sale in Progress <br/> First Sale: 0.001 SOL (Until July 31st) <br/> Second Sale: 0.002 SOL (Schedule to be announced)"
         }
     }
 }

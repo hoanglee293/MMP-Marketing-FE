@@ -1,4 +1,4 @@
-import { Button } from "@/app/ui/button"
+import { Button } from "@/ui/button"
 import { ArrowRight, ChevronDown } from "lucide-react"
 
 interface StakeItemProps {
@@ -48,7 +48,7 @@ function StakeGroup({
                     </div>
                 </div>
                 <div className=" flex-1 flex justify-between items-center">
-                    
+
                     <div className="flex flex-col">
                         <p className="text-sm text-neutral mb-1">Term</p>
                         <p className="text-base kati-font font-medium">{term}</p>

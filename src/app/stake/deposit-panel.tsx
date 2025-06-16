@@ -1,8 +1,8 @@
 "use client"
 
 import { useState } from "react"
-import { Input } from "@/app/ui/input"
-import { Button } from "@/app/ui/button"
+import { Input } from "@/ui/input"
+import { Button } from "@/ui/button"
 import { Pencil, ChevronDown, ChevronUp } from "lucide-react"
 
 export default function DepositPanel() {
