@@ -48,6 +48,7 @@ const Header = () => {
     setShowDropdown(false)
     setShowMobileMenu(false)
     loginMethod == "phantom" && localStorage.removeItem("publicKey")
+    window.location.reload();
   }
 
   const handlePhantomSignIn = async () => {

@@ -96,6 +96,8 @@
             "invalidRequest": "Yêu cầu không hợp lệ. Vui lòng kiểm tra đầu vào của bạn.",
             "authenticationRequired": "Yêu cầu xác thực. Vui lòng kết nối ví của bạn.",
             "insufficientBalance": "Số dư không đủ hoặc quyền bị từ chối.",
+            "insufficientSolBalance": "Số dư SOL không đủ. Vui lòng kiểm tra số dư ví của bạn.",
+            "ataCreationFee": "Phí tạo ATA là 0.0025 SOL. Vui lòng đảm bảo bạn có đủ SOL cho giao dịch.",
             "serviceUnavailable": "Dịch vụ không khả dụng. Vui lòng thử lại sau.",
             "tooManyRequests": "Quá nhiều yêu cầu. Vui lòng chờ trước khi thử lại.",
             "serverError": "Lỗi máy chủ. Vui lòng thử lại sau.",
@@ -230,7 +232,23 @@
         },
         "specialOpportunity": {
             "title": "Cơ hội đặc biệt",
-            "message": "Đang diễn ra đợt bán MMP/MPB đầu tiên <br/> Đợt bán đầu tiên: 0.001 SOL (Đến ngày 31 tháng 7) <br/> Đợt bán thứ hai: 0.002 SOL (Lịch trình sẽ được thông báo sau)"
+            "message": "Đợt bán đầu tiên MMP/MPB đang diễn ra <br/> Đợt bán đầu tiên: 0.001 SOL (Đến ngày 31 tháng 7) <br/> Đợt bán thứ hai: 0.002 SOL (Lịch trình sẽ được thông báo)"
+        }
+    },
+    "services": {
+        "errors": {
+            "phantomNotInstalled": "Ví Phantom chưa được cài đặt",
+            "phantomNotInstalledWithLink": "Ví Phantom chưa được cài đặt. Vui lòng cài đặt từ https://phantom.app/",
+            "phantomNotConnected": "Ví Phantom chưa được kết nối. Vui lòng kết nối trước.",
+            "phantomConnectionRejected": "Người dùng đã từ chối yêu cầu kết nối",
+            "phantomConnectionFailed": "Không thể kết nối với ví Phantom",
+            "phantomSignatureRejected": "Người dùng đã từ chối yêu cầu ký",
+            "phantomSignatureFailed": "Không thể ký tin nhắn với ví Phantom",
+            "phantomTransactionRejected": "Người dùng đã từ chối yêu cầu giao dịch",
+            "phantomAuthFailed": "Không thể xác thực với ví Phantom",
+            "failedToCreateTokenAccount": "Không thể tạo tài khoản token",
+            "errorGetMyWallet": "Lỗi lấy thông tin ví của tôi",
+            "errorGetGoogleUserInfo": "Lỗi lấy thông tin người dùng Google"
         }
     }
 }

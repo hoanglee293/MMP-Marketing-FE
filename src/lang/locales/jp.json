@@ -96,6 +96,8 @@
             "invalidRequest": "無効なリクエストです。入力を確認してください。",
             "authenticationRequired": "認証が必要です。ウォレットを接続してください。",
             "insufficientBalance": "残高不足または権限が拒否されました。",
+            "insufficientSolBalance": "SOL残高が不足しています。ウォレットの残高を確認してください。",
+            "ataCreationFee": "ATA作成手数料は0.0025 SOLです。取引に十分なSOLがあることを確認してください。",
             "serviceUnavailable": "サービスが利用できません。後でもう一度お試しください。",
             "tooManyRequests": "リクエストが多すぎます。再試行する前にしばらくお待ちください。",
             "serverError": "サーバーエラーです。後でもう一度お試しください。",
@@ -230,7 +232,23 @@
         },
         "specialOpportunity": {
             "title": "特別な機会",
-            "message": "MMP/MPBの初回販売が進行中 <br/> 初回販売：0.001 SOL（7月31日まで） <br/> 第二回販売：0.002 SOL（スケジュールは後日発表）"
+            "message": "MMP/MPB初期販売進行中 <br/> 第1回販売: 0.001 SOL (7月31日まで) <br/> 第2回販売: 0.002 SOL (スケジュールは後日発表)"
+        }
+    },
+    "services": {
+        "errors": {
+            "phantomNotInstalled": "Phantomウォレットがインストールされていません",
+            "phantomNotInstalledWithLink": "Phantomウォレットがインストールされていません。https://phantom.app/からインストールしてください",
+            "phantomNotConnected": "Phantomウォレットが接続されていません。先に接続してください。",
+            "phantomConnectionRejected": "ユーザーが接続リクエストを拒否しました",
+            "phantomConnectionFailed": "Phantomウォレットへの接続に失敗しました",
+            "phantomSignatureRejected": "ユーザーが署名リクエストを拒否しました",
+            "phantomSignatureFailed": "Phantomウォレットでのメッセージ署名に失敗しました",
+            "phantomTransactionRejected": "ユーザーがトランザクションリクエストを拒否しました",
+            "phantomAuthFailed": "Phantomウォレットでの認証に失敗しました",
+            "failedToCreateTokenAccount": "トークンアカウントの作成に失敗しました",
+            "errorGetMyWallet": "マイウォレット情報取得エラー",
+            "errorGetGoogleUserInfo": "Googleユーザー情報取得エラー"
         }
     }
 }

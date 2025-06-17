@@ -2,6 +2,8 @@ import { Transaction, PublicKey, Connection } from '@solana/web3.js';
 import { TOKEN_PROGRAM_ID, getAssociatedTokenAddress, createAssociatedTokenAccountInstruction } from '@solana/spl-token';
 import axios from 'axios';
 import axiosClient from '@/utils/axiosClient';
+import { createLocalizedError, SERVICE_ERROR_KEYS } from '@/utils/errorMessages';
+import { getCurrentLang } from '@/utils/getCurrentLang';
 
 export class Web3WalletService {
   private static readonly SOLANA_RPC_ENDPOINT = 'https://lively-prettiest-ensemble.solana-mainnet.quiknode.pro/ba794df56fd8d99396adef456ae82f527553674a';
@@ -56,7 +58,8 @@ export class Web3WalletService {
     try {
       const { solana } = window as any;
       if (!solana || !solana.isPhantom) {
-        throw new Error('Phantom wallet is not installed');
+        const currentLang = getCurrentLang();
+        throw createLocalizedError(currentLang, SERVICE_ERROR_KEYS.PHANTOM_NOT_INSTALLED);
       }
 
       const connection = new Connection(this.SOLANA_RPC_ENDPOINT);
@@ -100,6 +103,28 @@ export class Web3WalletService {
       return true;
     } catch (error) {
       console.error('Error creating token account:', error);
+      
+      // Handle specific Phantom wallet errors
+      if (error instanceof Error) {
+        const currentLang = getCurrentLang();
+        
+        // Check for user rejection error
+        if (error.message.includes('User rejected the request') || 
+            error.message.includes('User rejected') ||
+            error.message.includes('User cancelled')) {
+          throw createLocalizedError(currentLang, SERVICE_ERROR_KEYS.PHANTOM_TRANSACTION_REJECTED);
+        }
+        
+        // Check for other Phantom-specific errors
+        if (error.message.includes('Wallet not connected')) {
+          throw createLocalizedError(currentLang, SERVICE_ERROR_KEYS.PHANTOM_NOT_CONNECTED);
+        }
+        
+        if (error.message.includes('Failed to create token account')) {
+          throw createLocalizedError(currentLang, SERVICE_ERROR_KEYS.FAILED_TO_CREATE_TOKEN_ACCOUNT);
+        }
+      }
+      
       return false;
     }
   }
@@ -114,7 +139,8 @@ export class Web3WalletService {
         if (!hasAccount) {
           const created = await this.createTokenAccountIfNeeded(publicKey, outputMint);
           if (!created) {
-            throw new Error("Failed to create token account");
+            const currentLang = getCurrentLang();
+            throw createLocalizedError(currentLang, SERVICE_ERROR_KEYS.FAILED_TO_CREATE_TOKEN_ACCOUNT);
           }
         }
       }
@@ -139,7 +165,9 @@ export class Web3WalletService {
       const { solana } = window as any;
       
       if (!solana || !solana.isPhantom) {
-        throw new Error('Phantom wallet is not installed');
+        const currentLang = getCurrentLang();
+        console.log("currentLang", currentLang);
+        throw createLocalizedError(currentLang, SERVICE_ERROR_KEYS.PHANTOM_NOT_INSTALLED);
       }
 
       // Deserialize transaction from base64
@@ -158,6 +186,24 @@ export class Web3WalletService {
       return signedTx.signature;
     } catch (error) {
       console.error('Error signing Web3 transaction:', error);
+      
+      // Handle specific Phantom wallet errors
+      if (error instanceof Error) {
+        const currentLang = getCurrentLang();
+        
+        // Check for user rejection error
+        if (error.message.includes('User rejected the request') || 
+            error.message.includes('User rejected') ||
+            error.message.includes('User cancelled')) {
+          throw createLocalizedError(currentLang, SERVICE_ERROR_KEYS.PHANTOM_TRANSACTION_REJECTED);
+        }
+        
+        // Check for other Phantom-specific errors
+        if (error.message.includes('Wallet not connected')) {
+          throw createLocalizedError(currentLang, SERVICE_ERROR_KEYS.PHANTOM_NOT_CONNECTED);
+        }
+      }
+      
       throw error;
     }
   }
@@ -183,7 +229,8 @@ export class Web3WalletService {
       const { solana } = window as any;
       
       if (!solana || !solana.isPhantom) {
-        throw new Error('Phantom wallet is not installed');
+        const currentLang = getCurrentLang();
+        throw createLocalizedError(currentLang, SERVICE_ERROR_KEYS.PHANTOM_NOT_INSTALLED);
       }
 
       // Connect to wallet
@@ -191,6 +238,25 @@ export class Web3WalletService {
       return response.publicKey.toString();
     } catch (error) {
       console.error('Error connecting to Phantom wallet:', error);
+      
+      // Handle specific Phantom wallet errors
+      if (error instanceof Error) {
+        const currentLang = getCurrentLang();
+        
+        // Check for user rejection error
+        if (error.message.includes('User rejected the request') || 
+            error.message.includes('User rejected') ||
+            error.message.includes('User cancelled')) {
+          throw createLocalizedError(currentLang, SERVICE_ERROR_KEYS.PHANTOM_CONNECTION_REJECTED);
+        }
+        
+        // Check for other connection errors
+        if (error.message.includes('Wallet not connected') || 
+            error.message.includes('Connection failed')) {
+          throw createLocalizedError(currentLang, SERVICE_ERROR_KEYS.PHANTOM_CONNECTION_FAILED);
+        }
+      }
+      
       throw error;
     }
   }

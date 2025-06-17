@@ -14,6 +14,7 @@ import { createSwapOrder } from "@/services/api/SwapService"
 import { Web3WalletService } from "@/services/api/Web3WalletService"
 import notify from "@/components/notify"
 import { useLang } from "@/lang/useLang"
+import { useWsWalletBalance } from "@/hooks/useWsWalletBalance"
 
 const tokens = [
   { symbol: "SOL", name: "Solana", color: "bg-green-500", icon: "/solana.png" },
@@ -44,27 +45,26 @@ export default function SwapInterface() {
   const [activePolicyTab, setActivePolicyTab] = useState("mmp")
   const { isAuthenticated, loginMethod } = useAuth()
 
-  let gasPriceLanguage;
-  switch (lang) {
-    case "vi":
-      gasPriceLanguage = "~10k VNĐ";
-      break;
-    case "jp":
-      gasPriceLanguage = "~58 ¥";
-      break;
-    case "kr":
-      gasPriceLanguage = "~544 KRW";
-      break;
-    case "en":
-      gasPriceLanguage = "~0.4$";
-      break;
-    default:
-      gasPriceLanguage = "~0.4$";
-  }
+  // let gasPriceLanguage;
+  // switch (lang) {
+  //   case "vi":
+  //     gasPriceLanguage = "~10k VNĐ";
+  //     break;
+  //   case "jp":
+  //     gasPriceLanguage = "~58 ¥";
+  //     break;
+  //   case "kr":
+  //     gasPriceLanguage = "~544 KRW";
+  //     break;
+  //   case "en":
+  //     gasPriceLanguage = "~0.4$";
+  //     break;
+  //   default:
+  //     gasPriceLanguage = "~0.4$";
+  // }
   const { data: myWallet, refetch: refetchMyWallet } = useQuery({
     queryKey: ['myWallet'],
     queryFn: () => TelegramWalletService.getmyWallet(),
-    refetchInterval: 5000,
   })
 
   const { data: solPrice } = useQuery({
@@ -76,6 +76,10 @@ export default function SwapInterface() {
     queryKey: ['swapOrder'],
     queryFn: () => SwapService.getSwapOrder(),
   })
+
+  const { balances, isConnected, error } = useWsWalletBalance(myWallet?.sol_address);
+  console.log(balances);
+  console.log("balances", balances);
 
   // Format swap order history data for display
   const formatSwapHistory = () => {
@@ -98,8 +102,8 @@ export default function SwapInterface() {
     }))
   }
 
-  const swapHistoryData2 = formatSwapHistory()
-  const swapHistoryData = [...swapHistoryData2, ...swapHistoryData2]
+  const swapHistoryData = formatSwapHistory();
+
   // Calculate token price in USD
   const getTokenPriceUSD = () => {
     if (!solPrice) return 0
@@ -490,12 +494,12 @@ export default function SwapInterface() {
   // Handle traditional wallet swap
   const handleTraditionalSwap = async () => {
     const response = await createSwapOrder(sellToken.symbol, Number(sellAmount), sellTokenSwap.symbol)
-
+    console.log("response", response);
     notify({
       message: t("swap.errors.swapSuccess"),
       type: "success"
     })
-    refetchMyWallet()
+    // refetchMyWallet()
     refetchSwapOrderHistory()
     // Reset form
     setSellAmount("0")
@@ -555,6 +559,23 @@ export default function SwapInterface() {
       // Server responded with error status
       const status = error.response.status
       const errorMessage = error.response.data?.message || error.response.data?.error
+
+      // Check for specific API error messages
+      if (errorMessage === "Insufficient SOL balance") {
+        notify({
+          message: t("swap.errors.insufficientSolBalance"),
+          type: "error"
+        })
+        return
+      }
+
+      if (errorMessage === "ATA creation fee is 0.0025 SOL") {
+        notify({
+          message: t("swap.errors.ataCreationFee"),
+          type: "error"
+        })
+        return
+      }
 
       switch (status) {
         case 400:
@@ -638,15 +659,15 @@ export default function SwapInterface() {
 
   // Get balance for specific token
   const getTokenBalance = (tokenSymbol: string) => {
-    if (!myWallet) return 0;
+    if (!balances) return 0;
 
     switch (tokenSymbol) {
       case "SOL":
-        return myWallet.balance_sol || 0;
+        return balances.sol || 0;
       case "USDT":
-        return myWallet.balance_usdt || 0;
+        return balances.usdt || 0;
       case "USDC":
-        return myWallet.balance_usdc || 0;
+        return balances.usdc || 0;
       default:
         return 0;
     }
@@ -662,6 +683,7 @@ export default function SwapInterface() {
       getPhantomBalance();
     }
   }, [loginMethod, isAuthenticated]);
+
 
   return (
     <div className="flex-1 flex items-center justify-center p-4 md:p-4 z-20">
@@ -752,8 +774,8 @@ export default function SwapInterface() {
                 {sellToken && isAuthenticated && (
                   <div className="flex flex-col gap-[6px]">
                     <span className="text-xs lg:text-sm ">{t("swap.myBalance")}: <span className="bg-gradient-purple-cyan bg-clip-text">{getTokenBalance(sellToken.symbol)}</span>&ensp;{sellToken.symbol}</span>
-                    <span className="text-xs lg:text-sm "> <span className="bg-gradient-purple-cyan bg-clip-text">{myWallet?.balance_mmp}</span>&ensp;MMP</span>
-                    <span className="text-xs lg:text-sm "> <span className="bg-gradient-purple-cyan bg-clip-text">{myWallet?.balance_mpb}</span>&ensp;MPB</span>
+                    <span className="text-xs lg:text-sm "> <span className="bg-gradient-purple-cyan bg-clip-text">{balances?.mmp}</span>&ensp;MMP</span>
+                    <span className="text-xs lg:text-sm "> <span className="bg-gradient-purple-cyan bg-clip-text">{balances?.mpb}</span>&ensp;MPB</span>
                   </div>
                 )}
               </div>

@@ -96,6 +96,8 @@
             "invalidRequest": "잘못된 요청입니다. 입력을 확인해 주세요.",
             "authenticationRequired": "인증이 필요합니다. 지갑을 연결해 주세요.",
             "insufficientBalance": "잔액 부족 또는 권한이 거부되었습니다.",
+            "insufficientSolBalance": "SOL 잔액이 부족합니다. 지갑 잔액을 확인해 주세요.",
+            "ataCreationFee": "ATA 생성 수수료는 0.0025 SOL입니다. 거래를 위해 충분한 SOL이 있는지 확인해 주세요.",
             "serviceUnavailable": "서비스를 사용할 수 없습니다. 나중에 다시 시도해 주세요.",
             "tooManyRequests": "요청이 너무 많습니다. 다시 시도하기 전에 잠시 기다려 주세요.",
             "serverError": "서버 오류입니다. 나중에 다시 시도해 주세요.",
@@ -233,8 +235,24 @@
             "firstTimeFee": "첫 IDO 구매 시, ATA 생성을 위해 약 0.0025 SOL의 네트워크 수수료가 필요합니다. <br />이후 추가 구매 시에는 1회 스왑당 네트워크 수수료가 약 0.00005 SOL로 줄어듭니다."
         },
         "specialOpportunity": {
-            "title": "특별한 기회",
-            "message": "특별한 기회 <br/> MMP/MPB 초기 판매 진행 중 <br/> 1차 판매: 0.001 SOL (7월 31일까지) <br/> 2차 판매: 0.002 SOL (일정 추후 공지)"
+            "title": "특별 기회",
+            "message": "MMP/MPB 초기 판매 진행 중 <br/> 첫 번째 판매: 0.001 SOL (7월 31일까지) <br/> 두 번째 판매: 0.002 SOL (일정 발표 예정)"
+        }
+    },
+    "services": {
+        "errors": {
+            "phantomNotInstalled": "팬텀 지갑이 설치되지 않았습니다",
+            "phantomNotInstalledWithLink": "팬텀 지갑이 설치되지 않았습니다. https://phantom.app/에서 설치해 주세요",
+            "phantomNotConnected": "팬텀 지갑이 연결되지 않았습니다. 먼저 연결해 주세요.",
+            "phantomConnectionRejected": "사용자가 연결 요청을 거부했습니다",
+            "phantomConnectionFailed": "팬텀 지갑 연결에 실패했습니다",
+            "phantomSignatureRejected": "사용자가 서명 요청을 거부했습니다",
+            "phantomSignatureFailed": "팬텀 지갑으로 메시지 서명에 실패했습니다",
+            "phantomTransactionRejected": "사용자가 거래 요청을 거부했습니다",
+            "phantomAuthFailed": "팬텀 지갑 인증에 실패했습니다",
+            "failedToCreateTokenAccount": "토큰 계정 생성에 실패했습니다",
+            "errorGetMyWallet": "내 지갑 정보 가져오기 오류",
+            "errorGetGoogleUserInfo": "Google 사용자 정보 가져오기 오류"
         }
     }
 }
