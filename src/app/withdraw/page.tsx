@@ -22,7 +22,7 @@ const tokens = [
     { symbol: "MPB", name: "MP", color: "bg-green-600", icon: "/mpb.png" },
 ]
 
-export default function WithdrawWallet({ walletInfor }: { walletInfor: any }) {
+export default function WithdrawWallet() {
     const { t } = useLang();
     const [amount, setAmount] = useState<string>("0")
     const [recipientWallet, setRecipientWallet] = useState<string>("")
