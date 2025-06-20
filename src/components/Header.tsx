@@ -26,8 +26,9 @@ const Header = () => {
     // { id: 'overview', href: '/', label: t('header.overview'), icon: '📊' },
     { id: 'swap', href: '/swap', label: t('header.swap'), icon: <ArrowDownUp className='w-3 h-3 sm:w-4 sm:h-4' /> },
     { id: 'deposit', href: '/deposit', label: t('header.deposit'), icon: '💰' },
+    { id: 'withdraw', href: '/withdraw', label: t('header.withdraw'), icon: '💰' },
     // { id: 'stake', href: '/stake', label: t('header.stake'), icon: '🔒' },
-    // { id: 'referral', href: '/referral', label: t('header.referral'), icon: '👥' },
+    { id: 'referral', href: '/referral', label: t('header.referral'), icon: '👥' },
   ]
 
   
