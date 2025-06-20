@@ -27,7 +27,7 @@ function GoogleLoginContent() {
     const handleGoogleLogin = async () => {
         try {
             // Gọi API để xác thực Google code
-            const response = await GoogleAuthService.login({ code, ref: Cookies.get("ref") || "" });
+            const response = await GoogleAuthService.login({ code, ref_code: Cookies.get("ref") || "" });
             login('google');
             window.location.href = '/swap';
 

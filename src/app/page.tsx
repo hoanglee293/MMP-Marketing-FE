@@ -13,7 +13,7 @@ function HomeContent() {
 
   useEffect(() => {
     const refParam = searchParams.get('ref');
-
+    console.log("refParam", refParam)
     if (refParam) {
       Cookies.set('ref', refParam, { expires: 1 });
     }
