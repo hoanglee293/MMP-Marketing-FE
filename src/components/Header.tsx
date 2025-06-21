@@ -23,7 +23,7 @@ const Header = () => {
   const { t, lang, setLang, langConfig } = useLang();
 
   const tabs = [
-    // { id: 'overview', href: '/', label: t('header.overview'), icon: '📊' },
+    { id: 'overview', href: '/overview', label: t('header.overview'), icon: '📊', isActive: true },
     { id: 'swap', href: '/swap', label: t('header.swap'), icon: <ArrowDownUp className='w-3 h-3 sm:w-4 sm:h-4' />, isActive: true },
     { id: 'deposit', href: '/deposit', label: t('header.deposit'), icon: '💰', isActive: isAuthenticated },
     { id: 'withdraw', href: '/withdraw', label: t('header.withdraw'), icon: '💰', isActive: isAuthenticated },
@@ -35,8 +35,9 @@ const Header = () => {
   const { data: myWallet } = useQuery({
     queryKey: ['myWallet'],
     queryFn: () => TelegramWalletService.getmyWallet(),
-    enabled: isAuthenticated && loginMethod === 'telegram',
+    enabled: isAuthenticated,
   })
+  console.log("myWallet", myWallet)
 
   const handleGoogleSignIn = async () => {
     window.open(`https://accounts.google.com/o/oauth2/v2/auth?client_id=${process.env.NEXT_PUBLIC_GOOGLE_CLIENT_ID}&redirect_uri=${process.env.NEXT_PUBLIC_GOOGLE_REDIRECT_URI}&response_type=code&scope=email%20profile&access_type=offline`)
