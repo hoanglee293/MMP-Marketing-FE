@@ -2,6 +2,7 @@
 import React from 'react'
 import Features from './features'
 import { useIntersectionObserver } from '@/hooks/useIntersectionObserver'
+import ExchangeToken from './exchange-token'
 
 const page = () => {
     const { elementRef: titleRef, isIntersecting: titleInView } = useIntersectionObserver<HTMLHeadingElement>({
@@ -20,7 +21,7 @@ const page = () => {
     });
 
     return (
-        <div className='flex flex-col gap-1 flex-1'>
+        <div className='flex flex-col gap-1 '>
             <div className='bg-overview bg-blue-200 z-50 w-full h-svh flex items-center justify-center relative overflow-hidden'>
                 <div className='absolute top-[50%] right-0 animate-float'>
                     <img src="/box-elips.png" alt="bg-feature" className='2xl:max-w-max max-w-[230px] object-cover' />
@@ -32,9 +33,9 @@ const page = () => {
                     <div className='flex flex-col items-center justify-center gap-10'>
                         <h1 
                             ref={titleRef}
-                            className={`text-[80px] 2xl:text-[120px] font-bold text-center text-white uppercase bg-gradient-purple-cyan bg-clip-text animate-fade-in-up ${titleInView ? 'in-view' : ''}`}
+                            className={`text-[80px] orbitron-font 2xl:text-[120px] tracking-[0.3em] font-bold text-center text-white uppercase bg-gradient-purple-cyan bg-clip-text animate-fade-in-up ${titleInView ? 'in-view' : ''}`}
                         >
-                            MEME PUMP
+                            MEMEPUMP
                         </h1> 
                         <p 
                             ref={descRef}
@@ -55,6 +56,7 @@ const page = () => {
                 </div>
             </div>
             <Features />
+            <ExchangeToken />
         </div>
 
     )

@@ -40,10 +40,10 @@ const features = () => {
     });
 
     return (
-        <div className='bg-feature bg-[#020616BD]/60 z-50 w-full h-svh flex items-center justify-center relative pt-20'>
+        <div className='bg-feature bg-[#020616BD]/60 z-50 w-full h-svh flex items-center justify-center relative pt-20 overflow-hidden'>
             <div className='absolute top-0 right-0 w-full h-full bg-[#020616c2]' />
             <div className='h-[50vh] flex items-center justify-center border-l-2 border-r-0 border-t-0 border-b-0 border-gray-500 border-solid absolute bottom-0 right-[27%] z-10 animate-pulse-slow'>
-                <svg style={{ marginTop: '-50px', marginLeft: '10px' }} xmlns="http://www.w3.org/2000/svg" width="19" height="156" viewBox="0 0 19 156" fill="none">
+                <svg style={{ marginTop: '9vh', marginLeft: '10px' }} xmlns="http://www.w3.org/2000/svg" width="19" height="156" viewBox="0 0 19 156" fill="none">
                     <path d="M0.5 18L18.5 0V12L0.5 30V18Z" fill="url(#paint0_linear_391_1118)" />
                     <path d="M0.5 36L18.5 18V30L0.5 48V36Z" fill="url(#paint1_linear_391_1118)" />
                     <path d="M0.5 54L18.5 36V48L0.5 66V54Z" fill="url(#paint2_linear_391_1118)" />
@@ -88,10 +88,10 @@ const features = () => {
                     </defs>
                 </svg>
             </div>
-            <div className='h-[10vh] w-[2px] bg-gray-500 absolute top-[42%] right-[22%] z-10 animate-pulse'>
+            <div className='h-[10vh] w-[2px] bg-gray-500 absolute top-[47%] right-[22%] z-10 animate-pulse'>
                 <div className={"w-2 h-2 rounded-full bg-gray-500 absolute top-0 left-[-3px] z-10 animate-ping"} />
             </div>
-            <div className='absolute top-0 left-[22%] z-10 animate-fade-in-left'>
+            <div className='absolute top-0 left-[22%] z-10 '>
                 <svg xmlns="http://www.w3.org/2000/svg" width="90" height="551" viewBox="0 0 90 551" fill="none">
                     <path d="M1 0L34.5 33.5V255.5L89 310V550.5" stroke="white" stroke-opacity="0.4" />
                 </svg>
@@ -101,23 +101,23 @@ const features = () => {
                 <div className='flex flex-col items-center justify-center gap-4 relative h-[50px]'>
                     <h2 
                         ref={titleRef}
-                        className={`title-feature text-[36px] 2xl:text-[48px] bg-clip-text absolute 2xl:top-[-25px] top-[-10px] left-0 w-full h-full text-center animate-fade-in-up ${titleInView ? 'in-view' : ''}`}
+                        className={`title-feature text-[36px] xl:text-[48px] bg-clip-text absolute top-0 left-0 w-full h-full text-center animate-fade-in-up ${titleInView ? 'in-view' : ''}`}
                     >
                         Key Features
                     </h2>
                     <h3 
                         ref={title2Ref}
-                        className={`text-[#DFE0EF] text-[36px] 2xl:text-[48px] webkit-text-stroke-1 font-bold bg-black/60 2xl:min-w-[440px] min-w-[300px] h-full text-center z-10 leading-none animate-fade-in-up-delayed ${title2InView ? 'in-view' : ''}`}
+                        className={`text-[#DFE0EF] text-[36px] xl:text-[48px] webkit-text-stroke-1 font-bold bg-black/60 xl:min-w-[440px] min-w-[300px] h-full text-center z-10 leading-none animate-fade-in-up-delayed ${title2InView ? 'in-view' : ''}`}
                     >
                         Key Features
                     </h3>
                 </div>
-                <div className='flex justify-between items-center 2xl:mx-10 mx-20'>
+                <div className='flex justify-between items-center xl:mx-10 mx-20'>
                     <div 
                         ref={imageRef}
                         className={`animate-fade-in-left animate-float ${imageInView ? 'in-view' : ''}`}
                     >
-                        <img src="/layout-features.png" alt="feature-1" className='max-h-[1000px] w-full min-w-[400px] 2xl:min-w-[800px] h-auto object-cover' />
+                        <img src="/layout-features.png" alt="feature-1" className='max-h-[1000px] w-full min-w-[400px] xl:min-w-[800px] h-auto object-cover' />
                     </div>
                     <div className='flex flex-col md:flex-row justify-center items-start gap-6 flex-1'>
                         {/* Left Column */}
@@ -127,8 +127,8 @@ const features = () => {
                                 className={`animate-fade-in-up-delayed hover:scale-105 transition-transform duration-300 ${feature1InView ? 'in-view' : ''}`}
                             >
                                 <BoxFeauture>
-                                    <div className='text-neutral text-base 2xl:text-2xl font-medium bg-gradient-to-t from-white to-[#00C0FF] bg-clip-text'>Hybrid DeFi + Simulated Trading</div>
-                                    <div className='text-neutral text-sm 2xl:text-lg mt-2'>
+                                    <div className='text-neutral text-base xl:text-xl font-medium bg-gradient-to-t from-white to-[#00C0FF] bg-clip-text'>Hybrid DeFi + Simulated Trading</div>
+                                    <div className='text-neutral text-sm xl:text-lg mt-2'>
                                         A unique ecosystem combining real trading with risk-free simulation markets.
                                     </div>
                                 </BoxFeauture>
@@ -138,8 +138,8 @@ const features = () => {
                                 className={`animate-fade-in-up-more-delayed hover:scale-105 transition-transform duration-300 ${feature2InView ? 'in-view' : ''}`}
                             >
                                 <BoxFeauture>
-                                    <div className='text-neutral text-base 2xl:text-2xl font-medium bg-gradient-to-t from-white to-[#00C0FF] bg-clip-text'>Global Expansion Focus</div>
-                                    <div className='text-neutral text-sm 2xl:text-lg mt-2'>
+                                    <div className='text-neutral text-base xl:text-xl font-medium bg-gradient-to-t from-white to-[#00C0FF] bg-clip-text'>Global Expansion Focus</div>
+                                    <div className='text-neutral text-sm xl:text-lg mt-2'>
                                         Aggressive marketing and partnerships to ensure long-term growth.
                                     </div>
                                 </BoxFeauture>
@@ -153,8 +153,8 @@ const features = () => {
                                 className={`animate-fade-in-up-delayed hover:scale-105 transition-transform duration-300 ${feature3InView ? 'in-view' : ''}`}
                             >
                                 <BoxFeauture>
-                                    <div className='text-neutral text-base 2xl:text-2xl font-medium bg-gradient-to-t from-white to-[#00C0FF] bg-clip-text'>55% Community Rewards</div>
-                                    <div className='text-neutral text-sm 2xl:text-lg mt-2'>
+                                    <div className='text-neutral text-base xl:text-xl font-medium bg-gradient-to-t from-white to-[#00C0FF] bg-clip-text'>55% Community Rewards</div>
+                                    <div className='text-neutral text-sm xl:text-lg mt-2'>
                                         The largest share of tokens goes directly to users via trading incentives, staking, and engagement.
                                     </div>
                                 </BoxFeauture>
@@ -164,8 +164,8 @@ const features = () => {
                                 className={`animate-fade-in-up-more-delayed hover:scale-105 transition-transform duration-300 ${feature4InView ? 'in-view' : ''}`}
                             >
                                 <BoxFeauture>
-                                    <div className='text-neutral text-base 2xl:text-2xl font-medium bg-gradient-to-t from-white to-[#00C0FF] bg-clip-text'>DAO-Ready Governance</div>
-                                    <div className='text-neutral text-sm 2xl:text-lg mt-2'>
+                                    <div className='text-neutral text-base xl:text-xl font-medium bg-gradient-to-t from-white to-[#00C0FF] bg-clip-text'>DAO-Ready Governance</div>
+                                    <div className='text-neutral text-sm xl:text-lg mt-2'>
                                         A portion of reserves is allocated for future decentralized decision-making.
                                     </div>
                                 </BoxFeauture>

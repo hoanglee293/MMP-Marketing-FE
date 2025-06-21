@@ -1,6 +1,6 @@
 const BoxFeauture = ({children}: {children: React.ReactNode}) => {
     return (
-        <div className="relative w-full 2xl:max-w-[417px] max-w-[300px] h-auto 2xl:min-h-[261px] min-h-[180px] aspect-[417/261]">
+        <div className="relative w-full xl:max-w-[417px] max-w-[300px] h-auto xl:min-h-[261px] min-h-[180px] aspect-[417/261]">
             {/* Top decorative SVG - responsive positioning */}
             <svg 
                 className="absolute top-0 right-[8%] z-10 w-[35%] max-w-[146px] h-auto" 
@@ -74,7 +74,7 @@ const BoxFeauture = ({children}: {children: React.ReactNode}) => {
             
             {/* Bottom decorative SVG - responsive positioning */}
             <svg 
-                className="absolute bottom-0 left-[22%] z-10 w-[51%] max-w-[214px] h-auto" 
+                className="absolute bottom-0 left-[22.7%] z-10 w-[51%] max-w-[214px] h-auto" 
                 xmlns="http://www.w3.org/2000/svg" 
                 viewBox="0 0 214 19" 
                 fill="none"
@@ -92,7 +92,7 @@ const BoxFeauture = ({children}: {children: React.ReactNode}) => {
             </svg>
             
             {/* Content container - responsive padding */}
-            <div className="flex flex-col 2xl:gap-4 gap-1 justify-center h-full top-0 left-0 absolute z-10 2xl:mx-6 mx-2 2xl:px-4 px-2 2xl:py-6 py-4">
+            <div className="flex flex-col xl:gap-4 gap-1 justify-center h-full top-0 left-0 absolute z-10 xl:mx-6 mx-2 xl:px-4 px-2 xl:py-6 py-4">
                 {children}
             </div>
         </div>
