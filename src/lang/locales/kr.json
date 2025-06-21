@@ -49,7 +49,8 @@
             "pending": "대기 중",
             "completed": "완료됨",
             "failed": "실패함"
-        }
+        },
+        "transaction_history": "거래 내역"
     },
     "universal_account": {
         "amount_cannot_exceed_balance": "금액은 잔액 {balance}을 초과할 수 없습니다",
@@ -324,11 +325,10 @@
             "level7": "레벨 7"
         },
         "structure": {
-            "your_reward": "귀하의 보상",
+            "your_reward": "당신의 보상",
             "total_commission": "총 수수료",
-            "paid_in": "으로 지급",
-            "regular_customer": "일반 고객",
-            "bj_influencer": "BJ / 인플루언서"
+            "paid_in": "로 지급",
+            "note": "참고: 보상을 받으려면 최소 $5의 MMP 토큰 스왑을 수행해야 합니다. 스왑을 수행하지 않은 경우 보상 금액은 대기 상태가 됩니다."
         },
         "noReferredUsers": "아직 추천된 사용자가 없습니다."
     },

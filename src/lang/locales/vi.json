@@ -26,13 +26,6 @@
         "deposit": "Nạp",
         "withdraw": "Rút"
     },
-    "referral": {
-        "structure": {
-            "your_reward": "Phần thưởng cho bạn",
-            "total_commission": "Tổng hoa hồng",
-            "paid_in": "thanh toán bằng"
-        }
-    },
     "withdraw_page": {
         "withdraw_successful": "Rút tiền thành công!",
         "withdraw_failed": "Rút tiền thất bại. Vui lòng thử lại.",
@@ -42,6 +35,7 @@
         "enter_recipient_wallet_address": "Nhập địa chỉ ví người nhận...",
         "send": "Gửi",
         "loading": "Đang tải...",
+        "transaction_history": "Lịch sử giao dịch",
         "no_withdrawal_history": "Không có lịch sử rút tiền",
         "table": {
             "time": "Thời gian",
@@ -327,18 +321,16 @@
             "level6": "Cấp 6",
             "level7": "Cấp 7"
         },
+        
         "structure": {
             "regular_customer": "Khách hàng thông thường",
             "bj_influencer": "BJ / Người có ảnh hưởng",
             "total_commission": "Tổng hoa hồng",
-            "paid_in": "trả bằng"
+            "paid_in": "trả bằng",
+            "your_reward": "Phần thưởng của bạn",
+            "note": "Lưu ý: Bạn cần thực hiện swap đồng MMP với tối thiểu 5$ thì mới có thể được trả thưởng, khi bạn chưa thực hiện thì số phần thưởng của bạn sẽ ở trạng thái chờ."
         },
-        "noReferredUsers": "Chưa có người dùng nào được giới thiệu.",
-        "structure": {
-            "your_reward": "Phần thưởng cho bạn",
-            "total_commission": "Tổng hoa hồng",
-            "paid_in": "thanh toán bằng"
-        }
+        "noReferredUsers": "Chưa có người dùng nào được giới thiệu."
     },
     "referral_page": {
         "title": "Referral"

@@ -30,7 +30,8 @@
         "structure": {
             "your_reward": "Your Reward",
             "total_commission": "Total Commission",
-            "paid_in": "paid in"
+            "paid_in": "paid in",
+            "note": "Note: You need to perform a swap of MMP tokens with a minimum of $5 to be eligible for rewards. When you haven't performed the swap, your reward amount will be in pending status."
         }
     },
     "withdraw_page": {
