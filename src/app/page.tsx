@@ -12,10 +12,9 @@ function HomeContent() {
   const searchParams = useSearchParams();
 
   useEffect(() => {
-    const refParam = searchParams.get('ref');
-    console.log("refParam", refParam)
-    if (refParam) {
-      Cookies.set('ref', refParam, { expires: 1 });
+    const codeParam = searchParams.get('code');
+    if (codeParam) {
+      Cookies.set('code', codeParam, { expires: 1 });
     }
 
     router.push('/swap');

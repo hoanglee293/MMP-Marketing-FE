@@ -28,20 +28,40 @@ export const langConfig: {
   }
 };
 
-// Hàm hỗ trợ lấy dữ liệu từ object lồng nhau
+// Hàm hỗ trợ lấy dữ liệu từ object lồng nhau (chỉ trả về string)
 const getNestedTranslation = (translations: Translations, key: string): string => {
-  return key.split('.').reduce((obj: any, k) => {
+  const result = key.split('.').reduce((obj: any, k) => {
     if (typeof obj === 'object' && obj !== null && k in obj) {
-      return obj[k] as Translations;
+      return obj[k];
     }
     return undefined;
-  }, translations as Translations) as string || key;
+  }, translations as Translations);
+  
+  return typeof result === 'string' ? result : key;
+};
+
+// Hàm hỗ trợ lấy array từ object lồng nhau
+const getNestedArray = (translations: Translations, key: string): string[] => {
+  const result = key.split('.').reduce((obj: any, k) => {
+    if (typeof obj === 'object' && obj !== null && k in obj) {
+      return obj[k];
+    }
+    return undefined;
+  }, translations as Translations);
+  
+  return Array.isArray(result) ? result : [];
 };
 
 // Export the translation function that takes language as a parameter
 export const getTranslation = (lang: LangCodes) => (key: string) => {
   const translations = langConfig.langsApp[lang] || {};
   return getNestedTranslation(translations, key);
+};
+
+// Export the array translation function
+export const getArrayTranslation = (lang: LangCodes) => (key: string) => {
+  const translations = langConfig.langsApp[lang] || {};
+  return getNestedArray(translations, key);
 };
 
 // Re-export useLang and LangProvider
