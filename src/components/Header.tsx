@@ -29,6 +29,7 @@ const Header = () => {
     { id: 'withdraw', href: '/withdraw', label: t('header.withdraw'), icon: '💰', isActive: isAuthenticated },
     // { id: 'stake', href: '/stake', label: t('header.stake'), icon: '🔒' },
     { id: 'referral', href: '/referral', label: t('header.referral'), icon: '👥', isActive: isAuthenticated },
+    { id: 'white-paper', href: '/white-paper', label: t('header.whitePaper'), icon: '📄', isActive: true },
   ]
 
   

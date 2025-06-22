@@ -7,8 +7,10 @@ import { LangProvider } from '@/lang/LangProvider';
 
 export type LangCodes = 'en' | 'vi' | 'kr' | 'jp';
 
-// Định nghĩa kiểu dữ liệu có thể chứa object lồng nhau
-type Translations = { [key: string]: string | string[] | Translations };
+// Updated type definition to support arrays of objects and nested structures
+type Translations = { 
+  [key: string]: string | string[] | { [key: string]: any }[] | Translations 
+};
 
 export const langConfig: { 
   listLangs: { id: number; name: string; code: LangCodes }[];
