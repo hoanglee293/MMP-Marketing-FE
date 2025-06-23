@@ -6,7 +6,7 @@
     "lang": {
         "en": "Tiếng Anh",
         "vi": "Tiếng Việt",
-        "jp": "Tiếng Nhật", 
+        "jp": "Tiếng Nhật",
         "kr": "Tiếng Hàn"
     },
     "header": {
@@ -322,7 +322,6 @@
             "level6": "Cấp 6",
             "level7": "Cấp 7"
         },
-        
         "structure": {
             "regular_customer": "Khách hàng thông thường",
             "bj_influencer": "BJ / Người có ảnh hưởng",
@@ -471,6 +470,14 @@
                                     "Giám sát trạng thái LP: Phát hiện dòng tiền ra hoặc rút tiền đáng ngờ từ pool thanh khoản",
                                     "Phòng thí nghiệm giao dịch giấy: Thử nghiệm chiến lược meme coin không rủi ro trước khi đầu tư thực"
                                 ]
+                            },
+                            "onchainUpdate": {
+                                "title": "Tại sao cách này phù hợp với meme coin?",
+                                "items": [
+                                    "Đối với trader: Phát hiện pump sớm, tránh rug pull, theo dõi xu hướng dựa trên dữ liệu",
+                                    "Đối với cộng đồng: Chứng minh độ tin cậy của dự án và thu hút người dùng tự nhiên",
+                                    "Đối với nhà phát triển: Có thể phát hiện các lỗ hổng chưa được khám phá"
+                                ]
                             }
                         }
                     }
@@ -510,6 +517,15 @@
                                     "Mô phỏng giao dịch giấy: Thử nghiệm chiến lược không rủi ro thông qua kịch bản được tạo bởi AI"
                                 ],
                                 "watchlist": "Báo cáo danh sách theo dõi tùy chỉnh: ví dụ: \"Trong số coin tôi theo dõi, $WIF tăng 40%, $BONK đang trending ở Việt Nam\""
+                            },
+                            "aiAssistantUpdate": {
+                                "title": "Tại sao AI của MEMEPUMP là tốt nhất",
+                                "items": [
+                                    "Đối với degen: Đừng giao dịch bằng cảm xúc nữa — AI phát hiện và phát hiện các lừa đảo",
+                                    "Đối với nhà phát triển: Chứng minh tính hợp lệ của meme coin với điểm tin cậy được tạo bởi AI",
+                                    "Đối với cộng đồng: Có thể tạo ra các chiến lược pump/dump thông minh hơn dựa trên bản đồ cảm xúc"
+                                ],
+                                "content": "MEMEPUMP không chỉ cung cấp dữ liệu, mà còn cung cấp sự khác biệt cho người dùng."
                             }
                         }
                     }
@@ -530,6 +546,22 @@
                             "Phần thưởng tham gia: Token MEMEPUMP được phân phối hàng ngày cho người dùng tích cực tham gia giao dịch, hoạt động cộng đồng và chia sẻ nội dung.",
                             "Ưu đãi thanh khoản & mô phỏng: Người dùng đóng góp vào pool thanh khoản giao dịch thực hoặc tham gia hệ sinh thái đầu tư mô phỏng nhận được phần thưởng.",
                             "Tiền thưởng độ chính xác nội dung và dữ liệu: Thành viên phát hiện hoặc sửa lỗi dữ liệu hoặc đóng góp nội dung hữu ích được thưởng bằng token MEMEPUMP."
+                        ]
+                    },
+                    "incentiveStructureUpdate": {
+                        "title": "Cấu trúc ưu đãi hệ sinh thái",
+                        "description": "Token MEMEPUMP là cơ chế ưu đãi cốt lõi của nền tảng và kích hoạt hệ sinh thái theo những cách sau:",
+                        "items": [
+                            "Phần thưởng tham gia: Token MEMEPUMP được phân phối hàng ngày cho người dùng tích cực tham gia giao dịch, hoạt động cộng đồng và chia sẻ nội dung.",
+                            "Ưu đãi thanh khoản & mô phỏng: Người dùng đóng góp vào pool thanh khoản giao dịch thực hoặc tham gia hệ sinh thái đầu tư mô phỏng nhận được phần thưởng.",
+                            "Tiền thưởng độ chính xác nội dung và dữ liệu: Thành viên phát hiện hoặc sửa lỗi dữ liệu hoặc đóng góp nội dung hữu ích được thưởng bằng token MEMEPUMP."
+                        ]
+                    },
+                    "incentiveStructureUpdate2": {
+                        "title": "Staking cho chức năng Premium",
+                        "items": [
+                            "Ngoài các ưu đãi cơ bản, người dùng đang stake token MEMEPUMP có thể truy cập vào nhiều chức năng premium khác nhau.",
+                            "Người dùng đang stake token MEMEPUMP trên một số lượng nhất định sẽ có quyền truy cập vào các công cụ phân tích nâng cao, nội dung độc quyền, giảm phí giao dịch trong SSI Protocol và các dịch vụ phụ trợ khác."
                         ]
                     }
                 },
@@ -591,7 +623,8 @@
                                     "Giải phóng ban đầu: 15% được giải phóng tại TGE (Sự kiện tạo token)",
                                     "Giải phóng liên tục: Token còn lại được phân phối tuyến tính trong 60 tháng"
                                 ]
-                            }
+                            },
+                            "content": "Các cấu trúc tokenomics này được thiết kế để cân bằng giữa lợi ích của nhà đầu tư ban đầu và sự tham gia dài hạn của cộng đồng, đồng thời đảm bảo sự phát triển bền vững của dự án."
                         }
                     }
                 },
@@ -671,7 +704,10 @@
             },
             "miningApp": {
                 "title": "4.5 Ứng dụng khai thác",
-                "overview": "Chương trình khai thác token MMPP được tích hợp vào website chính thức của dự án, hướng tới môi trường phân phối token công bằng, minh bạch trong cộng đồng. Mục tiêu chính là người dùng thực hiện các hoạt động, nhiệm vụ online để tích điểm, sau đó quy đổi thành token MMPP. Điều này mở rộng hệ sinh thái và thúc đẩy sự tham gia, phát triển cộng đồng bền vững.",
+                "overview": {
+                    "title": "1. Giới thiệu chung",
+                    "content": "Chương trình khai thác token MMPP được tích hợp vào website chính thức của dự án, hướng tới môi trường phân phối token công bằng, minh bạch trong cộng đồng. Mục tiêu chính là người dùng thực hiện các hoạt động, nhiệm vụ online để tích điểm, sau đó quy đổi thành token MMPP. Điều này mở rộng hệ sinh thái và thúc đẩy sự tham gia, phát triển cộng đồng bền vững."
+                },
                 "mechanism": {
                     "title": "2. Cơ chế khai thác token MMPP",
                     "mining": {
@@ -713,47 +749,241 @@
             },
             "resources": {
                 "title": "5. Tài nguyên & Hỗ trợ",
-                "items": [
-                    "Tài nguyên hữu ích",
-                    "Hỗ trợ & hỏi đáp"
-                ]
+                "tutorial": {
+                    "title": "5.1 Hướng dẫn",
+                    "overview": "Nếu bạn đang gặp khó khăn trong việc mua MMPP token, hãy tham khảo tài liệu này. Chúng tôi sẽ giải quyết các vấn đề thường gặp và hướng dẫn bạn qua các bước đơn giản để mua token.",
+                    "usdc": {
+                        "title": "2. Cách nhận USDC trên Solana Mainnet",
+                        "items": [
+                            "Chuyển USDC giữa các mạng lưới (sử dụng DEX): Sử dụng sàn giao dịch phi tập trung (DEX) hỗ trợ bridge như Jupiter Aggregator. Sau khi kết nối ví, chọn mạng lưới hiện tại của USDC đang nắm giữ làm mạng gửi đi. Chọn mạng đích là Solana Mainnet. Nhập số lượng USDC cần chuyển. Thực hiện theo hướng dẫn trên giao diện DEX để hoàn tất quá trình chuyển.",
+                            "Chuyển USDC từ sàn tập trung (CEX) sang ví on-chain: Trên sàn giao dịch bạn đang sử dụng, chọn tùy chọn rút tiền (Withdraw). Sao chép địa chỉ ví Solana và dán vào ô địa chỉ rút tiền. Chọn loại mạng là Solana. Nhập số lượng USDC muốn chuyển và hoàn tất các bước xác thực. Sau khi xác nhận giao dịch, USDC sẽ được chuyển trực tiếp vào ví của bạn.",
+                            "Chuyển đổi từ CEX sang USDC: Trên sàn giao dịch, chọn tùy chọn chuyển đổi (Convert) hoặc trao đổi (Swap). Chọn loại token bạn đang nắm giữ và chọn USDC làm đích. Nhập số lượng cần chuyển đổi. Thực hiện theo hướng dẫn trên sàn để hoàn tất quá trình chuyển đổi."
+                        ]
+                    },
+                    "sol": {
+                        "title": "3. Cách nhận SOL trên Solana Mainnet",
+                        "items": [
+                            "Chuyển SOL giữa các mạng lưới (sử dụng DEX): Sử dụng sàn giao dịch phi tập trung (DEX) hỗ trợ bridge như Jupiter Aggregator. Sau khi kết nối ví, chọn mạng lưới hiện tại của SOL đang nắm giữ làm mạng gửi đi. Chọn mạng đích là Solana Mainnet. Nhập số lượng SOL cần chuyển. Thực hiện theo hướng dẫn trên giao diện DEX để hoàn tất quá trình chuyển.",
+                            "Chuyển SOL từ sàn tập trung (CEX) sang ví on-chain: Trên sàn giao dịch bạn đang sử dụng, chọn tùy chọn rút tiền (Withdraw). Sao chép địa chỉ ví Solana và dán vào ô địa chỉ rút tiền. Chọn loại mạng là Solana. Nhập số lượng SOL muốn chuyển và hoàn tất các bước xác thực. Sau khi xác nhận giao dịch, SOL sẽ được chuyển trực tiếp vào ví của bạn."
+                        ]
+                    },
+                    "staking": {
+                        "title": "4. Cách stake MMPP token",
+                        "items": [
+                            "Trang stake: Đăng nhập vào MEMEPUMP dashboard hoặc chạy ứng dụng MEMEPUMP để đến trang stake.",
+                            "Nhập số lượng: Nhập số lượng MMPP token bạn muốn stake. Hiển thị thông tin chi tiết về APY, thời gian, và các điều kiện khác.",
+                            "Xác nhận giao dịch: Xác nhận giao dịch stake thông qua ví được kết nối. Kiểm tra điều kiện và nội dung giao dịch trước khi xác nhận.",
+                            "Nhận phần thưởng: Sau khi stake, nhận phần thưởng theo hướng dẫn của nền tảng và giải phóng chức năng premium."
+                        ]
+                    }
+                },
+                "roadmap": {
+                    "title": "6. Lộ trình & kế hoạch phát triển tương lai",
+                    "summary": "MEMEPUMP được vận hành dựa trên lộ trình động, dựa trên các cột mốc, nhằm mở rộng hệ sinh thái, tích hợp phản hồi cộng đồng và thúc đẩy sự sáng tạo. Dưới đây là các cột mốc chính của chúng tôi:",
+                    "phases": [
+                        {
+                            "title": "1. Chuẩn bị cơ sở hạ tầng và phát hành (2025 Q2)",
+                            "items": [
+                                "Phát triển protocol cuối cùng: Hoàn thành phát triển protocol, kiểm tra thông tin, và kiểm tra giao diện người dùng."
+                            ]
+                        },
+                        {
+                            "title": "2. Phát hành chính thức và phát triển ban đầu (2025 Q3)",
+                            "items": [
+                                "Phát hành trên Mainnet: Phát hành MEMEPUMP platform trên Solana Mainnet.",
+                                "Bắt đầu phân phối token: Bắt đầu phân phối token và kích hoạt các kênh phân phối khác.",
+                                "Cải thiện giao diện người dùng: Cải thiện giao diện người dùng và tính năng tương tác để người dùng dễ dàng theo dõi tiến trình, số token tích lũy."
+                            ]
+                        },
+                        {
+                            "title": "3. Mở rộng hệ sinh thái và nâng cao chức năng (2025 Q4 ~ 2026 Q1)",
+                            "items": [
+                                "Mở rộng tính năng thanh khoản và mô phỏng: Phát triển tính năng thanh khoản cao cấp và mô phỏng để tăng hoạt động thị trường.",
+                                "Phát triển chức năng staking và dịch vụ premium: Phát triển chức năng staking và cung cấp dịch vụ premium như phân tích nâng cao, nội dung độc quyền, và giảm phí giao dịch trong SSI Protocol.",
+                                "Mở rộng thị trường toàn cầu: Mở rộng thị trường toàn cầu và kích hoạt các kênh phân phối khác."
+                            ]
+                        },
+                        {
+                            "title": "4. Đổi mới quản trị và phát triển dài hạn (2026 Q2 trở đi)",
+                            "items": [
+                                "Chuyển đổi DAO: Chuyển đổi quản trị thành một mô hình quản trị hoàn toàn phi tập trung để tạo điều kiện cho sự quyết định của cộng đồng.",
+                                "Tích hợp cross-chain: Tích hợp các chuỗi khác để tăng độ linh hoạt và khả năng truy cập của người dùng.",
+                                "Cải thiện tính năng liên tục: Cập nhật các tính năng tiên tiến dựa trên phản hồi từ người dùng và sự phát triển của thị trường."
+                            ]
+                        }
+                    ],
+                    "note": "Lộ trình này có thể được điều chỉnh dựa trên tình hình thị trường, sự phát triển công nghệ và ý kiến cộng đồng. Chúng tôi luôn cố gắng xây dựng một nền tảng an toàn và sáng tạo, đặc biệt là trong việc tập trung vào người dùng."
+                },
+                "audit": {
+                    "title": "7. Kiểm toán",
+                    "content": "(※ Đoạn này sẽ được cập nhật khi kết quả kiểm toán được hoàn thành.)"
+                },
+                "terms": {
+                    "title": "8. Điều khoản & Điều kiện",
+                    "lastUpdate": "Cập nhật cuối: 7 tháng 6 năm 2025",
+                    "sections": [
+                        {
+                            "title": "1. Đồng ý với điều khoản",
+                            "content": "Bằng cách truy cập vào MEMEPUMP (dưới đây được gọi là 'nền tảng'), bạn đồng ý với các điều khoản và điều kiện trong nền tảng này. Nếu bạn không đồng ý, vui lòng không sử dụng nền tảng."
+                        },
+                        {
+                            "title": "Điều kiện sử dụng",
+                            "items": [
+                                "Phải trên 18 tuổi (hoặc tuổi đủ điều kiện theo quy định của quốc gia bạn đang sinh sống)."
+                            ]
+                        },
+                        {
+                            "title": "2. Dịch vụ nền tảng",
+                            "content": "Nền tảng MEMEPUMP cung cấp các dịch vụ sau:",
+                            "items": [
+                                "Giao dịch MEME: Sử dụng DEX hỗ trợ bridge như Jupiter Aggregator để giao dịch token MMPP.",
+                                "Theo dõi danh mục đầu tư: Theo dõi tài sản trên blockchain.",
+                                "Stake: Stake token MMPP để nhận phần thưởng (có thể thay đổi theo thời gian)."
+                            ],
+                            "disclaimer": "Chúng tôi chỉ cung cấp giao diện người dùng. Các hoạt động thực tế được thực hiện thông qua hợp đồng thông minh. Chúng tôi không có quyền kiểm soát các giao thức bên ngoài (ví, DEX, v.v.)."
+                        },
+                        {
+                            "title": "3. Sử dụng token (MMPP)",
+                            "items": [
+                                "Tham gia quản trị: Bạn có quyền bỏ phiếu cho các cải tiến trên nền tảng.",
+                                "Nhận phần thưởng stake: Nhận phần thưởng khi cung cấp thanh khoản và nhận phần thưởng từ MMPP.",
+                                "Tính năng premium: Stake token MMPP để truy cập các tính năng nâng cao như phân tích nâng cao, nội dung độc quyền, và giảm phí giao dịch trong SSI Protocol."
+                            ]
+                        },
+                        {
+                            "title": "4. Quốc gia và người dùng bị hạn chế",
+                            "items": [
+                                "Quốc gia bị hạn chế: Hoa Kỳ, Anh, Trung Quốc, Singapore, và các quốc gia trong danh sách đen FATF.",
+                                "Người dùng bị hạn chế: Người dùng bị đình chỉ, người dưới 18 tuổi, hoặc những người vi phạm luật của quốc gia."
+                            ]
+                        },
+                        {
+                            "title": "5. Trách nhiệm của người dùng",
+                            "items": [
+                                "Bảo mật: Bạn phải tự bảo quản khoá ví cá nhân một cách an toàn. Chúng tôi không thể phục hồi tài sản bị mất.",
+                                "Tuân thủ luật: Bạn phải tuân thủ tất cả các luật liên quan của quốc gia mà bạn đang sinh sống, và tự đăng ký và nộp thuế.",
+                                "Nghiên cứu: Trước khi giao dịch MEME, hãy thực hiện nghiên cứu kỹ lưỡng."
+                            ],
+                            "prohibited": "Hành vi bị cấm: Đánh bạc, làm giả, hành vi phạm pháp luật (ví dụ: rửa tiền, hỗ trợ tội phạm, v.v.), sử dụng lỗ hổng trên nền tảng"
+                        },
+                        {
+                            "title": "6. Rủi ro và miễn trách trách nhiệm",
+                            "items": [
+                                "Biến động thị trường: MEME coin có thể giảm giá 100% trong thời gian ngắn.",
+                                "Không có bảo đảm: Nền tảng này được cung cấp 'as is', không đảm bảo độ chính xác hoặc hoạt động liên tục.",
+                                "Rủi ro từ các bên thứ ba: Rủi ro từ các dịch vụ bên ngoài (ví, DEX, v.v.) như lỗi hoặc rủi ro bị hack."
+                            ],
+                            "liability": "Trách nhiệm giới hạn: Chúng tôi không chịu trách nhiệm cho: Hacking, lừa đảo, mất tài sản do lỗi của người dùng, tổn thất gián tiếp (ví dụ: tổn thất do thu nhập)."
+                        },
+                        {
+                            "title": "7. Quyền sở hữu trí tuệ",
+                            "content": "Tất cả nội dung trên nền tảng (logo, mã, UI, v.v.) thuộc sở hữu của MEMEPUMP. Giấy phép sử dụng giới hạn cho mục đích cá nhân, không thương mại."
+                        },
+                        {
+                            "title": "8. Hủy dịch vụ",
+                            "content": "Nền tảng có quyền tạm dừng hoặc hủy tài khoản người dùng nếu vi phạm điều khoản sử dụng."
+                        },
+                        {
+                            "title": "9. Giải quyết tranh chấp",
+                            "items": [
+                                "Trung tâm: Tất cả tranh chấp được giải quyết thông qua quy trình trung tâm BVI (BVI là quốc gia ảo trong BVI), và không được phép tham gia vào tố cáo các tổ chức.",
+                                "Luật định: Điều khoản này tuân theo luật của BVI."
+                            ]
+                        },
+                        {
+                            "title": "10. Thay đổi điều khoản",
+                            "content": "Nền tảng có quyền thay đổi điều khoản bất cứ lúc nào, và việc tiếp tục sử dụng sau khi thay đổi được coi là đồng ý với thay đổi đó."
+                        },
+                        {
+                            "title": "Liên hệ",
+                            "content": "Nếu bạn có câu hỏi, vui lòng liên hệ qua email: memepump@gmail.com"
+                        }
+                    ],
+                    "improvements": {
+                        "title": "Cải thiện",
+                        "items": [
+                        "Cấu trúc đơn giản: Các phần rõ ràng và điểm đánh dấu",
+                        "Ngôn ngữ người dùng: Sử dụng ít thuật ngữ pháp luật",
+                        "Cảnh báo rủi ro: Mô tả rủi ro đặc trưng của MEME coin",
+                        "Tuân thủ quy định: Nhấn mạnh việc tuân thủ các vấn đề pháp lý liên quan đến DeFi"
+                    ]
+                }
             },
-            "roadmap": {
-                "title": "6. Lộ trình & kế hoạch phát triển tương lai",
-                "items": [
-                    "Tổng quan lộ trình phát triển",
-                    "Kế hoạch phát triển từng giai đoạn"
-                ],
-                "summary": "Chương trình khai thác này không chỉ là công cụ phân phối token mà còn là động lực tăng tương tác, thúc đẩy hệ sinh thái phát triển bền vững."
-            },
-            "audit": {
-                "title": "7. Kiểm toán",
-                "items": [
-                    "Kiểm toán bên ngoài",
-                    "Kiểm toán bên trong"
-                ]
-            },
-            "terms": {
-                "title": "8. Điều khoản & Điều kiện",
-                "items": [
-                    "Điều khoản sử dụng",
-                    "Điều kiện dịch vụ"
-                ]
-            },
-            "privacy": {
-                "title": "9. Chính sách bảo mật",
-                "items": [
-                    "Chính sách bảo mật dữ liệu",
-                    "Chính sách bảo mật trang web"
-                ]
-            },
-            "faq": {
-                "title": "10. Câu hỏi thường gặp",
-                "items": [
-                    "Câu hỏi thường gặp về dự án",
-                    "Câu hỏi thường gặp về tokenomics",
-                    "Câu hỏi thường gặp về ứng dụng khai thác"
-                ]
+                "privacy": {
+                    "title": "9. Chính sách bảo mật",
+                    "overview": "MEMEPUMP coi việc bảo vệ quyền riêng tư và an toàn dữ liệu của người dùng là ưu tiên hàng đầu. Chính sách này mô tả cách nền tảng tuân thủ các tiêu chuẩn bảo vệ dữ liệu toàn cầu và cách thức thu thập, sử dụng và bảo vệ dữ liệu của người dùng.",
+                    "sections": [
+                        {
+                            "title": "1. Thu thập dữ liệu",
+                            "onchain": {
+                                "title": "Dữ liệu on-chain:",
+                                "content": "Lịch sử giao dịch, địa chỉ ví, và số dư token được ghi lại trên blockchain. Dữ liệu này công khai nhưng được ẩn danh."
+                            },
+                            "offchain": {
+                                "title": "Dữ liệu off-chain:",
+                                "content": "Dữ liệu từ các hoạt động của người dùng như giao dịch, đăng ký, và các hoạt động khác được lưu trữ trên nền tảng. Dữ liệu này được bảo mật và không được công khai."
+                            },
+                            "analytics": {
+                                "title": "Dữ liệu phân tích:",
+                                "content": "Dữ liệu phân tích sử dụng để cải thiện trải nghiệm người dùng và tối ưu hóa dịch vụ."
+                            }
+                        },
+                        {
+                            "title": "2. Sử dụng dữ liệu",
+                            "items": [
+                                "Bảo mật và tuân thủ quy định: Dữ liệu được sử dụng chủ yếu để duy trì bảo mật nền tảng, xác minh người dùng khi cần thiết, và tuân thủ các quy định liên quan.",
+                                "Cải thiện dịch vụ: Dữ liệu người dùng được sử dụng để tùy chỉnh dịch vụ, giải quyết vấn đề, và cải thiện chức năng tổng thể, trong khi vẫn bảo vệ quyền riêng tư của người dùng.",
+                                "Tương tác: Nếu người dùng đồng ý, dữ liệu liên hệ được sử dụng để cung cấp các thông tin cập nhật chính, thông báo từ nền tảng, và hỗ trợ khách hàng."
+                            ]
+                        },
+                        {
+                            "title": "3. Các biện pháp bảo vệ dữ liệu",
+                            "items": [
+                                "Mã hóa và lưu trữ an toàn: Dữ liệu nhạy cảm off-chain được mã hóa và lưu trữ an toàn, và chỉ có những người được phép truy cập.",
+                                "Phân tách tài sản: Tài sản on-chain và off-chain được quản lý bởi ví đa chữ ký và kiểm soát truy cập mạnh mẽ, có các biện pháp bảo vệ chống lại truy cập trái phép.",
+                                "Tuân thủ quy định: MEMEPUMP tuân thủ các quy định bảo vệ dữ liệu toàn cầu như GDPR, đảm bảo quyền lợi và tính toàn vẹn của người dùng."
+                            ]
+                        },
+                        {
+                            "title": "4. Quyền lợi và lưu trữ dữ liệu của người dùng",
+                            "items": [
+                                "Xem và chỉnh sửa dữ liệu: Người dùng có quyền yêu cầu xem và chỉnh sửa dữ liệu cá nhân mà chúng tôi giữ, và có thể yêu cầu chỉnh sửa khi cần thiết.",
+                                "Lưu trữ dữ liệu: Dữ liệu cá nhân được lưu trữ trong thời gian cần thiết để đạt được mục đích đã nêu trong chính sách, và sẽ được loại bỏ an toàn khi không còn cần thiết.",
+                                "Thay đổi chính sách: Chính sách bảo mật này có thể được cập nhật theo thời gian, và các thay đổi quan trọng sẽ được thông báo thông qua các kênh chính thức."
+                            ]
+                        }
+                    ],
+                    "contact": "Bằng cách sử dụng nền tảng MEMEPUMP, bạn đồng ý với nội dung trong chính sách bảo mật này. Vui lòng liên hệ qua email: support@memepump.com để biết thêm thông tin về quyền riêng tư và dữ liệu của bạn."
+                },
+                "faq": {
+                    "title": "10. Câu hỏi thường gặp",
+                    "questions": [
+                        {
+                            "question": "Ai cũng có thể mint hoặc burn MMPP token không?",
+                            "answer": "Không. Chỉ có những nhà cung cấp thanh khoản được phê duyệt (Whitelisted Liquidity Providers, WLP)** mới có thể thực hiện việc mint và burn MMPP token. Những nhà cung cấp này phải hoàn thành quy trình KYC và KYB, để đảm bảo tính hợp pháp và độ tin cậy của nền tảng. Người dùng thông thường có thể mua và giao dịch MMPP token tự do."
+                        },
+                        {
+                            "question": "Muốn mua lượng lớn MMPP token, có cách nào khác ngoài sàn giao dịch chính thức không?",
+                            "answer": "Có. Nếu bạn muốn mua lượng lớn, vui lòng liên hệ qua email: vip@memepump.com Chúng tôi sẽ hỗ trợ bạn với các tùy chọn giao dịch phù hợp nhất."
+                        },
+                        {
+                            "question": "Nền tảng sử dụng tài sản cơ sở như thế nào để bảo vệ?",
+                            "answer": "Tất cả tài sản cơ sở hỗ trợ nền tảng MEMEPUMP được bảo vệ thông qua hợp đồng thông minh và các sàn giao dịch được kiểm soát bởi các tổ chức được cấp giấy phép và được quản lý bởi các nhà cung cấp thanh khoản được phê duyệt (WLP). Các tổ chức này được kiểm soát bởi các nhà cung cấp thanh khoản được phê duyệt (WLP)."
+                        },
+                        {
+                            "question": "Nếu tài sản cơ sở có biến động, điều gì sẽ xảy ra?",
+                            "answer": "Các thay đổi về cấu trúc thanh khoản hoặc sự điều chỉnh về tỷ lệ tài sản sẽ được tự động áp dụng vào cơ chế token MMPP. Các cập nhật này thường được thực hiện theo chu kỳ hàng tháng và không yêu cầu người dùng thực hiện bất kỳ hành động nào. Nền tảng đảm bảo ổn định và linh hoạt để đáp ứng các thay đổi."
+                        },
+                        {
+                            "question": "Phí dịch vụ được tính như thế nào?",
+                            "answer": "MEMEPUMP protocol tính phí dịch vụ dựa trên giá trị tài sản cơ sở, với mức phí 0.01% mỗi ngày. Phí này được tự động tính toán hàng ngày thông qua hợp đồng thông minh, và được công khai để người dùng có thể kiểm tra và xác minh bất cứ lúc nào."
+                        },
+                        {
+                            "question": "Nếu bạn có thắc mắc hoặc vấn đề, liên hệ qua email nào?",
+                            "answer": "Vui lòng tham khảo tài liệu chính thức của MEMEPUMP và liên hệ qua email: support@memepump.com nếu bạn có thêm câu hỏi hoặc vấn đề."
+                        }
+                    ]
+                }
             }
         }
     }

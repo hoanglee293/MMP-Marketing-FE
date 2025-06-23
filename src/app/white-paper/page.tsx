@@ -2,6 +2,7 @@
 import React from 'react'
 import { useLang } from "@/lang/useLang"
 import WhitePaperPageTwo from './page-section'
+import { CheckIcon } from 'lucide-react'
 
 const WhitePaperPage = () => {
   const { t, tArray } = useLang()
@@ -21,14 +22,14 @@ const WhitePaperPage = () => {
         <section className="mb-12">
           <h2 className="text-3xl font-bold mb-6 text-yellow-400">{t('whitePaper.sections.introduction.title')}</h2>
           <div className="bg-white/10 backdrop-blur-sm rounded-lg p-6 mb-6">
-            <p className="text-lg leading-relaxed">
+            <p className="text-base leading-relaxed">
               {t('whitePaper.sections.introduction.description')}
             </p>
           </div>
 
           <div className="bg-red-500/20 border border-red-500/30 rounded-lg p-6 mb-6">
             <h3 className="text-xl font-bold mb-4 text-red-400">{t('whitePaper.sections.introduction.problems.title')}</h3>
-            <p className="mb-4">{t('whitePaper.sections.introduction.problems.description')}</p>
+            <p className="mb-4 text-sm">{t('whitePaper.sections.introduction.problems.description')}</p>
             <ul className="list-disc list-inside space-y-2 ml-4">
               {tArray('whitePaper.sections.introduction.problems.items').map((item: string, index: number) => (
                 <li key={index}>{item}</li>
@@ -38,11 +39,11 @@ const WhitePaperPage = () => {
 
           <div className="bg-green-500/20 border border-green-500/30 rounded-lg p-6">
             <h3 className="text-xl font-bold mb-4 text-green-400">{t('whitePaper.sections.introduction.solutions.title')}</h3>
-            <p className="mb-4">{t('whitePaper.sections.introduction.solutions.description')}</p>
+            <p className="mb-4 text-sm">{t('whitePaper.sections.introduction.solutions.description')}</p>
             <ul className="space-y-2">
               {tArray('whitePaper.sections.introduction.solutions.items').map((item: string, index: number) => (
-                <li key={index} className="flex items-start">
-                  <span className="text-green-400 mr-2">✅</span>
+                <li key={index} className="flex items-center">
+                  <span className="text-green-400 mr-2"><CheckIcon className="w-4 h-4" /></span>
                   <span>{item}</span>
                 </li>
               ))}
@@ -54,13 +55,13 @@ const WhitePaperPage = () => {
         <section className="mb-12">
           <h2 className="text-3xl font-bold mb-6 text-yellow-400">{t('whitePaper.sections.problems.title')}</h2>
           <div className="bg-white/10 backdrop-blur-sm rounded-lg p-6 mb-6">
-            <p className="text-lg leading-relaxed">
+            <p className="text-base leading-relaxed">
               {t('whitePaper.sections.problems.description')}
             </p>
           </div>
 
           <div className="grid gap-6">
-            <div className="bg-red-500/20 border border-red-500/30 rounded-lg p-6">
+            <div className="bg-blue-500/20 border border-red-500/30 rounded-lg p-6">
               <h3 className="text-xl font-bold mb-4 text-red-400">{t('whitePaper.sections.problems.subsections.rugPull.title')}</h3>
               <ul className="list-disc list-inside space-y-2 ml-4">
                 {tArray('whitePaper.sections.problems.subsections.rugPull.items').map((item: string, index: number) => (
@@ -78,7 +79,7 @@ const WhitePaperPage = () => {
               </ul>
             </div>
 
-            <div className="bg-red-500/20 border border-red-500/30 rounded-lg p-6">
+            <div className="bg-purple-500/20 border border-red-500/30 rounded-lg p-6">
               <h3 className="text-xl font-bold mb-4 text-red-400">{t('whitePaper.sections.problems.subsections.lackOfUtility.title')}</h3>
               <ul className="list-disc list-inside space-y-2 ml-4">
                 {tArray('whitePaper.sections.problems.subsections.lackOfUtility.items').map((item: string, index: number) => (
@@ -87,7 +88,7 @@ const WhitePaperPage = () => {
               </ul>
             </div>
 
-            <div className="bg-red-500/20 border border-red-500/30 rounded-lg p-6">
+            <div className="bg-green-500/20 border border-red-500/30 rounded-lg p-6">
               <h3 className="text-xl font-bold mb-4 text-red-400">{t('whitePaper.sections.problems.subsections.informationOverload.title')}</h3>
               <ul className="list-disc list-inside space-y-2 ml-4">
                 {tArray('whitePaper.sections.problems.subsections.informationOverload.items').map((item: string, index: number) => (
@@ -125,20 +126,20 @@ const WhitePaperPage = () => {
           
           <div className="bg-white/10 backdrop-blur-sm rounded-lg p-6 mb-6">
             <h3 className="text-2xl font-bold mb-4 text-blue-400">{t('whitePaper.sections.aiSolutions.dataInsights.title')}</h3>
-            <p className="text-lg leading-relaxed mb-4">
+            <p className="text-base leading-relaxed mb-4">
               {t('whitePaper.sections.aiSolutions.dataInsights.description')}
             </p>
             
             <h4 className="text-xl font-bold mb-3 text-blue-300">{t('whitePaper.sections.aiSolutions.dataInsights.whyNewParadigm.title')}</h4>
-            <p className="mb-4">{t('whitePaper.sections.aiSolutions.dataInsights.whyNewParadigm.description')}</p>
-            <ul className="list-disc list-inside space-y-2 ml-4 mb-6">
+            <p className="mb-4 text-sm">{t('whitePaper.sections.aiSolutions.dataInsights.whyNewParadigm.description')}</p>
+            <ul className="list-disc list-inside space-y-2 ml-4 mb-6 text-sm">
               {tArray('whitePaper.sections.aiSolutions.dataInsights.whyNewParadigm.items').map((item: string, index: number) => (
                 <li key={index}>{item}</li>
               ))}
             </ul>
             
             <h4 className="text-xl font-bold mb-3 text-blue-300">{t('whitePaper.sections.aiSolutions.dataInsights.dataFramework.title')}</h4>
-            <p className="mb-4">{t('whitePaper.sections.aiSolutions.dataInsights.dataFramework.description')}</p>
+            <p className="mb-4 text-sm">{t('whitePaper.sections.aiSolutions.dataInsights.dataFramework.description')}</p>
             
             <div className="grid gap-4">
               <div className="bg-blue-500/20 border border-blue-500/30 rounded-lg p-4">
@@ -150,7 +151,7 @@ const WhitePaperPage = () => {
                 </ul>
               </div>
 
-              <div className="bg-blue-500/20 border border-blue-500/30 rounded-lg p-4">
+              <div className="bg-green-500/20 border border-blue-500/30 rounded-lg p-4">
                 <h5 className="font-bold mb-2">{t('whitePaper.sections.aiSolutions.dataInsights.dataFramework.sections.sectorIndex.title')}</h5>
                 <p className="mb-2 text-sm">{t('whitePaper.sections.aiSolutions.dataInsights.dataFramework.sections.sectorIndex.description')}</p>
                 <ul className="list-disc list-inside space-y-1 ml-4 text-sm">
@@ -161,7 +162,7 @@ const WhitePaperPage = () => {
                 <p className="text-sm mt-2 italic">{t('whitePaper.sections.aiSolutions.dataInsights.dataFramework.sections.sectorIndex.example')}</p>
               </div>
 
-              <div className="bg-blue-500/20 border border-blue-500/30 rounded-lg p-4">
+              <div className="bg-orange-500/20 border border-blue-500/30 rounded-lg p-4">
                 <h5 className="font-bold mb-2">{t('whitePaper.sections.aiSolutions.dataInsights.dataFramework.sections.tokenAnalysis.title')}</h5>
                 <p className="mb-2 text-sm">{t('whitePaper.sections.aiSolutions.dataInsights.dataFramework.sections.tokenAnalysis.description')}</p>
                 <ul className="list-disc list-inside space-y-1 ml-4 text-sm">
@@ -171,7 +172,7 @@ const WhitePaperPage = () => {
                 </ul>
               </div>
 
-              <div className="bg-blue-500/20 border border-blue-500/30 rounded-lg p-4">
+              <div className="bg-purple-500/20 border border-blue-500/30 rounded-lg p-4">
                 <h5 className="font-bold mb-2">{t('whitePaper.sections.aiSolutions.dataInsights.dataFramework.sections.alphaNews.title')}</h5>
                 <ul className="list-disc list-inside space-y-1 ml-4 text-sm">
                   {tArray('whitePaper.sections.aiSolutions.dataInsights.dataFramework.sections.alphaNews.items').map((item: string, index: number) => (
@@ -180,7 +181,7 @@ const WhitePaperPage = () => {
                 </ul>
               </div>
 
-              <div className="bg-blue-500/20 border border-blue-500/30 rounded-lg p-4">
+              <div className="bg-green-500/20 border border-blue-500/30 rounded-lg p-4">
                 <h5 className="font-bold mb-2">{t('whitePaper.sections.aiSolutions.dataInsights.dataFramework.sections.onchainTrading.title')}</h5>
                 <ul className="list-disc list-inside space-y-1 ml-4 text-sm">
                   {tArray('whitePaper.sections.aiSolutions.dataInsights.dataFramework.sections.onchainTrading.items').map((item: string, index: number) => (
@@ -201,7 +202,7 @@ const WhitePaperPage = () => {
 
           <div className="bg-white/10 backdrop-blur-sm rounded-lg p-6">
             <h3 className="text-2xl font-bold mb-4 text-purple-400">{t('whitePaper.sections.aiSolutions.aiEnabled.title')}</h3>
-            <p className="text-lg leading-relaxed mb-6">
+            <p className="text-base leading-relaxed mb-6">
               {t('whitePaper.sections.aiSolutions.aiEnabled.description')}
             </p>
 
@@ -219,7 +220,7 @@ const WhitePaperPage = () => {
                 <p className="text-sm mt-2 italic">{t('whitePaper.sections.aiSolutions.aiEnabled.howAIChanges.sections.dataAnalysis.notification')}</p>
               </div>
 
-              <div className="bg-purple-500/20 border border-purple-500/30 rounded-lg p-4">
+              <div className="bg-green-500/20 border border-purple-500/30 rounded-lg p-4">
                 <h5 className="font-bold mb-2">{t('whitePaper.sections.aiSolutions.aiEnabled.howAIChanges.sections.marketPrediction.title')}</h5>
                 <p className="mb-2 text-sm">{t('whitePaper.sections.aiSolutions.aiEnabled.howAIChanges.sections.marketPrediction.description')}</p>
                 <ul className="list-disc list-inside space-y-1 ml-4 text-sm">
@@ -230,7 +231,7 @@ const WhitePaperPage = () => {
                 <p className="text-sm mt-2 italic">{t('whitePaper.sections.aiSolutions.aiEnabled.howAIChanges.sections.marketPrediction.briefing')}</p>
               </div>
 
-              <div className="bg-purple-500/20 border border-purple-500/30 rounded-lg p-4">
+              <div className="bg-blue-500/20 border border-purple-500/30 rounded-lg p-4">
                 <h5 className="font-bold mb-2">{t('whitePaper.sections.aiSolutions.aiEnabled.howAIChanges.sections.aiAssistant.title')}</h5>
                 <p className="mb-2 text-sm">{t('whitePaper.sections.aiSolutions.aiEnabled.howAIChanges.sections.aiAssistant.description')}</p>
                 <ul className="list-disc list-inside space-y-1 ml-4 text-sm">
@@ -263,14 +264,14 @@ const WhitePaperPage = () => {
             <div className="grid gap-6">
               <div className="bg-green-500/20 border border-green-500/30 rounded-lg p-4">
                 <h4 className="text-xl font-bold mb-3 text-green-300">{t('whitePaper.sections.tokenomics.memepumpToken.governance.title')}</h4>
-                <p className="text-sm leading-relaxed">
+                <p className="text-base leading-relaxed">
                   {t('whitePaper.sections.tokenomics.memepumpToken.governance.description')}
                 </p>
               </div>
 
-              <div className="bg-green-500/20 border border-green-500/30 rounded-lg p-4">
+              <div className="bg-blue-500/20 border border-green-500/30 rounded-lg p-4">
                 <h4 className="text-xl font-bold mb-3 text-green-300">{t('whitePaper.sections.tokenomics.memepumpToken.incentiveStructure.title')}</h4>
-                <p className="text-sm leading-relaxed mb-3">
+                <p className="text-base leading-relaxed mb-3">
                   {t('whitePaper.sections.tokenomics.memepumpToken.incentiveStructure.description')}
                 </p>
                 <ul className="list-disc list-inside space-y-2 ml-4 text-sm">
@@ -279,7 +280,7 @@ const WhitePaperPage = () => {
                   ))}
                 </ul>
               </div>
-              <div className="bg-green-500/20 border border-green-500/30 rounded-lg p-4">
+              <div className="bg-purple-500/20 border border-green-500/30 rounded-lg p-4">
                 <h4 className="text-xl font-bold mb-3 text-green-300">{t('whitePaper.sections.tokenomics.memepumpToken.incentiveStructureUpdate.title')}</h4>
                 <ul className="list-disc list-inside space-y-2 ml-4 text-sm">
                   {tArray('whitePaper.sections.tokenomics.memepumpToken.incentiveStructureUpdate.items').map((item: string, index: number) => (
@@ -405,9 +406,9 @@ const WhitePaperPage = () => {
         <WhitePaperPageTwo />
 
         {/* Footer */}
-        <div className="text-center mt-12 pt-8 border-t border-white/20">
+        <div className="text-center pt-2 border-t border-white/20">
           <p className="text-white/60">
-            © 2024 MEMEPUMP. All rights reserved.
+            © 2025 MEMEPUMP. All rights reserved.
           </p>
         </div>
       </div>

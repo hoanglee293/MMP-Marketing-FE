@@ -12,6 +12,7 @@ import { truncateString } from '@/utils/format'
 import { ArrowDownIcon, ChevronDown, CopyIcon, LogOut, Globe, Menu, X, ArrowDownUp } from 'lucide-react'
 import { useLang } from '@/lang/useLang'
 import { toast } from 'react-toastify'
+import Cookies from 'js-cookie'
 
 const Header = () => {
   const [activeTab, setActiveTab] = useState('overview')
@@ -236,7 +237,7 @@ const Header = () => {
             ) : (
               <div className='lg:flex gap-3 hidden'>
                 <span className="hidden sm:inline text-xs sm:text-sm text-neutral font-medium">{t('header.joinUs')}</span>
-                <div className='w-5 h-5 sm:w-6 sm:h-6 cursor-pointer flex items-center justify-center bg-neutral rounded-full' onClick={() => window.open(`${process.env.NEXT_PUBLIC_TELEGRAM_BOT_URL}=${sessionStorage.getItem('ref')}`, "_blank")} >
+                <div className='w-5 h-5 sm:w-6 sm:h-6 cursor-pointer flex items-center justify-center bg-neutral rounded-full' onClick={() => window.open(`${process.env.NEXT_PUBLIC_TELEGRAM_BOT_URL}=${Cookies.get("ref") || null}`, "_blank")} >
                   <img src="/tele-icon.png" alt="tele-icon" className='w-2.5 h-2.5 sm:w-3 sm:h-3' style={{ marginLeft: '-3px' }} />
                 </div>
                 <div className='w-5 h-5 sm:w-6 sm:h-6 cursor-pointer flex items-center justify-center bg-neutral rounded-full' onClick={handlePhantomSignIn}>
@@ -310,7 +311,7 @@ const Header = () => {
                 <div className="flex gap-2 justify-between">
                   <button 
                     className="flex items-center gap-2 px-4 py-2 bg-black/40 border-none rounded-lg text-xs text-white"
-                    onClick={() => window.open(`${process.env.NEXT_PUBLIC_TELEGRAM_BOT_URL}=${sessionStorage.getItem('ref')}`, "_blank")}
+                    onClick={() => window.open(`${process.env.NEXT_PUBLIC_TELEGRAM_BOT_URL}=${Cookies.get("ref") || null}`, "_blank")}
                   >
                     <img src="/tele-icon.png" alt="tele-icon" className="w-3 h-3" />
                     Telegram

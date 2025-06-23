@@ -14,7 +14,7 @@ function HomeContent() {
   useEffect(() => {
     const codeParam = searchParams.get('code');
     if (codeParam) {
-      Cookies.set('code', codeParam, { expires: 1 });
+      Cookies.set('ref', codeParam, { expires: 1 });
     }
 
     router.push('/swap');

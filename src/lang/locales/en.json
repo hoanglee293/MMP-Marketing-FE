@@ -5,7 +5,7 @@
     },
     "lang": {
         "en": "English",
-        "vi": "Vietnamese", 
+        "vi": "Vietnamese",
         "jp": "Japanese",
         "kr": "Korean"
     },
@@ -55,7 +55,7 @@
             "tx_id": "Transaction ID",
             "withdraw": "Withdraw",
             "deposit": "Deposit",
-            "completed": "Completed"        
+            "completed": "Completed"
         }
     },
     "universal_account": {
@@ -449,6 +449,15 @@
                                     "LP status monitoring: Detect fund outflows or suspicious withdrawals from liquidity pools",
                                     "Paper trading laboratory: Test meme coin strategies risk-free before real investment"
                                 ]
+                            },
+                            "onchainUpdate": {
+                                "title": "5.1 On-chain Trading Update",
+                                "description": "MEMEPUMP's on-chain trading features are constantly evolving to provide the best trading experience. We've added:",
+                                "items": [
+                                    "Real-time market analysis: AI-powered insights for every coin",
+                                    "Personalized watchlists: Tailored to your trading style"
+                                ],
+                                "content": "This update enhances MEMEPUMP's on-chain trading features, making it more intuitive and efficient for traders."
                             }
                         }
                     }
@@ -488,6 +497,15 @@
                                     "Paper trading simulation: Test strategies risk-free through AI-generated scenarios"
                                 ],
                                 "watchlist": "Custom watchlist reports: e.g., \"Among my watched coins, $WIF up 40%, $BONK trending in Vietnam\""
+                            },
+                            "aiAssistantUpdate": {
+                                "title": "3.3 AI Assistant Update",
+                                "description": "MEME-GPT is constantly evolving to provide the best trading experience. We've added:",
+                                "items": [
+                                    "Real-time market analysis: AI-powered insights for every coin",
+                                    "Personalized watchlists: Tailored to your trading style"
+                                ],
+                                "content": "This update enhances MEME-GPT's functionality, making it more intuitive and efficient for traders."
                             }
                         }
                     }
@@ -508,6 +526,22 @@
                             "Participation rewards: MEMEPUMP tokens are distributed daily to users actively engaging in trading, community activities, and content sharing.",
                             "Liquidity & Simulation incentives: Users contributing to real trading liquidity pools or participating in simulation investment ecosystems receive rewards.",
                             "Content and data accuracy bounties: Members who discover or fix data errors or contribute useful content are rewarded with MEMEPUMP tokens."
+                        ]
+                    },
+                    "incentiveStructureUpdate": {
+                        "title": "Ecosystem Incentive Structure Update",
+                        "description": "MEMEPUMP tokens are the core incentive mechanism of the platform and activate the ecosystem in the following ways:",
+                        "items": [
+                            "Participation rewards: MEMEPUMP tokens are distributed daily to users actively engaging in trading, community activities, and content sharing.",
+                            "Liquidity & Simulation incentives: Users contributing to real trading liquidity pools or participating in simulation investment ecosystems receive rewards.",
+                            "Content and data accuracy bounties: Members who discover or fix data errors or contribute useful content are rewarded with MEMEPUMP tokens."
+                        ]
+                    },
+                    "incentiveStructureUpdate2": {
+                        "title": "Staking for Premium Features",
+                        "items": [
+                            "In addition to basic incentives, users who stake MEMEPUMP tokens can access various premium features:",
+                            "Users who stake a certain amount of MEMEPUMP tokens will have access to advanced analytics tools, exclusive content, transaction fee discounts in SSI Protocol, and other additional services."
                         ]
                     }
                 },
@@ -649,7 +683,10 @@
             },
             "miningApp": {
                 "title": "4.5 Mining App",
-                "overview": "The MMPP token mining program is integrated into the project's official website and aims to create a fair and transparent token distribution environment within the community. The main goal is for users to earn points by performing various online activities and tasks, which can later be converted into MMPP tokens. This expands the ecosystem and promotes sustainable community participation and growth.",
+                "overview": {
+                    "title": "1. Overview",
+                    "content": "The MMPP token mining program is integrated into the project's official website and aims to create a fair and transparent token distribution environment within the community. The main goal is for users to earn points by performing various online activities and tasks, which can later be converted into MMPP tokens. This expands the ecosystem and promotes sustainable community participation and growth."
+                },
                 "mechanism": {
                     "title": "2. MMPP Token Mining Mechanism",
                     "mining": {
@@ -846,12 +883,15 @@
                             "content": "For questions, please contact us at: memepump@gmail.com"
                         }
                     ],
-                    "improvements": [
-                        "Concise structure: Clear sections and bullet point composition",
-                        "User-centered language: Minimized use of legal terminology",
-                        "Enhanced risk disclosure: Clearly explains meme coin-specific risks",
-                        "Regulatory compliance emphasis: Explicitly mentions DeFi-related legal issues"
-                    ]
+                    "improvements": {
+                        "title": "Improvements",
+                        "items": [
+                            "Concise structure: Clear sections and bullet point composition",
+                            "User-centered language: Minimized use of legal terminology",
+                            "Enhanced risk disclosure: Clearly explains meme coin-specific risks",
+                            "Regulatory compliance emphasis: Explicitly mentions DeFi-related legal issues"
+                        ]
+                    }
                 },
                 "privacy": {
                     "title": "5.5 Privacy Policy",
