@@ -328,8 +328,11 @@
         "structure": {
             "your_reward": "당신의 보상",
             "total_commission": "총 수수료",
-            "paid_in": "로 지급",
-            "note": "참고: 보상을 받으려면 최소 $5의 MMP 토큰 스왑을 수행해야 합니다. 스왑을 수행하지 않은 경우 보상 금액은 대기 상태가 됩니다."
+            "paid_in": "으로 지급",
+            "note": "참고: 보상을 받으려면 최소 5달러 상당의 MMP 토큰을 스왑해야 합니다. 스왑을 수행하지 않은 경우 보상 금액은 보류 상태가 됩니다.",
+            "when_downline_buys": "다운라인이 구매 시",
+            "when_downline_buys_mpb": "당신의 하위 유저가 MPB를 구매할 때",
+            "when_downline_buys_mmp": "당신의 하위 유저가 MMP를 구매할 때"
         },
         "noReferredUsers": "아직 추천된 사용자가 없습니다."
     },

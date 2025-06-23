@@ -107,7 +107,7 @@ const ExchangeToken = () => {
 
   return (
     <div className='bg-feature bg-[#020616BD]/60 z-50 w-full h-svh flex items-center justify-center relative pt-20 overflow-hidden'>
-      <div className='absolute top-0 right-0 w-full h-full bg-[#020616c2]' />
+      <div className='absolute top-0 right-0 w-full h-full bg-[#020616c2] backdrop-blur-lg' />
       <div className='container mx-auto px-4 relative mb-[10%]'>
         <div className='flex flex-col items-center justify-center gap-4 relative h-[50px]'>
           <h2
@@ -131,7 +131,7 @@ const ExchangeToken = () => {
             MMP and MPB are two pioneering exchange-issued coins that represent a breakthrough in the world of Web3 and decentralized platforms. Built on Solana, they are not just liquidity tokens but also tools for creating value and opportunities for the community, aiming to establish a sustainable and powerful ecosystem.
           </p>
         </div>
-        <div className='flex w-full items-center justify-evenly relative mt-20'>
+        <div className='flex w-full items-center justify-evenly relative mt-[10%]'>
           <div className='w-1/2 max-w-[316px] flex flex-col items-center justify-center gap-10'>
             <img 
               ref={mmpImageRef}

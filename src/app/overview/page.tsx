@@ -3,6 +3,7 @@ import React from 'react'
 import Features from './features'
 import { useIntersectionObserver } from '@/hooks/useIntersectionObserver'
 import ExchangeToken from './exchange-token'
+import Tokenomics from './tokenomics'
 
 const page = () => {
     const { elementRef: titleRef, isIntersecting: titleInView } = useIntersectionObserver<HTMLHeadingElement>({
@@ -57,6 +58,7 @@ const page = () => {
             </div>
             <Features />
             <ExchangeToken />
+            <Tokenomics />
         </div>
 
     )

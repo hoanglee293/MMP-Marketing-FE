@@ -82,23 +82,23 @@ export default function ReferralDashboard() {
           {/* Stats Cards */}
           <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-3 sm:gap-4 md:gap-6">
             <Card className="bg-gradient-purple-cyan-60 h-auto min-h-[80px] sm:min-h-[90px]  flex flex-col justify-around border-primary-100 border border-solid rounded-xl backdrop-blur-sm p-3 xl:p-4">
-                <p className="text-neutral text-sm sm:text-base mb-1">{t('referral.totalReferrals')}</p>
-                <p className="text-lg sm:text-xl font-bold text-white">{referralStatistics?.total_referrals || 0}</p>
+              <p className="text-neutral text-sm sm:text-base mb-1">{t('referral.totalReferrals')}</p>
+              <p className="text-lg sm:text-xl font-bold text-white">{referralStatistics?.total_referrals || 0}</p>
             </Card>
 
             <Card className="bg-gradient-purple-cyan-60 h-auto min-h-[80px] sm:min-h-[90px]  flex flex-col justify-around border-primary-100 border border-solid rounded-xl backdrop-blur-sm p-3 xl:p-4">
               <p className="text-neutral text-sm sm:text-base mb-1">{t('referral.totalEarnings')}</p>
               <div className="flex flex-col sm:flex-row gap-1 sm:gap-2 justify-around">
-                <p className="text-base sm:text-lg xl:text-xl font-medium text-white">
-                  MMP: {referralStatistics?.total_reward_mmp || 0}
-                </p>
-                <p className="text-base sm:text-lg xl:text-xl font-medium text-white">
+                <p className="text-xs sm:text-sm xl:text-base font-medium text-white">
                   SOL: {referralStatistics?.total_reward_sol || 0}
                 </p>
-                {/* <p className="text-base sm:text-lg xl:text-xl font-bold text-white">
-                MPB: {referralStatistics?.total_reward_mpb || 0}
-              </p> */}
-            </div>
+                <p className="text-xs sm:text-sm xl:text-base font-medium text-white">
+                  MMP: {referralStatistics?.total_reward_mmp || 0}
+                </p>
+                <p className="text-xs sm:text-sm xl:text-base font-bold text-white">
+                  MPB: {referralStatistics?.total_reward_mpb || 0}
+                </p>
+              </div>
             </Card>
             <Card className="bg-gradient-purple-cyan-60 h-auto min-h-[80px] sm:min-h-[90px]  flex flex-col justify-around border-primary-100 border border-solid rounded-xl backdrop-blur-sm p-3 xl:p-4 sm:col-span-2 lg:col-span-1">
               <p className="text-neutral text-sm sm:text-base mb-1">{t('referral.activeReferrals')}</p>
@@ -140,7 +140,7 @@ export default function ReferralDashboard() {
                           <div className="w-8 h-8 bg-gradient-to-r from-purple to-cyan rounded-full flex items-center justify-center text-xs font-bold mr-3 shrink-0">
                             {user.sol_address.charAt(0).toUpperCase()}
                           </div>
-                          <span className="font-medium text-sm truncate">{truncateString(user.sol_address, 12)}</span>
+                          <span className="font-medium text-sm truncate text-neutral">{truncateString(user.sol_address, 12)}</span>
                         </div>
                         <div className="grid grid-cols-2 gap-2 text-xs">
                           <div className="text-slate-300">
@@ -176,7 +176,7 @@ export default function ReferralDashboard() {
                   <div className="text-neutral col-span-2">{t('referral.user')}</div>
                   <div className="text-neutral">{t('referral.joinDate')}</div>
                   <div className="text-neutral text-right">{t('referral.earnings')} (SOL)</div>
-                  <div className="text-neutral text-right">{t('referral.earnings')} (MMP)</div>
+                  <div className="text-neutral text-right">{t('referral.earnings')} (MMP/MPB)</div>
                 </div>
 
                 {/* Table Data */}
@@ -199,11 +199,12 @@ export default function ReferralDashboard() {
                             day: 'numeric'
                           })}
                         </div>
-                        <div className="flex items-center justify-end font-bold text-green-500">
-                          {user.total_reward_sol.toFixed(2)}
+                        <div className="flex items-center justify-end lg:mr-[5%] font-bold text-green-500">
+                          {user.total_reward_sol}
                         </div>
                         <div className="flex flex-col items-end font-bold">
-                          <div className="text-green-500">{user.total_reward_mmp} <span className="text-xs text-neutral">MMP</span></div>
+                          <div className="text-green-500">{user.total_reward_mmp ?? 0} <span className="text-xs text-neutral">MMP</span></div>
+                          <div className="text-green-500">{user.total_reward_mpb ?? 0} <span className="text-xs text-neutral">MPB</span></div>
                         </div>
                       </div>
                     ))}

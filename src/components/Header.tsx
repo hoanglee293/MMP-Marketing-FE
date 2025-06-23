@@ -27,9 +27,9 @@ const Header = () => {
     // { id: 'overview', href: '/overview', label: t('header.overview'), icon: '📊', isActive: true },
     { id: 'swap', href: '/swap', label: t('header.swap'), icon: <ArrowDownUp className='w-3 h-3 sm:w-4 sm:h-4' />, isActive: true },
     { id: 'deposit', href: '/deposit', label: t('header.deposit'), icon: '💰', isActive: isAuthenticated },
-    { id: 'withdraw', href: '/withdraw', label: t('header.withdraw'), icon: '💰', isActive: isAuthenticated },
+    { id: 'withdraw', href: '/withdraw', label: t('header.withdraw'), icon: '💰', isActive: isAuthenticated && loginMethod != "phantom" },
     // { id: 'stake', href: '/stake', label: t('header.stake'), icon: '🔒' },
-    { id: 'referral', href: '/referral', label: t('header.referral'), icon: '👥', isActive: isAuthenticated },
+    { id: 'referral', href: '/referral', label: t('header.referral'), icon: '👥', isActive: isAuthenticated && loginMethod != "phantom" },
     { id: 'white-paper', href: '/white-paper', label: t('header.whitePaper'), icon: '📄', isActive: true },
   ]
 

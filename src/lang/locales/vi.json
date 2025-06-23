@@ -327,9 +327,12 @@
             "regular_customer": "Khách hàng thông thường",
             "bj_influencer": "BJ / Người có ảnh hưởng",
             "total_commission": "Tổng hoa hồng",
-            "paid_in": "trả bằng",
+            "paid_in": "thanh toán bằng",
             "your_reward": "Phần thưởng của bạn",
-            "note": "Lưu ý: Bạn cần thực hiện swap đồng MMP với tối thiểu 5$ thì mới có thể được trả thưởng, khi bạn chưa thực hiện thì số phần thưởng của bạn sẽ ở trạng thái chờ."
+            "note": "Lưu ý: Bạn cần thực hiện một giao dịch hoán đổi token MMP với giá trị tối thiểu là 5$ để đủ điều kiện nhận phần thưởng. Khi bạn chưa thực hiện giao dịch hoán đổi, số tiền thưởng của bạn sẽ ở trạng thái chờ xử lý.",
+            "when_downline_buys": "Khi cấp dưới của bạn mua",
+            "when_downline_buys_mpb": "Khi cấp dưới của bạn mua MPB",
+            "when_downline_buys_mmp": "Khi cấp dưới của bạn mua MMP"
         },
         "noReferredUsers": "Chưa có người dùng nào được giới thiệu."
     },
