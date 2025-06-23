@@ -8,19 +8,19 @@ const WhitePaperPage = () => {
   const { t, tArray } = useLang()
 
   return (
-    <div className="min-h-screen bg-gradient-to-br from-purple-900 via-blue-900 to-indigo-900 text-white">
+    <div className="min-h-screen  text-white">
       <div className="container mx-auto px-4 py-8 max-w-4xl">
         {/* Header */}
-        <div className="text-center mb-12">
-          <h1 className="text-5xl font-bold mb-4 bg-gradient-to-r from-yellow-400 to-orange-500 bg-clip-text text-transparent">
+        <div className="text-center lg:mb-12 mb-6">
+          <h1 className="text-2xl lg:text-5xl font-bold mb-4 bg-gradient-to-r from-yellow-400 to-orange-500 bg-clip-text text-transparent">
             {t('whitePaper.title')}
           </h1>
           <div className="w-24 h-1 bg-gradient-to-r from-yellow-400 to-orange-500 mx-auto"></div>
         </div>
 
         {/* Section 1: Introduction */}
-        <section className="mb-12">
-          <h2 className="text-3xl font-bold mb-6 text-yellow-400">{t('whitePaper.sections.introduction.title')}</h2>
+        <section className="lg:mb-12 mb-6">
+          <h2 className="text-xl lg:text-3xl font-bold mb-6 text-yellow-400">{t('whitePaper.sections.introduction.title')}</h2>
           <div className="bg-white/10 backdrop-blur-sm rounded-lg p-6 mb-6">
             <p className="text-base leading-relaxed">
               {t('whitePaper.sections.introduction.description')}
@@ -52,8 +52,8 @@ const WhitePaperPage = () => {
         </section>
 
         {/* Section 2: Problems */}
-        <section className="mb-12">
-          <h2 className="text-3xl font-bold mb-6 text-yellow-400">{t('whitePaper.sections.problems.title')}</h2>
+        <section className="lg:mb-12 mb-6">
+          <h2 className="text-xl lg:text-3xl font-bold mb-6 text-yellow-400">{t('whitePaper.sections.problems.title')}</h2>
           <div className="bg-white/10 backdrop-blur-sm rounded-lg p-6 mb-6">
             <p className="text-base leading-relaxed">
               {t('whitePaper.sections.problems.description')}
@@ -121,11 +121,11 @@ const WhitePaperPage = () => {
         </section>
 
         {/* Section 3: AI Solutions */}
-        <section className="mb-12">
-          <h2 className="text-3xl font-bold mb-6 text-yellow-400">{t('whitePaper.sections.aiSolutions.title')}</h2>
+        <section className="lg:mb-12 mb-6">
+          <h2 className="text-xl lg:text-3xl font-bold mb-6 text-yellow-400">{t('whitePaper.sections.aiSolutions.title')}</h2>
           
           <div className="bg-white/10 backdrop-blur-sm rounded-lg p-6 mb-6">
-            <h3 className="text-2xl font-bold mb-4 text-blue-400">{t('whitePaper.sections.aiSolutions.dataInsights.title')}</h3>
+            <h3 className="text-xl lg:text-2xl font-bold mb-4 text-blue-400">{t('whitePaper.sections.aiSolutions.dataInsights.title')}</h3>
             <p className="text-base leading-relaxed mb-4">
               {t('whitePaper.sections.aiSolutions.dataInsights.description')}
             </p>
@@ -201,12 +201,12 @@ const WhitePaperPage = () => {
           </div>
 
           <div className="bg-white/10 backdrop-blur-sm rounded-lg p-6">
-            <h3 className="text-2xl font-bold mb-4 text-purple-400">{t('whitePaper.sections.aiSolutions.aiEnabled.title')}</h3>
+            <h3 className="text-xl lg:text-2xl font-bold mb-4 text-purple-400">{t('whitePaper.sections.aiSolutions.aiEnabled.title')}</h3>
             <p className="text-base leading-relaxed mb-6">
               {t('whitePaper.sections.aiSolutions.aiEnabled.description')}
             </p>
 
-            <h4 className="text-xl font-bold mb-3 text-purple-300">{t('whitePaper.sections.aiSolutions.aiEnabled.howAIChanges.title')}</h4>
+            <h4 className="text-lg lg:text-xl font-bold mb-3 text-purple-300">{t('whitePaper.sections.aiSolutions.aiEnabled.howAIChanges.title')}</h4>
             
             <div className="grid gap-6">
               <div className="bg-purple-500/20 border border-purple-500/30 rounded-lg p-4">
@@ -255,11 +255,11 @@ const WhitePaperPage = () => {
         </section>
 
         {/* Section 4: Tokenomics */}
-        <section className="mb-12">
-          <h2 className="text-3xl font-bold mb-6 text-yellow-400">{t('whitePaper.sections.tokenomics.title')}</h2>
+        <section className="lg:mb-12 mb-6">
+          <h2 className="text-xl lg:text-3xl font-bold mb-6 text-yellow-400">{t('whitePaper.sections.tokenomics.title')}</h2>
           
           <div className="bg-white/10 backdrop-blur-sm rounded-lg p-6 mb-6">
-            <h3 className="text-2xl font-bold mb-4 text-green-400">{t('whitePaper.sections.tokenomics.memepumpToken.title')}</h3>
+            <h3 className="text-xl lg:text-2xl font-bold mb-4 text-green-400">{t('whitePaper.sections.tokenomics.memepumpToken.title')}</h3>
             
             <div className="grid gap-6">
               <div className="bg-green-500/20 border border-green-500/30 rounded-lg p-4">
@@ -300,7 +300,7 @@ const WhitePaperPage = () => {
           </div>
 
           <div className="bg-white/10 backdrop-blur-sm rounded-lg p-6 mb-6">
-            <h3 className="text-2xl font-bold mb-4 text-green-400">{t('whitePaper.sections.tokenomics.tokenomics.title')}</h3>
+            <h3 className="text-xl lg:text-2xl font-bold mb-4 text-green-400">{t('whitePaper.sections.tokenomics.tokenomics.title')}</h3>
             
             <div className="grid gap-4">
               <div className="bg-blue-500/20 border border-blue-500/30 rounded-lg p-4">
@@ -363,7 +363,7 @@ const WhitePaperPage = () => {
           </div>
 
           <div className="bg-white/10 backdrop-blur-sm rounded-lg p-6">
-            <h3 className="text-2xl font-bold mb-4 text-green-400">{t('whitePaper.sections.tokenomics.airdrop.title')}</h3>
+            <h3 className="text-xl lg:text-2xl font-bold mb-4 text-green-400">{t('whitePaper.sections.tokenomics.airdrop.title')}</h3>
             
             <div className="grid gap-4">
               <div className="bg-green-500/20 border border-green-500/30 rounded-lg p-4">
