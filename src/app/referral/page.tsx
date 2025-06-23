@@ -96,7 +96,7 @@ export default function ReferralDashboard() {
                   MMP: {referralStatistics?.total_reward_mmp || 0}
                 </p>
                 <p className="text-xs sm:text-sm xl:text-base font-bold text-white">
-                  MPB: {referralStatistics?.total_reward_mpb || 0}
+                  {/* MPB: {referralStatistics?.total_reward_mpb || 0} */}
                 </p>
               </div>
             </Card>
@@ -176,7 +176,7 @@ export default function ReferralDashboard() {
                   <div className="text-neutral col-span-2">{t('referral.user')}</div>
                   <div className="text-neutral">{t('referral.joinDate')}</div>
                   <div className="text-neutral text-right">{t('referral.earnings')} (SOL)</div>
-                  <div className="text-neutral text-right">{t('referral.earnings')} (MMP/MPB)</div>
+                  <div className="text-neutral text-right">{t('referral.earnings')} (MMP)</div>
                 </div>
 
                 {/* Table Data */}
@@ -204,7 +204,7 @@ export default function ReferralDashboard() {
                         </div>
                         <div className="flex flex-col items-end font-bold">
                           <div className="text-green-500">{user.total_reward_mmp ?? 0} <span className="text-xs text-neutral">MMP</span></div>
-                          <div className="text-green-500">{user.total_reward_mpb ?? 0} <span className="text-xs text-neutral">MPB</span></div>
+                          {/* <div className="text-green-500">{user.total_reward_mpb ?? 0} <span className="text-xs text-neutral">MPB</span></div> */}
                         </div>
                       </div>
                     ))}
