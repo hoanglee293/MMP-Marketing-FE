@@ -74,7 +74,8 @@
         "phantomNotInstalled": "Ví Phantom chưa được cài đặt. Vui lòng cài đặt trước.",
         "phantomConnectionFailed": "Không thể kết nối với ví Phantom",
         "phantomSignatureFailed": "Không thể ký tin nhắn với ví Phantom",
-        "phantomAuthFailed": "Không thể xác thực với ví Phantom"
+        "phantomAuthFailed": "Không thể xác thực với ví Phantom",
+        "processingPhantomLogin": "Đang xử lý đăng nhập với ví Phantom..."
     },
     "tglogin": {
         "title": "Hoàn thành Hồ sơ",

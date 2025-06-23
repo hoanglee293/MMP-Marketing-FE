@@ -353,7 +353,7 @@ export default function SwapInterface() {
             <h2 className="bg-gradient-purple-cyan bg-clip-text text-xl lg:text-3xl font-bold leading-7  text-center mb-6">{t("swap.swapGuide")}</h2>
 
             <div className="flex-1 flex flex-col justify-around ">
-              <div className=" rounded-xl px-4 pb-4">
+              <div className=" rounded-xl lg:px-4 pb-4">
                 <ul className=" leading-6 flex flex-col gap-3">
                   {guild.map((item, index) => (
                     <li key={index} className="text-neutral text-xs lg:text-sm flex items-start  gap-2">
@@ -364,8 +364,8 @@ export default function SwapInterface() {
                 </ul>
 
               </div>
-              <div className="rounded-xl overflow-hidden">
-                <img src="/okv.jpg" alt="swap-guide" className="w-full h-auto " />
+              <div className="rounded-xl overflow-hidden flex justify-center">
+                <img src="/okv.jpg" alt="swap-guide" className="w-full h-auto md:w-auto md:h-80 lg:h-96" />
               </div>
             </div>
           </div>
@@ -748,9 +748,9 @@ export default function SwapInterface() {
         </div>
 
         {/* Main Swap Interface */}
-        <Card className="w-full lg:w-[600px] bg-black/6060 flex lg:flex-col flex-col-reverse gap-4 order-1 lg:order-2">
+        <Card className="w-full lg:max-w-[700px] bg-black/6060 flex lg:flex-col flex-col-reverse gap-4 order-1 lg:order-2">
           <div className="flex gap-6 w-full">
-            <div className="flex flex-col gap-4 bg-black/60 text-[#bf46d7] p-3 md:p-6 rounded-xl leading-6 text-xs lg:text-sm flex-1" dangerouslySetInnerHTML={{
+            <div className="flex flex-col gap-4 bg-black/60 text-[#bf46d7] p-3 md:p-6 rounded-xl leading-6 text-xs lg:text-sm flex-1 max-w-[300px]" dangerouslySetInnerHTML={{
               __html: t("swap.specialOpportunity.message")
             }} />
             <div className="bg-black/60 text-[#d961f1] p-3 md:p-6 rounded-xl leading-6 text-xs lg:text-sm gap-2 pt-4 flex-1">
@@ -772,7 +772,7 @@ export default function SwapInterface() {
 
               <div className="text-neutral text-xs lg:text-sm text-right leading-5 gap-2">
                 {sellToken && isAuthenticated && (
-                  <div className="flex flex-col gap-[6px]">
+                  <div className="flex lg:flex-col items-end justify-end gap-[6px]">
                     <span className="text-xs lg:text-sm ">{t("swap.myBalance")}: <span className="bg-gradient-purple-cyan bg-clip-text">{getTokenBalance(sellToken.symbol)}</span>&ensp;{sellToken.symbol}</span>
                     <span className="text-xs lg:text-sm "> <span className="bg-gradient-purple-cyan bg-clip-text">{balances?.mmp}</span>&ensp;MMP</span>
                     <span className="text-xs lg:text-sm "> <span className="bg-gradient-purple-cyan bg-clip-text">{balances?.mpb}</span>&ensp;MPB</span>
@@ -875,7 +875,7 @@ export default function SwapInterface() {
               </div>
               <div className="text-xs lg:text-sm text-right leading-5 gap-2 pt-4">
                 <span className="text-primary text-base ">(*) &ensp;</span>
-                <span className="text-yellow-500 text-sm" dangerouslySetInnerHTML={{
+                <span className="text-yellow-500 text-xs" dangerouslySetInnerHTML={{
                   __html: t("swap.networkFee.firstTimeFee")
                 }} />
               </div>

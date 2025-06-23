@@ -79,7 +79,8 @@
         "phantomNotInstalled": "Phantom wallet is not installed. Please install it first.",
         "phantomConnectionFailed": "Failed to connect to Phantom wallet",
         "phantomSignatureFailed": "Failed to sign message with Phantom wallet",
-        "phantomAuthFailed": "Failed to authenticate with Phantom wallet"
+        "phantomAuthFailed": "Failed to authenticate with Phantom wallet",
+        "processingPhantomLogin": "Processing Phantom login..."
     },
     "tglogin": {
         "title": "Complete Your Profile",
@@ -118,6 +119,11 @@
         "sell": "Sell",
         "buy": "Buy",
         "noSwapHistory": "No swap history available",
+        "networkFee": {
+            "message": "When swapping, a Solana network fee ({fee}) will be incurred. <br /> It is recommended to purchase directly in SOL.",
+            "recommendation": "It is recommended to purchase directly in SOL.",
+            "firstTimeFee": "For the first IDO purchase, a network fee of approximately 0.0025 SOL is required for ATA creation. <br /> After additional purchases, the network fee per swap is reduced to approximately 0.00005 SOL."
+        },
         "guildMembership": "Guild Membership",
         "guildDescription": "Join our exclusive guild system to unlock premium features, earn rewards, and connect with other traders. Guild members enjoy reduced fees, priority support, and exclusive trading opportunities.",
         "joinGuild": "Join Guild",
@@ -131,6 +137,16 @@
             "If they choose not to stake, they can withdraw MMP/MPB from their exchange wallet back to their personal wallet, paying only the network fee.",
             "When withdrawing SOL, USDT, or USDC from the exchange wallet to a personal wallet, a flat $1 withdrawal fee applies."
         ],
+        "specialOpportunity": {
+            "title": "Special Opportunity",
+            "message": "MMP/MPB Initial Sale in Progress <br/> First Sale: 0.001 SOL (July 31, 2025) <br/> Second Sale: 0.002 SOL (Scheduled to be announced)"
+        },
+        "holdingBenefits": {
+            "title": "Holding Benefits",
+            "synergyProject": "Synergy Project Execution",
+            "airdropDistribution": "5% of Airdrop supply will be distributed to holders",
+            "earlyParticipants": "Early participants receive larger rewards"
+        },
         "errors": {
             "enterValidAmount": "Please enter a valid amount swap",
             "selectToken": "Please select a token to swap",

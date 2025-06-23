@@ -72,7 +72,8 @@
         "phantomNotInstalled": "Phantomウォレットがインストールされていません。先にインストールしてください。",
         "phantomConnectionFailed": "Phantomウォレットへの接続に失敗しました",
         "phantomSignatureFailed": "Phantomウォレットでのメッセージ署名に失敗しました",
-        "phantomAuthFailed": "Phantomウォレットでの認証に失敗しました"
+        "phantomAuthFailed": "Phantomウォレットでの認証に失敗しました",
+        "processingPhantomLogin": "Phantomログインを処理中..."
     },
     "tglogin": {
         "title": "プロフィールを完成させる",
