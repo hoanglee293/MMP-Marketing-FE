@@ -95,9 +95,6 @@ export default function ReferralDashboard() {
                 <p className="text-xs sm:text-sm xl:text-base font-medium text-white">
                   MMP: {referralStatistics?.total_reward_mmp || 0}
                 </p>
-                <p className="text-xs sm:text-sm xl:text-base font-bold text-white">
-                  {/* MPB: {referralStatistics?.total_reward_mpb || 0} */}
-                </p>
               </div>
             </Card>
             <Card className="bg-gradient-purple-cyan-60 h-auto min-h-[80px] sm:min-h-[90px]  flex flex-col justify-around border-primary-100 border border-solid rounded-xl backdrop-blur-sm p-3 xl:p-4 sm:col-span-2 lg:col-span-1">
@@ -204,7 +201,6 @@ export default function ReferralDashboard() {
                         </div>
                         <div className="flex flex-col items-end font-bold">
                           <div className="text-green-500">{user.total_reward_mmp ?? 0} <span className="text-xs text-neutral">MMP</span></div>
-                          {/* <div className="text-green-500">{user.total_reward_mpb ?? 0} <span className="text-xs text-neutral">MPB</span></div> */}
                         </div>
                       </div>
                     ))}

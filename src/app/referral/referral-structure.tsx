@@ -23,7 +23,7 @@ export default function ReferralStructure({ type }: { type: string }) {
                 <p className="text-[#e10cf2] mb-3 sm:mb-4 text-sm sm:text-base">{t('referral.structure.total_commission')} </p>
                 <div className="flex flex-col sm:flex-row gap-4 sm:gap-6 xl:gap-10 items-center justify-center text-xs sm:text-sm">
                   <p>+ 5% {t('referral.structure.paid_in')} SOL</p>
-                  <p>+ 5% {t('referral.structure.paid_in')} MPB</p>
+                  <p>+ 5% {t('referral.structure.paid_in')} MMP</p>
                 </div>
               </div>
 
@@ -40,7 +40,7 @@ export default function ReferralStructure({ type }: { type: string }) {
             </div>
 
             <div>
-              <p className="text-xs sm:text-sm mt-6 text-yellow-400 max-w-[50%] mx-auto">{t('referral.structure.note')}</p>
+              <p className="text-xs sm:text-sm mt-6 text-yellow-400 max-w-[52%] mx-auto">{t('referral.structure.note')}</p>
             </div>
           </>
         )}
@@ -59,7 +59,7 @@ export default function ReferralStructure({ type }: { type: string }) {
                 <p className="text-[#e10cf2] mb-3 sm:mb-4 text-sm sm:text-base">{t('referral.structure.total_commission')}</p>
                 <div className="flex flex-col sm:flex-row gap-4 sm:gap-6 xl:gap-10 text-xs sm:text-sm">
                   <p>+ 10% {t('referral.structure.paid_in')} SOL</p>
-                  <p>+ 10% {t('referral.structure.paid_in')} MPB</p>
+                  <p>+ 10% {t('referral.structure.paid_in')} MMP</p>
                 </div>
               </div>
 
@@ -77,7 +77,7 @@ export default function ReferralStructure({ type }: { type: string }) {
               </div>
             </div>
             <div>
-              <p className="text-xs sm:text-sm mt-6 text-yellow-400 max-w-[50%] mx-auto">{t('referral.structure.note')}</p>
+              <p className="text-xs sm:text-sm mt-6 text-yellow-400 max-w-[52%] mx-auto">{t('referral.structure.note')}</p>
             </div>
           </>
         )}
