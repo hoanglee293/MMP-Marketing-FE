@@ -1,9 +1,24 @@
 'use client'
 import BoxFeauture from '@/components/border'
-import React from 'react'
+import React, { useState, useEffect } from 'react'
 import { useIntersectionObserver } from '@/hooks/useIntersectionObserver'
 
 const features = () => {
+    const [windowWidth, setWindowWidth] = useState(0);
+    const [isClient, setIsClient] = useState(false);
+
+    useEffect(() => {
+        setIsClient(true);
+        setWindowWidth(window.innerWidth);
+        
+        const handleResize = () => {
+            setWindowWidth(window.innerWidth);
+        };
+        
+        window.addEventListener('resize', handleResize);
+        return () => window.removeEventListener('resize', handleResize);
+    }, []);
+
     const { elementRef: titleRef, isIntersecting: titleInView } = useIntersectionObserver<HTMLHeadingElement>({
         threshold: 0.3,
         rootMargin: '-50px'
@@ -38,8 +53,6 @@ const features = () => {
         threshold: 0.3,
         rootMargin: '-50px'
     });
-
-    console.log("width", window.innerWidth)
 
     return (
         <div className='bg-feature bg-[#020616BD]/60 z-50 w-full h-svh flex items-center justify-center relative pt-20 overflow-hidden'>
@@ -129,8 +142,8 @@ const features = () => {
                                 className={`animate-fade-in-up-delayed hover:scale-105 transition-transform duration-300 ${feature1InView ? 'in-view' : ''}`}
                             >
                                 <BoxFeauture>
-                                    <div className={`text-neutral font-medium bg-gradient-to-t from-white to-[#00C0FF] bg-clip-text ${window.innerWidth < 1600 ? 'text-sm' : 'text-lg'}`}>Hybrid DeFi + Simulated Trading</div>
-                                    <div className={`text-neutral ${window.innerWidth < 1600 ? 'text-xs' : 'text-sm'} mt-1`}>
+                                    <div className={`text-neutral font-medium bg-gradient-to-t from-white to-[#00C0FF] bg-clip-text ${isClient && windowWidth < 1600 ? 'text-sm' : 'text-lg'}`}>Hybrid DeFi + Simulated Trading</div>
+                                    <div className={`text-neutral ${isClient && windowWidth < 1600 ? 'text-xs' : 'text-sm'} mt-1`}>
                                         A unique ecosystem combining real trading with risk-free simulation markets.
                                     </div>
                                 </BoxFeauture>

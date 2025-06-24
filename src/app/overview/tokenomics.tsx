@@ -1,5 +1,4 @@
 'use client'
-import TokenomicSvg from '@/components/tokenomic-svg';
 import { useIntersectionObserver } from '@/hooks/useIntersectionObserver';
 import React from 'react'
 
