@@ -39,6 +39,8 @@ const features = () => {
         rootMargin: '-50px'
     });
 
+    console.log("width", window.innerWidth)
+
     return (
         <div className='bg-feature bg-[#020616BD]/60 z-50 w-full h-svh flex items-center justify-center relative pt-20 overflow-hidden'>
             <div className='absolute top-0 right-0 w-full h-full bg-[#020616c2] backdrop-blur-lg' />
@@ -99,13 +101,13 @@ const features = () => {
             </div>
             <div className='h-full mx-36 py-8 relative z-20 flex flex-col justify-around '>
                 <div className='flex flex-col items-center justify-center gap-4 relative h-[50px]'>
-                    <h2 
+                    <h2
                         ref={titleRef}
                         className={`title-feature text-[36px] xl:text-[48px] bg-clip-text absolute top-0 left-0 w-full h-full text-center animate-fade-in-up ${titleInView ? 'in-view' : ''}`}
                     >
                         Key Features
                     </h2>
-                    <h3 
+                    <h3
                         ref={title2Ref}
                         className={`text-[#DFE0EF] text-[36px] xl:text-[48px] webkit-text-stroke-1 font-bold bg-black/60 xl:min-w-[440px] min-w-[300px] h-full text-center z-10 leading-none animate-fade-in-up-delayed ${title2InView ? 'in-view' : ''}`}
                     >
@@ -113,33 +115,33 @@ const features = () => {
                     </h3>
                 </div>
                 <div className='flex justify-between items-center xl:mx-10 mx-20'>
-                    <div 
+                    <div
                         ref={imageRef}
-                        className={`animate-fade-in-left animate-float ${imageInView ? 'in-view' : ''}`}
+                        className={`animate-fade-in-left animate-float basis-1/2 ${imageInView ? 'in-view' : ''}`}
                     >
-                        <img src="/layout-features.png" alt="feature-1" className='max-h-[1000px] w-full min-w-[400px] xl:min-w-[800px] h-auto object-cover' />
+                        <img src="/layout-features.png" alt="feature-1" className='max-h-[1000px] w-full min-w-[400px] 2xl:min-w-[600px] h-auto object-cover' />
                     </div>
                     <div className='flex flex-col md:flex-row justify-center items-start gap-6 flex-1'>
                         {/* Left Column */}
-                        <div className='flex flex-col gap-[140px] w-full  md:w-1/2 md:max-w-md md:mt-[23%]'>
-                            <div 
+                        <div className='flex flex-col gap-[140px] w-full md:mt-[23%]'>
+                            <div
                                 ref={feature1Ref}
                                 className={`animate-fade-in-up-delayed hover:scale-105 transition-transform duration-300 ${feature1InView ? 'in-view' : ''}`}
                             >
                                 <BoxFeauture>
-                                    <div className='text-neutral text-base xl:text-xl font-medium bg-gradient-to-t from-white to-[#00C0FF] bg-clip-text'>Hybrid DeFi + Simulated Trading</div>
-                                    <div className='text-neutral text-sm xl:text-lg mt-2'>
+                                    <div className={`text-neutral font-medium bg-gradient-to-t from-white to-[#00C0FF] bg-clip-text ${window.innerWidth < 1600 ? 'text-sm' : 'text-lg'}`}>Hybrid DeFi + Simulated Trading</div>
+                                    <div className={`text-neutral ${window.innerWidth < 1600 ? 'text-xs' : 'text-sm'} mt-1`}>
                                         A unique ecosystem combining real trading with risk-free simulation markets.
                                     </div>
                                 </BoxFeauture>
                             </div>
-                            <div 
+                            <div
                                 ref={feature2Ref}
                                 className={`animate-fade-in-up-more-delayed hover:scale-105 transition-transform duration-300 ${feature2InView ? 'in-view' : ''}`}
                             >
                                 <BoxFeauture>
-                                    <div className='text-neutral text-base xl:text-xl font-medium bg-gradient-to-t from-white to-[#00C0FF] bg-clip-text'>Global Expansion Focus</div>
-                                    <div className='text-neutral text-sm xl:text-lg mt-2'>
+                                    <div className='text-neutral text-sm font-medium bg-gradient-to-t from-white to-[#00C0FF] bg-clip-text'>Global Expansion Focus</div>
+                                    <div className='text-neutral text-xs mt-1'>
                                         Aggressive marketing and partnerships to ensure long-term growth.
                                     </div>
                                 </BoxFeauture>
@@ -148,24 +150,24 @@ const features = () => {
 
                         {/* Right Column */}
                         <div className='flex flex-col gap-[140px] w-full'>
-                            <div 
+                            <div
                                 ref={feature3Ref}
                                 className={`animate-fade-in-up-delayed hover:scale-105 transition-transform duration-300 ${feature3InView ? 'in-view' : ''}`}
                             >
                                 <BoxFeauture>
-                                    <div className='text-neutral text-base xl:text-xl font-medium bg-gradient-to-t from-white to-[#00C0FF] bg-clip-text'>55% Community Rewards</div>
-                                    <div className='text-neutral text-sm xl:text-lg mt-2'>
+                                    <div className='text-neutral text-sm font-medium bg-gradient-to-t from-white to-[#00C0FF] bg-clip-text'>55% Community Rewards</div>
+                                    <div className='text-neutral text-xs mt-1'>
                                         The largest share of tokens goes directly to users via trading incentives, staking, and engagement.
                                     </div>
                                 </BoxFeauture>
                             </div>
-                            <div 
+                            <div
                                 ref={feature4Ref}
                                 className={`animate-fade-in-up-more-delayed hover:scale-105 transition-transform duration-300 ${feature4InView ? 'in-view' : ''}`}
                             >
                                 <BoxFeauture>
-                                    <div className='text-neutral text-base xl:text-xl font-medium bg-gradient-to-t from-white to-[#00C0FF] bg-clip-text'>DAO-Ready Governance</div>
-                                    <div className='text-neutral text-sm xl:text-lg mt-2'>
+                                    <div className='text-neutral text-sm font-medium bg-gradient-to-t from-white to-[#00C0FF] bg-clip-text'>DAO-Ready Governance</div>
+                                    <div className='text-neutral text-xs mt-1'>
                                         A portion of reserves is allocated for future decentralized decision-making.
                                     </div>
                                 </BoxFeauture>

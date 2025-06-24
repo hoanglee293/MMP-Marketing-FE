@@ -71,15 +71,12 @@ export default function SwapInterface() {
     queryKey: ['solPrice'],
     queryFn: () => SwapService.gerSolPrice(),
   })
-  console.log("solPrice", solPrice)
   const { data: swapOrderHistory, refetch: refetchSwapOrderHistory } = useQuery({
     queryKey: ['swapOrder'],
     queryFn: () => SwapService.getSwapOrder(),
   })
 
   const { balances, isConnected, error } = useWsWalletBalance(myWallet?.sol_address);
-  console.log(balances);
-  console.log("balances", balances);
 
   // Format swap order history data for display
   const formatSwapHistory = () => {

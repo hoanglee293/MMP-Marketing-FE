@@ -34,16 +34,22 @@ const Header = () => {
   ]
 
   
-  const { data: myWallet } = useQuery({
+  const { data: myWallet, refetch: refetchMyWallet } = useQuery({
     queryKey: ['myWallet'],
-    queryFn: () => TelegramWalletService.getmyWallet(),
+    queryFn: async () => {
+      const res = await TelegramWalletService.getmyWallet();
+      if(res.status === 401) {
+        handleLogout()
+      }else{
+        return res
+      }
+    },
     enabled: isAuthenticated,
   })
-  console.log("myWallet", myWallet)
+  
 
   const handleGoogleSignIn = async () => {
     window.open(`https://accounts.google.com/o/oauth2/v2/auth?client_id=${process.env.NEXT_PUBLIC_GOOGLE_CLIENT_ID}&redirect_uri=${process.env.NEXT_PUBLIC_GOOGLE_REDIRECT_URI}&response_type=code&scope=email%20profile&access_type=offline`)
-    console.log("handleGoogleSignIn")
   }
 
   const handleLogout = () => {
@@ -155,6 +161,7 @@ const Header = () => {
                   'text-xs sm:text-sm text-neutral font-medium cursor-pointer hover:opacity-80 transition-opacity rounded-lg px-2 py-1', 
                   pathname === tab.href && 'bg-gradient-purple-cyan bg-clip-text'
                 )} 
+                onClick={() => refetchMyWallet()}
                 href={tab.href} 
                 key={tab.id}
               >

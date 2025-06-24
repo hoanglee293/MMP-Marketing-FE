@@ -72,7 +72,7 @@ export function ConnectWalletModal({ open, onOpenChange }: ConnectWalletModalPro
 
   return (
     <Dialog open={open} onOpenChange={onOpenChange} >
-      <DialogContent className="bg-black/60 border-[#d7d7d7]/20 text-white max-w-md">
+      <DialogContent className="bg-black/80 border-[#d7d7d7]/20 text-white max-w-md">
         <DialogHeader className="text-center">
           <DialogTitle className="bg-gradient-purple-cyan bg-clip-text text-2xl font-bold kati-font text-center">
             {t("connectWalletModal.title")}
