@@ -101,13 +101,13 @@ export default function DepositPanel() {
                 }
                 console.log("prepareResponse", prepareResponse)
                 // Step 2: Sign and send transaction
-                const signature = await Web3WalletService.signAndSendTransaction(
-                    prepareResponse.transaction
-                )
+                // const signature = await Web3WalletService.signAndSendTransaction(
+                //     prepareResponse.transaction
+                // )
 
                 // Step 3: Complete the staking transaction
                 await createStakingPhantomCompleted({
-                    signedTransaction: signature,
+                    signedTransaction: prepareResponse.transaction,
                     staking_plan_id: Number(selectedStake)
                 })
             } else {
@@ -264,7 +264,7 @@ export default function DepositPanel() {
             {/* Stake Button */}
             <Button 
                 onClick={handleStake} 
-                className="w-full h-10  bg-gradient-to-r from-purple-600 to-cyan-500 border-none hover:from-purple-700 hover:to-cyan-600 text-white font-bold text-base sm:text-lg rounded-full transition-all duration-300 transform hover:scale-105 disabled:opacity-50 disabled:cursor-not-allowed disabled:transform-none"
+                className="w-full h-10 cursor-pointer bg-gradient-to-r from-purple-600 to-cyan-500 border-none hover:from-purple-700 hover:to-cyan-600 text-white font-bold text-base sm:text-lg rounded-full transition-all duration-300 transform hover:scale-105 disabled:opacity-50 disabled:cursor-not-allowed disabled:transform-none"
                 // disabled={isLoading || !selectedStake || !depositAmount || Number(depositAmount) <= 0 || Number(depositAmount) > Number(balances?.mmp || 0)}
             >
                 {isLoading ? t("stake.stakeProcessing") : t("stake.stake")}

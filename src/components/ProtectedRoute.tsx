@@ -17,8 +17,6 @@ export function ProtectedRoute({ children, fallback }: ProtectedRouteProps) {
   const [showConnectModal, setShowConnectModal] = useState(false)
   const pathname = usePathname()
   const isPublicPage = ["/swap", "/white-paper"].includes(pathname)
-  console.log("pathname", pathname)
-  console.log("isPublicPage", isPublicPage)
   if (!isAuthenticated && !isPublicPage) {
     return (
       <>

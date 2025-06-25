@@ -19,7 +19,7 @@ function StakingDashboardContent() {
     })
 
     return (
-        <div className="flex-1 max-h-svh flex items-center justify-center p-2 sm:p-4 z-20  bg-stake">
+        <div className="flex-1 max-h-svh flex items-center justify-center p-2 sm:p-4 z-20">
             <div className="w-full px-2 sm:px-4 py-3 sm:py-6 flex-1 max-h-svh text-white gap-6 flex flex-col container mx-auto">
                 {/* Mobile: Single column layout, Desktop: Two column layout */}
                 <div className="flex flex-col lg:flex-row gap-3 sm:gap-6">

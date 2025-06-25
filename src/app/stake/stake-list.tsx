@@ -305,7 +305,7 @@ export default function StakeList() {
                     />
                 ))
             ) : (
-                <div className={`flex justify-center items-center ${window.innerHeight > 600 ? 'h-[60vh]' : 'h-[70vh]'} text-neutral text-sm sm:text-base`}>
+                <div className={`flex justify-center items-center ${window.innerHeight < 870 ? 'h-[60vh]' : 'h-[70vh]'} text-neutral text-sm sm:text-base`}>
                     {t("stake.noStakingDataAvailable")}
                 </div>
             )}
