@@ -1,7 +1,12 @@
 {
     "home": {
         "title": "홈페이지",
-        "redirecting": "리디렉션 중..."
+        "redirecting": "리다이렉팅 중..."
+    },
+    "protectedRoute": {
+        "welcome": "MMP에 오신 것을 환영합니다",
+        "connectWalletRequired": "이 페이지에 접근하려면 지갑을 연결해 주세요",
+        "connectWallet": "지갑 연결"
     },
     "lang": {
         "en": "영어",
@@ -1047,50 +1052,14 @@
         "apy": "APY",
         "stake": "스테이킹",
         "stakeProcessing": "처리 중...",
-        "usdApprox": "≈ {amount} USD"
-    },
-    "referral": {
-        "title": "레퍼럴 대시보드",
-        "yourReferralLink": "나의 레퍼럴 링크",
-        "copied": "클립보드에 복사되었습니다!",
-        "totalReferrals": "총 레퍼럴 수",
-        "totalEarnings": "총 수익",
-        "activeReferrals": "활성 레퍼럴",
-        "bjReferrals": "BJ 레퍼럴",
-        "normalReferrals": "일반 레퍼럴",
-        "withdraw": "출금",
-        "referralStructure": "레퍼럴 구조",
-        "yourReferrals": "나의 레퍼럴",
-        "referredUsers": "추천된 사용자",
-        "levelReferral": "레벨별 레퍼럴",
-        "normal": "일반",
-        "bj": "유명 인사",
-        "user": "사용자",
-        "joinDate": "가입일",
-        "level": "레벨",
-        "earnings": "수익",
-        "hide": "숨기기",
-        "show": "보이기",
-        "type": "유형",
-        "levels": {
-            "all": "전체",
-            "level1": "레벨 1",
-            "level2": "레벨 2",
-            "level3": "레벨 3",
-            "level4": "레벨 4",
-            "level5": "레벨 5",
-            "level6": "레벨 6",
-            "level7": "레벨 7"
-        },
-        "structure": {
-            "your_reward": "당신의 보상",
-            "total_commission": "총 수수료",
-            "paid_in": "으로 지급",
-            "note": "참고: 보상을 받으려면 최소 5달러 상당의 MMP 토큰을 스왑해야 합니다. 스왑을 수행하지 않은 경우 보상 금액은 보류 상태가 됩니다.",
-            "when_downline_buys": "다운라인이 구매 시",
-            "when_downline_buys_mpb": "당신의 하위 유저가 MPB를 구매할 때",
-            "when_downline_buys_mmp": "당신의 하위 유저가 MMP를 구매할 때"
-        },
-        "noReferredUsers": "아직 추천된 사용자가 없습니다."
+        "usdApprox": "≈ {amount} USD",
+        "months": "개월",
+        "pleaseEnterValidAmount": "유효한 금액을 입력하세요",
+        "pleaseSelectStakePlan": "스테이크 플랜을 선택하세요",
+        "invalidAmount": "유효하지 않은 금액",
+        "insufficientBalance": "잔액이 부족합니다. 사용 가능: {balance} MMP",
+        "invalidStakePeriod": "유효하지 않은 스테이크 기간",
+        "stakeSuccess": "스테이크가 성공적으로 생성되었습니다!",
+        "stakeError": "스테이크 생성에 실패했습니다. 다시 시도해 주세요."
     }
 }

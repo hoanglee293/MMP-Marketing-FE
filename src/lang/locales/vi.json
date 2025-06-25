@@ -3,6 +3,11 @@
         "title": "Trang chủ",
         "redirecting": "Đang chuyển hướng..."
     },
+    "protectedRoute": {
+        "welcome": "Chào mừng đến với MMP",
+        "connectWalletRequired": "Vui lòng kết nối ví để truy cập trang này",
+        "connectWallet": "Kết nối ví"
+    },
     "lang": {
         "en": "Tiếng Anh",
         "vi": "Tiếng Việt",
@@ -1041,6 +1046,14 @@
         "apy": "APY",
         "stake": "ĐẶT CỌC",
         "stakeProcessing": "Đang xử lý...",
-        "usdApprox": "≈ {amount} USD"
+        "usdApprox": "≈ {amount} USD",
+        "months": "tháng",
+        "pleaseEnterValidAmount": "Vui lòng nhập số tiền hợp lệ",
+        "pleaseSelectStakePlan": "Vui lòng chọn kế hoạch stake",
+        "invalidAmount": "Số tiền không hợp lệ",
+        "insufficientBalance": "Số dư không đủ. Có sẵn: {balance} MMP",
+        "invalidStakePeriod": "Thời gian stake không hợp lệ",
+        "stakeSuccess": "Tạo stake thành công!",
+        "stakeError": "Không thể tạo stake. Vui lòng thử lại."
     }
 }

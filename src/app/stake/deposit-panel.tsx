@@ -4,12 +4,15 @@ import { useState } from "react"
 import { Input } from "@/ui/input"
 import { Button } from "@/ui/button"
 import { Pencil, ChevronDown, ChevronUp } from "lucide-react"
-import { createStaking, getStakingPlans } from "@/services/api/StakingService"
+import { createStaking, createStakingPhantomConfirm, getStakingPlans, createStakingPhantomCompleted } from "@/services/api/StakingService"
 import { useQuery, useQueryClient } from "@tanstack/react-query"
 import { TelegramWalletService } from "@/services/api"
+import { Web3WalletService } from "@/services/api/Web3WalletService"
 import { useWsWalletBalance } from "@/hooks/useWsWalletBalance"
 import { useLang } from "@/lang/useLang"
 import { useStakingContext } from "@/contexts/StakingContext"
+import { toast } from "react-toastify"
+import { useAuth } from "@/hooks/useAuth"
 
 export default function DepositPanel() {
     const [depositAmount, setDepositAmount] = useState<string>("0.00")
@@ -21,6 +24,7 @@ export default function DepositPanel() {
     const { t } = useLang()
     const queryClient = useQueryClient()
     const { refreshStakingData } = useStakingContext()
+    const { loginMethod } = useAuth()
 
     const { data: stakingPlans } = useQuery({
         queryKey: ["staking-plans"],
@@ -51,19 +55,71 @@ export default function DepositPanel() {
     }
 
     const handleStake = async () => {
-        if (!selectedStake || !depositAmount || Number(depositAmount) <= 0) {
+        // Validate required fields first
+        if (!selectedStake) {
+            toast.error(t("stake.pleaseSelectStakePlan") || "Please select a stake plan")
+            return
+        }
+
+        if (!depositAmount || Number(depositAmount) <= 0) {
+            toast.error(t("stake.pleaseEnterValidAmount") || "Please enter a valid amount")
+            return
+        }
+
+        // Validate deposit amount format
+        const amount = Number(depositAmount)
+        if (isNaN(amount) || amount <= 0) {
+            toast.error(t("stake.invalidAmount") || "Invalid amount")
+            return
+        }
+
+        // Check if user has sufficient balance
+        const availableBalance = Number(balances?.mmp || 0)
+        if (amount > availableBalance) {
+            toast.error(t("stake.insufficientBalance")?.replace("{balance}", availableBalance.toString()) || `Insufficient balance. Available: ${availableBalance} MMP`)
+            return
+        }
+
+        // Validate stake months
+        if (!stakeMonths || Number(stakeMonths) <= 0) {
+            toast.error(t("stake.invalidStakePeriod") || "Invalid stake period")
             return
         }
 
         setIsLoading(true)
         try {
-            await createStaking({ 
-                staking_plan_id: Number(selectedStake), 
-                amount_staked: Number(depositAmount), 
-                lock_months: Number(stakeMonths) / 30 
-            })
+            if(loginMethod == "phantom") {
+                // Phantom wallet flow
+                // Step 1: Prepare transaction
+                const prepareResponse = await createStakingPhantomConfirm({
+                    amount_staked: amount, 
+                    lock_months: Number(stakeMonths) / 30
+                })
+                
+                if (!prepareResponse.transaction) {
+                    throw new Error("Failed to prepare transaction")
+                }
+                console.log("prepareResponse", prepareResponse)
+                // Step 2: Sign and send transaction
+                const signature = await Web3WalletService.signAndSendTransaction(
+                    prepareResponse.transaction
+                )
+
+                // Step 3: Complete the staking transaction
+                await createStakingPhantomCompleted({
+                    signedTransaction: signature,
+                    staking_plan_id: Number(selectedStake)
+                })
+            } else {
+                // Regular flow for other login methods
+                await createStaking({ 
+                    staking_plan_id: Number(selectedStake), 
+                    amount_staked: amount, 
+                    lock_months: Number(stakeMonths) / 30 
+                })
+            }
             
-            // Phương án 1: Invalidate và refetch các queries liên quan (React Query)
+            // Invalidate và refetch các queries liên quan (React Query)
             await Promise.all([
                 queryClient.invalidateQueries({ queryKey: ["list-staking"] }),
                 queryClient.invalidateQueries({ queryKey: ["staking-plans"] }),
@@ -71,7 +127,7 @@ export default function DepositPanel() {
                 refetchMyWallet()
             ])
             
-            // Phương án 2: Trigger refresh thông qua Context
+            // Trigger refresh thông qua Context
             refreshStakingData()
             
             // Reset form
@@ -80,18 +136,38 @@ export default function DepositPanel() {
             setStakeMonths("")
             setStakeName("")
             
+            // Show success message
+            toast.success(t("stake.stakeSuccess") || "Stake created successfully!")
+            
         } catch (error) {
             console.error("Error creating staking:", error)
+            
+            // Handle specific Phantom wallet errors
+            if (loginMethod === "phantom" && error instanceof Error) {
+                if (error.message.includes('User rejected') || error.message.includes('User cancelled')) {
+                    toast.error(t("services.errors.phantomTransactionRejected") || "Transaction was rejected by user")
+                } else if (error.message.includes('Wallet not connected')) {
+                    toast.error(t("services.errors.phantomNotConnected") || "Phantom wallet is not connected")
+                } else {
+                    toast.error(t("stake.stakeError") || "Failed to create stake. Please try again.")
+                }
+            } else {
+                toast.error(t("stake.stakeError") || "Failed to create stake. Please try again.")
+            }
         } finally {
             setIsLoading(false)
         }
     }
 
+    // const handleTest = async () => {
+    //     await test({signedTransaction: "5nxkghmFPvxAhJNP6j89gkPyNybfmr4edNGij33noKRu1BFEX5FkSGAfNb2HyhpqCpEDCCuTtUWvHsjNEcT1eAeW", staking_plan_id: 1})
+    // }
+
     return (
         <div className="bg-black/40 backdrop-blur-xl rounded-xl sm:rounded-2xl p-3 sm:p-6 border border-purple-500/20 flex-1 flex flex-col justify-between">
-            <div className="text-center mb-3 sm:mb-5">
-                <h2 className="bg-gradient-purple-cyan bg-clip-text text-xl sm:text-2xl lg:text-3xl font-bold leading-7 text-center mb-1 sm:mb-2 font-tektur">{t("stake.depositMmp")}</h2>
-                <h3 className="bg-gradient-purple-cyan bg-clip-text text-xl sm:text-2xl lg:text-3xl font-bold leading-7 font-tektur text-center mb-1 sm:mb-2">{t("stake.earnContinuously")}</h3>
+            <div className="text-center mb-3 ">
+                <h2 className="bg-gradient-purple-cyan bg-clip-text text-xl sm:text-2xl lg:text-3xl font-bold leading-7 text-center mb-1 font-tektur">{t("stake.depositMmp")}</h2>
+                <h3 className="bg-gradient-purple-cyan bg-clip-text text-xl sm:text-2xl lg:text-3xl font-bold leading-7 font-tektur text-center mb-1">{t("stake.earnContinuously")}</h3>
             </div>
 
             <div className="flex-1 flex flex-col">
@@ -102,7 +178,7 @@ export default function DepositPanel() {
 
                 {/* Deposit Section */}
                 <div className="space-y-3 sm:space-y-4 mb-4 sm:mb-6">
-                    <div className="bg-dark-100 rounded-xl flex justify-start flex-col p-3 sm:p-4 border border-gray-700/50">
+                    <div className="bg-dark-100 rounded-xl flex justify-start flex-col p-3 border border-gray-700/50">
                         <p className="text-xs sm:text-sm text-gray-400 mb-1">{t("stake.deposit")}</p>
                         <div className="flex items-center justify-between">
                             <div className="flex items-center">
@@ -113,9 +189,25 @@ export default function DepositPanel() {
                                 <input 
                                     type="number" 
                                     min={0} 
+                                    step="0.01"
                                     className="bg-transparent text-base sm:text-lg border-none max-w-[80px] sm:max-w-[100px] font-bold text-white outline-none appearance-none [&::-webkit-outer-spin-button]:appearance-none [&::-webkit-inner-spin-button]:appearance-none text-right" 
                                     value={depositAmount} 
-                                    onChange={(e) => setDepositAmount(e.target.value)} 
+                                    onChange={(e) => {
+                                        const value = e.target.value
+                                        // Prevent negative values
+                                        if (value.startsWith('-')) return
+                                        // Allow empty string or valid numbers
+                                        if (value === '' || /^\d*\.?\d*$/.test(value)) {
+                                            setDepositAmount(value)
+                                        }
+                                    }}
+                                    onBlur={(e) => {
+                                        // Format to 2 decimal places on blur
+                                        const value = Number(e.target.value)
+                                        if (!isNaN(value) && value >= 0) {
+                                            setDepositAmount(value.toFixed(2))
+                                        }
+                                    }}
                                 />
                                 <p className="text-xs text-gray-400">≈ {Number(depositAmount) / 1000} USD</p>
                             </div>
@@ -127,7 +219,7 @@ export default function DepositPanel() {
                         <p className="text-xs sm:text-sm text-gray-400 mb-1">{t("stake.depositTerm")}</p>
                         <div className="bg-gradient-purple-cyan rounded-xl p-[1px]">
                             <div
-                                className="bg-black rounded-xl px-3 sm:px-4 py-2 sm:py-3 cursor-pointer transition-all duration-200 hover:border-gray-600/70"
+                                className="bg-black rounded-xl px-3 sm:px-4 py-2 cursor-pointer transition-all duration-200 hover:border-gray-600/70"
                                 onClick={() => setIsSelectOpen(!isSelectOpen)}
                             >
                                 <div className="flex items-center justify-between">
@@ -172,8 +264,8 @@ export default function DepositPanel() {
             {/* Stake Button */}
             <Button 
                 onClick={handleStake} 
-                className="w-full h-10 sm:h-12 bg-gradient-to-r from-purple-600 to-cyan-500 hover:from-purple-700 hover:to-cyan-600 text-white font-bold text-base sm:text-lg rounded-full transition-all duration-300 transform hover:scale-105"
-                disabled={isLoading}
+                className="w-full h-10  bg-gradient-to-r from-purple-600 to-cyan-500 border-none hover:from-purple-700 hover:to-cyan-600 text-white font-bold text-base sm:text-lg rounded-full transition-all duration-300 transform hover:scale-105 disabled:opacity-50 disabled:cursor-not-allowed disabled:transform-none"
+                // disabled={isLoading || !selectedStake || !depositAmount || Number(depositAmount) <= 0 || Number(depositAmount) > Number(balances?.mmp || 0)}
             >
                 {isLoading ? t("stake.stakeProcessing") : t("stake.stake")}
             </Button>

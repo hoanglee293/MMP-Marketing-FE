@@ -76,6 +76,13 @@ body {
   // background-color: rgba(2, 6, 22, 0.74);
 }
 
+.bg-stake {
+  background-image: url('/bg-stake.png');
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+}
+
 .btn-join-us {
   background: #15DFFD;
   border: none;

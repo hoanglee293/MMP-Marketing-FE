@@ -3,6 +3,11 @@
         "title": "ホームページ",
         "redirecting": "リダイレクト中..."
     },
+    "protectedRoute": {
+        "welcome": "MMPへようこそ",
+        "connectWalletRequired": "このページにアクセスするにはウォレットを接続してください",
+        "connectWallet": "ウォレットを接続"
+    },
     "lang": {
         "en": "英語",
         "vi": "ベトナム語",
@@ -1047,6 +1052,14 @@
         "apy": "APY",
         "stake": "ステーキング",
         "stakeProcessing": "処理中...",
-        "usdApprox": "≈ {amount} USD"
+        "usdApprox": "≈ {amount} USD",
+        "months": "ヶ月",
+        "pleaseEnterValidAmount": "有効な金額を入力してください",
+        "pleaseSelectStakePlan": "ステークプランを選択してください",
+        "invalidAmount": "無効な金額",
+        "insufficientBalance": "残高が不足しています。利用可能: {balance} MMP",
+        "invalidStakePeriod": "無効なステーク期間",
+        "stakeSuccess": "ステークが正常に作成されました！",
+        "stakeError": "ステークの作成に失敗しました。もう一度お試しください。"
     }
 }

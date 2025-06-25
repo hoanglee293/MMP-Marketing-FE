@@ -5,6 +5,7 @@ import { getListStaking, getStakingPlans } from "@/services/api/StakingService"
 import { useState, useEffect } from "react"
 import { useLang } from "@/lang/useLang"
 import { useStakingContext } from "@/contexts/StakingContext"
+import { useAuth } from "@/hooks/useAuth"
 
 interface StakeItemProps {
     name: string
@@ -72,52 +73,60 @@ function StakeGroup({
     stakes,
 }: StakeGroupProps) {
     const [isExpanded, setIsExpanded] = useState(true);
+    const [hasInteracted, setHasInteracted] = useState(false);
     const { t } = useLang();
     const withdrawableCount = stakes.filter(stake => stake.showWithdrawals).length
+    const { loginMethod } = useAuth()
 
     const toggleExpanded = () => {
+        setHasInteracted(true);
         setIsExpanded(!isExpanded);
     };
+
+    // Determine background based on priority: stakes?.length first, then isExpanded
+    const shouldShowBackground = hasInteracted ? isExpanded : (stakes?.length > 0);
 
     return (
         <div>
             <div
-                className="border-2 flex flex-col sm:flex-row border-blue-400/50 rounded-xl p-3 sm:p-4 mb-3 sm:mb-4 bg-gradient-purple-cyan-0deg backdrop-blur-sm hover:border-blue-400/70 transition-all duration-300 cursor-pointer"
+                className={`flex flex-col justify-between sm:flex-row border-blue-400/50 border border-[#5558FF] border-solid rounded-xl p-3 sm:p-4 mb-3 sm:mb-4 backdrop-blur-sm hover:border-blue-400/70 transition-all duration-300 cursor-pointer ${shouldShowBackground ? 'bg-gradient-purple-cyan-0deg' : 'bg-transparent'}`}
                 onClick={toggleExpanded}
             >
                 {/* Mobile: Stack vertically, Desktop: Row layout */}
-                <div className="flex items-center w-full sm:w-[40px] mb-2 sm:mb-0">
-                    <ChevronDown
-                        className={`w-4 h-4 text-neutral transition-transform duration-300 ${isExpanded ? 'rotate-180' : ''}`}
-                    />
+                <div className="flex items-center gap-2">
+                    <div className="flex items-center sm:w-[40px] ">
+                        <ChevronDown
+                            className={`w-4 h-4 text-neutral transition-transform duration-300 ${isExpanded ? 'rotate-180' : ''}`}
+                        />
+                    </div>
+
+                    <div className="flex flex-1 sm:gap-2 sm:flex-col sm:mr-10 items-center sm:items-start gap-3">
+                        <p className="text-sm sm:text-base kati-font font-medium">{stakeName}</p>
+                        <p className="text-xs text-neutral bg-green-700 max-w-[100px] flex items-center justify-center rounded-full px-2 py-1 mb-0 p-0">
+                            {stakes?.length ?? 0} {t("stake.stakes")}
+                        </p>
+                    </div>
                 </div>
-                
-                <div className="flex flex-1 gap-2 flex-col sm:mr-10">
-                    <p className="text-sm sm:text-base kati-font font-medium">{stakeName}</p>
-                    <p className="text-xs text-neutral bg-green-700 max-w-[100px] flex items-center justify-center rounded-full px-2 py-1 mb-0 p-0">
-                        {stakes?.length ?? 0} {t("stake.stakes")}
-                    </p>
-                </div>
-                
+
                 {/* Mobile: Grid layout, Desktop: Row layout */}
                 <div className="grid grid-cols-2 sm:flex sm:flex-1 sm:justify-between sm:items-center gap-2 sm:gap-0 mt-2 sm:mt-0">
                     <div className="flex flex-col">
                         <p className="text-xs sm:text-sm text-neutral mb-1">{t("stake.allAmount")}</p>
                         <p className="text-sm sm:text-base kati-font font-medium text-neutral">{allAmount}</p>
                     </div>
-                    
+
                     <div className="flex flex-col">
                         <p className="text-xs sm:text-sm text-neutral mb-1">{t("stake.term")}</p>
                         <p className="text-sm sm:text-base kati-font font-medium">{term}</p>
                     </div>
-                    
+
                     <div className="flex flex-col">
                         <p className="text-xs sm:text-sm text-neutral mb-1">{t("stake.interestRate")}</p>
                         <p className="text-sm sm:text-base kati-font font-medium text-green-600">+ {interestRate}</p>
                     </div>
                 </div>
             </div>
-            
+
             {stakes.length > 0 && isExpanded && (
                 <div className="">
                     {stakes.map((stake, index) => (
@@ -127,35 +136,48 @@ function StakeGroup({
                                 <span className="text-xs italic text-neutral mb-1">{t("stake.startDate")} {stake.startDate}</span>
                                 <span className="text-xs italic text-neutral mb-1">{t("stake.dueDate")} {stake.dueDate}</span>
                             </div>
-                            
+
                             {/* Mobile: Grid 2x2, Desktop: Row layout */}
-                            <div className="grid grid-cols-2 sm:flex sm:gap-16 gap-3 sm:gap-0">
-                                <div className="flex justify-between items-center">
-                                    <div className="flex flex-col min-w-[80px] sm:min-w-[100px]">
-                                        <p className="text-xs sm:text-sm text-neutral mb-1">{t("stake.amount")}</p>
-                                        <p className="text-xs sm:text-sm kati-font font-medium bg-gradient-purple-cyan bg-clip-text">{stake.amount}</p>
-                                    </div>
-                                </div>
-                                <div className="flex justify-between items-center">
-                                    <div className="flex flex-col min-w-[80px] sm:min-w-[100px]">
-                                        <p className="text-xs sm:text-sm text-neutral mb-1">{t("stake.profit")}</p>
-                                        <p className="text-xs sm:text-sm kati-font font-medium text-green-600">+ {stake.profit} MMP</p>
-                                    </div>
-                                </div>
-                                <div className="flex justify-between items-center">
-                                    <div className="flex flex-col min-w-[80px] sm:min-w-[100px]">
-                                        <p className="text-xs sm:text-sm text-neutral mb-1">{t("stake.interestRate")}</p>
-                                        <p className="text-xs sm:text-sm kati-font font-medium">{stake.interestRate}</p>
-                                    </div>
-                                </div>
-                                {stake.daysLeft && (
+                            <div className=" sm:flex sm:gap-16 justify-between gap-3">
+                                <div className="flex flex-1 gap-[8%] sm:flex-nowrap flex-wrap">
                                     <div className="flex justify-between items-center">
                                         <div className="flex flex-col min-w-[80px] sm:min-w-[100px]">
-                                            <p className="text-xs sm:text-sm text-neutral mb-1">{t("stake.daysLeft")}</p>
-                                            <p className="text-xs sm:text-sm kati-font font-medium">{stake.daysLeft}</p>
+                                            <p className="text-xs sm:text-sm text-neutral mb-1">{t("stake.amount")}</p>
+                                            <p className="text-xs sm:text-sm kati-font font-medium bg-gradient-purple-cyan bg-clip-text">{stake.amount}</p>
                                         </div>
                                     </div>
-                                )}
+                                    <div className="flex justify-between items-center">
+                                        <div className="flex flex-col min-w-[80px] sm:min-w-[100px]">
+                                            <p className="text-xs sm:text-sm text-neutral mb-1">{t("stake.profit")}</p>
+                                            <p className="text-xs sm:text-sm kati-font font-medium text-green-600">+ {stake.profit} MMP</p>
+                                        </div>
+                                    </div>
+                                    <div className="flex justify-between items-center">
+                                        <div className="flex flex-col min-w-[80px] sm:min-w-[100px]">
+                                            <p className="text-xs sm:text-sm text-neutral mb-1">{t("stake.interestRate")}</p>
+                                            <p className="text-xs sm:text-sm kati-font font-medium">{stake.interestRate}</p>
+                                        </div>
+                                    </div>
+                                    {stake.daysLeft && (
+                                        <div className="flex justify-between items-center">
+                                            <div className="flex flex-col min-w-[80px] sm:min-w-[100px]">
+                                                <p className="text-xs sm:text-sm text-neutral mb-1">{t("stake.daysLeft")}</p>
+                                                <p className="text-xs sm:text-sm kati-font font-medium">{stake.daysLeft}</p>
+                                            </div>
+                                        </div>
+                                    )}
+                                </div>
+                                {
+                                    loginMethod == "phantom" && stake.showWithdrawals && (
+                                        <div className="flex justify-between items-center">
+                                            <div className="flex flex-col min-w-[80px] h-8 sm:min-w-[100px]">
+                                                <Button variant="outline" size="sm" className="bg-gradient-purple-cyan text-white rounded-full transition-all duration-300 transform hover:scale-105 cursor-pointer">
+                                                    {t("stake.withdraw")}
+                                                </Button>
+                                            </div>
+                                        </div>
+                                    )
+                                }
                             </div>
                         </div>
                     ))}
@@ -168,7 +190,7 @@ function StakeGroup({
 export default function StakeList() {
     const { t } = useLang();
     const { refreshTrigger } = useStakingContext();
-    
+
     const { data: listStaking, isLoading, error, refetch: refetchListStaking } = useQuery({
         queryKey: ["list-staking"],
         queryFn: getListStaking,
@@ -193,7 +215,11 @@ export default function StakeList() {
             return [];
         }
 
-        const newData = stakingPlans?.map((plan: any) => ({
+        if (!stakingPlans || !Array.isArray(stakingPlans)) {
+            return [];
+        }
+
+        const newData = stakingPlans.map((plan: any) => ({
             periodDays: plan.period_days,
             name: plan.name
         }))
@@ -247,7 +273,7 @@ export default function StakeList() {
         return Object.values(groupedStakes).map((group: any) => ({
             stakeName: group.planName,
             allAmount: `${group.totalAmount.toFixed(2)} MMP`,
-            term: `${group.planName}`,
+            term: `${group.periodDays / 30} ${t("stake.months")}`,
             interestRate: `${group.interestRate}%`,
             stakes: group.stakes
         }));
@@ -256,15 +282,17 @@ export default function StakeList() {
     const processedStakes = processStakingData();
 
     if (isLoading) {
-        return <div className="flex justify-center items-center h-[50vh] sm:h-[60vh] text-sm sm:text-base">{t("stake.loading")}</div>;
+        return <div className="flex justify-center items-center h-[60vh] text-sm sm:text-base">{t("stake.loading")}</div>;
     }
 
     if (error) {
-        return <div className="flex justify-center items-center h-[50vh] sm:h-[60vh] text-red-500 text-sm sm:text-base">{t("stake.errorLoadingStakingData")}</div>;
+        return <div className="flex justify-center items-center h-[60vh] text-red-500 text-sm sm:text-base">{t("stake.errorLoadingStakingData")}</div>;
     }
 
+    console.log("window.innerHeight", window.innerHeight)
+
     return (
-        <div className="space-y-3 sm:space-y-4 h-[50vh] sm:h-[60vh] overflow-y-auto scrollbar-hide custom-scroll">
+        <div className={`space-y-3 sm:space-y-4 ${window.innerHeight < 870 ? 'h-[60vh]' : 'h-[70vh]'} overflow-y-auto scrollbar-hide custom-scroll`}>
             {processedStakes.length > 0 ? (
                 processedStakes.map((stakeGroup, index) => (
                     <StakeGroup
@@ -277,7 +305,7 @@ export default function StakeList() {
                     />
                 ))
             ) : (
-                <div className="flex justify-center items-center h-[50vh] sm:h-[60vh] text-neutral text-sm sm:text-base">
+                <div className={`flex justify-center items-center ${window.innerHeight > 600 ? 'h-[60vh]' : 'h-[70vh]'} text-neutral text-sm sm:text-base`}>
                     {t("stake.noStakingDataAvailable")}
                 </div>
             )}

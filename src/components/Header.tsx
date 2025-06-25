@@ -161,7 +161,6 @@ const Header = () => {
                   'text-xs sm:text-sm text-neutral font-medium cursor-pointer hover:opacity-80 transition-opacity rounded-lg px-2 py-1', 
                   pathname === tab.href && 'bg-gradient-purple-cyan bg-clip-text'
                 )} 
-                onClick={() => refetchMyWallet()}
                 href={tab.href} 
                 key={tab.id}
               >

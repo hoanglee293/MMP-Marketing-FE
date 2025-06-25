@@ -3,6 +3,11 @@
         "title": "Home Page",
         "redirecting": "Redirecting..."
     },
+    "protectedRoute": {
+        "welcome": "Welcome to MMP",
+        "connectWalletRequired": "Please connect your wallet to access this page",
+        "connectWallet": "Connect Wallet"
+    },
     "lang": {
         "en": "English",
         "vi": "Vietnamese",
@@ -328,7 +333,15 @@
         "apy": "APY",
         "stake": "STAKE",
         "stakeProcessing": "Processing...",
-        "usdApprox": "≈ {amount} USD"
+        "usdApprox": "≈ {amount} USD",
+        "months": "months",
+        "pleaseEnterValidAmount": "Please enter a valid amount",
+        "pleaseSelectStakePlan": "Please select a stake plan",
+        "invalidAmount": "Invalid amount",
+        "insufficientBalance": "Insufficient balance. Available: {balance} MMP",
+        "invalidStakePeriod": "Invalid stake period",
+        "stakeSuccess": "Stake created successfully!",
+        "stakeError": "Failed to create stake. Please try again."
     },
     "referral": {
         "title": "Referral Dashboard",
@@ -1027,6 +1040,22 @@
                     ]
                 }
             }
+        }
+    },
+    "services": {
+        "errors": {
+            "phantomNotInstalled": "Phantom wallet is not installed",
+            "phantomNotInstalledWithLink": "Phantom wallet is not installed. Please install from https://phantom.app/",
+            "phantomNotConnected": "Phantom wallet is not connected. Please connect first.",
+            "phantomConnectionRejected": "User rejected the connection request",
+            "phantomConnectionFailed": "Failed to connect to Phantom wallet",
+            "phantomSignatureRejected": "User rejected the signature request",
+            "phantomSignatureFailed": "Failed to sign message with Phantom wallet",
+            "phantomTransactionRejected": "User rejected the transaction request",
+            "phantomAuthFailed": "Failed to authenticate with Phantom wallet",
+            "failedToCreateTokenAccount": "Failed to create token account",
+            "errorGetMyWallet": "Error getting my wallet information",
+            "errorGetGoogleUserInfo": "Error getting Google user information"
         }
     }
 }

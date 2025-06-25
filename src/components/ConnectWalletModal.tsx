@@ -1,6 +1,6 @@
 "use client"
 
-import { useState } from "react"
+import { useState, useEffect } from "react"
 import { motion } from "framer-motion"
 import { Dialog, DialogContent, DialogHeader, DialogTitle } from "@/ui/dialog"
 import { Button } from "@/ui/button"
@@ -15,9 +15,16 @@ interface ConnectWalletModalProps {
 }
 
 export function ConnectWalletModal({ open, onOpenChange }: ConnectWalletModalProps) {
-  const { login } = useAuth()
+  const { login, isAuthenticated } = useAuth()
   const { t } = useLang()
   const [isConnecting, setIsConnecting] = useState(false)
+
+  // Auto close modal when user is authenticated
+  useEffect(() => {
+    if (isAuthenticated && open) {
+      onOpenChange(false)
+    }
+  }, [isAuthenticated, open, onOpenChange])
 
   const handleTelegramConnect = async () => {
     setIsConnecting(true)
@@ -41,7 +48,6 @@ export function ConnectWalletModal({ open, onOpenChange }: ConnectWalletModalPro
       // For now, just simulate the login
       setTimeout(() => {
         login('google')
-        onOpenChange(false)
         setIsConnecting(false)
       }, 1000)
     } catch (error) {

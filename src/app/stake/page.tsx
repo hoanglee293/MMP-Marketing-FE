@@ -3,7 +3,7 @@
 import { useState } from "react"
 import StakeList from "./stake-list"
 import DepositPanel from "./deposit-panel"
-import TabNavigation from "./tab-navigation"
+import { ProtectedRoute } from "@/components/ProtectedRoute"
 import { useQuery } from "@tanstack/react-query"
 import { getOverViewStaking } from "@/services/api/StakingService"
 import { useLang } from "@/lang/useLang"
@@ -18,16 +18,14 @@ function StakingDashboardContent() {
         queryFn: getOverViewStaking,
     })
 
-    console.log("overviewStaking", overviewStaking)
-
     return (
-        <div className="flex-1 flex items-center justify-center p-2 sm:p-4 z-20 container mx-auto">
-            <div className="w-full px-2 sm:px-4 py-3 sm:py-6 h-full text-white">
+        <div className="flex-1 max-h-svh flex items-center justify-center p-2 sm:p-4 z-20  bg-stake">
+            <div className="w-full px-2 sm:px-4 py-3 sm:py-6 flex-1 max-h-svh text-white gap-6 flex flex-col container mx-auto">
                 {/* Mobile: Single column layout, Desktop: Two column layout */}
                 <div className="flex flex-col lg:flex-row gap-3 sm:gap-6">
                     {/* Stake List Section */}
                     <div className="flex-1 order-2 lg:order-1">
-                        <div className="bg-black/40 backdrop-blur-xl rounded-xl sm:rounded-2xl p-3 sm:p-6 border border-blue-500/20 h-full">
+                        <div className="bg-black/40 backdrop-blur-xl rounded-xl sm:rounded-2xl p-3 sm:p-6 border border-blue-500/20 ">
                             <h2 className="bg-gradient-purple-cyan bg-clip-text text-xl sm:text-2xl lg:text-3xl font-bold leading-7 kati-font text-center mb-4 sm:mb-8">{t("stake.currentStake")}</h2>
                             <StakeList />
                         </div>
@@ -69,7 +67,7 @@ function StakingDashboardContent() {
                 </div>
 
                 {/* Feature Cards Section - Mobile: Stack vertically, Desktop: Grid */}
-                <div className="flex flex-col sm:flex-row gap-3 sm:gap-6 mt-4 sm:mt-6">
+                {/* <div className="flex flex-col sm:flex-row gap-3 sm:gap-6">
                     <div className="bg-gradient-purple-cyan-0deg rounded-xl py-3 sm:py-4 px-6 sm:px-10 flex-1 flex flex-col gap-2">
                         <h4 className="text-base sm:text-lg kati-font font-medium">{t("stake.friendReferralBonus")}</h4>
                         <span className="text-xs text-neutral">{t("stake.friendReferralDescription")}</span>
@@ -86,7 +84,7 @@ function StakingDashboardContent() {
                         <h4 className="text-base sm:text-lg kati-font font-medium">{t("stake.miniGameLuckySpin")}</h4>
                         <span className="text-xs text-neutral">{t("stake.miniGameDescription")}</span>
                     </div>
-                </div>
+                </div> */}
             </div>
         </div>
     )
@@ -94,8 +92,10 @@ function StakingDashboardContent() {
 
 export default function StakingDashboard() {
     return (
-        <StakingProvider>
-            <StakingDashboardContent />
-        </StakingProvider>
+        <ProtectedRoute>
+            <StakingProvider>
+                <StakingDashboardContent />
+            </StakingProvider>
+        </ProtectedRoute>
     )
 }
