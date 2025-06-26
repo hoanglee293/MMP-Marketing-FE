@@ -1,6 +1,6 @@
 "use client"
 
-import { useState } from "react"
+import { useState, useRef } from "react"
 import { Input } from "@/ui/input"
 import { Button } from "@/ui/button"
 import { Pencil, ChevronDown, ChevronUp } from "lucide-react"
@@ -15,12 +15,13 @@ import { toast } from "react-toastify"
 import { useAuth } from "@/hooks/useAuth"
 
 export default function DepositPanel() {
-    const [depositAmount, setDepositAmount] = useState<string>("0.00")
+    const [depositAmount, setDepositAmount] = useState<string>("0")
     const [stakeMonths, setStakeMonths] = useState<string>("")
     const [stakeName, setStakeName] = useState<string>("")
     const [isSelectOpen, setIsSelectOpen] = useState<boolean>(false)
     const [selectedStake, setSelectedStake] = useState<string>("")
     const [isLoading, setIsLoading] = useState<boolean>(false)
+    const inputRef = useRef<HTMLInputElement>(null)
     const { t } = useLang()
     const queryClient = useQueryClient()
     const { refreshStakingData } = useStakingContext()
@@ -101,9 +102,10 @@ export default function DepositPanel() {
                 }
                 console.log("prepareResponse", prepareResponse)
                 // Step 2: Sign and send transaction
-                // const signature = await Web3WalletService.signAndSendTransaction(
-                //     prepareResponse.transaction
-                // )
+                const signature = await Web3WalletService.signAndSendTransaction(
+                    prepareResponse.transaction
+                )
+                console.log("signature", signature)
 
                 // Step 3: Complete the staking transaction
                 await createStakingPhantomCompleted({
@@ -143,17 +145,17 @@ export default function DepositPanel() {
             console.error("Error creating staking:", error)
             
             // Handle specific Phantom wallet errors
-            if (loginMethod === "phantom" && error instanceof Error) {
-                if (error.message.includes('User rejected') || error.message.includes('User cancelled')) {
-                    toast.error(t("services.errors.phantomTransactionRejected") || "Transaction was rejected by user")
-                } else if (error.message.includes('Wallet not connected')) {
-                    toast.error(t("services.errors.phantomNotConnected") || "Phantom wallet is not connected")
-                } else {
-                    toast.error(t("stake.stakeError") || "Failed to create stake. Please try again.")
-                }
-            } else {
-                toast.error(t("stake.stakeError") || "Failed to create stake. Please try again.")
-            }
+            // if (loginMethod === "phantom" && error instanceof Error) {
+            //     if (error.message.includes('User rejected') || error.message.includes('User cancelled')) {
+            //         toast.error(t("services.errors.phantomTransactionRejected") || "Transaction was rejected by user")
+            //     } else if (error.message.includes('Wallet not connected')) {
+            //         toast.error(t("services.errors.phantomNotConnected") || "Phantom wallet is not connected")
+            //     } else {
+            //         toast.error(t("stake.stakeError") || "Failed to create stake. Please try again.")
+            //     }
+            // } else {
+            //     toast.error(t("stake.stakeError") || "Failed to create stake. Please try again.")
+            // }
         } finally {
             setIsLoading(false)
         }
@@ -178,7 +180,10 @@ export default function DepositPanel() {
 
                 {/* Deposit Section */}
                 <div className="space-y-3 sm:space-y-4 mb-4 sm:mb-6">
-                    <div className="bg-dark-100 rounded-xl flex justify-start flex-col p-3 border border-gray-700/50">
+                    <div 
+                        className="bg-dark-100 rounded-xl flex justify-start flex-col p-3 border border-gray-700/50 cursor-text"
+                        onClick={() => inputRef.current?.focus()}
+                    >
                         <p className="text-xs sm:text-sm text-gray-400 mb-1">{t("stake.deposit")}</p>
                         <div className="flex items-center justify-between">
                             <div className="flex items-center">
@@ -187,10 +192,11 @@ export default function DepositPanel() {
                             </div>
                             <div className="text-right">
                                 <input 
+                                    ref={inputRef}
                                     type="number" 
                                     min={0} 
                                     step="0.01"
-                                    className="bg-transparent text-base sm:text-lg border-none max-w-[80px] sm:max-w-[100px] font-bold text-white outline-none appearance-none [&::-webkit-outer-spin-button]:appearance-none [&::-webkit-inner-spin-button]:appearance-none text-right" 
+                                    className="bg-transparent text-base sm:text-lg px-3 border border-transparent max-w-[80px] sm:max-w-[150px] border-solid focus:border-2 focus:border-gray-700/50 rounded-xl font-bold text-white outline-none appearance-none [&::-webkit-outer-spin-button]:appearance-none [&::-webkit-inner-spin-button]:appearance-none text-right" 
                                     value={depositAmount} 
                                     onChange={(e) => {
                                         const value = e.target.value
@@ -205,11 +211,11 @@ export default function DepositPanel() {
                                         // Format to 2 decimal places on blur
                                         const value = Number(e.target.value)
                                         if (!isNaN(value) && value >= 0) {
-                                            setDepositAmount(value.toFixed(2))
+                                            setDepositAmount(value.toLocaleString())
                                         }
                                     }}
                                 />
-                                <p className="text-xs text-gray-400">≈ {Number(depositAmount) / 1000} USD</p>
+                                <p className="text-xs text-gray-400">≈ {(Number(depositAmount) / 1000).toLocaleString()} USD</p>
                             </div>
                         </div>
                     </div>

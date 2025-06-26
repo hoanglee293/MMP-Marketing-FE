@@ -27,7 +27,7 @@ const BorderExchangeToken = ({ children }: { children: React.ReactNode }) => {
           </linearGradient>
         </defs>
       </svg>
-      <div className="flex text-neutral w-full items-center flex-col xl:gap-4 gap-1 justify-center h-full top-0 left-0 absolute z-10 xl:mx-6 mx-2 xl:px-4 px-2 xl:py-6 py-4">
+      <div className="flex text-neutral w-full items-center flex-col xl:gap-4 gap-1 justify-center h-full top-0 left-0 absolute z-10 ">
         {children}
       </div>
     </div>
