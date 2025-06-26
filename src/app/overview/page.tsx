@@ -5,6 +5,8 @@ import { useIntersectionObserver } from '@/hooks/useIntersectionObserver'
 import ExchangeToken from './exchange-token'
 import Tokenomics from './tokenomics'
 import OurTeam from './our-team'
+import RoadMap from './road-map'
+import Footer from './footer'
 
 const page = () => {
     const { elementRef: titleRef, isIntersecting: titleInView } = useIntersectionObserver<HTMLHeadingElement>({
@@ -23,7 +25,7 @@ const page = () => {
     });
 
     return (
-        <div className='flex flex-col gap-1 '>
+        <div className='flex flex-col'>
             <div className='bg-overview bg-blue-200 z-50 w-full h-svh flex items-center justify-center relative overflow-hidden'>
                 <div className='absolute top-[50%] right-0 animate-float'>
                     <img src="/box-elips.png" alt="bg-feature" className='2xl:max-w-max max-w-[230px] object-cover' />
@@ -61,6 +63,8 @@ const page = () => {
             <ExchangeToken />
             <Tokenomics />
             <OurTeam />
+            <RoadMap />
+            <Footer />
         </div>
 
     )

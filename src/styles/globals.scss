@@ -73,6 +73,9 @@ body {
   background-size: cover;
   background-position: center;
   background-repeat: no-repeat;
+  background-color: rgba(14, 9, 62, 0.6); /* màu nền bán trong suốt */
+  backdrop-filter: blur(10px);            /* làm mờ nền phía sau */
+  -webkit-backdrop-filter: blur(10px);   
   // background-color: rgba(2, 6, 22, 0.74);
 }
 
@@ -80,6 +83,13 @@ body {
   background-image: url('/bg-stake.png');
   background-size: cover;
   background-position: center;
+  background-repeat: no-repeat;
+}
+
+.bg-footer {
+  background-image: url('/bg-footer.png');
+  background-size: cover;
+  background-position: bottom;
   background-repeat: no-repeat;
 }
 
@@ -93,16 +103,7 @@ body {
   text-align: center;
   /* Black text with gradient border */
   color: #000;
-  text-shadow: 
-  0px 1px 4px #000,
-  0px 2px 0px #be26c4,
-    -1px -1px 0px #be26c4,
-    0px -2px 2px rgba(18, 213, 223, 0.8549019608),
-    -2px 3px 0px rgba(18, 213, 223, 0.8549019608),
-    1px -2px 0px #be26c4,
-    -1px -1px 0px #be26c4,
-    1px 4px 0px rgba(18, 213, 223, 0.8549019608),
-    2px 1px 0px rgba(18, 213, 223, 0.8549019608);
+  
   -webkit-text-stroke-width: 2px;
   -webkit-text-stroke-color: transparent;
   background: linear-gradient(90deg, #F70FFF -0.1%, #12D6DF 92.2%);

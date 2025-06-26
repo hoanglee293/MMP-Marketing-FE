@@ -107,7 +107,7 @@ const ExchangeToken = () => {
 
   return (
     <div className='bg-feature bg-[#020616BD]/60 z-50 w-full h-svh flex items-center justify-center relative pt-20 overflow-hidden'>
-      <div className='absolute top-0 right-0 w-full h-full bg-[#020616c2] backdrop-blur-lg' />
+      <div className='absolute top-0 right-0 w-full h-full bg-[#0f121ad6] backdrop-blur-lg' />
       <div className='eclipse-box absolute bottom-[10%] left-[10%] w-[375px] h-[375px] z-20' style={{background: '#0090ff57'}}/>
       <div className='eclipse-box absolute top-[10%] right-[10%] w-[254px] h-[254px] z-20' style={{background: '#15dffd63', filter: 'blur(50px)'}}/>
       <div className='container mx-auto px-4 relative mb-[5%]'>
@@ -118,12 +118,12 @@ const ExchangeToken = () => {
           >
             Exchange token
           </h2>
-          <h3
+          {/* <h3
             ref={title2Ref}
             className={`text-[#DFE0EF] text-[32px] xl:text-[40px] webkit-text-stroke-1 font-bold bg-black/60 xl:min-w-[440px] min-w-[300px] h-full text-center z-10 leading-none animate-fade-in-up-delayed ${title2InView ? 'in-view' : ''}`}
           >
             Exchange token
-          </h3>
+          </h3> */}
         </div>
         <div className='flex flex-col items-center justify-center gap-4 relative h-[50px] mt-10'>
           <p

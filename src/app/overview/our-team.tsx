@@ -87,9 +87,10 @@ const OurTeam = () => {
 
     return (
         <div className='bg-feature bg-[#020616BD]/60 z-50 w-full h-svh flex items-center justify-around relative pt-20 overflow-hidden'>
-            <div className='absolute top-0 right-0 w-full h-full bg-[#020616c2] backdrop-blur-lg' />
+            <div className='absolute top-0 right-0 w-full h-full bg-[#0f121ad6] backdrop-blur-lg' />
+            <div className='eclipse-box absolute bottom-[10%] left-[10%] w-[375px] h-[375px] z-20' style={{background: '#0090ff57'}}/>
             <div className='eclipse-box absolute top-[10%] right-[10%] w-[254px] h-[254px] z-20' style={{ background: '#15dffd63', filter: 'blur(50px)' }} />
-            <div className=' relative mb-[5%] container mx-auto w-full'>
+            <div className=' relative mb-[5%] container mx-auto w-full flex flex-col gap-16'>
                 <div className='flex flex-col items-center justify-center gap-4  '>
                     <h2
                         ref={titleRef}
@@ -97,20 +98,20 @@ const OurTeam = () => {
                     >
                         OUR TEAM
                     </h2>
-                    <h3
+                    {/* <h3
                         ref={title2Ref}
                         className={`text-[#DFE0EF] text-[32px] w-fit webkit-text-stroke-1 font-bold h-[50px] bg-black/60 xl:min-w-[300px] min-w-[200px] flex items-center justify-center text-center z-10 leading-none animate-fade-in-up-delayed ${title2InView ? 'in-view' : ''}`}
                     >
                         OUR TEAM
-                    </h3>
+                    </h3> */}
                 </div>
 
                 <div className='flex w-full h-full justify-between flex-wrap gap-[1%] mt-10'>
                     {team.map((item, index) => (
                         <BorderOurTeam className='w-full max-w-[19%] mb-10'>
-                            <div className={`text-neutral font-medium bg-gradient-to-t from-white to-[#00C0FF] bg-clip-text ${isClient && windowWidth < 1600 ? 'text-sm' : 'text-lg'}`}>{item.name}</div>
-                            <div className={`text-neutral font-medium bg-gradient-to-t from-white to-[#00C0FF] bg-clip-text ${isClient && windowWidth < 1600 ? 'text-sm' : 'text-lg'}`}>{item.role}</div>
-                            <div className={`text-neutral ${isClient && windowWidth < 1600 ? 'text-xs' : 'text-sm'} mt-1`}>
+                            <div className={`text-neutral  font-bold bg-gradient-to-t from-white to-[#00C0FF] bg-clip-text ${isClient && windowWidth < 1600 ? 'text-sm' : 'text-lg'}`}>{item.name}</div>
+                            <div className={`text-neutral font-medium  ${isClient && windowWidth < 1600 ? 'text-xs' : 'text-sm'}`}>{item.role}</div>
+                            <div className={`text-neutral text-center ${isClient && windowWidth < 1600 ? 'text-xs' : 'text-sm'} mt-1`}>
                                 {item.description}
                             </div>
                         </BorderOurTeam>

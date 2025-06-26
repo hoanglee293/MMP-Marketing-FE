@@ -17,7 +17,7 @@ const BoxFeauture = ({children}: {children: React.ReactNode}) => {
     }, []);
 
     return (
-        <div className="relative w-[100%] h-auto aspect-[417/261]">
+        <div className="relative w-[90%] h-auto aspect-[417/261]">
             {/* Top decorative SVG - responsive positioning */}
             <svg 
                 className={`absolute top-0 right-[8%] z-10 w-[35%] max-w-[146px] h-auto ${isClient && windowWidth < 1280 ? 'w-[20%] max-w-[80px]' : ''}`} 

@@ -56,7 +56,7 @@ const features = () => {
 
     return (
         <div className='bg-feature bg-[#020616BD]/60 z-50 w-full h-svh flex items-center justify-center relative pt-20 overflow-hidden'>
-            <div className='absolute top-0 right-0 w-full h-full bg-[#020616c2] backdrop-blur-lg' />
+            <div className='absolute top-0 right-0 w-full h-full bg-[#0f121ad6] backdrop-blur-lg' />
             <div className='eclipse-box absolute top-[10%] right-[10%] w-[254px] h-[254px] z-20' style={{background: '#15dffd63', filter: 'blur(50px)'}}/>
             <div className='h-[50vh] flex items-center justify-center border-l-2 border-r-0 border-t-0 border-b-0 border-gray-500 border-solid absolute bottom-0 right-[27%] z-10 animate-pulse-slow'>
                 <svg style={{ marginTop: '9vh', marginLeft: '10px' }} xmlns="http://www.w3.org/2000/svg" width="19" height="156" viewBox="0 0 19 156" fill="none">
@@ -121,12 +121,7 @@ const features = () => {
                     >
                         Key Features
                     </h2>
-                    <h3
-                        ref={title2Ref}
-                        className={`text-[#DFE0EF] text-[36px] xl:text-[48px] webkit-text-stroke-1 font-bold bg-black/60 xl:min-w-[440px] min-w-[300px] h-full text-center z-10 leading-none animate-fade-in-up-delayed ${title2InView ? 'in-view' : ''}`}
-                    >
-                        Key Features
-                    </h3>
+                  
                 </div>
                 <div className='flex justify-between items-center xl:mx-10 mx-20'>
                     <div
@@ -135,7 +130,7 @@ const features = () => {
                     >
                         <img src="/layout-features.png" alt="feature-1" className='max-h-[1000px] w-full min-w-[400px] 2xl:min-w-[600px] h-auto object-cover' />
                     </div>
-                    <div className='flex flex-col md:flex-row justify-center items-start gap-6 flex-1'>
+                    <div className='flex flex-col md:flex-row justify-center items-start gap-[1%] flex-1'>
                         {/* Left Column */}
                         <div className='flex flex-col gap-[140px] w-full md:mt-[23%]'>
                             <div

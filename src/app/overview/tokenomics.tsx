@@ -1,9 +1,23 @@
 'use client'
 import BorderTokenomic from '@/components/border-tokenomic';
 import { useIntersectionObserver } from '@/hooks/useIntersectionObserver';
-import React from 'react'
+import React, { useEffect, useState } from 'react'
 
 const Tokenomics = () => {
+    const [windowWidth, setWindowWidth] = useState(0);
+    const [isClient, setIsClient] = useState(false);
+
+    useEffect(() => {
+        setIsClient(true);
+        setWindowWidth(window.innerWidth);
+        
+        const handleResize = () => {
+            setWindowWidth(window.innerWidth);
+        };
+        
+        window.addEventListener('resize', handleResize);
+        return () => window.removeEventListener('resize', handleResize);
+    }, []);
     const { elementRef: titleRef, isIntersecting: titleInView } = useIntersectionObserver<HTMLDivElement>({
         threshold: 0.3,
         rootMargin: '-50px'
@@ -19,30 +33,31 @@ const Tokenomics = () => {
         rootMargin: '-50px'
     });
 
+    console.log("windowWidth", windowWidth)
     return (
-        <div className='bg-feature bg-[#020616BD]/60 z-50 w-full h-svh flex  justify-center relative pt-[8%] overflow-hidden'>
-            <div className='absolute top-0 right-0 w-full h-full bg-[#020616c2] backdrop-blur-lg' />
+        <div className='bg-feature bg-[#020616BD]/60 z-50 w-full h-svh flex  justify-center relative pt-[6%] overflow-hidden'>
+            <div className='absolute top-0 right-0 w-full h-full bg-[#0f121ad6] backdrop-blur-lg' />
             <div className='eclipse-box absolute bottom-[10%] left-[10%] w-[375px] h-[375px] z-20' style={{background: '#0090ff57'}}/>
             <div className='eclipse-box absolute top-[10%] right-[10%] w-[254px] h-[254px] z-20' style={{background: '#15dffd63', filter: 'blur(50px)'}}/>
             <div className='container mx-auto px-4 relative flex flex-col items-center justify-center'>
-                <div className='flex flex-col items-center justify-center gap-4 bg-black/60 w-fit'>
+                <div className='flex flex-col items-center justify-center gap-4 bg-black/60 w-fit pb-8'>
                     <h2
                         ref={titleRef}
-                        className={`title-feature text-[36px] xl:text-[43px] bg-clip-text absolute top-[-1px] left-0 w-full h-full text-center animate-fade-in-up ${titleInView ? 'in-view' : ''}`}
+                        className={`title-feature text-[36px] xl:text-[43px] bg-clip-text absolute ${isClient && windowWidth < 1800 ? 'top-0' : 'top-[0px]'} left-0 w-full h-full text-center animate-fade-in-up ${titleInView ? 'in-view' : ''}`}
                     >
                         TOKENOMICS
                     </h2>
-                    <h3
+                    {/* <h3
                         ref={title2Ref}
                         className={`text-[#DFE0EF] text-[32px] webkit-text-stroke-1 font-bold h-[50px] bg-black/60 xl:min-w-[440px] min-w-[300px] flex items-center justify-center text-center z-10 leading-none animate-fade-in-up-delayed ${title2InView ? 'in-view' : ''}`}
                     >
                         TOKENOMICS
-                    </h3>
+                    </h3> */}
                 </div>
                 <div className='flex flex-col items-center justify-center gap-4 relative h-[50px] mt-10'>
                     <p
                         ref={descRef}
-                        className={`text-neutral text-center text-base  xl:max-w-[950px] max-w-[460px]  animate-fade-in-up-delayed ${descInView ? 'in-view' : ''}`}
+                        className={`text-neutral text-center text-sm  xl:max-w-[1050px] max-w-[460px]  animate-fade-in-up-delayed ${descInView ? 'in-view' : ''}`}
                     >
                         MMP and MPB are two pioneering exchange-issued coins that represent a breakthrough in the world of Web3 and decentralized platforms. Built on Solana, they are not just liquidity tokens but also tools for creating value and opportunities for the community, aiming to establish a sustainable and powerful ecosystem.
                     </p>
@@ -50,8 +65,8 @@ const Tokenomics = () => {
                 </div>
                 {/* <TokenomicSvg /> */}
                 <div className='flex items-center justify-center flex-1 relative z-10 w-full h-full'>
-                    <img src="/tokenomics.png" alt="tokenomics" className='w-full max-w-[780px] h-full object-contain' />
-                    <div className='absolute top-[12%] left-[30%] flex items-end justify-center gap-4'>
+                    <img src="/tokenomics.png" alt="tokenomics" className={` ${isClient && windowWidth < 2049 ? 'max-w-[540px]' : 'max-w-[700px]'} h-full object-contain`} />
+                    <div className={`absolute flex items-end justify-center gap-4 ${isClient && windowWidth < 1800 ? 'top-[7%] left-[27%]' : 'top-[8%] left-[26%]'}`}>
                         <BorderTokenomic primaryColor='#3AB3D9' secondaryColor='#3AB3D9' tag='18%' tagTextColor='#3AB3D9'>
                             <div className='flex flex-col items-center justify-center gap-4 relative'>
                                 <p
@@ -70,7 +85,7 @@ const Tokenomics = () => {
                             </svg>
                         </div>
                     </div>
-                    <div className='absolute top-[30%] left-[5%] flex items-end justify-center gap-4'>
+                    <div className={`absolute flex items-end justify-center gap-4 ${isClient && windowWidth < 1800 ? 'top-[30%] left-[10%]' : 'top-[30%] left-[7%]'}`}>
                         <BorderTokenomic primaryColor='#3C01B7' secondaryColor='#3C01B7' tag='55%'  tagTextColor='#632AD7'>
                             <div className='flex flex-col items-center justify-center gap-4 relative'>
                                 <p
@@ -89,7 +104,7 @@ const Tokenomics = () => {
                             </svg>
                         </div>
                     </div>
-                    <div className='absolute bottom-[17%] left-[10%] flex items-end justify-center gap-4'>
+                    <div className={`absolute flex items-end justify-center gap-4 ${isClient && windowWidth < 1800 ? 'bottom-[12%] left-[10%]' : 'bottom-[19%] left-[10%]'}`}>
                         <BorderTokenomic primaryColor='#6600B6' secondaryColor='#6600B6' tag='10%' tagTextColor='#6600B6'>
                             <div className='flex flex-col items-center justify-center gap-4 relative'>
                                 <p
@@ -106,7 +121,7 @@ const Tokenomics = () => {
                             </svg>
                         </div>
                     </div>
-                    <div className='absolute bottom-[15%] right-[17%] flex items-end justify-center gap-4'>
+                    <div className={`absolute flex items-end justify-center gap-4 ${isClient && windowWidth < 1800 ? 'bottom-[7%] right-[19%]' : 'bottom-[17%] right-[17%]'}`}>
                         <div style={{ marginBottom: '65px' }}>
                             <svg xmlns="http://www.w3.org/2000/svg" width="201" height="105" viewBox="0 0 201 105" fill="none">
                                 <path d="M1 1.42676H82.4051L109.291 94.4268H178" stroke="#B806B2" stroke-width="2" stroke-linecap="round" />
@@ -125,7 +140,7 @@ const Tokenomics = () => {
                             </div>
                         </BorderTokenomic>
                     </div>
-                    <div className='absolute bottom-[28%] right-[12%] flex items-end justify-center gap-4'>
+                    <div className={`absolute flex items-end justify-center gap-4 ${isClient && windowWidth < 1800 ? 'bottom-[25%] right-[15%]' : 'bottom-[29%] right-[13%]'}`}>
                         <div style={{ marginBottom: '65px' }}>
                             <svg xmlns="http://www.w3.org/2000/svg" width="234" height="45" viewBox="0 0 234 45" fill="none">
                                 <path d="M1 1.42676H79.5L117.5 33.4268H207" stroke="#C300B0" stroke-width="2" stroke-linecap="round" />
@@ -144,7 +159,7 @@ const Tokenomics = () => {
                             </div>
                         </BorderTokenomic>
                     </div>
-                    <div className='absolute top-[42%] right-[10%] flex items-end justify-center gap-4'>
+                    <div className={`absolute flex items-end justify-center gap-4 ${isClient && windowWidth < 1800 ? 'top-[22%] right-[11%]' : 'top-[24%] right-[9%]'}`}>
                         <div style={{ marginBottom: '-5%' }}>
                             <svg xmlns="http://www.w3.org/2000/svg" width="239" height="99" viewBox="0 0 239 99" fill="none">
                                 <path d="M228.427 21.3118C226.141 21.3118 223.833 20.5573 221.903 19.0262C217.42 15.4315 216.688 8.8411 220.283 4.33657C223.878 -0.167963 230.468 -0.878045 234.95 2.71671C237.125 4.4697 238.501 6.95496 238.789 9.7065C239.1 12.4802 238.301 15.2096 236.57 17.3842C234.507 19.9582 231.489 21.3118 228.427 21.3118ZM222.014 5.73452C219.173 9.2627 219.75 14.4551 223.301 17.2954C226.829 20.1357 232.021 19.5588 234.862 16.0084C236.237 14.2998 236.859 12.1474 236.615 9.97279C236.371 7.79818 235.305 5.82328 233.575 4.4697C230.024 1.60722 224.854 2.18415 222.014 5.73452Z" fill="#8B8B8B" />
