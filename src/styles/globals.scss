@@ -123,6 +123,11 @@ body {
   -webkit-text-stroke-color: transparent;
 }
 
+.eclipse-box {
+  border-radius: 375.348px;
+  filter: blur(131.85223388671875px);
+}
+
 /* Custom Animations */
 @keyframes fadeInUp {
   from {

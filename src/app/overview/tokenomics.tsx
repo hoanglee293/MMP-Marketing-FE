@@ -20,19 +20,21 @@ const Tokenomics = () => {
     });
 
     return (
-        <div className='bg-feature bg-[#020616BD]/60 z-50 w-full h-svh flex  justify-center relative pt-20 overflow-hidden'>
+        <div className='bg-feature bg-[#020616BD]/60 z-50 w-full h-svh flex  justify-center relative pt-[8%] overflow-hidden'>
             <div className='absolute top-0 right-0 w-full h-full bg-[#020616c2] backdrop-blur-lg' />
+            <div className='eclipse-box absolute bottom-[10%] left-[10%] w-[375px] h-[375px] z-20' style={{background: '#0090ff57'}}/>
+            <div className='eclipse-box absolute top-[10%] right-[10%] w-[254px] h-[254px] z-20' style={{background: '#15dffd63', filter: 'blur(50px)'}}/>
             <div className='container mx-auto px-4 relative flex flex-col items-center justify-center'>
-                <div className='flex flex-col items-center justify-center gap-4 bg-black/60 w-fit h-[43px]'>
+                <div className='flex flex-col items-center justify-center gap-4 bg-black/60 w-fit'>
                     <h2
                         ref={titleRef}
-                        className={`title-feature text-[36px] xl:text-[43px] bg-clip-text absolute top-0 left-0 w-full h-full text-center animate-fade-in-up ${titleInView ? 'in-view' : ''}`}
+                        className={`title-feature text-[36px] xl:text-[43px] bg-clip-text absolute top-[-1px] left-0 w-full h-full text-center animate-fade-in-up ${titleInView ? 'in-view' : ''}`}
                     >
                         TOKENOMICS
                     </h2>
                     <h3
                         ref={title2Ref}
-                        className={`text-[#DFE0EF] text-[32px] webkit-text-stroke-1 font-bold bg-black/60 xl:min-w-[440px] min-w-[300px] h-[full] text-center z-10 leading-none animate-fade-in-up-delayed ${title2InView ? 'in-view' : ''}`}
+                        className={`text-[#DFE0EF] text-[32px] webkit-text-stroke-1 font-bold h-[50px] bg-black/60 xl:min-w-[440px] min-w-[300px] flex items-center justify-center text-center z-10 leading-none animate-fade-in-up-delayed ${title2InView ? 'in-view' : ''}`}
                     >
                         TOKENOMICS
                     </h3>
@@ -112,7 +114,7 @@ const Tokenomics = () => {
                                 <path d="M195.663 93.8608C195.663 96.7455 193.311 99.0976 190.426 99.0976C187.542 99.0976 185.189 96.7455 185.189 93.8608C185.189 90.9761 187.542 88.624 190.426 88.624C193.311 88.624 195.663 90.9761 195.663 93.8608Z" fill="#CCCCCC" fill-opacity="0.5" />
                             </svg>
                         </div>
-                        <BorderTokenomic primaryColor='#0562B9' secondaryColor='#0562B9'>
+                        <BorderTokenomic primaryColor='#0562B9' secondaryColor='#0562B9' tag='6%' tagTextColor='#9C00D3'>
                             <div className='flex flex-col items-center justify-center gap-4 relative'>
                                 <p
                                     ref={descRef}
@@ -131,7 +133,7 @@ const Tokenomics = () => {
                                 <path d="M228.663 33.8608C228.663 36.7455 226.311 39.0976 223.426 39.0976C220.542 39.0976 218.189 36.7455 218.189 33.8608C218.189 30.9761 220.542 28.624 223.426 28.624C226.311 28.624 228.663 30.9761 228.663 33.8608Z" fill="#CCCCCC" fill-opacity="0.5" />
                             </svg>
                         </div>
-                        <BorderTokenomic primaryColor='#C300B0' secondaryColor='#C300B0'>
+                        <BorderTokenomic primaryColor='#C300B0' secondaryColor='#C300B0' tag='5%' tagTextColor='#C300B0'>
                             <div className='flex flex-col items-center justify-center gap-4 relative'>
                                 <p
                                     ref={descRef}
@@ -150,7 +152,7 @@ const Tokenomics = () => {
                                 <path d="M1 97.4268L57 68.4268H175.5L218 16.9268" stroke="#0562B9" stroke-width="2" stroke-linecap="round" />
                             </svg>
                         </div>
-                        <BorderTokenomic primaryColor='#9C00D3' secondaryColor='#9C00D3'>
+                        <BorderTokenomic primaryColor='#9C00D3' secondaryColor='#9C00D3' tag='6%' tagTextColor='#9C00D3'>
                             <div className='flex flex-col items-center justify-center gap-4 relative'>
                                 <p
                                     ref={descRef}

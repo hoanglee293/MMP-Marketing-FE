@@ -13,6 +13,7 @@ import { useLang } from "@/lang/useLang"
 import { useStakingContext } from "@/contexts/StakingContext"
 import { toast } from "react-toastify"
 import { useAuth } from "@/hooks/useAuth"
+import { Transaction } from "@solana/web3.js"
 
 export default function DepositPanel() {
     const [depositAmount, setDepositAmount] = useState<string>("0")
@@ -100,16 +101,15 @@ export default function DepositPanel() {
                 if (!prepareResponse.transaction) {
                     throw new Error("Failed to prepare transaction")
                 }
-                console.log("prepareResponse", prepareResponse)
-                // Step 2: Sign and send transaction
-                const signature = await Web3WalletService.signAndSendTransaction(
+                
+                // Step 2: Ký transaction và serialize lại
+                const serializedSignedTransaction = await Web3WalletService.signTransactionAndSerialize(
                     prepareResponse.transaction
                 )
-                console.log("signature", signature)
-
-                // Step 3: Complete the staking transaction
-                await createStakingPhantomCompleted({
-                    signedTransaction: prepareResponse.transaction,
+                
+                // Step 3: Gửi transaction đã ký lên backend (cần signedTransaction và staking_plan_id)
+                const completedResponse = await createStakingPhantomCompleted({
+                    signedTransaction: serializedSignedTransaction,
                     staking_plan_id: Number(selectedStake)
                 })
             } else {

@@ -78,6 +78,7 @@ const BoxFeauture = ({children}: {children: React.ReactNode}) => {
                 fill="none"
                 preserveAspectRatio="xMidYMid meet"
             >
+                
                 <foreignObject x="-24" y="-24" width="465" height="309">
                     <div style={{ backdropFilter: 'blur(12px)', clipPath: 'url(#bgblur_0_391_1181_clip_path)', height: '100%', width: '100%' }}></div>
                 </foreignObject>

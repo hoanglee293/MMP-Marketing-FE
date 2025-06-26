@@ -108,6 +108,8 @@ const ExchangeToken = () => {
   return (
     <div className='bg-feature bg-[#020616BD]/60 z-50 w-full h-svh flex items-center justify-center relative pt-20 overflow-hidden'>
       <div className='absolute top-0 right-0 w-full h-full bg-[#020616c2] backdrop-blur-lg' />
+      <div className='eclipse-box absolute bottom-[10%] left-[10%] w-[375px] h-[375px] z-20' style={{background: '#0090ff57'}}/>
+      <div className='eclipse-box absolute top-[10%] right-[10%] w-[254px] h-[254px] z-20' style={{background: '#15dffd63', filter: 'blur(50px)'}}/>
       <div className='container mx-auto px-4 relative mb-[5%]'>
         <div className='flex flex-col items-center justify-center gap-4 relative h-[50px]'>
           <h2
