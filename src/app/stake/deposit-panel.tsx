@@ -145,17 +145,17 @@ export default function DepositPanel() {
             console.error("Error creating staking:", error)
             
             // Handle specific Phantom wallet errors
-            // if (loginMethod === "phantom" && error instanceof Error) {
-            //     if (error.message.includes('User rejected') || error.message.includes('User cancelled')) {
-            //         toast.error(t("services.errors.phantomTransactionRejected") || "Transaction was rejected by user")
-            //     } else if (error.message.includes('Wallet not connected')) {
-            //         toast.error(t("services.errors.phantomNotConnected") || "Phantom wallet is not connected")
-            //     } else {
-            //         toast.error(t("stake.stakeError") || "Failed to create stake. Please try again.")
-            //     }
-            // } else {
-            //     toast.error(t("stake.stakeError") || "Failed to create stake. Please try again.")
-            // }
+            if (loginMethod === "phantom" && error instanceof Error) {
+                if (error.message.includes('User rejected') || error.message.includes('User cancelled')) {
+                    toast.error(t("services.errors.phantomTransactionRejected") || "Transaction was rejected by user")
+                } else if (error.message.includes('Wallet not connected')) {
+                    toast.error(t("services.errors.phantomNotConnected") || "Phantom wallet is not connected")
+                } else {
+                    toast.error(t("stake.stakeError") || "Failed to create stake. Please try again.")
+                }
+            } else {
+                toast.error(t("stake.stakeError") || "Failed to create stake. Please try again.")
+            }
         } finally {
             setIsLoading(false)
         }
