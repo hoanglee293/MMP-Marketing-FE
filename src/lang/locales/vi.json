@@ -1070,7 +1070,7 @@
         "pleaseSelectStakePlan": "Vui lòng chọn kế hoạch stake",
         "invalidAmount": "Số tiền không hợp lệ",
         "insufficientBalance": "Số dư không đủ. Có sẵn: {balance} MMP",
-        "insufficientSolBalance": "Số dư SOL tối thiểu để khởi tạo khoảng 0.002",
+        "insufficientSolBalance": "Bạn cần tối thiếu 0.002 SOL để khởi tạo stake",
         "invalidStakePeriod": "Thời gian stake không hợp lệ",
         "stakeSuccess": "Tạo stake thành công!",
         "stakeError": "Không thể tạo stake. Vui lòng thử lại."

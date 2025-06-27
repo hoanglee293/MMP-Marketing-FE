@@ -334,7 +334,7 @@
         "pleaseSelectStakePlan": "Please select a stake plan",
         "invalidAmount": "Invalid amount",
         "insufficientBalance": "Insufficient balance. Available: {balance} MMP",
-        "insufficientSolBalance": "Minimum SOL balance to initialize approximately 0.002",
+        "insufficientSolBalance": "You need a minimum of 0.002 SOL to initialize stake",
         "invalidStakePeriod": "Invalid stake period",
         "stakeSuccess": "Stake created successfully!",
         "stakeError": "Failed to create stake. Please try again."

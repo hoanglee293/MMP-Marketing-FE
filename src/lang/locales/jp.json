@@ -1077,7 +1077,7 @@
         "pleaseSelectStakePlan": "ステークプランを選択してください",
         "invalidAmount": "無効な金額",
         "insufficientBalance": "残高不足。利用可能: {balance} MMP",
-        "insufficientSolBalance": "初期化に必要な最小SOL残高約0.002",
+        "insufficientSolBalance": "ステークを初期化するには最低0.002 SOLが必要です",
         "invalidStakePeriod": "無効なステーク期間",
         "stakeSuccess": "ステークが正常に作成されました！",
         "stakeError": "ステークの作成に失敗しました。もう一度お試しください。"
