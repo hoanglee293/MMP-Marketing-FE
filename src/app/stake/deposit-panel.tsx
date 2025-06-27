@@ -216,7 +216,7 @@ export default function DepositPanel() {
                                     //     }
                                     // }}
                                 />
-                                <p className="text-xs text-gray-400">≈ {!depositAmount ? (Number(depositAmount) / 1000).toLocaleString() : "0"} USD</p>
+                                <p className="text-xs text-gray-400">≈ {(Number(depositAmount) / 1000).toLocaleString()} USD</p>
                             </div>
                         </div>
                     </div>
