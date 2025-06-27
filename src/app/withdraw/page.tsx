@@ -91,7 +91,7 @@ export default function WithdrawWallet() {
             return;
         }
 
-        const minUsdValue = 0.1;
+        const minUsdValue = 10;
         const tokenBalance = getTokenBalance(sellToken.symbol);
 
         // Check if amount exceeds balance
@@ -210,6 +210,7 @@ export default function WithdrawWallet() {
             <div className="flex-1 flex flex-col gap-4 sm:gap-6 justify-center h-full relative z-40 container lg:mx-auto px-4 sm:px-6">
                 {/* Amount Input */}
                 <div className="flex flex-col justify-center items-center lg:gap-6 gap-3 sm:gap-10 container mx-auto">
+                    <div className="flex flex-col gap-4 w-full items-center justify-center">
                     <div className={`p-[1px] rounded-xl bg-gradient-to-t from-theme-purple-100 to-theme-gradient-linear-end w-full max-w-[650px] group hover:from-theme-purple-200 hover:to-theme-gradient-linear-end transition-all duration-300 ${isDisabled.input ? ' cursor-not-allowed' : ''
                         }`}>
                         <div className="bg-black/50 border border-theme-gradient-linear-start p-3 sm:p-4 lg:p-6 rounded-xl group-hover:border-theme-purple-200 transition-all duration-300 ">
@@ -226,7 +227,7 @@ export default function WithdrawWallet() {
                                         value={amount}
                                         onChange={handleAmountChange}
                                         disabled={isDisabled.input}
-                                        className={`bg-transparent border-none text-center text-2xl sm:text-3xl max-w-[200px] sm:max-w-[250px] font-bold w-full focus:outline-none text-neutral transition-colors duration-300 ${error ? 'text-red-500' : 'group-hover:text-white'
+                                        className={`bg-transparent border-none text-center text-2xl sm:text-3xl max-w-[150px] sm:max-w-[250px] font-bold w-full focus:outline-none text-neutral transition-colors duration-300 ${error ? 'text-red-500' : 'group-hover:text-white'
                                             } ${isDisabled.input ? 'cursor-not-allowed ' : ''}`}
                                     />
                                     <button className="px-4 py-[2px] rounded-full text-xs bg-gray-600 cursor-pointer text-neutral border-none" onClick={() => setAmount(getTokenBalance(sellToken.symbol).toString())}>{t('swap.max')}</button>
@@ -301,6 +302,20 @@ export default function WithdrawWallet() {
                             )}
                         </div>
                     </div>
+                    <div>
+                        <div className="w-full bg-black/40 rounded-xl  py-4 px-6 border border-white/10">
+                            <div className="flex flex-col gap-2">
+                                <div className="flex items-center justify-between text-xs text-neutral/80">
+                                    <span>{t('withdraw_page.minimum_withdrawal')}: &ensp;</span>
+                                    <span className="text-green-400 font-medium">$10</span>
+                                </div>
+                                <div className="flex items-center justify-between text-xs text-neutral/80">
+                                    <span>{t('withdraw_page.transaction_fee')}: &ensp;</span>
+                                    <span className="text-red-400 font-medium">$1</span>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
 
                     {/* Send Button */}
                     <button
@@ -321,9 +336,10 @@ export default function WithdrawWallet() {
                             </span>
                         )}
                     </button>
+                    </div>
 
                     {/* Transaction History */}
-                    <div className="rounded-xl mt-6 sm:mt-10 max-w-[1200px] w-full pb-4">
+                    <div className="rounded-xl mt-6 max-w-[1200px] w-full pb-4">
                         <h3 className="text-sm sm:text-base font-semibold text-neutral mb-4 px-2">
                             {t('withdraw_page.transaction_history')}
                         </h3>
