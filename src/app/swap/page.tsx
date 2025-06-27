@@ -728,6 +728,7 @@ export default function SwapInterface() {
                   <div className="bg-dark-100 rounded-xl py-3 px-4">
                     <div className="flex items-center justify-between mb-1">
                       <label className="text-[#fcfcfc] text-xs lg:text-sm font-medium">{t("swap.from")}</label>
+                      <button className="px-4 py-[1px] rounded-full h-[20px] text-xs bg-gray-600 cursor-pointer text-neutral border-none" onClick={() => setSellAmount(getTokenBalance(sellToken.symbol).toString())}>{t("swap.max")}</button>
                     </div>
                     <div className="flex items-start justify-between">
                       <DropdownMenu>
@@ -746,7 +747,7 @@ export default function SwapInterface() {
                           {tokens.map((token) => (
                             <DropdownMenuItem
                               key={`${token.symbol}-${token.name}`}
-                              onClick={() => setSellToken(token)}
+                              onClick={() => { setSellToken(token); setSellAmount("0") }}
                               className="text-[#fcfcfc] hover:bg-[#d7d7d7]/10 focus:bg-[#d7d7d7]/10 w-full p-2 hover:bg-gradient-violet-blue flex items-center gap-3 px-3"
                             >
                               <div
@@ -848,7 +849,7 @@ export default function SwapInterface() {
                   </Button>
                 )}
 
-                <div className="bg-black/60 rounded-xl flex  items-center justify-between space-y-1  lg:space-y-2">
+                <div className=" rounded-xl flex  items-center justify-between space-y-1  lg:space-y-2">
                   <div className="flex  text-xs lg:text-sm gap-2 ">
                     <span className="text-[#d7d7d7]">1 MMP/ MPB</span>
                     <svg xmlns="http://www.w3.org/2000/svg" width="12" height="13" className="lg:w-4 lg:h-4" viewBox="0 0 14 15" fill="none">

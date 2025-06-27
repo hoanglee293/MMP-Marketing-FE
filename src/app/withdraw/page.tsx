@@ -34,11 +34,6 @@ export default function WithdrawWallet() {
     const [sellToken, setSellToken] = useState(tokens[0])
     const [expandedRow, setExpandedRow] = useState<number | null>(null);
 
-    const isDisabled = useMemo(() => ({
-        input: isSending,
-        send: isSending || !amount || parseFloat(amount) <= 0 || !!error || !!recipientError,
-    }), [isSending, amount, error, recipientError]);
-
     const { data: myWallet, refetch: refetchMyWallet } = useQuery({
         queryKey: ['myWallet'],
         queryFn: () => TelegramWalletService.getmyWallet(),
@@ -77,6 +72,18 @@ export default function WithdrawWallet() {
         }
     };
 
+    const isDisabled = useMemo(() => {
+        const numAmount = parseFloat(amount);
+        const tokenBalance = getTokenBalance(sellToken.symbol);
+        const hasValidAmount = numAmount > 0 && numAmount <= tokenBalance;
+        const hasValidRecipient = recipientWallet.length > 0;
+        
+        return {
+            input: isSending,
+            send: isSending || !hasValidAmount || !hasValidRecipient || !!error || !!recipientError,
+        };
+    }, [isSending, amount, recipientWallet, error, recipientError, sellToken.symbol, balances]);
+
     useEffect(() => {
         const numValue = parseFloat(amount);
         if (!amount || isNaN(numValue) || numValue <= 0) {
@@ -85,6 +92,13 @@ export default function WithdrawWallet() {
         }
 
         const minUsdValue = 0.1;
+        const tokenBalance = getTokenBalance(sellToken.symbol);
+
+        // Check if amount exceeds balance
+        if (numValue > tokenBalance) {
+            setError(t('withdraw_page.insufficient_balance'));
+            return;
+        }
 
         switch (sellToken.symbol) {
             case 'USDT':
@@ -134,16 +148,36 @@ export default function WithdrawWallet() {
     };
 
     const handleSubmit = () => {
+        // Reset previous errors
+        setRecipientError("");
+        setError("");
+        
+        let hasError = false;
+        
+        // Validate recipient wallet
         if (recipientWallet.length === 0) {
             setRecipientError(t('universal_account.recipient_address_required'));
+            hasError = true;
         }
-        if (Number(amount) <= 0) {
+        
+        // Validate amount
+        const numAmount = Number(amount);
+        if (numAmount <= 0) {
             setError(t('universal_account.amount_must_be_positive'));
+            hasError = true;
         }
-        if(Number(amount) > 0 && recipientError.length !== 0){
+        
+        // Check if amount exceeds balance
+        const tokenBalance = getTokenBalance(sellToken.symbol);
+        if (numAmount > tokenBalance) {
+            setError(t('withdraw_page.insufficient_balance'));
+            hasError = true;
+        }
+        
+        // If no errors, proceed with withdrawal
+        if (!hasError) {
             handleSend();
         }
-        return;
     }
     
     const handleSend = async () => {
@@ -185,7 +219,7 @@ export default function WithdrawWallet() {
                                         {t('withdraw_page.enter_amount_to_send')}
                                     </p>
                                 </div>
-                                <div className="text-center flex items-center justify-center mb-2 relative">
+                                <div className="text-center flex items-center justify-center mb-2 ml-5 relative">
                                     <input
                                         type="text"
                                         inputMode="decimal"
@@ -195,6 +229,7 @@ export default function WithdrawWallet() {
                                         className={`bg-transparent border-none text-center text-2xl sm:text-3xl max-w-[200px] sm:max-w-[250px] font-bold w-full focus:outline-none text-neutral transition-colors duration-300 ${error ? 'text-red-500' : 'group-hover:text-white'
                                             } ${isDisabled.input ? 'cursor-not-allowed ' : ''}`}
                                     />
+                                    <button className="px-4 py-[2px] rounded-full text-xs bg-gray-600 cursor-pointer text-neutral border-none" onClick={() => setAmount(getTokenBalance(sellToken.symbol).toString())}>{t('swap.max')}</button>
                                     <DropdownMenu>
                                         <DropdownMenuTrigger asChild className="bg-transparent border-none text-xs lg:text-sm text-neutral cursor-pointer py-1 lg:py-2 absolute right-0 top-0">
                                             <button className="flex items-center gap-1 lg:gap-2 text-[#fcfcfc] hover:text-[#9747ff] transition-colors min-h-[32px] min-w-[32px]"
@@ -213,7 +248,7 @@ export default function WithdrawWallet() {
                                             {tokens.map((token) => (
                                                 <DropdownMenuItem
                                                     key={`${token.symbol}-${token.name}`}
-                                                    onClick={() => setSellToken(token)}
+                                                    onClick={() => { setSellToken(token); setAmount("0") }}
                                                     className="text-[#fcfcfc] hover:bg-[#d7d7d7]/10 focus:bg-[#d7d7d7]/10 w-full p-2 hover:bg-gradient-violet-blue flex items-center gap-3 px-3 cursor-pointer"
                                                 >
                                                     <div

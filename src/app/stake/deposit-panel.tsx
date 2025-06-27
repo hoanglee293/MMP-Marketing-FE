@@ -27,7 +27,7 @@ export default function DepositPanel() {
     const queryClient = useQueryClient()
     const { refreshStakingData } = useStakingContext()
     const { loginMethod } = useAuth()
-
+    console.log("depositAmount", depositAmount)
     const { data: stakingPlans } = useQuery({
         queryKey: ["staking-plans"],
         queryFn: getStakingPlans,
@@ -36,9 +36,9 @@ export default function DepositPanel() {
     const { data: myWallet, refetch: refetchMyWallet } = useQuery({
         queryKey: ['myWallet'],
         queryFn: () => TelegramWalletService.getmyWallet(),
-      })
-    
-    
+    })
+
+
     const { balances } = useWsWalletBalance(myWallet?.sol_address);
     // Transform stakingPlans to stakeOptions format
     const stakeOptions = stakingPlans ? stakingPlans.map((plan: any) => ({
@@ -90,23 +90,23 @@ export default function DepositPanel() {
 
         setIsLoading(true)
         try {
-            if(loginMethod == "phantom") {
+            if (loginMethod == "phantom") {
                 // Phantom wallet flow
                 // Step 1: Prepare transaction
                 const prepareResponse = await createStakingPhantomConfirm({
-                    amount_staked: amount, 
+                    amount_staked: amount,
                     lock_months: Number(stakeMonths) / 30
                 })
-                
+
                 if (!prepareResponse.transaction) {
                     throw new Error("Failed to prepare transaction")
                 }
-                
+
                 // Step 2: Ký transaction và serialize lại
                 const serializedSignedTransaction = await Web3WalletService.signTransactionAndSerialize(
                     prepareResponse.transaction
                 )
-                
+
                 // Step 3: Gửi transaction đã ký lên backend (cần signedTransaction và staking_plan_id)
                 const completedResponse = await createStakingPhantomCompleted({
                     signedTransaction: serializedSignedTransaction,
@@ -114,13 +114,13 @@ export default function DepositPanel() {
                 })
             } else {
                 // Regular flow for other login methods
-                await createStaking({ 
-                    staking_plan_id: Number(selectedStake), 
-                    amount_staked: amount, 
-                    lock_months: Number(stakeMonths) / 30 
+                await createStaking({
+                    staking_plan_id: Number(selectedStake),
+                    amount_staked: amount,
+                    lock_months: Number(stakeMonths) / 30
                 })
             }
-            
+
             // Invalidate và refetch các queries liên quan (React Query)
             await Promise.all([
                 queryClient.invalidateQueries({ queryKey: ["list-staking"] }),
@@ -128,22 +128,22 @@ export default function DepositPanel() {
                 queryClient.invalidateQueries({ queryKey: ["myWallet"] }),
                 refetchMyWallet()
             ])
-            
+
             // Trigger refresh thông qua Context
             refreshStakingData()
-            
+
             // Reset form
             setDepositAmount("0.00")
             setSelectedStake("")
             setStakeMonths("")
             setStakeName("")
-            
+
             // Show success message
             toast.success(t("stake.stakeSuccess") || "Stake created successfully!")
-            
+
         } catch (error) {
             console.error("Error creating staking:", error)
-            
+
             // Handle specific Phantom wallet errors
             if (loginMethod === "phantom" && error instanceof Error) {
                 if (error.message.includes('User rejected') || error.message.includes('User cancelled')) {
@@ -180,24 +180,25 @@ export default function DepositPanel() {
 
                 {/* Deposit Section */}
                 <div className="space-y-3 sm:space-y-4 mb-4 sm:mb-6">
-                    <div 
+                    <div
                         className="bg-dark-100 rounded-xl flex justify-start flex-col p-3 border border-gray-700/50 cursor-text"
                         onClick={() => inputRef.current?.focus()}
                     >
-                        <p className="text-xs sm:text-sm text-gray-400 mb-1">{t("stake.deposit")}</p>
+                        <div className="flex justify-between"><p className="text-xs sm:text-sm text-gray-400 mb-1">{t("stake.deposit")}</p>
+                            <button className="px-4 py-[1px] rounded-full h-[20px] text-xs bg-gray-600 cursor-pointer text-neutral border-none" onClick={() => setDepositAmount(balances?.mmp.toString() || "0")}>Max</button></div>
                         <div className="flex items-center justify-between">
                             <div className="flex items-center">
                                 <img src="/mmp-logo.png" alt="MMP" className="w-5 h-5 sm:w-6 sm:h-6 mr-2" />
                                 <div className="text-white font-medium pt-1 text-sm sm:text-base">MMP</div>
                             </div>
                             <div className="text-right">
-                                <input 
+                                <input
                                     ref={inputRef}
-                                    type="number" 
-                                    min={0} 
+                                    type="number"
+                                    min={0}
                                     step="0.01"
-                                    className="bg-transparent text-base sm:text-lg px-3 border border-transparent max-w-[80px] sm:max-w-[150px] border-solid focus:border-2 focus:border-gray-700/50 rounded-xl font-bold text-white outline-none appearance-none [&::-webkit-outer-spin-button]:appearance-none [&::-webkit-inner-spin-button]:appearance-none text-right" 
-                                    value={depositAmount} 
+                                    className="bg-transparent text-base sm:text-lg px-3 border border-transparent max-w-[80px] sm:max-w-[200px] border-solid focus:border-2 focus:border-gray-700/50 rounded-xl font-bold text-white outline-none appearance-none [&::-webkit-outer-spin-button]:appearance-none [&::-webkit-inner-spin-button]:appearance-none text-right"
+                                    value={depositAmount}
                                     onChange={(e) => {
                                         const value = e.target.value
                                         // Prevent negative values
@@ -207,15 +208,15 @@ export default function DepositPanel() {
                                             setDepositAmount(value)
                                         }
                                     }}
-                                    onBlur={(e) => {
-                                        // Format to 2 decimal places on blur
-                                        const value = Number(e.target.value)
-                                        if (!isNaN(value) && value >= 0) {
-                                            setDepositAmount(value.toLocaleString())
-                                        }
-                                    }}
+                                    // onBlur={(e) => {
+                                    //     // Format to 2 decimal places on blur
+                                    //     const value = Number(e.target.value)
+                                    //     if (!isNaN(value) && value >= 0) {
+                                    //         setDepositAmount(value.toLocaleString())
+                                    //     }
+                                    // }}
                                 />
-                                <p className="text-xs text-gray-400">≈ {(Number(depositAmount) / 1000).toLocaleString()} USD</p>
+                                <p className="text-xs text-gray-400">≈ {!depositAmount ? (Number(depositAmount) / 1000).toLocaleString() : "0"} USD</p>
                             </div>
                         </div>
                     </div>
@@ -266,12 +267,12 @@ export default function DepositPanel() {
                     </div>
                 </div>
             </div>
-            
+
             {/* Stake Button */}
-            <Button 
-                onClick={handleStake} 
+            <Button
+                onClick={handleStake}
                 className="w-full h-10 cursor-pointer bg-gradient-to-r from-purple-600 to-cyan-500 border-none hover:from-purple-700 hover:to-cyan-600 text-white font-bold text-base sm:text-lg rounded-full transition-all duration-300 transform hover:scale-105 disabled:opacity-50 disabled:cursor-not-allowed disabled:transform-none"
-                // disabled={isLoading || !selectedStake || !depositAmount || Number(depositAmount) <= 0 || Number(depositAmount) > Number(balances?.mmp || 0)}
+            // disabled={isLoading || !selectedStake || !depositAmount || Number(depositAmount) <= 0 || Number(depositAmount) > Number(balances?.mmp || 0)}
             >
                 {isLoading ? t("stake.stakeProcessing") : t("stake.stake")}
             </Button>

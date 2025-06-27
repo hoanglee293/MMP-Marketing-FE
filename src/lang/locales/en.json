@@ -32,17 +32,6 @@
         "withdraw": "Withdraw",
         "whitePaper": "White Paper"
     },
-    "referral": {
-        "structure": {
-            "your_reward": "Your Reward",
-            "total_commission": "Total Commission",
-            "paid_in": "paid in",
-            "note": "Note: You need to perform a swap of MMP tokens with a minimum of $5 to be eligible for rewards. When you haven't performed the swap, your reward amount will be in pending status.",
-            "when_downline_buys": "When your downline buys",
-            "when_downline_buys_mpb": "When your downline buys MPB",
-            "when_downline_buys_mmp": "When your downline buys MMP"
-        }
-    },
     "withdraw_page": {
         "withdraw_successful": "Withdrawal successful!",
         "withdraw_failed": "Withdrawal failed. Please try again.",
@@ -52,6 +41,7 @@
         "enter_recipient_wallet_address": "Enter recipient wallet address...",
         "send": "Send",
         "loading": "Loading...",
+        "insufficient_balance": "Insufficient balance",
         "no_withdrawal_history": "No withdrawal history",
         "table": {
             "time": "Time",
@@ -121,6 +111,7 @@
         "from": "From",
         "to": "To",
         "swap": "SWAP",
+        "max": "Max",
         "connectWallet": "Connect Wallet",
         "processing": "Processing...",
         "time": "Time",
@@ -365,6 +356,19 @@
         "show": "Show",
         "type": "Type",
         "normal": "Normal",
+        "history": "History",
+        "txHash": "Tx Hash",
+        "status": "Status",
+        "reward": "Reward",
+        "token": "Token",
+        "pending": "Pending",
+        "completed": "Completed",
+        "detail": "Detail",
+        "referralHistory": "Referral History",
+        "referralDetail": "Referral Detail",
+        "userInfo": "User Information",
+        "date": "Date",
+        "failed": "Failed",
         "bj": "BJ",
         "levels": {
             "all": "All",
@@ -377,11 +381,15 @@
             "level7": "Level 7"
         },
         "structure": {
-            "regular_customer": "Regular Customer",
-            "bj_influencer": "BJ / Influencer",
+            "your_reward": "Your Reward",
             "total_commission": "Total Commission",
             "paid_in": "paid in",
-            "your_reward": "Your Reward"
+            "note": "Note: You need to perform a swap of MMP tokens with a minimum of $5 to be eligible for rewards. When you haven't performed the swap, your reward amount will be in pending status.",
+            "when_downline_buys": "When your downline buys",
+            "when_downline_buys_mpb": "When your downline buys MPB",
+            "when_downline_buys_mmp": "When your downline buys MMP",
+            "regular_customer": "Regular Customer",
+            "bj_influencer": "BJ / Influencer"
         },
         "noReferredUsers": "No referred users yet."
     },
