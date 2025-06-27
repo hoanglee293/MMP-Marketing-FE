@@ -43,6 +43,7 @@
         "send": "Send",
         "loading": "Loading...",
         "insufficient_balance": "Insufficient balance",
+        "withdraw_fee_description": "For SOL, USDT, USDC: ",
         "no_withdrawal_history": "No withdrawal history",
         "minimum_withdrawal": "Minimum withdrawal",
         "transaction_fee": "Transaction fee",
@@ -157,7 +158,7 @@
             "invalidRequest": "Invalid request. Please check your input.",
             "authenticationRequired": "Authentication required. Please connect your wallet.",
             "insufficientBalance": "Insufficient balance or permission denied.",
-            "insufficientSolBalance": "Insufficient SOL balance. Please check your wallet balance.",
+            "insufficientSolBalance": "Minimum SOL balance to initialize approximately 0.002",
             "ataCreationFee": "ATA creation fee is 0.0025 SOL. Please ensure you have enough SOL for the transaction.",
             "serviceUnavailable": "Service not available. Please try again later.",
             "tooManyRequests": "Too many requests. Please wait before trying again.",
@@ -333,6 +334,7 @@
         "pleaseSelectStakePlan": "Please select a stake plan",
         "invalidAmount": "Invalid amount",
         "insufficientBalance": "Insufficient balance. Available: {balance} MMP",
+        "insufficientSolBalance": "Minimum SOL balance to initialize approximately 0.002",
         "invalidStakePeriod": "Invalid stake period",
         "stakeSuccess": "Stake created successfully!",
         "stakeError": "Failed to create stake. Please try again."
@@ -734,10 +736,11 @@
                     "items": [
                         "Premium APY rates",
                         "Competitive high-yield APY:",
-                        "3 months: 20% per year",
-                        "6 months: 30% per year",
-                        "9 months: 40% per year",
-                        "12 months: 50% per year",
+                        "3 months: 10%",
+                        "6 months: 22%",
+                        "9 months: 34%",
+                        "12 months: 48%",
+                        "24 months: 130%",
                         "Flexible adjustment: APY may be adjusted dynamically depending on platform operation or TVL (Total Value Locked) to ensure stable ecosystem growth."
                     ]
                 },

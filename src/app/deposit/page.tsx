@@ -26,12 +26,6 @@ const DepositPage = () => {
 
     const address = mywallet?.sol_address
 
-    const tokens = [
-        { symbol: "SOL", name: "Solana", icon: "/solana.png" },
-        { symbol: "USDT", name: "Tether", icon: "/USDT.png" },
-        { symbol: "USDC", name: "USDC", icon: "/usdc.png" },
-    ]
-
     const handleCopyAddress = async () => {
         if (!address) return
 

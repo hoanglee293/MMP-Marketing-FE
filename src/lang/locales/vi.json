@@ -45,6 +45,7 @@
         "no_withdrawal_history": "Không có lịch sử rút tiền",
         "minimum_withdrawal": "Số tiền rút tối thiểu",
         "transaction_fee": "Phí giao dịch",
+        "withdraw_fee_description": "Đối với SOL, USDT, USDC: ",
         "table": {
             "time": "Thời gian",
             "type": "Loại",
@@ -698,10 +699,11 @@
                     "items": [
                         "Tỷ lệ APY cao cấp",
                         "APY cạnh tranh, lợi suất cao:",
-                        "3 tháng: 20%/năm",
-                        "6 tháng: 30%/năm",
-                        "9 tháng: 40%/năm",
-                        "12 tháng: 50%/năm",
+                        "3 tháng: 10%",
+                        "6 tháng: 22%",
+                        "9 tháng: 34%",
+                        "12 tháng: 48%",
+                        "24 tháng: 130%",
                         "Điều chỉnh linh hoạt: APY có thể được điều chỉnh linh hoạt tùy theo hoạt động nền tảng hoặc TVL (Tổng giá trị khóa) để đảm bảo tăng trưởng hệ sinh thái ổn định."
                     ]
                 },
@@ -1068,6 +1070,7 @@
         "pleaseSelectStakePlan": "Vui lòng chọn kế hoạch stake",
         "invalidAmount": "Số tiền không hợp lệ",
         "insufficientBalance": "Số dư không đủ. Có sẵn: {balance} MMP",
+        "insufficientSolBalance": "Số dư SOL tối thiểu để khởi tạo khoảng 0.002",
         "invalidStakePeriod": "Thời gian stake không hợp lệ",
         "stakeSuccess": "Tạo stake thành công!",
         "stakeError": "Không thể tạo stake. Vui lòng thử lại."

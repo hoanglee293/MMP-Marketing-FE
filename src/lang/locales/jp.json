@@ -45,6 +45,7 @@
         "no_withdrawal_history": "出金履歴はありません",
         "minimum_withdrawal": "最低出金額",
         "transaction_fee": "取引手数料",
+        "withdraw_fee_description": "SOL、USDT、USDCの場合: ",
         "table": {
             "time": "時間",
             "type": "タイプ",
@@ -700,10 +701,11 @@
                     "items": [
                         "プレミアムAPYレート",
                         "競争力のある高利回りAPY:",
-                        "3ヶ月: 年20%",
-                        "6ヶ月: 年30%",
-                        "9ヶ月: 年40%",
-                        "12ヶ月: 年50%",
+                        "3ヶ月: 10%",
+                        "6ヶ月: 22%",
+                        "9ヶ月: 34%",
+                        "12ヶ月: 48%",
+                        "24ヶ月: 130%",
                         "柔軟な調整: プラットフォームの運用状況やTVL（Total Value Locked）に応じてAPYは柔軟に調整され、生態系の安定成長を図ります。"
                     ]
                 },
@@ -1074,7 +1076,8 @@
         "pleaseEnterValidAmount": "有効な金額を入力してください",
         "pleaseSelectStakePlan": "ステークプランを選択してください",
         "invalidAmount": "無効な金額",
-        "insufficientBalance": "残高が不足しています。利用可能: {balance} MMP",
+        "insufficientBalance": "残高不足。利用可能: {balance} MMP",
+        "insufficientSolBalance": "初期化に必要な最小SOL残高約0.002",
         "invalidStakePeriod": "無効なステーク期間",
         "stakeSuccess": "ステークが正常に作成されました！",
         "stakeError": "ステークの作成に失敗しました。もう一度お試しください。"

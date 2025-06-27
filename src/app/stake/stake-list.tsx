@@ -218,10 +218,10 @@ export default function StakeList() {
         if (!stakingPlans || !Array.isArray(stakingPlans)) {
             return [];
         }
-
         const newData = stakingPlans.map((plan: any) => ({
             periodDays: plan.period_days,
-            name: plan.name
+            name: plan.name,
+            interestRate: plan.interest_rate
         }))
 
         // Initialize all stake types with empty data
@@ -231,7 +231,7 @@ export default function StakeList() {
                 periodDays: stakeType.periodDays,
                 stakes: [],
                 totalAmount: 0,
-                interestRate: 0
+                interestRate: stakeType.interestRate
             };
             return acc;
         }, {} as any);

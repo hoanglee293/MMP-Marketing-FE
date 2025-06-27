@@ -82,6 +82,13 @@ export default function DepositPanel() {
             return
         }
 
+        // Check if user has sufficient SOL balance for transaction fees
+        const solBalance = Number(balances?.sol || 0)
+        if (solBalance < 0.002) {
+            toast.error(t("stake.insufficientSolBalance") || "To create a stake, the minimum SOL balance in your wallet should be approximately 0.002 SOL")
+            return
+        }
+
         // Validate stake months
         if (!stakeMonths || Number(stakeMonths) <= 0) {
             toast.error(t("stake.invalidStakePeriod") || "Invalid stake period")
@@ -188,7 +195,7 @@ export default function DepositPanel() {
                             <button className="px-4 py-[1px] rounded-full h-[20px] text-xs bg-gray-600 cursor-pointer text-neutral border-none" onClick={() => setDepositAmount(balances?.mmp.toString() || "0")}>Max</button></div>
                         <div className="flex items-center justify-between">
                             <div className="flex items-center">
-                                <img src="/mmp-logo.png" alt="MMP" className="w-5 h-5 sm:w-6 sm:h-6 mr-2" />
+                                <img src="/mmp.png" alt="MMP" className="w-5 h-5 sm:w-6 sm:h-6 mr-2" />
                                 <div className="text-white font-medium pt-1 text-sm sm:text-base">MMP</div>
                             </div>
                             <div className="text-right">

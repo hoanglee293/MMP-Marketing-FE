@@ -303,8 +303,9 @@ export default function WithdrawWallet() {
                         </div>
                     </div>
                     <div>
-                        <div className="w-full bg-black/40 rounded-xl  py-4 px-6 border border-white/10">
+                        <div className="w-full bg-black/40 rounded-xl  py-4 px-8 border border-white/10">
                             <div className="flex flex-col gap-2">
+                                <span className="text-xs text-neutral/80">{t('withdraw_page.withdraw_fee_description')} </span>
                                 <div className="flex items-center justify-between text-xs text-neutral/80">
                                     <span>{t('withdraw_page.minimum_withdrawal')}: &ensp;</span>
                                     <span className="text-green-400 font-medium">$10</span>
@@ -339,7 +340,7 @@ export default function WithdrawWallet() {
                     </div>
 
                     {/* Transaction History */}
-                    <div className="rounded-xl mt-6 max-w-[1200px] w-full pb-4">
+                    <div className="rounded-xl mt-0 max-w-[1200px] w-full pb-4">
                         <h3 className="text-sm sm:text-base font-semibold text-neutral mb-4 px-2">
                             {t('withdraw_page.transaction_history')}
                         </h3>

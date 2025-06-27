@@ -45,6 +45,7 @@
         "insufficient_balance": "잔액이 부족합니다",
         "minimum_withdrawal": "최소 출금액",
         "transaction_fee": "거래 수수료",
+        "withdraw_fee_description": "SOL, USDT, USDC의 경우: ",
         "table": {
             "time": "시간",
             "type": "유형",
@@ -700,10 +701,11 @@
                     "items": [
                         "프리미엄 APY 비율",
                         "경쟁력 있는 고수익 APY:",
-                        "3개월: 연 20%",
-                        "6개월: 연 30%",
-                        "9개월: 연 40%",
-                        "12개월: 연 50%",
+                        "3개월: 10%",
+                        "6개월: 22%",
+                        "9개월: 34%",
+                        "12개월: 48%",
+                        "24개월: 130%",
                         "유동적 조정 가능: 플랫폼의 운영 상황이나 TVL(Total Value Locked, 총 예치금)에 따라 APY는 유동적으로 조정될 수 있으며, 이는 생태계의 안정적 성장을 위한 조치입니다."
                     ]
                 },
@@ -1074,7 +1076,8 @@
         "pleaseEnterValidAmount": "유효한 금액을 입력하세요",
         "pleaseSelectStakePlan": "스테이크 플랜을 선택하세요",
         "invalidAmount": "유효하지 않은 금액",
-        "insufficientBalance": "잔액이 부족합니다. 사용 가능: {balance} MMP",
+        "insufficientBalance": "잔액 부족. 사용 가능: {balance} MMP",
+        "insufficientSolBalance": "초기화를 위한 최소 SOL 잔액 약 0.002",
         "invalidStakePeriod": "유효하지 않은 스테이크 기간",
         "stakeSuccess": "스테이크가 성공적으로 생성되었습니다!",
         "stakeError": "스테이크 생성에 실패했습니다. 다시 시도해 주세요."
