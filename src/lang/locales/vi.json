@@ -43,6 +43,8 @@
         "loading": "Đang tải...",
         "transaction_history": "Lịch sử giao dịch",
         "no_withdrawal_history": "Không có lịch sử rút tiền",
+        "minimum_withdrawal": "Số tiền rút tối thiểu",
+        "transaction_fee": "Phí giao dịch",
         "table": {
             "time": "Thời gian",
             "type": "Loại",

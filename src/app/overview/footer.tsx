@@ -1,3 +1,4 @@
+import BorderPrimary from '@/components/border-primary'
 import React from 'react'
 
 const Footer = () => {
@@ -7,14 +8,19 @@ const Footer = () => {
             <div className=' relative mb-[5%] container mx-auto w-full flex flex-col gap-32 z-30'>
                 <div className='flex items-center justify-center h-[178px] bg-gradient-to-l from-[#0b4343]/70 to-[#014185]/70 w-full backdrop-blur-lg rounded-lg overflow-hidden'>
                     <div className="border-4 rounded-l-lg border-r-0 border-solid border-[#33FCFF] h-full w-16" />
-                    <div className='flex items-center justify-around flex-1 h-[90%] overflow-hidden'>
+                    <div className='flex items-center justify-around flex-1 h-[100%] overflow-hidden '>
                         <div className='flex flex-col  justify-center gap-4'>
-                            <h3 className='text-neutral text-4xl font-bold bg-gradient-to-t from-[#1366FF] to-[#00C0FF] bg-clip-text'>Swap Now <span className="text-neutral bg-transparent">- Leade the Future</span></h3>
+                            <div className='flex items-center gap-2'>
+                                <h3 className='text-neutral text-4xl font-bold bg-gradient-to-t from-[#33FCFF] to-[#2492FE] bg-clip-text'>Swap Now</h3><span className="text-neutral bg-transparent text-4xl font-bold">- Leade the Future</span>
+                            </div>
                             <p className='text-neutral text-lg max-w-[750px]'>
                                 Join the MEMEPUMP community in making breakthrough swaps – trade fast, earn rewards instantly, and unlock limitless profit opportunities!
                             </p>
                         </div>
-                        <button className="border-none bg-[#18b5d5] cursor-pointer text-neutral text-lg font-bold px-8 py-2 rounded-lg">Swap Now</button>
+
+                        <div className='h-[43px] w-[199px] relative'>
+                            <BorderPrimary >Swap Now</BorderPrimary>
+                        </div>
                     </div>
                     <div className="border-4 rounded-r-lg border-l-0 border-solid border-[#33FCFF] h-full w-16" />
                 </div>

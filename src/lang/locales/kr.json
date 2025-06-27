@@ -43,6 +43,8 @@
         "loading": "로딩 중...",
         "no_withdrawal_history": "출금 내역이 없습니다",
         "insufficient_balance": "잔액이 부족합니다",
+        "minimum_withdrawal": "최소 출금액",
+        "transaction_fee": "거래 수수료",
         "table": {
             "time": "시간",
             "type": "유형",

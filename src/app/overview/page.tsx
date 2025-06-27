@@ -2,11 +2,13 @@
 import React from 'react'
 import Features from './features'
 import { useIntersectionObserver } from '@/hooks/useIntersectionObserver'
+import { useActiveSection } from '@/hooks/useActiveSection'
 import ExchangeToken from './exchange-token'
 import Tokenomics from './tokenomics'
 import OurTeam from './our-team'
 import RoadMap from './road-map'
 import Footer from './footer'
+import NavigationTabs from '@/components/NavigationTabs'
 
 const page = () => {
     const { elementRef: titleRef, isIntersecting: titleInView } = useIntersectionObserver<HTMLHeadingElement>({
@@ -24,9 +26,12 @@ const page = () => {
         rootMargin: '-50px'
     });
 
+    const activeSection = useActiveSection();
+
     return (
         <div className='flex flex-col'>
-            <div className='bg-overview bg-blue-200 z-50 w-full h-svh flex items-center justify-center relative overflow-hidden'>
+            {/* Join Us Section */}
+            <div id="join-us" className='bg-overview bg-blue-200 z-50 w-full h-svh flex items-center justify-center relative overflow-hidden'>
                 <div className='absolute top-[50%] right-0 animate-float'>
                     <img src="/box-elips.png" alt="bg-feature" className='2xl:max-w-max max-w-[230px] object-cover' />
                 </div>
@@ -59,12 +64,39 @@ const page = () => {
                     
                 </div>
             </div>
-            <Features />
-            <ExchangeToken />
-            <Tokenomics />
-            <OurTeam />
-            <RoadMap />
-            <Footer />
+            
+            {/* Features Section */}
+            <div id="features">
+                <Features />
+            </div>
+            
+            {/* Exchange Token Section */}
+            <div id="exchange-token">
+                <ExchangeToken />
+            </div>
+            
+            {/* Tokenomics Section */}
+            <div id="tokenomics">
+                <Tokenomics />
+            </div>
+            
+            {/* Our Team Section */}
+            <div id="our-team">
+                <OurTeam />
+            </div>
+            
+            {/* Road Map Section */}
+            <div id="road-map">
+                <RoadMap />
+            </div>
+            
+            {/* Footer Section */}
+            <div id="footer">
+                <Footer />
+            </div>
+
+            {/* Navigation Tabs */}
+            <NavigationTabs activeSection={activeSection} />
         </div>
 
     )

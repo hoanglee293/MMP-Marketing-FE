@@ -44,6 +44,8 @@
         "loading": "Loading...",
         "insufficient_balance": "Insufficient balance",
         "no_withdrawal_history": "No withdrawal history",
+        "minimum_withdrawal": "Minimum withdrawal",
+        "transaction_fee": "Transaction fee",
         "table": {
             "time": "Time",
             "type": "Type",
