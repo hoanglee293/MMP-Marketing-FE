@@ -197,7 +197,7 @@ export default function DepositPanel() {
                                     type="number"
                                     min={0}
                                     step="0.01"
-                                    className="bg-transparent text-base sm:text-lg px-3 border border-transparent max-w-[80px] sm:max-w-[200px] border-solid focus:border-2 focus:border-gray-700/50 rounded-xl font-bold text-white outline-none appearance-none [&::-webkit-outer-spin-button]:appearance-none [&::-webkit-inner-spin-button]:appearance-none text-right"
+                                    className="bg-transparent text-base sm:text-lg px-3 border border-transparent max-w-[200px] border-solid focus:border-2 focus:border-gray-700/50 rounded-xl font-bold text-white outline-none appearance-none [&::-webkit-outer-spin-button]:appearance-none [&::-webkit-inner-spin-button]:appearance-none text-right"
                                     value={depositAmount}
                                     onChange={(e) => {
                                         const value = e.target.value

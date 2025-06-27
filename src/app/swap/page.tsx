@@ -272,6 +272,24 @@ export default function SwapInterface() {
       title: t("swap.policyItems.4"),
     }
   ]
+  let linkYoutube;
+  switch (lang) {
+    case "en":
+      linkYoutube = "https://www.youtube.com/embed/rmmJsStmSaM"
+      break;
+    case "vi":
+      linkYoutube = "https://www.youtube.com/embed/pb5cIxvI6mQ"
+      break;
+    case "kr":
+      linkYoutube = "https://www.youtube.com/embed/gczNhJ5G7Co"
+      break;
+    case "jp":
+      linkYoutube = "https://www.youtube.com/embed/rmmJsStmSaM"
+      break;
+    default:
+      linkYoutube = "https://www.youtube.com/embed/rmmJsStmSaM"
+      break;
+  }
 
   const renderTabContent = () => {
     switch (activeTab) {
@@ -339,7 +357,14 @@ export default function SwapInterface() {
 
               </div>
               <div className="rounded-xl overflow-hidden flex justify-center">
-                <img src="/okv.jpg" alt="swap-guide" className="w-full h-auto md:w-auto md:h-80 lg:h-96" />
+                <iframe 
+                  src={linkYoutube} 
+                  title="swap-guide"
+                  className="w-full max-w-3xl h-48 md:h-64 lg:h-[24rem] rounded-xl"
+                  frameBorder="0"
+                  allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+                  allowFullScreen
+                />
               </div>
             </div>
           </div>
@@ -766,7 +791,7 @@ export default function SwapInterface() {
                           value={sellAmount}
                           onChange={(e) => setSellAmount(e.target.value)}
                           placeholder="0"
-                          className="text-lg lg:text-2xl font-bold text-[#fcfcfc] bg-transparent pr-1 border-none outline-none w-24 lg:w-32 rounded-full min-w-[80px] lg:min-w-[100px] text-right appearance-none [&::-webkit-outer-spin-button]:appearance-none [&::-webkit-inner-spin-button]:appearance-none"
+                          className="text-lg lg:text-2xl font-bold text-[#fcfcfc] bg-transparent pr-1 border-none outline-none w-24 lg:w-32 rounded-full min-w-[200px] text-right appearance-none [&::-webkit-outer-spin-button]:appearance-none [&::-webkit-inner-spin-button]:appearance-none"
                         />
                         <div className="text-right text-[#d7d7d7] text-xs lg:text-sm">~ {getUSDValue().toFixed(2)} USD</div>
                       </div>

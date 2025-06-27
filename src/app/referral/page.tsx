@@ -123,6 +123,7 @@ export default function ReferralDashboard() {
   const [isDetailModalOpen, setIsDetailModalOpen] = useState(false)
   const [selectedUser, setSelectedUser] = useState<ReferralUser | null>(null)
   const [copied, setCopied] = useState(false)
+  const [copiedTxHash, setCopiedTxHash] = useState("")
 
   useEffect(() => {
     if (myWallet?.wallet_type) {
@@ -168,14 +169,24 @@ export default function ReferralDashboard() {
     setSelectedUser(null)
   }
 
-  const handleCopyAddress = async () => {
-    if (!selectedUser?.sol_address) return
+  const handleCopyAddress = async (sol_address: string) => {
+    if (!sol_address) return
 
     try {
-      await navigator.clipboard.writeText(selectedUser.sol_address)
+      await navigator.clipboard.writeText(sol_address)
       setCopied(true)
-      toast.success(t('deposit.addressCopied'))
       setTimeout(() => setCopied(false), 2000)
+    } catch (err) {
+      toast.error(t('deposit.failedToCopyAddress'))
+    }
+  }
+
+  const handleCopyTxHash = async (tx_hash: string, id: number) => {
+
+    try {
+      await navigator.clipboard.writeText(tx_hash)
+      setCopiedTxHash(id.toString())
+      setTimeout(() => setCopiedTxHash(""), 2000)
     } catch (err) {
       toast.error(t('deposit.failedToCopyAddress'))
     }
@@ -359,7 +370,18 @@ export default function ReferralDashboard() {
                             <div className="w-6 h-6 sm:w-8 sm:h-8 bg-gradient-to-r from-purple to-cyan rounded-full flex items-center justify-center text-xs font-bold mr-2 sm:mr-3 shrink-0">
                               {user.sol_address.charAt(0).toUpperCase()}
                             </div>
-                            <span className="font-medium truncate">{truncateString(user.sol_address, 12)}</span>
+                            <span className="font-medium truncate">{truncateString(user.sol_address, 12)}</span> <Button
+                              onClick={() => handleCopyAddress(user.sol_address)}
+                              variant="ghost"
+                              size="sm"
+                              className="text-neutral hover:text-white bg-transparent border-none cursor-pointer p-1 sm:p-2 shrink-0"
+                            >
+                              {copied ? (
+                                <Check className="w-3 h-3 sm:w-4 sm:h-4 text-green-500" />
+                              ) : (
+                                <Copy className="w-3 h-3 sm:w-4 sm:h-4" />
+                              )}
+                            </Button>
                           </div>
                           <div className="flex items-center text-slate-300">
                             {new Date(user.created_at).toLocaleDateString(currentLocale, {
@@ -414,7 +436,7 @@ export default function ReferralDashboard() {
                       <div className="flex items-center gap-2">
                         <p className="bg-gradient-purple-cyan bg-clip-text font-bold text-sm sm:text-base truncate">{truncateString(selectedUser.sol_address, 20)}</p>
                         <Button
-                          onClick={handleCopyAddress}
+                          onClick={() => handleCopyAddress(selectedUser.sol_address)}
                           variant="ghost"
                           size="sm"
                           className="text-neutral hover:text-white bg-transparent border-none cursor-pointer p-1 sm:p-2 shrink-0"
@@ -480,17 +502,17 @@ export default function ReferralDashboard() {
                           <div className="grid grid-cols-2 gap-2 text-xs sm:text-sm">
                             <div className="text-neutral">{t('referral.reward') || 'Reward'}:</div>
                             <div className="text-white font-medium">{item.reward_amount}</div>
-                            
+
                             <div className="text-neutral">{t('referral.token') || 'Token'}:</div>
                             <div className={`text-white font-medium ${item.reward_token === 'SOL' ? 'text-purple-500' : 'text-primary-100'}`}>
                               {item.reward_token}
                             </div>
-                            
+
                             <div className="text-neutral">{t('referral.txHash') || 'Tx Hash'}:</div>
                             <div className="text-white font-mono text-xs break-all">
                               {truncateString(item.tx_hash, 20)}
                             </div>
-                            
+
                             <div className="text-neutral">{t('referral.date') || 'Date'}:</div>
                             <div className="text-neutral text-xs">
                               {new Date(item.created_at).toLocaleDateString(currentLocale, {
@@ -524,6 +546,18 @@ export default function ReferralDashboard() {
                               <td className={`py-2 px-3 text-white ${item.reward_token === 'SOL' ? 'text-purple-500' : 'text-primary-100'}`}>{item.reward_token}</td>
                               <td className="py-2 px-3 text-white font-mono text-xs">
                                 {truncateString(item.tx_hash, 15)}
+                                <Button
+                                  onClick={() => handleCopyTxHash(item.tx_hash, item.id)}
+                                  variant="ghost"
+                                  size="sm"
+                                  className="text-neutral hover:text-white bg-transparent border-none cursor-pointer p-1 sm:p-2"
+                                >
+                                  {copiedTxHash === item.id.toString() ? (
+                                    <Check className="w-3 h-3 text-green-500" />
+                                  ) : (
+                                    <Copy className="w-3 h-3" />
+                                  )}
+                                </Button>
                               </td>
                               <td className="py-2 px-3 text-neutral">
                                 {new Date(item.created_at).toLocaleDateString(currentLocale, {

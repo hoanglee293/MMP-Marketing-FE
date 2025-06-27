@@ -192,7 +192,7 @@ export default function WithdrawWallet() {
             refetchMyWallet();
             refetchWithdraws(); // Refetch wallet balance after successful withdrawal
         } catch (error: any) {
-            const errorMessage = error?.response?.data?.message || t('withdraw_page.withdraw_failed');
+            const errorMessage = t('withdraw_page.withdraw_failed');
             notify({ message: errorMessage, type: 'error' });
         } finally {
             setIsSending(false);
@@ -219,7 +219,7 @@ export default function WithdrawWallet() {
                                         {t('withdraw_page.enter_amount_to_send')}
                                     </p>
                                 </div>
-                                <div className="text-center flex items-center justify-center mb-2 ml-5 relative">
+                                <div className="text-center flex items-center justify-center mb-2 ml-[10%] relative">
                                     <input
                                         type="text"
                                         inputMode="decimal"

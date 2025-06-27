@@ -39,6 +39,7 @@
         "available_balance": "Available balance for transfer",
         "recipient_wallet_address": "Recipient wallet address",
         "enter_recipient_wallet_address": "Enter recipient wallet address...",
+        "transaction_history": "Transaction History",
         "send": "Send",
         "loading": "Loading...",
         "insufficient_balance": "Insufficient balance",
