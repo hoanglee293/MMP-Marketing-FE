@@ -46,12 +46,7 @@ export function ConnectWalletModal({ open, onOpenChange }: ConnectWalletModalPro
     setIsConnecting(true)
     try {
        window.open(`https://accounts.google.com/o/oauth2/v2/auth?client_id=${process.env.NEXT_PUBLIC_GOOGLE_CLIENT_ID}&redirect_uri=${process.env.NEXT_PUBLIC_GOOGLE_REDIRECT_URI}&response_type=code&scope=email%20profile&access_type=offline`, "_blank")
-      // Implement Google OAuth login
-      // For now, just simulate the login
-      setTimeout(() => {
-        login('google')
-        setIsConnecting(false)
-      }, 1000)
+   
     } catch (error) {
       console.error("Google connection error:", error)
       setIsConnecting(false)
