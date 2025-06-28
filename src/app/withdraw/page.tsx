@@ -91,7 +91,7 @@ export default function WithdrawWallet() {
             return;
         }
 
-        const minUsdValue = 10;
+        const minUsdValue = process.env.NEXT_PUBLIC_MIN_WITHDRAW_AMOUNT != "https://ido.memepump.gg" ? 1 : 10;
         const tokenBalance = getTokenBalance(sellToken.symbol);
 
         // Check if amount exceeds balance
