@@ -8,6 +8,7 @@ import { useAuth } from "@/hooks/useAuth"
 import { useLang } from "@/lang/useLang"
 import { PhantomWalletService } from "@/services/api"
 import { toast } from "react-toastify"
+import Cookies from "js-cookie"
 
 interface ConnectWalletModalProps {
   open: boolean
@@ -32,7 +33,7 @@ export function ConnectWalletModal({ open, onOpenChange }: ConnectWalletModalPro
       // Redirect to Telegram login
       const telegramBotUsername = "your_telegram_bot_username" // Replace with actual bot username
       const redirectUrl = encodeURIComponent(window.location.origin + "/tglogin")
-      const telegramAuthUrl = `https://t.me/${telegramBotUsername}?start=${redirectUrl}`
+      const telegramAuthUrl = `${process.env.NEXT_PUBLIC_TELEGRAM_BOT_URL}=${Cookies.get("ref") || null}`
       window.open(telegramAuthUrl, "_blank")
     } catch (error) {
       console.error("Telegram connection error:", error)
@@ -44,6 +45,7 @@ export function ConnectWalletModal({ open, onOpenChange }: ConnectWalletModalPro
   const handleGoogleConnect = async () => {
     setIsConnecting(true)
     try {
+       window.open(`https://accounts.google.com/o/oauth2/v2/auth?client_id=${process.env.NEXT_PUBLIC_GOOGLE_CLIENT_ID}&redirect_uri=${process.env.NEXT_PUBLIC_GOOGLE_REDIRECT_URI}&response_type=code&scope=email%20profile&access_type=offline`, "_blank")
       // Implement Google OAuth login
       // For now, just simulate the login
       setTimeout(() => {

@@ -182,7 +182,7 @@ export default function DepositPanel() {
             <div className="flex-1 flex flex-col">
                 {/* Available Balance */}
                 <p className="text-center text-sm sm:text-base text-gray-300 mb-3 sm:mb-4">
-                    {t("stake.availableBalance")} <span className="font-bold text-sm sm:text-base bg-gradient-purple-cyan bg-clip-text">{balances?.mmp} MMP</span>
+                    {t("stake.availableBalance")} <span className="font-bold text-sm sm:text-base bg-gradient-purple-cyan bg-clip-text">{balances?.mmp} MMP & {balances?.sol} SOL</span>
                 </p>
 
                 {/* Deposit Section */}

@@ -1,7 +1,9 @@
 import BorderPrimary from '@/components/border-primary'
+import { useRouter } from 'next/navigation'
 import React from 'react'
 
 const Footer = () => {
+    const router = useRouter()
     return (
         <div className='bg-footer w-full h-svh flex items-center justify-center relative pt-20 overflow-hidden '>
 
@@ -18,7 +20,7 @@ const Footer = () => {
                             </p>
                         </div>
 
-                        <div className='h-[43px] w-[199px] relative'>
+                        <div className='h-[43px] w-[199px] relative' onClick={() => router.push('/swap')}>
                             <BorderPrimary >Swap Now</BorderPrimary>
                         </div>
                     </div>
