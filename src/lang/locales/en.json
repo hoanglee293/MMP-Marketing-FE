@@ -82,7 +82,8 @@
         "phantomConnectionFailed": "Failed to connect to Phantom wallet",
         "phantomSignatureFailed": "Failed to sign message with Phantom wallet",
         "phantomAuthFailed": "Failed to authenticate with Phantom wallet",
-        "processingPhantomLogin": "Processing Phantom login..."
+        "processingPhantomLogin": "Processing Phantom login...",
+        "phantomMobileWarning": "If you want to login with Phantom wallet, please access the website through the browser available in the Phantom app. Login may be restricted if using an external browser."
     },
     "tglogin": {
         "title": "Complete Your Profile",

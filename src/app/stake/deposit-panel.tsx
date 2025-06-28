@@ -168,15 +168,11 @@ export default function DepositPanel() {
         }
     }
 
-    // const handleTest = async () => {
-    //     await test({signedTransaction: "5nxkghmFPvxAhJNP6j89gkPyNybfmr4edNGij33noKRu1BFEX5FkSGAfNb2HyhpqCpEDCCuTtUWvHsjNEcT1eAeW", staking_plan_id: 1})
-    // }
-
     return (
         <div className="bg-black/40 backdrop-blur-xl rounded-xl sm:rounded-2xl p-3 sm:p-6 border border-purple-500/20 flex-1 flex flex-col justify-between">
             <div className="text-center mb-3 ">
                 <h2 className="bg-gradient-purple-cyan bg-clip-text text-xl sm:text-2xl lg:text-3xl font-bold leading-7 text-center mb-1 font-tektur">{t("stake.depositMmp")}</h2>
-                <h3 className="bg-gradient-purple-cyan bg-clip-text text-xl sm:text-2xl lg:text-3xl font-bold leading-7 font-tektur text-center mb-1">{t("stake.earnContinuously")}</h3>
+                <h3 className="bg-gradient-purple-cyan bg-clip-text text-xl sm:text-2xl lg:text-2xl font-bold leading-7 font-tektur text-center mb-1">{t("stake.earnContinuously")}</h3>
             </div>
 
             <div className="flex-1 flex flex-col">
@@ -259,7 +255,7 @@ export default function DepositPanel() {
                                     >
                                         <div className="flex justify-between items-center">
                                             <div className="flex-1 min-w-0">
-                                                <p className="text-neutral font-medium kati-font text-xs sm:text-sm truncate">{option.name}</p>
+                                                <p className="text-neutral font-medium kati-font text-xs sm:text-sm truncate">{t(`stake.${option.name}`)}</p>
                                                 <p className="text-xs text-cyan-400">{option.period_days} {t("stake.days")}</p>
                                             </div>
                                             <div className="text-right ml-2 flex-shrink-0">

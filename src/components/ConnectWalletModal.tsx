@@ -45,8 +45,8 @@ export function ConnectWalletModal({ open, onOpenChange }: ConnectWalletModalPro
   const handleGoogleConnect = async () => {
     setIsConnecting(true)
     try {
-       window.open(`https://accounts.google.com/o/oauth2/v2/auth?client_id=${process.env.NEXT_PUBLIC_GOOGLE_CLIENT_ID}&redirect_uri=${process.env.NEXT_PUBLIC_GOOGLE_REDIRECT_URI}&response_type=code&scope=email%20profile&access_type=offline`, "_blank")
-   
+      window.open(`https://accounts.google.com/o/oauth2/v2/auth?client_id=${process.env.NEXT_PUBLIC_GOOGLE_CLIENT_ID}&redirect_uri=${process.env.NEXT_PUBLIC_GOOGLE_REDIRECT_URI}&response_type=code&scope=email%20profile&access_type=offline`, "_blank")
+
     } catch (error) {
       console.error("Google connection error:", error)
       setIsConnecting(false)
@@ -75,47 +75,64 @@ export function ConnectWalletModal({ open, onOpenChange }: ConnectWalletModalPro
 
   return (
     <Dialog open={open} onOpenChange={onOpenChange} >
-      <DialogContent className="bg-black/80 border-[#d7d7d7]/20 text-white max-w-md">
-        <DialogHeader className="text-center">
-          <DialogTitle className="bg-gradient-purple-cyan bg-clip-text text-2xl font-bold kati-font text-center">
-            {t("connectWalletModal.title")}
-          </DialogTitle>
-        </DialogHeader>
-        <div className="text-center mt-4">
-          <p className="text-[#d7d7d7] text-sm">
-            {t("connectWalletModal.description")}
-          </p>
-        </div>
-        <div className="flex justify-around">
-          {/* Telegram Connect Button */}
-          <button
-            onClick={handleTelegramConnect}
-            disabled={isConnecting}
-            className="bg-transparent group mt-0 cursor-pointer flex-col border-none font-medium py-4 text-base kati-font flex items-center justify-between  gap-3"
-          >
-            <img src="/tele-icon.png" alt="Telegram" className="w-10 h-10 p-1" />
-            <span className="text-white group-hover:text-primary">{t("connectWalletModal.telegram")}</span>
-          </button>
+      <DialogContent className="p-4">
+        <div className="bg-black/80 border-[#d7d7d7]/20 text-white max-w-md p-4 flex flex-col xl:gap-10 gap-4 h-full rounded-xl">
+          <DialogHeader className="text-center">
+            <DialogTitle className="bg-gradient-purple-cyan bg-clip-text text-2xl font-bold kati-font text-center">
+              {t("connectWalletModal.title")}
+            </DialogTitle>
+          </DialogHeader>
+          <div className="text-center mt-4">
+            <p className="text-[#d7d7d7] text-sm">
+              {t("connectWalletModal.description")}
+            </p>
+          </div>
+          <div>
+            <div className="flex justify-around bg-gray-800/70 rounded-lg p-4">
+              {/* Telegram Connect Button */}
+              <button
+                onClick={handleTelegramConnect}
+                disabled={isConnecting}
+                className="bg-transparent group mt-0 cursor-pointer flex-col border-none font-medium py-4 text-base kati-font flex items-center justify-between  gap-3"
+              >
+                <img src="/tele-icon.png" alt="Telegram" className="w-10 h-10 p-1" />
+                <span className="text-white group-hover:text-primary">{t("connectWalletModal.telegram")}</span>
+              </button>
 
-          {/* Phantom Connect Button */}
-          <button
-            onClick={handlePhantomConnect}
-            disabled={isConnecting}
-            className="bg-transparent group mt-0 cursor-pointer flex-col border-none font-medium py-4 text-base kati-font flex items-center justify-between  gap-3"
-          >
-            <img src="/phantom.png" alt="Phantom" className="w-10 h-10 p-1" />
-            <span className="text-white group-hover:text-primary">{t("connectWalletModal.phantom")}</span>
-          </button>
+              {/* Phantom Connect Button */}
+              <button
+                onClick={handlePhantomConnect}
+                disabled={isConnecting}
+                className="bg-transparent group mt-0 cursor-pointer flex-col border-none font-medium py-4 text-base kati-font flex items-center justify-between  gap-3"
+              >
+                <img src="/phantom.png" alt="Phantom" className="w-10 h-10 p-1" />
+                <span className="text-white group-hover:text-primary">{t("connectWalletModal.phantom")}</span>
+              </button>
 
-          {/* Google Connect Button */}
-          <button
-            onClick={handleGoogleConnect}
-            disabled={isConnecting}
-            className=" bg-transparent mt-0 cursor-pointer  border-none text-white font-medium py-4 text-base kati-font flex flex-col items-center justify-between gap-3"
-          >
-            <img src="/google-color-icon.png" alt="Google" className="w-10 h-10" />
-            <span className="text-white group-hover:text-primary">{t("connectWalletModal.google")}</span>
-          </button>
+              {/* Google Connect Button */}
+              <button
+                onClick={handleGoogleConnect}
+                disabled={isConnecting}
+                className=" bg-transparent mt-0 cursor-pointer  border-none text-white font-medium py-4 text-base kati-font flex flex-col items-center justify-between gap-3"
+              >
+                <img src="/google-color-icon.png" alt="Google" className="w-10 h-10" />
+                <span className="text-white group-hover:text-primary">{t("connectWalletModal.google")}</span>
+              </button>
+            </div>
+            <div className="block md:hidden text-left mt-4 p-3 bg-yellow-500/20 border border-yellow-500/30 rounded-lg">
+              <p className="text-yellow-400 text-xs leading-5">
+                <span className="font-bold">✅ Phantom 지갑 로그인 안내</span>
+                <br />
+                <span className="font-bold">1.Phantom 지갑 앱을 켭니다.</span>
+                <br />
+                <span className="font-bold">2.Phantom 지갑 내에 아래쪽에 있는 돋보기 아이콘(🔍) 을 눌러 검색창으로 이동합니다.</span>
+                <br />
+                <span className="font-bold">3.상단 주소창에 ido.memepump.gg 를 입력하고 접속합니다.</span>
+                <br />
+                <span className="font-bold">4.웹사이트가 열리면 ‘지갑 연결’ 또는 ‘로그인’ 버튼을 눌러 로그인합니다.</span>
+              </p>
+            </div>
+          </div>
         </div>
       </DialogContent>
     </Dialog>

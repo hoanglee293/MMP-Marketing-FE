@@ -40,7 +40,7 @@ export default function ReferralStructure({ type }: { type: string }) {
             </div>
 
             <div>
-              <p className="text-xs sm:text-sm mt-6 text-yellow-400 max-w-[52%] mx-auto">{t('referral.structure.note')}</p>
+              <p className="text-xs sm:text-sm mt-6 text-yellow-400 xl:max-w-[52%] mx-auto">{t('referral.structure.note')}</p>
             </div>
           </>
         )}
@@ -77,7 +77,7 @@ export default function ReferralStructure({ type }: { type: string }) {
               </div>
             </div>
             <div>
-              <p className="text-xs sm:text-sm mt-6 text-yellow-400 max-w-[52%] mx-auto">{t('referral.structure.note')}</p>
+              <p className="text-xs sm:text-sm mt-6 text-yellow-400 xl:max-w-[52%] mx-auto">{t('referral.structure.note')}</p>
             </div>
           </>
         )}

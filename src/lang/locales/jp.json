@@ -82,7 +82,8 @@
         "phantomConnectionFailed": "Phantomウォレットへの接続に失敗しました",
         "phantomSignatureFailed": "Phantomウォレットでのメッセージ署名に失敗しました",
         "phantomAuthFailed": "Phantomウォレットでの認証に失敗しました",
-        "processingPhantomLogin": "Phantomログインを処理中..."
+        "processingPhantomLogin": "Phantomログインを処理中...",
+        "phantomMobileWarning": "Phantomウォレットでログインしたい場合は、Phantomアプリ内のブラウザを通じてウェブサイトにアクセスしてください。外部ブラウザを使用するとログインが制限される場合があります。"
     },
     "tglogin": {
         "title": "プロフィールを完成させる",
@@ -1022,6 +1023,16 @@
         }
     },
     "stake": {
+        "Term 3 Months": "3ヶ月",
+        "Term 6 Months": "6ヶ月",
+        "Term 9 Months": "9ヶ月",
+        "Term 12 Months": "12ヶ月",
+        "Term 24 Months": "24ヶ月",
+        "3 Month": "3ヶ月",
+        "6 Month": "6ヶ月",
+        "9 Month": "9ヶ月",
+        "12 Month": "12ヶ月",
+        "24 Month": "24ヶ月",
         "title": "MMPステーキング",
         "comingSoon": "ステーキングがまもなく開始されます！",
         "description": "MMPトークンをステーキングして報酬を獲得しましょう。ステーキング期間が長いほど、より多くの報酬を獲得できます。",

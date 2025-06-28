@@ -101,7 +101,7 @@ function StakeGroup({
                     </div>
 
                     <div className="flex flex-1 sm:gap-2 sm:flex-col sm:mr-10 items-center sm:items-start gap-3">
-                        <p className="text-sm sm:text-base kati-font font-medium">{stakeName}</p>
+                        <p className="text-sm sm:text-base kati-font font-medium">{t(`stake.${stakeName}`)}</p>
                         <p className="text-xs text-neutral bg-green-700 max-w-[100px] flex items-center justify-center rounded-full px-2 py-1 mb-0 p-0">
                             {stakes?.length ?? 0} {t("stake.stakes")}
                         </p>

@@ -83,7 +83,8 @@
         "phantomConnectionFailed": "Không thể kết nối với ví Phantom",
         "phantomSignatureFailed": "Không thể ký tin nhắn với ví Phantom",
         "phantomAuthFailed": "Không thể xác thực với ví Phantom",
-        "processingPhantomLogin": "Đang xử lý đăng nhập với ví Phantom..."
+        "processingPhantomLogin": "Đang xử lý đăng nhập với ví Phantom...",
+        "phantomMobileWarning": "Nếu bạn muốn đăng nhập bằng ví Phantom, vui lòng truy cập website thông qua trình duyệt có sẵn trong ứng dụng Phantom. Việc đăng nhập có thể bị hạn chế nếu sử dụng trình duyệt bên ngoài."
     },
     "tglogin": {
         "title": "Hoàn thành Hồ sơ",
@@ -1023,6 +1024,16 @@
         "rewards": "Phần thưởng",
         "stakeNow": "Đặt cọc ngay",
         "unStake": "Rút cọc",
+        "Term 3 Months": "3 tháng",
+        "Term 6 Months": "6 tháng",
+        "Term 9 Months": "9 tháng",
+        "Term 12 Months": "12 tháng",
+        "Term 24 Months": "24 tháng",
+        "3 Month": "3 tháng",
+        "6 Month": "6 tháng",
+        "9 Month": "9 tháng",
+        "12 Month": "12 tháng",
+        "24 Month": "24 tháng",
         "claimRewards": "Nhận phần thưởng",
         "enterAmount": "Nhập số lượng để đặt cọc",
         "balance": "Số dư",

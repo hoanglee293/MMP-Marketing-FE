@@ -194,7 +194,7 @@ export default function ReferralDashboard() {
 
   return (
     <ProtectedRoute>
-      <div className="h-svh relative overflow-hidden flex flex-1 flex-col w-full justify-center">
+      <div className="h-svh relative xl:overflow-hidden flex flex-1 flex-col w-full justify-center">
         <div className="relative z-10">
           <div className="container mx-auto p-2 sm:p-3 md:p-4 xl:p-6 gap-2 sm:gap-3 md:gap-4 flex flex-col">
             {/* Referral Link Section */}
@@ -297,7 +297,7 @@ export default function ReferralDashboard() {
               </CardHeader>
               <CardContent className="px-0">
                 {/* Mobile Table Layout */}
-                <div className="block sm:hidden">
+                <div className="block sm:hidden overflow-y-scroll">
                   {isLoadingReferralStatistics ? (
                     <div className="space-y-3">
                       {[1, 2, 3].map((index) => (
@@ -305,7 +305,7 @@ export default function ReferralDashboard() {
                       ))}
                     </div>
                   ) : referralStatistics && referralStatistics.referred_wallets.length > 0 ? (
-                    <div className="space-y-3">
+                    <div className="overflow-y-scroll space-y-3">
                       {referralStatistics.referred_wallets.map((user: ReferralUser) => (
                         <div key={user.wallet_id} className="bg-dark-300 rounded-lg  border border-gray/30">
                           <div className="flex items-center justify-between mb-2">
