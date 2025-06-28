@@ -84,7 +84,14 @@
         "phantomSignatureFailed": "Không thể ký tin nhắn với ví Phantom",
         "phantomAuthFailed": "Không thể xác thực với ví Phantom",
         "processingPhantomLogin": "Đang xử lý đăng nhập với ví Phantom...",
-        "phantomMobileWarning": "Nếu bạn muốn đăng nhập bằng ví Phantom, vui lòng truy cập website thông qua trình duyệt có sẵn trong ứng dụng Phantom. Việc đăng nhập có thể bị hạn chế nếu sử dụng trình duyệt bên ngoài."
+        "phantomMobileWarning": "Nếu bạn muốn đăng nhập bằng ví Phantom, vui lòng truy cập website thông qua trình duyệt có sẵn trong ứng dụng Phantom. Việc đăng nhập có thể bị hạn chế nếu sử dụng trình duyệt bên ngoài.",
+        "phantomMobileGuide": {
+            "title": "✅ Hướng dẫn đăng nhập ví Phantom",
+            "step1": "1. Mở ứng dụng ví Phantom.",
+            "step2": "2. Nhấp vào biểu tượng kính lúp (🔍) ở phía dưới ví Phantom để chuyển đến màn hình tìm kiếm.",
+            "step3": "3. Nhập ido.memepump.gg vào thanh địa chỉ ở trên cùng và truy cập.",
+            "step4": "4. Khi website mở ra, nhấp vào nút 'Kết nối ví' hoặc 'Đăng nhập' để đăng nhập."
+        }
     },
     "tglogin": {
         "title": "Hoàn thành Hồ sơ",

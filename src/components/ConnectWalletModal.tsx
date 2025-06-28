@@ -121,15 +121,15 @@ export function ConnectWalletModal({ open, onOpenChange }: ConnectWalletModalPro
             </div>
             <div className="block md:hidden text-left mt-4 p-3 bg-yellow-500/20 border border-yellow-500/30 rounded-lg">
               <p className="text-yellow-400 text-xs leading-5">
-                <span className="font-bold">✅ Phantom 지갑 로그인 안내</span>
+                <span className="font-bold">{t("connectWalletModal.phantomMobileGuide.title")}</span>
                 <br />
-                <span className="font-bold">1.Phantom 지갑 앱을 켭니다.</span>
+                <span className="font-bold">{t("connectWalletModal.phantomMobileGuide.step1")}</span>
                 <br />
-                <span className="font-bold">2.Phantom 지갑 내에 아래쪽에 있는 돋보기 아이콘(🔍) 을 눌러 검색창으로 이동합니다.</span>
+                <span className="font-bold">{t("connectWalletModal.phantomMobileGuide.step2")}</span>
                 <br />
-                <span className="font-bold">3.상단 주소창에 ido.memepump.gg 를 입력하고 접속합니다.</span>
+                <span className="font-bold">{t("connectWalletModal.phantomMobileGuide.step3")}</span>
                 <br />
-                <span className="font-bold">4.웹사이트가 열리면 ‘지갑 연결’ 또는 ‘로그인’ 버튼을 눌러 로그인합니다.</span>
+                <span className="font-bold">{t("connectWalletModal.phantomMobileGuide.step4")}</span>
               </p>
             </div>
           </div>

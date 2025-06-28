@@ -83,7 +83,14 @@
         "phantomSignatureFailed": "Phantomウォレットでのメッセージ署名に失敗しました",
         "phantomAuthFailed": "Phantomウォレットでの認証に失敗しました",
         "processingPhantomLogin": "Phantomログインを処理中...",
-        "phantomMobileWarning": "Phantomウォレットでログインしたい場合は、Phantomアプリ内のブラウザを通じてウェブサイトにアクセスしてください。外部ブラウザを使用するとログインが制限される場合があります。"
+        "phantomMobileWarning": "Phantomウォレットでログインしたい場合は、Phantomアプリ内のブラウザを通じてウェブサイトにアクセスしてください。外部ブラウザを使用するとログインが制限される場合があります。",
+        "phantomMobileGuide": {
+            "title": "✅ Phantomウォレットログインガイド",
+            "step1": "1. Phantomウォレットアプリを開きます。",
+            "step2": "2. Phantomウォレット内の下部にある虫眼鏡アイコン（🔍）をクリックして検索画面に移動します。",
+            "step3": "3. 上部のアドレスバーにido.memepump.ggを入力してアクセスします。",
+            "step4": "4. ウェブサイトが開いたら、「ウォレット接続」または「ログイン」ボタンをクリックしてログインします。"
+        }
     },
     "tglogin": {
         "title": "プロフィールを完成させる",
