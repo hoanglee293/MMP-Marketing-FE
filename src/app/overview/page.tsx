@@ -32,10 +32,10 @@ const page = () => {
         <div className='flex flex-col'>
             {/* Join Us Section */}
             <div id="join-us" className='bg-overview bg-blue-200 z-50 w-full min-h-screen sm:h-svh flex items-center justify-center relative overflow-hidden'>
-                <div className='absolute top-[30%] sm:top-[40%] md:top-[50%] right-0 sm:right-4 md:right-8 animate-float'>
+                <div className='absolute top-[30%] sm:top-[40%] md:top-[50%] right-0  animate-float'>
                     <img src="/box-elips.png" alt="bg-feature" className='max-w-[120px] sm:max-w-[150px] md:max-w-[180px] lg:max-w-[200px] 2xl:max-w-[230px] object-cover' />
                 </div>
-                <div className='absolute top-[10%] sm:top-[15%] md:top-[20%] left-0 sm:left-4 md:left-8 animate-float-delayed'>
+                <div className='absolute top-[10%] sm:top-[15%] md:top-[20%] left-0 animate-float-delayed'>
                     <img src="/box-pan-elips.png" alt="bg-feature" className='max-w-[120px] sm:max-w-[150px] md:max-w-[180px] lg:max-w-[200px] 2xl:max-w-[230px] object-cover' />
                 </div>
                 <div className='container mx-auto px-4 sm:px-6 md:px-8 lg:px-12 relative mb-[5%] sm:mb-[8%] lg:mb-[10%]'>
