@@ -2,10 +2,11 @@ import en from './locales/en.json';
 import vi from './locales/vi.json';
 import kr from './locales/kr.json';
 import jp from './locales/jp.json';
+import id from './locales/id.json';
 import { useLang } from '@/lang/useLang';
 import { LangProvider } from '@/lang/LangProvider';
 
-export type LangCodes = 'en' | 'vi' | 'kr' | 'jp';
+export type LangCodes = 'en' | 'vi' | 'kr' | 'jp' | 'id';
 
 // Updated type definition to support arrays of objects and nested structures
 type Translations = { 
@@ -21,12 +22,14 @@ export const langConfig: {
     { id: 2, name: "English", code: "en" },
     { id: 3, name: "Vietnamese", code: "vi" },
     { id: 4, name: "Japan", code: "jp" },
+    { id: 5, name: "Indonesia", code: "id" },
   ],
   langsApp: {
     en,
     vi,
     kr,
     jp,
+    id,
   }
 };
 

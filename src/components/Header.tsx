@@ -137,7 +137,8 @@ const Header = () => {
       'en': 'https://flagcdn.com/w40/gb.png',
       'vi': 'https://flagcdn.com/w40/vn.png',
       'jp': 'https://flagcdn.com/w40/jp.png',
-      'kr': 'https://flagcdn.com/w40/kr.png'
+      'kr': 'https://flagcdn.com/w40/kr.png',
+      'id': 'https://flagcdn.com/w40/id.png'
     }
     return flags[code] || '🌐'
   }

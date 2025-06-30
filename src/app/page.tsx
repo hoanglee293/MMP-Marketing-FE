@@ -6,6 +6,7 @@ import { useLang } from '@/lang';
 import Cookies from 'js-cookie';
 import { useAuth } from '@/hooks/useAuth'
 import { ProtectedRoute } from '@/components/ProtectedRoute';
+import axiosClient from '@/utils/axiosClient';
 
 function HomeContent() {
   const router = useRouter();
@@ -18,6 +19,7 @@ function HomeContent() {
     const codeParam = searchParams.get('code');
     if (codeParam) {
       Cookies.set('ref', codeParam, { expires: 1 });
+      axiosClient.post('/referral-clicks', { referral_code: codeParam });
     }
     
     // Only redirect if user is authenticated

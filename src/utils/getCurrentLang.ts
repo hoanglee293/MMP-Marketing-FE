@@ -4,7 +4,7 @@ import { LangCodes } from '@/lang';
 export const getCurrentLang = (): LangCodes => {
   if (typeof window !== 'undefined') {
     const storedLang = localStorage.getItem('lang') as LangCodes;
-    if (storedLang && ['en', 'vi', 'kr', 'jp'].includes(storedLang)) {
+    if (storedLang && ['en', 'vi', 'kr', 'jp', 'id'].includes(storedLang)) {
       return storedLang;
     }
   }

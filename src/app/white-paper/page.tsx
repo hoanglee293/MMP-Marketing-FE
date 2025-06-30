@@ -410,7 +410,7 @@ const WhitePaperPage = () => {
           {/* Footer */}
           <div className="text-center pt-2 border-t border-white/20">
             <p className="text-white/60">
-              © 2025 MEMEPUMP. All rights reserved.
+              © 2025 MEMEPUMP.
             </p>
           </div>
         </div>

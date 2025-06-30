@@ -1,0 +1,1143 @@
+{
+    "home": {
+        "title": "Beranda",
+        "redirecting": "Mengalihkan..."
+    },
+    "protectedRoute": {
+        "welcome": "Selamat datang di MMP",
+        "connectWalletRequired": "Silakan hubungkan dompet untuk mengakses halaman ini",
+        "connectWallet": "Hubungkan Dompet"
+    },
+    "lang": {
+        "en": "Bahasa Inggris",
+        "vi": "Bahasa Vietnam",
+        "jp": "Bahasa Jepang",
+        "kr": "Bahasa Korea",
+        "id": "Bahasa Indonesia"
+    },
+    "header": {
+        "overview": "Ikhtisar",
+        "swap": "Tukar",
+        "stake": "Staking",
+        "referral": "Program Referral",
+        "joinUs": "Bergabung",
+        "telegramLogin": "Login Telegram",
+        "googleLogin": "Login Google",
+        "phantomLogin": "Login Phantom",
+        "unknownLogin": "Tidak Diketahui",
+        "walletAddress": "Alamat Dompet:",
+        "logout": "Keluar",
+        "language": "Bahasa",
+        "selectLanguage": "Pilih Bahasa",
+        "deposit": "Deposit",
+        "withdraw": "Tarik Dana",
+        "whitePaper": "Whitepaper"
+    },
+    "withdraw_page": {
+        "enter_amount_to_send": "Masukkan jumlah yang akan dikirim",
+        "available_balance": "Saldo Tersedia",
+        "recipient_wallet_address": "Alamat Dompet Penerima",
+        "enter_recipient_wallet_address": "Masukkan alamat dompet penerima",
+        "send": "Kirim",
+        "withdraw_successful": "Penarikan berhasil",
+        "withdraw_failed": "Penarikan gagal",
+        "loading": "Memuat...",
+        "no_withdrawal_history": "Tidak ada riwayat penarikan",
+        "insufficient_balance": "Saldo tidak mencukupi",
+        "minimum_withdrawal": "Penarikan minimum",
+        "transaction_fee": "Biaya Transaksi",
+        "withdraw_fee_description": "Untuk SOL, USDT, USDC: ",
+        "table": {
+            "time": "Waktu",
+            "type": "Jenis",
+            "status": "Status",
+            "amount": "Jumlah",
+            "from_address": "Dari Alamat",
+            "to_address": "Ke Alamat",
+            "tx_id": "ID Transaksi",
+            "withdraw": "Tarik Dana",
+            "deposit": "Deposit",
+            "pending": "Menunggu",
+            "completed": "Selesai",
+            "failed": "Gagal"
+        },
+        "transaction_history": "Riwayat Transaksi"
+    },
+    "universal_account": {
+        "amount_cannot_exceed_balance": "Jumlah tidak boleh melebihi saldo {balance}",
+        "minimum_withdrawal_amount": "Jumlah penarikan minimum adalah {amount}",
+        "maximum_withdrawal_amount": "Jumlah penarikan maksimum adalah {amount}",
+        "minimum_withdrawal_amount_in_usd": "Jumlah penarikan minimum adalah {amount} {symbol} (~${usd_value})",
+        "amount_must_be_positive": "Jumlah harus lebih dari 0",
+        "sending": "Mengirim...",
+        "recipient_address_required": "Alamat dompet penerima diperlukan."
+    },
+    "connectWalletModal": {
+        "title": "Hubungkan Dompet",
+        "description": "Hubungkan dengan kami menggunakan berbagai metode login yang fleksibel",
+        "telegram": "Telegram",
+        "phantom": "Phantom",
+        "google": "Google",
+        "connecting": "Menghubungkan...",
+        "connectError": "Error Koneksi",
+        "phantomNotInstalled": "Dompet Phantom tidak terinstal. Silakan instal terlebih dahulu.",
+        "phantomConnectionFailed": "Gagal menghubungkan dompet Phantom",
+        "phantomSignatureFailed": "Gagal menandatangani pesan dengan dompet Phantom",
+        "phantomAuthFailed": "Gagal autentikasi dompet Phantom",
+        "processingPhantomLogin": "Memproses login Phantom...",
+        "phantomMobileWarning": "Untuk login dengan dompet Phantom, akses website melalui browser di dalam aplikasi Phantom. Menggunakan browser eksternal dapat membatasi login.",
+        "phantomMobileGuide": {
+            "title": "✅ Panduan Login Dompet Phantom",
+            "step1": "1.Buka aplikasi dompet Phantom.",
+            "step2": "2.Di dompet Phantom, tekan ikon kaca pembesar (🔍) di bagian bawah untuk masuk ke halaman pencarian.",
+            "step3": "3.Masukkan ido.memepump.gg di bar alamat atas dan akses.",
+            "step4": "4.Setelah website terbuka, tekan tombol 'Hubungkan Dompet' atau 'Login' untuk login."
+        }
+    },
+    "tglogin": {
+        "title": "Lengkapi Profil",
+        "nickname": "Nama Panggilan",
+        "nicknameRequired": "Nama panggilan diperlukan",
+        "nicknamePlaceholder": "Masukkan nama panggilan",
+        "country": "Negara",
+        "countryRequired": "Negara diperlukan",
+        "submit": "Kirim"
+    },
+    "deposit": {
+        "title": "Deposit MMP",
+        "connectWalletToDeposit": "Hubungkan dompet untuk deposit",
+        "connectWallet": "Hubungkan Dompet",
+        "myWalletAddress": "Alamat Dompet Saya",
+        "noAddressAvailable": "Tidak ada alamat yang tersedia",
+        "downloadQRCode": "Unduh QR Code",
+        "addressCopied": "Alamat telah disalin ke clipboard!",
+        "failedToCopyAddress": "Gagal menyalin alamat",
+        "loading": "Memuat..."
+    },
+    "swap": {
+        "swapHistory": "Riwayat Tukar",
+        "swapGuide": "Panduan Tukar",
+        "policy": "Kebijakan",
+        "guild": "Guild",
+        "instantExchange": "Pertukaran Instan",
+        "myBalance": "Saldo Saya",
+        "from": "Dari Aset",
+        "to": "Ke Aset",
+        "swap": "Tukar",
+        "max": "Maksimum",
+        "connectWallet": "Hubungkan Dompet",
+        "processing": "Memproses...",
+        "time": "Waktu",
+        "sell": "Jual",
+        "buy": "Beli",
+        "noSwapHistory": "Tidak ada riwayat tukar",
+        "guildMembership": "Keanggotaan Guild",
+        "guildDescription": "Bergabunglah dengan sistem guild eksklusif untuk membuka fitur premium, mendapatkan hadiah, dan terhubung dengan trader lain. Anggota guild menikmati pengurangan biaya, dukungan prioritas, dan peluang trading eksklusif.",
+        "joinGuild": "Bergabung Guild",
+        "viewBenefits": "Lihat Manfaat",
+        "mmpTab": "MMP",
+        "mpbTab": "MPB",
+        "policyItems": [
+            "Pengguna dapat mentransfer SOL, USDT, atau USDC langsung dari dompet pribadi (Phantom) ke dompet trading.",
+            "SOL, USDT, atau USDC dapat digunakan untuk menukar token MMP dengan harga IDO $0.001.",
+            "Pengguna dapat melakukan staking MMP untuk mendapatkan hadiah reguler (detail hadiah sedang diperbarui).",
+            "Jika memilih untuk tidak melakukan staking, pengguna dapat menarik MMP/MPB dari dompet trading ke dompet pribadi hanya dengan biaya jaringan.",
+            "Saat menarik SOL, USDT, atau USDC dari dompet trading ke dompet pribadi, biaya penarikan $1 akan dikenakan."
+        ],
+        "errors": {
+            "enterValidAmount": "Masukkan jumlah swap yang valid",
+            "selectToken": "Pilih token untuk ditukar",
+            "swapSuccess": "Pesanan swap berhasil dibuat! Anda akan segera menerima token MMP.",
+            "swapFailed": "Gagal membuat pesanan swap. Silakan coba lagi.",
+            "invalidRequest": "Permintaan tidak valid. Periksa input Anda.",
+            "authenticationRequired": "Autentikasi diperlukan. Silakan hubungkan dompet.",
+            "insufficientBalance": "Saldo tidak mencukupi atau izin ditolak.",
+            "insufficientSolBalance": "Saldo SOL tidak mencukupi. Periksa saldo dompet Anda.",
+            "ataCreationFee": "Biaya pembuatan ATA adalah 0.0025 SOL. Pastikan Anda memiliki SOL yang cukup untuk transaksi.",
+            "serviceUnavailable": "Layanan tidak tersedia. Silakan coba lagi nanti.",
+            "tooManyRequests": "Terlalu banyak permintaan. Silakan tunggu sebentar sebelum mencoba lagi.",
+            "serverError": "Kesalahan server. Silakan coba lagi nanti.",
+            "networkError": "Kesalahan jaringan. Periksa koneksi dan coba lagi.",
+            "unexpectedError": "Terjadi kesalahan tak terduga. Silakan coba lagi."
+        },
+        "policyContent": {
+            "seedRound": {
+                "title": "Putaran Seed (6%): 6 miliar token didistribusikan pada putaran seed, terutama digunakan untuk pengembangan platform dan aktivitas investasi awal.",
+                "content": ""
+            },
+            "communityRewards": {
+                "title": "Hadiah Komunitas (55%): 55 miliar token dari total suplai didistribusikan ke komunitas melalui Airdrop, promosi, dan aktivitas hadiah partisipasi.",
+                "content": ""
+            },
+            "liquidityFund": {
+                "title": "Dana Likuiditas & Simulasi Investasi (18%): 18 miliar token digunakan untuk menyediakan likuiditas dan mengembangkan strategi investasi melalui kemitraan dengan Pump.fun.",
+                "content": ""
+            },
+            "marketingPartnership": {
+                "title": "Pemasaran & Kemitraan (10%): 10 miliar token digunakan untuk strategi pemasaran dan pengembangan kemitraan.",
+                "content": ""
+            },
+            "operationalCosts": {
+                "title": "Biaya Operasional / Tim (5%): 5 miliar token untuk biaya operasional tim pengembangan, dengan periode penguncian 2 tahun.",
+                "content": ""
+            },
+            "reserveFund": {
+                "title": "Dana Cadangan (6%): 6 miliar token dipertahankan sebagai dana cadangan untuk aktivitas DAO (Organisasi Otonom Terdesentralisasi). Ini memastikan fleksibilitas dan keberlanjutan platform.",
+                "content": ""
+            },
+            "goalsLaunch": {
+                "title": "Tujuan & Rencana Peluncuran",
+                "content": "Tujuan proyek ini adalah mencapai 10 juta pengguna pada Juli 2027. Selain itu, peluncuran penuh ditargetkan pada Juli 2025, saat ini dalam tahap beta dan menerima minat besar dari komunitas."
+            },
+            "whyChooseMMP": {
+                "title": "Mengapa Memilih MMP Coin?",
+                "content": "Potensi Pasar<br/> MMP akan memanfaatkan potensi maksimal pasar kripto, terutama pasar hadiah komunitas. Diperkirakan pada 2025, pasar ini akan mencapai 55% dari total nilai transaksi, dan MemePump akan memainkan peran penting dalam pertumbuhan ini. MMP akan menyediakan ekosistem Web3 yang potensial bagi pengguna untuk berpartisipasi."
+            },
+            "strongGrowth": {
+                "title": "Potensi Pertumbuhan Kuat",
+                "content": "Nilai MMP berpotensi naik dari 0.001 USD/token menjadi 0.328 USD/token, memberikan peluang keuntungan luar biasa bagi investor. Diperkirakan, jika volume transaksi harian mencapai antara 10 juta hingga 300 juta dolar, nilai MMP dapat meningkat 328 kali lipat."
+            },
+            "beginnerFriendly": {
+                "title": "Ramah Pemula",
+                "content": "MMP dirancang dengan antarmuka yang ramah pengguna dan cocok untuk pengguna yang baru pertama kali berpartisipasi di pasar kripto. Integrasi dengan alat seperti TradingView dan ekosistem Solana memungkinkan pengguna berpartisipasi dengan mudah dan mendapatkan pengalaman yang lancar."
+            },
+            "investmentBenefits": {
+                "title": "Manfaat Berinvestasi di MMP",
+                "content": "MMP bukan hanya peluang investasi, tetapi juga memberikan manfaat jangka panjang:<br/> Investasi Fleksibel: MMP dapat dibeli sebanyak yang diinginkan dengan harga 0.001 USD/token, memberikan peluang ideal bagi investor kecil yang ingin berpartisipasi di pasar kripto dengan modal kecil."
+            },
+            "flexibleInvestment": {
+                "title": "Investasi Fleksibel",
+                "content": "MMP dapat dibeli sebanyak yang diinginkan dengan harga 0.001 USD/token, memberikan peluang ideal bagi investor kecil yang ingin berpartisipasi di pasar kripto dengan modal kecil."
+            },
+            "highGrowthPotential": {
+                "title": "Potensi Pertumbuhan Tinggi:",
+                "content": "Jika MMP mencapai volume transaksi harian 300 juta dolar, nilainya dapat naik hingga 0.328 USD/token, memberikan keuntungan 328 kali lipat dari harga awal."
+            },
+            "airdropBenefits": {
+                "title": "Manfaat Airdrop:",
+                "content": "Pemegang MPB (MemePump Bonus) dapat menerima manfaat Airdrop 18% per tahun, 1.5% per bulan selama 2 tahun."
+            },
+            "limitedOpportunity": {
+                "title": "Peluang Investasi Terbatas:",
+                "content": "Penjualan tahap pertama hingga 31 Juli 2025 dengan harga 0.001 dolar, penjualan tahap kedua belum ditentukan, minimal 0.002 dolar mulai~ <br/> Putaran seed senilai 3 juta dolar akan berakhir, memberikan peluang besar bagi investor awal."
+            },
+            "tokenValueAppreciation": {
+                "title": "Potensi Apresiasi Nilai Token",
+                "content": "Dengan menerapkan sistem pengali MPB, nilai MMP dapat naik 328 kali lipat dari 0.001 USD/token menjadi 0.328 USD/token. Ini memberikan peluang untuk berinvestasi di kripto baru dan mengharapkan keuntungan besar."
+            },
+            "mmpInvestmentAdvantage": {
+                "title": "Keuntungan Investasi MMP",
+                "content": "Dengan investasi hanya 1.000 USD, Anda dapat membeli 1 juta token, dan ketika pendapatan penjualan token MMP mencapai 300 juta dolar, Anda dapat memperoleh keuntungan besar."
+            },
+            "visionConclusion": {
+                "title": "Visi & Kesimpulan",
+                "content": "MMP bukan hanya kripto sederhana, tetapi bagian penting dari ekosistem meme coin dan Web3. Dengan pertumbuhan berkelanjutan dan strategi investasi yang jelas,<br /> MMP diperkirakan akan mencapai nilai 3,28 miliar dolar pada tahun 2028. Berinvestasi di MMP memberikan peluang untuk mendapatkan keuntungan dari pertumbuhan pasar sambil berpartisipasi dalam komunitas yang berkembang pesat."
+            },
+            "callToAction": {
+                "title": "Bergabunglah sekarang dengan MemePump dan jangan lewatkan peluang kenaikan nilai 328 kali lipat!",
+                "content": ""
+            }
+        },
+        "mpbPolicyContent": {
+            "projectOverview": {
+                "title": "Ikhtisar Proyek",
+                "content": "Nama Proyek: MemePump (MPB Coin) <br/> Nilai Proyek: 10 Juta Dolar <br/> Rasio Emisi: 30% (3 Juta Dolar untuk Dividen Investor) <br/> Jumlah Token yang Diterbitkan: 1 Miliar Token MPB (30% untuk Investor, 70% untuk Dana Pengembangan Platform) <br/> Target Investasi: Mengumpulkan 3 Juta Dolar <br/> Jadwal Peluncuran: Peluncuran Resmi Juli 2025 (Saat ini dalam Versi Beta)"
+            },
+            "projectOverview2": {
+                "title": "Manfaat Investasi",
+                "content": "MemePump menawarkan peluang investasi unik dengan pengembalian tinggi. <br/> Dividen yang Diharapkan (Dalam Pemungutan Suara): Sebesar kepemilikan koin (sebesar jumlah investasi) dari pendapatan perusahaan melalui pemungutan suara tahunan 1% ~mencapai maksimal 300 juta dolar pendapatan dapat mengarah ke pengembalian 2,190% per tahun dibandingkan investasi. <br /> Investasi Fleksibel: Mulai dari minimal 1 dolar dan dapat meningkatkan jumlah investasi secara bertahap. <br /> Airdrop MMP Coin: Dengan memegang MPB Coin, Anda mendapatkan kesempatan airdrop MMP Coin yang memberikan bunga 1.5% per bulan dan bonus 18% per tahun."
+            },
+            "marketPotential": {
+                "title": "Potensi Pasar",
+                "content": "MemePump bukan hanya proyek kripto sederhana, tetapi platform Web3 terdesentralisasi yang dibangun di atas teknologi blockchain Solana yang kuat. Proyek ini bertujuan untuk mencapai pendapatan 300 juta dolar pada tahun 2028, dan MPB Coin akan memainkan peran penting dalam platform untuk memberikan pengembalian yang kuat kepada investor."
+            },
+            "investmentBenefits": {
+                "title": "Manfaat Investasi",
+                "content": "MemePump menawarkan peluang investasi unik dengan pengembalian tinggi: <br/> Dividen yang Diharapkan (Dalam Pemungutan Suara): Sebesar kepemilikan koin (sebesar jumlah investasi) dari pendapatan perusahaan melalui pemungutan suara tahunan 1% ~mencapai maksimal 300 juta dolar pendapatan dapat mengarah ke pengembalian 2,190% per tahun dibandingkan investasi. <br/> Investasi Fleksibel: Mulai dari minimal 1 dolar dan dapat meningkatkan jumlah investasi secara bertahap. <br/> Airdrop MMP Coin: Dengan memegang MPB Coin, Anda mendapatkan kesempatan airdrop MMP Coin yang memberikan bunga 1.5% per bulan dan bonus 18% per tahun."
+            },
+            "growthOpportunities": {
+                "title": "Pertumbuhan dan Peluang",
+                "content": "MemePump bertujuan untuk pengembangan berkelanjutan, berencana mencapai pendapatan 300 juta dolar pada tahun 2028. Selain itu, MPB Coin menawarkan peluang berikut. <br/> Nilai token MPB diperkirakan akan naik dari 0.001 dolar menjadi 0.3285 dolar, yang memiliki potensi pertumbuhan sekitar 328 kali lipat. <br/> Pendapatan yang Diharapkan: Diperkirakan akan tumbuh dari 100 ribu dolar pada tahun 2025 menjadi 300 juta dolar pada tahun 2028. <br/> Likuiditas Tinggi: MPB Coin dapat diperdagangkan dengan mudah di platform blockchain, memungkinkan investor untuk menarik dana dengan mudah saat diperlukan."
+            },
+            "investmentHolding": {
+                "title": "Investasi (Kepemilikan Koin)",
+                "content": "MemePump menawarkan kesempatan bagi siapa saja untuk berpartisipasi, dari investor kecil hingga investor besar. Dengan pengembalian tinggi dan potensi pertumbuhan yang kuat, proyek ini layak untuk diikuti sekarang.<br/> Investasi Fleksibel: Mulai dari minimal 1 dolar dan dapat meningkatkan jumlah investasi secara bertahap.<br/> Peluang Keuntungan yang Menarik: Dengan dividen hingga 2,190% dan kesempatan airdrop, pemegang MPB Coin dapat memperoleh keuntungan yang signifikan.<br/> Potensi Pertumbuhan Jangka Panjang: MemePump bertujuan untuk pertumbuhan besar pada tahun 2028, dan nilai MPB Coin akan meningkat secara signifikan. <br> Jangan lewatkan peluang investasi terbaik tahun 2025 dengan berinvestasi di MemePump (MPB) sekarang! Bergabunglah dengan MemePump untuk berpartisipasi dalam perubahan ekosistem Web3 dan menjadi investor sukses di masa depan!"
+            },
+            "limitedInvestmentOpportunity": {
+                "title": "Peluang Investasi Terbatas",
+                "content": "Penjualan pertama hingga 31 Juli 2025 harga 0.001 dolar Penjualan kedua belum ditentukan minimal 0.002 dolar mulai~ <br/>Putaran seed 3 juta dolar akan berakhir, yang memberikan peluang besar bagi investor awal."
+            },
+            "riskWarning": {
+                "title": "Peringatan Risiko",
+                "content": "Seperti halnya pengembalian tinggi yang ditawarkan, investasi di MemePump juga memiliki risiko. Penting bagi investor untuk mendapatkan saran ahli sebelum membuat keputusan. Dividen dapat bervariasi tergantung pada biaya operasional platform dan tingkat profitabilitas, dan tidak ada jaminan pengembalian atau perlindungan modal."
+            }
+        },
+        "projectDescriptions": {
+            "mmpProjectIntro": "Proyek MemePump (MMP) adalah proyek inovatif yang menawarkan token likuiditas baru di dunia kripto, terutama di Web3 dan platform terdesentralisasi. MMP bukan hanya kripto sederhana, tetapi alat untuk menciptakan nilai dan peluang bagi komunitas, dengan tujuan membangun ekosistem yang kuat dan berkelanjutan. Dibangun di atas jaringan Solana, MemePump bertujuan untuk mengubah cara pengguna berinteraksi dan berpartisipasi dalam ruang kripto.",
+            "mmpProjectOverview": "Ikhtisar Proyek MemePump (MMP) <br/> MMP dirancang sebagai token likuiditas untuk platform MemePump, dengan total pasokan mencapai 100 miliar token. MMP bukan hanya meme coin, tetapi digunakan sebagai token likuiditas untuk reward komunitas dan perdagangan dalam ekosistem ini. Emisi dan distribusi token dilakukan sesuai dengan strategi yang jelas dan transparan untuk memberikan manfaat maksimal kepada komunitas dan investor.",
+            "mmpTokenDistribution": "Struktur Distribusi Token MMP",
+            "mpbProjectIntro": "Pengenalan Proyek MemePump (MPB)",
+            "mpbProjectDescription": "**MemePump (MPB)** adalah proyek inovatif dalam ekosistem Web3 terdesentralisasi yang dibangun di atas platform Solana. Proyek ini akan memberikan pengembalian tinggi kepada investor, dan di masa depan akan memberikan dividen dan keuntungan melalui koin dengan potensi pertumbuhan yang kuat, MPB Coin, yang akan memberikan manfaat jangka panjang kepada investor."
+        },
+        "holdingBenefits": {
+            "title": "Manfaat Memegang MMP/MPB",
+            "synergyProject": "Saat proyek sinergi dilaksanakan",
+            "airdropDistribution": "5% dari volume airdrop akan dibagikan kepada pemegang",
+            "earlyParticipants": "Peserta awal akan menerima reward yang lebih besar"
+        },
+        "networkFee": {
+            "message": "Biaya jaringan Solana ({fee}) akan dikenakan saat melakukan swap. <br /> Disarankan untuk membeli langsung dengan SOL.",
+            "recommendation": "Disarankan untuk membeli langsung dengan SOL.",
+            "firstTimeFee": "Untuk pembelian IDO pertama kali, diperlukan biaya jaringan sekitar 0.0025 SOL untuk pembuatan ATA. <br />Untuk pembelian tambahan selanjutnya, biaya jaringan per swap akan berkurang menjadi sekitar 0.00005 SOL."
+        },
+        "specialOpportunity": {
+            "title": "Peluang Khusus",
+            "message": "Penjualan awal MMP/MPB sedang berlangsung <br/> Penjualan pertama: 0.001 $ (hingga 31 Juli) <br/> Penjualan kedua: 0.002 $ (jadwal akan diumumkan)"
+        }
+    },
+    "services": {
+        "errors": {
+            "phantomNotInstalled": "Dompet Phantom tidak terinstal",
+            "phantomNotInstalledWithLink": "Dompet Phantom tidak terinstal. Silakan instal dari https://phantom.app/",
+            "phantomNotConnected": "Dompet Phantom tidak terhubung. Silakan hubungkan terlebih dahulu.",
+            "phantomConnectionRejected": "Pengguna menolak permintaan koneksi",
+            "phantomConnectionFailed": "Gagal menghubungkan dompet Phantom",
+            "phantomSignatureRejected": "Pengguna menolak permintaan tanda tangan",
+            "phantomSignatureFailed": "Gagal menandatangani pesan dengan dompet Phantom",
+            "phantomTransactionRejected": "Pengguna menolak permintaan transaksi",
+            "phantomAuthFailed": "Gagal autentikasi dompet Phantom",
+            "failedToCreateTokenAccount": "Gagal membuat akun token",
+            "errorGetMyWallet": "Error mendapatkan informasi dompet saya",
+            "errorGetGoogleUserInfo": "Error mendapatkan informasi pengguna Google"
+        }
+    },
+    "referral": {
+        "title": "Dashboard Referral",
+        "yourReferralLink": "Link Referral Saya",
+        "copied": "Telah disalin ke clipboard!",
+        "totalReferrals": "Total Peserta",
+        "totalEarnings": "Total Pendapatan",
+        "activeReferrals": "Referral Aktif",
+        "bjReferrals": "Referral BJ",
+        "normalReferrals": "Referral Normal",
+        "withdraw": "Tarik Dana",
+        "referralStructure": "Struktur Referral",
+        "yourReferrals": "Riwayat Hadiah",
+        "referredUsers": "Pengguna yang Direferensikan",
+        "levelReferral": "Referral Berdasarkan Level",
+        "normal": "Normal",
+        "bj": "BJ",
+        "history": "Riwayat",
+        "txHash": "Hash Transaksi",
+        "status": "Status",
+        "reward": "Hadiah",
+        "token": "Token",
+        "user": "Pengguna",
+        "joinDate": "Tanggal Bergabung",
+        "level": "Level",
+        "earnings": "Pendapatan",
+        "hide": "Sembunyikan",
+        "show": "Tampilkan",
+        "referralHistory": "Riwayat Referral",
+        "referralDetail": "Detail Referral",
+        "detail": "Detail",
+        "userInfo": "Informasi Pengguna",
+        "date": "Tanggal",
+        "type": "Jenis",
+        "pending": "Menunggu",
+        "completed": "Selesai",
+        "failed": "Gagal",
+        "levels": {
+            "all": "Semua",
+            "level1": "Level 1",
+            "level2": "Level 2",
+            "level3": "Level 3",
+            "level4": "Level 4",
+            "level5": "Level 5",
+            "level6": "Level 6",
+            "level7": "Level 7"
+        },
+        "structure": {
+            "your_reward": "Hadiah Anda",
+            "total_commission": "Total Komisi",
+            "paid_in": "dibayarkan dalam",
+            "note": "Catatan: Untuk menerima hadiah, Anda harus melakukan tukar minimal $5 dalam token MMP. Jika tidak melakukan tukar, jumlah hadiah akan dalam status menunggu.",
+            "when_downline_buys": "Ketika downline membeli",
+            "when_downline_buys_mpb": "Ketika pengguna downline Anda membeli MPB",
+            "when_downline_buys_mmp": "Ketika pengguna downline Anda membeli MMP"
+        },
+        "noReferredUsers": "Belum ada pengguna yang direferensikan."
+    },
+    "referral_page": {
+        "title": "Referral"
+    },
+    "stake": {
+        "title": "Staking MMP",
+        "comingSoon": "Staking akan segera diluncurkan!",
+        "description": "Stake token MMP untuk mendapatkan reward. Semakin lama periode staking, semakin besar reward yang Anda terima.",
+        "totalStaked": "Total Staking",
+        "myStaked": "Staking Saya",
+        "rewards": "Reward",
+        "stakeNow": "Stake Sekarang",
+        "unStake": "Unstake",
+        "claimRewards": "Klaim Reward",
+        "enterAmount": "Masukkan jumlah untuk staking",
+        "balance": "Saldo",
+        "currentStake": "Staking Saat Ini",
+        "totalMmpStaked": "Total MMP Staking",
+        "totalInterestEarned": "Total Bunga yang Diperoleh",
+        "peopleCurrentlyStaking": "Orang yang sedang staking",
+        "mmpFromLastMonth": "MMP dibandingkan bulan lalu",
+        "mmpThisMonth": "MMP bulan ini",
+        "activeStakers": "Staker Aktif",
+        "friendReferralBonus": "Bonus Referral Teman:",
+        "friendReferralDescription": "Pengguna yang memperkenalkan teman untuk staking akan menerima tambahan 5-10% dari reward pengguna yang direferensikan. Ini memperluas jaringan pengguna dan mendorong partisipasi komunitas.",
+        "stakerLeaderboard": "Papan Peringkat Staker:",
+        "stakerLeaderboardDescription": "Sistem peringkat berdasarkan jumlah staking dan periode, memberikan hadiah mingguan atau bulanan kepada staker teratas (misalnya: staker peringkat 1 menerima 1,000 $MMP).",
+        "earlyStakingPromotion": "Promosi Staking Awal:",
+        "earlyStakingDescription": "Early adopter menerima bonus 10-30% dengan penawaran waktu terbatas.",
+        "miniGameLuckySpin": "Mini Game \"Lucky Spin\":",
+        "miniGameDescription": "Saat staking 1,000 token atau unstaking, pengguna mendapatkan kesempatan untuk memutar roda untuk mendapatkan hadiah acak.",
+        "stakes": "Staking",
+        "allAmount": "Total Jumlah",
+        "term": "Periode",
+        "interestRate": "Suku Bunga",
+        "startDate": "Tanggal Mulai:",
+        "Term 3 Months": "3 Bulan",
+        "Term 6 Months": "6 Bulan",
+        "Term 9 Months": "9 Bulan",
+        "Term 12 Months": "12 Bulan",
+        "Term 24 Months": "24 Bulan",
+        "3 Month": "3 Bulan",
+        "6 Month": "6 Bulan",
+        "9 Month": "9 Bulan",
+        "12 Month": "12 Bulan",
+        "24 Month": "24 Bulan",
+        "dueDate": "Tanggal Jatuh Tempo:",
+        "amount": "Jumlah",
+        "profit": "Keuntungan",
+        "daysLeft": "Hari Tersisa",
+        "withdraw": "Tarik Dana",
+        "loading": "Memuat...",
+        "errorLoadingStakingData": "Error memuat data staking",
+        "noStakingDataAvailable": "Tidak ada data staking yang tersedia",
+        "depositMmp": "Beli MMP dan",
+        "earnContinuously": "dapatkan keuntungan dengan staking",
+        "availableBalance": "Saldo Tersedia:",
+        "deposit": "Deposit",
+        "depositTerm": "Periode Deposit",
+        "selectStakeMonths": "Pilih bulan staking",
+        "days": "hari",
+        "apy": "APY",
+        "stake": "Stake",
+        "stakeProcessing": "Memproses...",
+        "usdApprox": "≈ {amount} USD",
+        "months": "bulan",
+        "pleaseEnterValidAmount": "Silakan masukkan jumlah yang valid",
+        "pleaseSelectStakePlan": "Silakan pilih rencana stake",
+        "invalidAmount": "Jumlah tidak valid",
+        "insufficientBalance": "Saldo tidak cukup. Tersedia: {balance} MMP",
+        "insufficientSolBalance": "Minimal 0.002 SOL diperlukan untuk menginisialisasi stake",
+        "invalidStakePeriod": "Periode stake tidak valid",
+        "stakeSuccess": "Stake berhasil dibuat!",
+        "stakeError": "Gagal membuat stake. Silakan coba lagi."
+    },
+    "overview": {
+        "title": "Ikhtisar MMP",
+        "welcome": "Selamat datang di MemePump",
+        "description": "Platform meme coin revolusioner yang dibangun di atas blockchain Solana",
+        "features": {
+            "title": "Fitur Utama",
+            "trading": "Perdagangan Aman",
+            "staking": "Staking Menguntungkan",
+            "rewards": "Sistem Hadiah",
+            "community": "Komunitas Kuat"
+        },
+        "tokenomics": {
+            "title": "Tokenomics",
+            "totalSupply": "Total Pasokan: 100 Miliar Token",
+            "distribution": "Distribusi yang Adil",
+            "community": "55% Komunitas",
+            "liquidity": "18% Likuiditas",
+            "marketing": "10% Pemasaran",
+            "team": "5% Tim",
+            "reserve": "6% Cadangan",
+            "seed": "6% Seed"
+        },
+        "roadmap": {
+            "title": "Roadmap",
+            "phase1": "Fase 1: Peluncuran Platform",
+            "phase2": "Fase 2: Ekspansi Fitur",
+            "phase3": "Fase 3: Pertumbuhan Global"
+        }
+    },
+    "mmp_info": {
+        "title": "Informasi MMP",
+        "projectOverview": "Ikhtisar Proyek",
+        "tokenomics": "Tokenomics",
+        "roadmap": "Roadmap",
+        "team": "Tim",
+        "faq": "FAQ",
+        "contact": "Kontak"
+    },
+    "whitePaper": {
+        "title": "Whitepaper MEMEPUMP",
+        "sections": {
+            "introduction": {
+                "title": "1. Pengenalan: Apa itu MEMEPUMP?",
+                "description": "MEMEPUMP adalah platform meme coin berbasis komunitas generasi berikutnya yang dibangun di atas blockchain Solana, yang lahir untuk mengubah secara revolusioner cara pengguna memperdagangkan, menghasilkan keuntungan, dan berpartisipasi dalam kripto berbasis meme. Berbeda dengan proyek meme yang kurang utilitas di masa lalu, MEMEPUMP mengintegrasikan insentif DeFi, ekosistem perdagangan simulasi, dan tata kelola terdesentralisasi untuk memberikan pengalaman yang berkelanjutan dan bermanfaat bagi semua peserta.",
+                "problems": {
+                    "title": "Masalah: Tantangan Pasar Meme Coin",
+                    "description": "Pasar meme coin menderita masalah berikut:",
+                    "items": [
+                        "Volatilitas tinggi dan risiko penipuan – Banyak proyek yang kurang transparansi dan beroperasi dengan cara pump and dump (menaikkan harga kemudian menjual).",
+                        "Reward pengguna yang rendah – Sebagian besar platform memprioritaskan paus (investor besar) daripada komunitas.",
+                        "Kurangnya utilitas jangka panjang – Sebagian besar meme coin menghilang setelah hype awal."
+                    ]
+                },
+                "solutions": {
+                    "title": "Solusi MEMEPUMP",
+                    "description": "Kami menyelesaikan masalah ini dengan cara berikut:",
+                    "items": [
+                        "Alokasi reward komunitas 55% – Membagikan proporsi token terbesar kepada pengguna, memberikan reward melalui insentif perdagangan, staking, dan partisipasi platform.",
+                        "Perdagangan DeFi + Simulasi Hibrida – Menyediakan ekosistem inovatif yang menggabungkan perdagangan nyata dengan pasar simulasi tanpa risiko.",
+                        "Persiapan tata kelola berbasis DAO – Mengalokasikan sebagian token sebagai cadangan untuk pengambilan keputusan terdesentralisasi di masa depan.",
+                        "Strategi ekspansi global – Mendorong pertumbuhan jangka panjang melalui pemasaran agresif dan kemitraan."
+                    ]
+                }
+            },
+            "problems": {
+                "title": "2. Masalah: Kekacauan Pasar Investasi Meme Coin",
+                "description": "Pasar meme coin mengalami popularitas yang meledak, tetapi masih seperti kasino berisiko tinggi dan berpenghasilan tinggi di mana sebagian besar investor mengalami kerugian. Mengapa?",
+                "subsections": {
+                    "rugPull": {
+                        "title": "2.1. Penipuan dan Rug Pull",
+                        "items": [
+                            "Lebih dari 90% meme coin baru menghilang atau menjadi proyek penipuan segera setelah peluncuran.",
+                            "Investor terekspos pada risiko yang tidak bertanggung jawab seperti likuiditas palsu, dumping insider, dan rug pull (kabur dengan uang)."
+                        ]
+                    },
+                    "unfairDistribution": {
+                        "title": "2.2. Struktur Distribusi yang Tidak Adil",
+                        "items": [
+                            "Sebagian besar meme coin dirancang untuk menguntungkan paus dan insider, dengan investor biasa hanya mendapat alokasi kecil.",
+                            "Cara pump and dump mendominasi, membuat kemungkinan pertumbuhan berkelanjutan sangat rendah."
+                        ]
+                    },
+                    "lackOfUtility": {
+                        "title": "2.3. Kurangnya Utilitas Substansial",
+                        "items": [
+                            "Banyak meme coin hanyalah objek spekulasi tanpa tujuan atau fungsi substansial.",
+                            "Tidak ada ekosistem, tidak ada sistem reward, hanya volatilitas yang bergantung pada hype berlebihan."
+                        ]
+                    },
+                    "informationOverload": {
+                        "title": "2.4. Kelebihan Informasi dan Informasi Palsu",
+                        "items": [
+                            "Meme coin baru diluncurkan setiap menit, membuat mustahil untuk mengidentifikasi proyek yang sah.",
+                            "Influencer palsu mempromosikan proyek penipuan dan menyesatkan investor."
+                        ]
+                    },
+                    "entryBarriers": {
+                        "title": "2.5. Hambatan Masuk untuk Perdagangan yang Aman",
+                        "items": [
+                            "Sebagian besar perdagangan meme coin dilakukan melalui DEX yang tidak diverifikasi dengan keamanan yang tidak memadai.",
+                            "Tidak ada perlindungan keamanan seperti deteksi scam, verifikasi smart contract, atau pelacakan paus."
+                        ]
+                    },
+                    "memepumpSolutions": {
+                        "title": "2.6. Solusi MEMEPUMP",
+                        "items": [
+                            "Reward komunitas prioritas – 55% dari total token dibagikan langsung kepada pengguna, bukan insider.",
+                            "Pencegahan rug pull – Hanya token yang diverifikasi yang terdaftar, dengan vault multisig untuk memastikan peluncuran yang aman.",
+                            "Perdagangan simulasi + DeFi nyata – Belajar di lingkungan tanpa risiko sebelum perdagangan nyata.",
+                            "Operasi global yang transparan – Mewujudkan pengambilan keputusan yang adil dan terdesentralisasi melalui tata kelola DAO."
+                        ]
+                    }
+                }
+            },
+            "aiSolutions": {
+                "title": "3. Solusi: AI Membuatnya Mungkin",
+                "dataInsights": {
+                    "title": "3.1 Mendapatkan Wawasan dari Data",
+                    "description": "Pasar meme coin bergerak berdasarkan tren viral, antusiasme komunitas, dan sentimen real-time. Namun, tanpa data terstruktur, investor tersesat dalam kebisingan informasi. MEMEPUMP menyelesaikan ini dengan mengintegrasikan analisis multi-chain, analisis sentimen sosial, dan perilaku on-chain untuk memberikan wawasan substansial.",
+                    "whyNewParadigm": {
+                        "title": "Mengapa Meme Coin Membutuhkan Paradigma Data Baru?",
+                        "description": "Sebagian besar platform memperlakukan meme coin seperti aset biasa, mengabaikan karakteristik unik mereka:",
+                        "items": [
+                            "Volatilitas ultra-tinggi: Harga naik turun hingga 1000% dalam beberapa jam, bergerak berdasarkan tweet, meme, dan pengaruh influencer.",
+                            "Transparansi rendah: Hampir tidak ada alat untuk melacak rug pull, perubahan likuiditas, dan dumping paus secara real-time.",
+                            "Berpusat pada komunitas: Kesuksesan bergantung pada indikator partisipasi seperti aktivitas Telegram/Discord dan kekuatan penyebaran meme, bukan fundamental."
+                        ]
+                    },
+                    "dataFramework": {
+                        "title": "Kerangka Data MEMEPUMP",
+                        "description": "Kami menyusun ulang data meme coin menjadi 5 bagian inti untuk memberikan informasi yang berguna bagi trader, degen, dan builder:",
+                        "sections": {
+                            "marketDashboard": {
+                                "title": "1. Dashboard Pasar Meme",
+                                "items": [
+                                    "Tren real-time: Koin yang melonjak, lonjakan volume, sebutan sosial (X, Telegram, 4chan).",
+                                    "Radar rug pull: Elemen risiko kontrak yang dipindai AI (misalnya: fungsi mint, status kunci LP) dan peringatan likuiditas.",
+                                    "Peluncuran baru: Filter berdasarkan chain (Solana, Base, Ethereum), indikator peluncuran yang adil."
+                                ]
+                            },
+                            "sectorIndex": {
+                                "title": "2. Sektor & Indeks Meme",
+                                "description": "Meme coin bukan satu jenis. Kami mengklasifikasikan berdasarkan kriteria berikut:",
+                                "items": [
+                                    "Sub-sektor: Seri Doge, politik, selebritas, AI-generated, dll.",
+                                    "Ekosistem chain: Perbandingan Solana, Ethereum, Base, dll.",
+                                    "Kekuatan komunitas: Jumlah holder, dukungan influencer."
+                                ],
+                                "example": "Contoh: \"Indeks Koin Doge Solana\" dapat menangkap peluang rotasi pasar."
+                            },
+                            "tokenAnalysis": {
+                                "title": "3. Analisis Mendalam Token & Proyek",
+                                "description": "Untuk setiap meme coin, MEMEPUMP melacak:",
+                                "items": [
+                                    "Tokenomics: Apakah peluncuran adil, saham tim, struktur pajak, dll.",
+                                    "Potensi viral: Tingkat pertumbuhan sosial, kekuatan penyebaran template meme.",
+                                    "Pemantauan aktivitas paus: Pergerakan jual/beli pemegang utama."
+                                ]
+                            },
+                            "alphaNews": {
+                                "title": "4. Alpha Leak & Berita",
+                                "items": [
+                                    "Integrasi berita meme: Berita utama yang dikumpulkan dari Crypto Twitter, Substack, channel degen.",
+                                    "Analisis sentimen yang disejajarkan AI: Tren bullish vs FUD per koin.",
+                                    "Peringatan acara: Berita tentang listing exchange besar, promosi influencer, kompetisi meme, dll."
+                                ]
+                            },
+                            "onchainTrading": {
+                                "title": "5. Perdagangan On-chain & Simulasi",
+                                "items": [
+                                    "Pemantauan status LP: Deteksi aliran keluar dana dari pool likuiditas atau penarikan mencurigakan",
+                                    "Laboratorium paper trading: Uji strategi meme coin tanpa risiko sebelum investasi nyata"
+                                ]
+                            },
+                            "onchainUpdate": {
+                                "title": "Mengapa Pendekatan Ini Cocok untuk Meme Coin?",
+                                "items": [
+                                    "Untuk trader: Deteksi dini pump, hindari rug pull, ikuti tren berbasis data",
+                                    "Untuk komunitas: Buktikan kredibilitas proyek dan dorong masuk alami",
+                                    "Untuk developer: Temukan niche yang belum digarap"
+                                ]
+                            }
+                        }
+                    }
+                },
+                "aiEnabled": {
+                    "title": "3.2 AI Membuatnya Mungkin (Edisi MEMEPUMP)",
+                    "description": "Jika meme coin melambangkan demokratisasi pasar spekulasi kripto, AI adalah perangkat equalizer yang mengubah kekacauan menjadi wawasan. MEMEPUMP menggunakan AI untuk menghilangkan noise dan memberikan wawasan real-time, deteksi penipuan, dan strategi trading yang disesuaikan — tidak seperti data tingkat Bloomberg yang dikenakan biaya lebih dari $30.000 per tahun oleh platform tradisional, tersedia gratis.",
+                    "howAIChanges": {
+                        "title": "Bagaimana AI MEMEPUMP Mengubah Trading Meme Coin",
+                        "sections": {
+                            "dataAnalysis": {
+                                "title": "1. Analisis Data Berbasis AI",
+                                "description": "Pergerakan meme coin secepat cahaya. AI MEMEPUMP memindai secara real-time:",
+                                "items": [
+                                    "Lebih dari 10.000 sebutan sosial per jam (X, Telegram, 4chan) untuk deteksi siklus hype",
+                                    "Analisis risiko smart contract (honeypot, fungsi mint, kunci LP, dll.) – 98% akurasi",
+                                    "Pelacakan dompet paus antar-chain (Solana, Base, Ethereum) – deteksi pump/dump"
+                                ],
+                                "notification": "Peringatan real-time: Pemberitahuan push saat lonjakan volume tiba-tiba, promosi influencer, atau tanda rug pull."
+                            },
+                            "marketPrediction": {
+                                "title": "2. Analisis Prediksi Pasar",
+                                "description": "Analisis teknis tradisional (TA) tidak cocok untuk meme coin. AI MEMEPUMP menganalisis:",
+                                "items": [
+                                    "Skor viral meme (penyebaran template meme, kecepatan partisipasi, dll.)",
+                                    "Pola pump masa lalu (misalnya: \"Koin Doge melonjak setelah tweet Elon\")",
+                                    "Perubahan sentimen komunitas (analisis real-time FOMO vs FUD)"
+                                ],
+                                "briefing": "Briefing AI harian: Kirim daftar TOP meme coin yang perlu diperhatikan ke kotak surat dengan ringkasan suara 30 detik."
+                            },
+                            "aiAssistant": {
+                                "title": "3. Asisten AI Degenerate Anda Sendiri",
+                                "description": "Bertemu sekarang — MEME-GPT, co-pilot trading meme coin 24 jam Anda:",
+                                "items": [
+                                    "Pelacakan portofolio: \"Mengapa $PEPE anjlok? Tunjukkan pergerakan dompet paus.\"",
+                                    "Alpha Leaks: \"Temukan meme coin dengan kapitalisasi pasar di bawah $1 juta yang sedang trending di Crypto Twitter.\"",
+                                    "Simulasi paper trading: Uji strategi tanpa risiko melalui skenario yang dihasilkan AI"
+                                ],
+                                "watchlist": "Laporan watchlist yang disesuaikan: Misalnya: \"Dari koin yang saya pantau, $WIF naik 40%, $BONK sedang trending di Vietnam\""
+                            },
+                            "aiAssistantUpdate": {
+                                "title": "Mengapa AI MEMEPUMP Unggul",
+                                "items": [
+                                    "Untuk degen: Jangan trading berdasarkan firasat lagi — AI mendeteksi penipuan dan menangkap potensi pumping.",
+                                    "Untuk developer: Buktikan legitimasi meme coin dengan skor kepercayaan yang dihasilkan AI.",
+                                    "Untuk komunitas: Buat strategi pump/dump yang lebih cerdas berdasarkan heatmap sentimen."
+                                ],
+                                "content": "MEMEPUMP tidak hanya memberikan data, tetapi memberikan keunggulan kompetitif kepada pengguna."
+                            }
+                        }
+                    }
+                }
+            },
+            "tokenomics": {
+                "title": "4. Tokenomics",
+                "memepumpToken": {
+                    "title": "4.1 Token MEMEPUMP",
+                    "governance": {
+                        "title": "Tata Kelola Terdesentralisasi",
+                        "description": "Pemegang token MEMEPUMP dapat mempengaruhi keputusan kunci dalam pengembangan platform. Mereka dapat secara langsung mengusulkan, mendiskusikan, dan memilih berbagai masalah seperti upgrade protokol, penyesuaian parameter, dan peluncuran fitur baru. Model tata kelola terdesentralisasi ini memastikan transparansi penuh dan memastikan semua perubahan selaras dengan kepentingan komunitas."
+                    },
+                    "incentiveStructure": {
+                        "title": "Struktur Insentif Ekosistem",
+                        "description": "Token MEMEPUMP adalah mekanisme insentif inti platform dan mengaktifkan ekosistem dengan cara berikut:",
+                        "items": [
+                            "Reward partisipasi: Token MEMEPUMP diberikan setiap hari kepada pengguna yang aktif berpartisipasi dalam perdagangan, aktivitas komunitas, berbagi konten, dll.",
+                            "Insentif likuiditas & simulasi: Pengguna yang berkontribusi pada pool likuiditas perdagangan nyata atau berpartisipasi dalam ekosistem investasi simulasi menerima reward.",
+                            "Bounty akurasi konten & data: Anggota yang menemukan atau memperbaiki kesalahan data, atau berkontribusi konten yang berguna, dihargai dengan token MEMEPUMP.",
+                            "Sistem ini meningkatkan keandalan data sambil memupuk kontribusi komunitas berkualitas tinggi."
+                        ]
+                    },
+                    "incentiveStructureUpdate": {
+                        "title": "Deposit Partisipasi Protokol",
+                        "description": "Token MEMEPUMP adalah mekanisme insentif inti platform dan mengaktifkan ekosistem dengan cara berikut:",
+                        "items": [
+                            "Untuk memastikan keandalan fungsi protokol, pengguna yang berpartisipasi dalam aktivitas inti seperti manajemen likuiditas atau kurasi fitur harus menyetor sejumlah token MEMEPUMP.",
+                            "Mekanisme ini berfungsi sebagai pengaman untuk mencegah perilaku jahat dan menekankan tanggung jawab peserta untuk stabilitas dan keamanan platform."
+                        ]
+                    },
+                    "incentiveStructureUpdate2": {
+                        "title": "Staking untuk Fitur Premium",
+                        "items": [
+                            "Selain insentif dasar, pengguna yang staking token dapat mengakses berbagai fitur premium.",
+                            "Pengguna yang staking sejumlah token MEMEPUMP tertentu dapat mengakses alat analisis lanjutan, konten eksklusif, diskon biaya perdagangan dalam protokol SSI, dan layanan tambahan lainnya. Ini meningkatkan pengalaman pengguna secara keseluruhan, mendorong kepemilikan jangka panjang, dan memperkuat utilitas token dalam ekosistem.",
+                            "Melalui kasus penggunaan multi-dimensi ini, token MEMEPUMP menetapkan dirinya sebagai aset inti yang mendorong tata kelola terdesentralisasi, mendorong partisipasi komunitas yang aktif, mengamankan protokol, dan membuka kunci fitur premium.",
+                            "Ini memberikan fondasi yang solid untuk platform kami untuk tumbuh menjadi ekosistem yang berkelanjutan dan dinamis."
+                        ]
+                    }
+                },
+                "tokenomics": {
+                    "title": "4.2 Tokenomics",
+                    "sections": {
+                        "seedRound": {
+                            "title": "1. Putaran Seed (6%)",
+                            "description": "Dialokasikan kepada investor strategis awal yang memberikan dukungan penting pada tahap awal proyek.",
+                            "vesting": {
+                                "title": "Jadwal Vesting:",
+                                "items": [
+                                    "Tahap 1: 50% dari total alokasi akan dilepas secara bertahap mulai 30 hari sebelum listing exchange.",
+                                    "Tahap 2: 50% sisanya akan dilepas setelah 3 bulan pasca listing."
+                                ]
+                            }
+                        },
+                        "communityRewards": {
+                            "title": "2. Reward Komunitas (55%)",
+                            "description": "Inti dari MEMEPUMP adalah ekosistem berbasis komunitas. Lebih dari setengah dari total pasokan dialokasikan sebagai reward untuk mendorong partisipasi pengguna.",
+                            "vesting": {
+                                "title": "Jadwal Vesting:",
+                                "items": [
+                                    "Pelepasan awal: 15% dilepas pada saat TGE (Token Generation Event).",
+                                    "Distribusi selanjutnya: 85% sisanya didistribusikan secara linear selama 60 bulan untuk mendorong kepemilikan jangka panjang dan partisipasi komunitas yang berkelanjutan."
+                                ]
+                            }
+                        },
+                        "liquidityPool": {
+                            "title": "3. Pool Likuiditas & Simulasi Ekosistem (18%)",
+                            "description": "Item ini ditetapkan untuk memperkuat likuiditas perdagangan nyata dan ekosistem simulasi secara bersamaan.",
+                            "vesting": "Jadwal Vesting: Token dilepas secara bertahap setiap bulan dengan cara linear selama 36 bulan."
+                        },
+                        "marketingPartnership": {
+                            "title": "4. Pemasaran & Kemitraan (10%)",
+                            "description": "Untuk ekspansi global dan kemitraan strategis, 10% dari total token dialokasikan untuk aktivitas pemasaran, kolaborasi influencer, dan berbagai inisiatif berbasis kemitraan.",
+                            "vesting": "Jadwal Vesting: Token mulai dilepas setelah periode cliff 18 bulan. Setelah itu, token didistribusikan secara bertahap setiap bulan selama 36 bulan."
+                        },
+                        "teamOperations": {
+                            "title": "5. Tim & Biaya Operasional (5%)",
+                            "description": "Item ini mendukung tim pengembangan inti dan pengembangan serta operasi platform yang berkelanjutan.",
+                            "vesting": {
+                                "title": "Jadwal Vesting:",
+                                "items": [
+                                    "Vesting dimulai 3 bulan setelah peluncuran resmi platform.",
+                                    "Dibayar bulanan selama 6 tahun dengan struktur berikut:",
+                                    "Tahun 1-2: Sekitar 2.2% per bulan",
+                                    "Tahun 3-4: Sekitar 1.4% per bulan",
+                                    "Tahun 5-6: Sekitar 0.57% per bulan"
+                                ]
+                            }
+                        },
+                        "reserveFund": {
+                            "title": "6. Dana Cadangan Yayasan (6%)",
+                            "description": "Item ini disimpan sebagai dana darurat strategis untuk menangani situasi tak terduga dan mendukung pengembangan masa depan, serta transisi yang lancar ke sistem tata kelola DAO (Organisasi Otonom Terdesentralisasi).",
+                            "vesting": {
+                                "title": "Jadwal Vesting:",
+                                "items": [
+                                    "Pelepasan awal: 15% dilepas pada saat TGE (Token Generation Event)",
+                                    "Pelepasan berkelanjutan: Sisanya didistribusikan secara linear selama 60 bulan."
+                                ]
+                            },
+                            "content": "Struktur tokenomics komprehensif ini dirancang dengan mempertimbangkan keseimbangan antara kepentingan investor awal dan partisipasi komunitas jangka panjang serta keberlanjutan proyek. Setiap item disediakan dengan jadwal vesting yang jelas, yang semakin memperkuat stabilitas platform dan kepercayaan pada ekosistem MEMEPUMP."
+                        }
+                    }
+                },
+                "airdrop": {
+                    "title": "4.3 Rencana Airdrop",
+                    "overview": {
+                        "title": "1. Ikhtisar",
+                        "description": "Whitepaper ini menjelaskan program airdrop yang terintegrasi langsung ke dalam website utama. Program ini mendorong partisipasi komunitas melalui berbagai tantangan dan interaksi, di mana pengguna dapat mengumpulkan Experience Points (EXP) dan mengkonversinya menjadi token proyek di masa depan."
+                    },
+                    "resources": {
+                        "title": "2. Sumber Daya Terhubung",
+                        "channels": {
+                            "title": "Channel Utama",
+                            "description": "Pengguna dapat login melalui Gmail dan Telegram. (Discord bersifat opsional dan dapat dihilangkan jika tidak didukung.)"
+                        },
+                        "socialParticipation": {
+                            "title": "Partisipasi Sosial Wajib",
+                            "description": "Untuk menerima reward, pengguna harus bergabung dengan semua channel sosial yang ditentukan. Kondisi ini memastikan integrasi penuh dengan komunitas."
+                        }
+                    },
+                    "tasks": {
+                        "title": "3. Tantangan & Akumulasi EXP",
+                        "description": "Program airdrop berpusat pada tantangan harian dan aktivitas SNS, mendorong partisipasi aktif melalui EXP.",
+                        "items": [
+                            "Daily check-in: Pengguna harus mengakses halaman airdrop website setiap hari untuk melakukan check-in.",
+                            "Partisipasi media sosial: Like, share, dan komentar pada posting terbaru Twitter memberikan EXP yang ditentukan untuk setiap aktivitas.",
+                            "Berbagi konten: Pengguna mengunggah posting ke media sosial mereka dan harus menyertakan username tag atau hashtag yang ditentukan: #memepump, #memepump_exchanges, #PumpWithMemePump."
+                        ]
+                    },
+                    "distribution": {
+                        "title": "4. Kriteria Distribusi Airdrop",
+                        "description": "Reward airdrop dihitung berdasarkan total Experience Points (EXP) yang terkumpul melalui tantangan, yang dikonversi menjadi token proyek. Untuk menerima reward, semua kondisi berikut harus dipenuhi:",
+                        "requirements": [
+                            "Partisipasi jaringan sosial: Harus bergabung dengan channel Telegram resmi. Harus mengikuti channel Twitter resmi.",
+                            "Partisipasi berkelanjutan: Harus menyelesaikan 15 hari check-in berturut-turut. Harus aktif setidaknya satu bulan.",
+                            "Kontribusi komunitas: Harus mencapai jumlah minimum referral yang ditentukan proyek. Semua akun sosial wajib harus terhubung."
+                        ],
+                        "conclusion": "Melalui kriteria ini, reward airdrop hanya didistribusikan kepada anggota komunitas yang berpartisipasi aktif dan berdedikasi pada proyek."
+                    }
+                }
+            },
+            "staking": {
+                "title": "4.4 Reward Staking",
+                "rewards": {
+                    "title": "1. Struktur APY & Reward",
+                    "items": [
+                        "Rasio APY Premium",
+                        "APY berpenghasilan tinggi yang kompetitif:",
+                        "3 bulan: 10%",
+                        "6 bulan: 22%",
+                        "9 bulan: 34%",
+                        "12 bulan: 48%",
+                        "24 bulan: 130%",
+                        "Penyesuaian fleksibel: APY dapat disesuaikan secara fleksibel tergantung pada kondisi operasional platform atau TVL (Total Value Locked), yang merupakan tindakan untuk pertumbuhan ekosistem yang stabil."
+                    ]
+                },
+                "mechanism": {
+                    "title": "2. Mekanisme Staking",
+                    "items": [
+                        "Preferensi untuk depositor jangka panjang dan besar: Pengguna yang staking jangka panjang atau menyetor jumlah besar menerima berbagai manfaat seperti airdrop token listing baru, reward tambahan USDT atau token lainnya.",
+                        "Prosedur staking: Pengguna menyetor token dengan cara 'lock-up' sesuai dengan periode staking yang dipilih dan menerima keuntungan APY yang ditentukan. Seluruh proses dirancang untuk memastikan transparansi dan keamanan reward.",
+                        "Opsi reward yang beragam",
+                        "Reward token dan stablecoin: Reward staking dapat dibayarkan dalam token dasar platform ($MMP) atau stablecoin seperti USDT/USDC.",
+                        "Mekanisme reward ganda: Melalui kemitraan strategis, pengguna dapat menerima reward tambahan selain keuntungan staking biasa. Misalnya, jika pengguna A merekomendasikan pengguna B untuk berpartisipasi dalam staking, A menerima komisi referral. Selain itu, jika A sedang staking, mereka dapat menerima reward ganda.",
+                        "Promosi staking awal: Peserta awal dapat menerima bonus tambahan 10-30% untuk waktu terbatas."
+                    ]
+                },
+                "community": {
+                    "title": "3. Program Referral & Partisipasi Komunitas",
+                    "titlesub": "Staking referral:",
+                    "items": [
+                        "Staking referral: Bonus referral teman: Jika pengguna mengundang teman untuk berpartisipasi dalam staking, referrer dapat menerima tambahan 5-10% dari reward pengguna yang direferensikan. Cara ini memperluas jaringan pengguna dan mendorong partisipasi komunitas.",
+                        "Leaderboard dan mini game: Leaderboard staker: Sistem peringkat berdasarkan jumlah staking dan periode, memberikan reward mingguan atau bulanan kepada staker teratas (misalnya: staker peringkat 1 menerima 1,000 $MMP).",
+                        "Mini game 'Lucky Spin': Saat staking 1,000 token atau unlock, pengguna mendapatkan kesempatan untuk memutar roulette untuk menerima reward acak."
+                    ],
+                    "summary": "Program staking menciptakan ekosistem yang hidup tidak hanya melalui rasio APY tinggi tetapi juga melalui aktivitas referral dan interaktif. Menggabungkan berbagai cara reward dan strategi pemasaran inovatif untuk membangun komunitas yang loyal dan mendukung pertumbuhan jangka panjang platform."
+                }
+            },
+            "miningApp": {
+                "title": "4.5 Aplikasi Mining",
+                "overview": {
+                    "title": "1. Ikhtisar",
+                    "content": "Program mining token MMPP terintegrasi ke dalam website resmi proyek dan bertujuan untuk menciptakan lingkungan distribusi token yang adil dan transparan dalam komunitas. Tujuan utamanya adalah memungkinkan pengguna mengumpulkan poin melalui berbagai aktivitas online dan tantangan, yang kemudian dapat dikonversi menjadi token MMPP. Melalui ini, proyek memperluas ekosistem sambil mendorong partisipasi komunitas yang berkelanjutan dan pertumbuhan."
+                },
+                "mechanism": {
+                    "title": "2. Mekanisme Mining Token MMPP",
+                    "mining": {
+                        "title": "2.1 Metode Mining",
+                        "items": [
+                            "Mining berbasis waktu: Pengguna dapat memperoleh token MMPP berdasarkan waktu yang dihabiskan di website (dalam menit atau jam). Sistem mencatat waktu partisipasi pengguna dan mengkonversinya menjadi poin mining.",
+                            "Mining berbasis misi: Selain aktivitas sehari-hari, pengguna juga dapat memperoleh poin dengan menyelesaikan misi tertentu seperti:",
+                            "Menyelesaikan daily check-in",
+                            "Berpartisipasi dalam survei, mini game, dan aktivitas interaktif lainnya",
+                            "Berbagi konten di media sosial",
+                            "Mining referral: Jika pengguna mengundang pengguna baru ke platform, pengundang menerima poin mining tambahan. Ini berkontribusi pada ekspansi komunitas dan meningkatkan tingkat partisipasi keseluruhan."
+                        ]
+                    },
+                    "points": {
+                        "title": "2.2 Perhitungan & Distribusi Poin",
+                        "items": [
+                            "Sistem poin: Setiap aktivitas pengguna, misi, atau interaksi dikonversi menjadi poin mining sesuai dengan rasio yang telah ditentukan sebelumnya. Sistem ini dirancang untuk memastikan keadilan dan mendorong partisipasi berkelanjutan.",
+                            "Konversi ke token MMPP: Poin mining yang terkumpul dikonversi menjadi token MMPP melalui mekanisme yang dapat disesuaikan berdasarkan kurs tetap atau model tata kelola proyek.",
+                            "Batasan & penyeimbangan: Untuk mempertahankan stabilitas token, batas mining harian maksimum per pengguna dapat ditetapkan. Selain itu, kurs dapat disesuaikan berdasarkan jumlah akumulasi poin dalam seluruh sistem."
+                        ]
+                    }
+                },
+                "security": {
+                    "title": "3. Sistem Keamanan & Pencegahan Kecurangan",
+                    "items": [
+                        "Monitoring & verifikasi: Sistem mining memanfaatkan alat monitoring dan verifikasi canggih untuk mendeteksi bot otomatis, penggunaan yang tidak sah, manipulasi poin mining, dll. Tindakan ini memastikan keadilan dan transparansi dalam distribusi token.",
+                        "Perlindungan data: Teknologi keamanan terbaru diterapkan untuk melindungi informasi pribadi dan data aktivitas pengguna. Semua transaksi dan interaksi dicatat dan disimpan dengan aman."
+                    ]
+                },
+                "roadmap": {
+                    "title": "4. Roadmap & Rencana Pengembangan Masa Depan",
+                    "items": [
+                        "Integrasi misi dan aktivitas baru: Secara teratur memperkenalkan misi baru yang menarik melalui update untuk terus mendorong partisipasi pengguna.",
+                        "Peningkatan UI/UX: Meningkatkan layout website dan fitur interaktif untuk memudahkan pengguna memeriksa kemajuan dan token yang terkumpul.",
+                        "Kemitraan multi-channel: Memperluas kolaborasi dengan proyek lain untuk memperluas utilitas token MMPP dan memberikan lebih banyak peluang reward yang beragam kepada komunitas."
+                    ],
+                    "summary": "Program mining ini melampaui sekadar alat distribusi token, menjadi kekuatan pendorong yang meningkatkan interaksi pengguna dan mendorong pertumbuhan berkelanjutan ekosistem."
+                }
+            },
+            "resources": {
+                "title": "4.6 Sumber Daya",
+                "tutorial": {
+                    "title": "5.1 Tutorial",
+                    "overview": "Jika Anda mengalami kesulitan dalam membeli token MMPP, silakan merujuk pada dokumen ini. Kami menyediakan panduan dan langkah demi langkah untuk membantu Anda melakukan transaksi dengan lancar. Untuk membeli token MMPP, Anda perlu memiliki USDC di dompet Solana dan SOL untuk membayar biaya transaksi.",
+                    "usdc": {
+                        "title": "2. Cara Memperoleh USDC di Solana Mainnet",
+                        "items": [
+                            "Transfer Lintas Jaringan USDC (melalui DEX): Gunakan bursa terdesentralisasi (DEX) yang mendukung bridge, seperti Jupiter Aggregator. Setelah menghubungkan dompet Anda, pilih jaringan tempat Anda menyimpan USDC saat ini sebagai Jaringan Sumber'. Pilih Solana Mainnet sebagai 'Jaringan Tujuan'. Masukkan jumlah USDC yang ingin Anda transfer. Ikuti petunjuk di layar DEX untuk menyelesaikan proses transfer.",
+                            "Untuk mentransfer USDC dari bursa terpusat (CEX) ke dompet on-chain: Pilih opsi 'Tarik' di bursa yang Anda gunakan. Salin alamat dompet Solana Anda dan tempel ke kolom alamat penarikan. Pilih Solana sebagai jenis rantai. Masukkan jumlah USDC yang ingin Anda transfer dan selesaikan proses verifikasi. Setelah Anda mengonfirmasi transaksi, USDC akan dikirim langsung ke dompet Anda.",
+                            "Konversi mata uang lain ke USDC di CEX: Pilih fungsi 'Konversi' atau 'Tukar' di bursa. Pilih mata uang kripto yang Anda miliki dan tentukan USDC sebagai mata uang yang akan dikonversi. Masukkan jumlah yang akan dikonversi. Ikuti petunjuk bursa untuk menyelesaikan proses konversi."
+                        ]
+                    },
+                    "sol": {
+                        "title": "3. Cara Memperoleh SOL di Solana Mainnet",
+                        "items": [
+                            "Transfer SOL melalui bridge DEX: Hubungkan dompet Anda ke DEX yang mendukung bridge, seperti Jupiter Aggregator. Setelah menghubungkan dompet Anda, pilih jaringan tempat Anda menyimpan SOL saat ini sebagai 'Jaringan Sumber'. Pilih Solana Mainnet sebagai 'Jaringan Tujuan'. Masukkan jumlah SOL yang ingin Anda transfer. Ikuti petunjuk di layar DEX untuk menyelesaikan proses transfer.",
+                            "Untuk mentransfer SOL dari bursa terpusat (CEX) ke dompet on-chain: Pilih opsi 'Tarik' di bursa yang Anda gunakan. Salin alamat dompet Solana Anda dan tempel ke kolom alamat penarikan. Pilih Solana sebagai jenis rantai. Masukkan jumlah SOL yang ingin Anda transfer dan selesaikan proses verifikasi. Setelah Anda mengonfirmasi transaksi, SOL akan dikirim langsung ke dompet Anda."
+                        ]
+                    },
+                    "staking": {
+                        "title": "4. Cara Melakukan Staking MMPP",
+                        "items": [
+                            "Akses halaman staking: Login ke dashboard MEMEPUMP atau jalankan aplikasi MEMEPUMP resmi. Pindah ke bagian staking.",
+                            "Masukkan jumlah: Masukkan jumlah token MMPP yang ingin Anda staking. Anda akan melihat perkiraan reward dan jadwal vesting.",
+                            "Konfirmasi transaksi: Setujui staking melalui dompet yang terhubung. Pastikan untuk memeriksa kondisi dan detail transaksi sebelum mengonfirmasi.",
+                            "Dapatkan reward: Setelah staking, Anda akan menerima reward sesuai dengan panduan platform. Fitur premium akan dibuka."
+                        ]
+                    }
+                },
+                "roadmap": {
+                    "title": "5.2 Roadmap",
+                    "summary": "Proyek MEMEPUMP beroperasi berdasarkan roadmap berbagai tahapan yang dinamis, yang dirancang untuk menjangkau pertumbuhan ekosistem yang berkelanjutan dan meningkatkan inovasi melalui umpan balik komunitas. Berikut adalah beberapa milestone utama yang kami rencanakan:",
+                    "phases": [
+                        {
+                            "title": "1. Pembangunan Dasar dan Persiapan Rilis (Kuartal 2 2025)",
+                            "items": [
+                                "Pengembangan Protokol Akhir: Selesaikan pengembangan protokol, audit kontrak pintar, dan pengujian antarmuka pengguna.",
+                                "Penerbitan Whitepaper dan Pembangunan Komunitas: Menerbitkan whitepaper dan membuka saluran komunikasi resmi untuk pengguna awal.",
+                                "Pembagian Token Pra-Rilis: Bagikan token seed round dan siapkan masuk ke Mainnet."
+                            ]
+                        },
+                        {
+                            "title": "2. Rilis Resmi dan Pertumbuhan Awal (Kuartal 3 2025)",
+                            "items": [
+                                "Rilis Mainnet: Luncurkan platform MEMEPUMP di Solana Mainnet.",
+                                "Pembagian Token: Mulai jadwal vesting dan aktivasi reward komunitas.",
+                                "Pengintegrasian Pasar Awal: Daftarkan MMPP di DEX utama dan mulai kerjasama strategis dengan partner utama."
+                            ]
+                        },
+                        {
+                            "title": "3. Peningkatan Ekosistem dan Fitur Lanjutan (Kuartal 4 2025 - Kuartal 1 2026)",
+                            "items": [
+                                "Peningkatan Fungsi Likuiditas dan Simulasi: Luncurkan fitur likuiditas tingkat tinggi dan modul simulasi terintegrasi untuk meningkatkan aktivitas pasar.",
+                                "Staking dan Rilis Layanan Premium: Implementasi fitur staking dan pembukaan layanan premium dan dashboard analitik tingkat lanjut.",
+                                "Ekspansi Global: Meningkatkan kegiatan pemasaran dan memperkuat kekuatan global melalui kerjasama tambahan."
+                            ]
+                        },
+                        {
+                            "title": "4. Peningkatan Governance dan Inovasi Jangka Panjang (Kuartal 2 2026 - Kuartal 1 2027)",
+                            "items": [
+                                "Pengubahan ke DAO: Gradually transition governance to a fully decentralized model to enable community-driven decision-making.",
+                                "Integrasi Cross-Chain: Meningkatkan likuiditas dan aksesibilitas dengan mengeksplorasi integrasi cross-chain.",
+                                "Peningkatan Fitur: Perbarui fitur berdasarkan umpan balik pengguna dan perkembangan pasar secara berkala.",
+                                "Proyek Komunitas: Mendukung proyek komunitas dan insentif untuk memperkuat ekosistem MEMEPUMP secara berkelanjutan."
+                            ]
+                        }
+                    ],
+                    "note": "Roadmap ini dapat disesuaikan berdasarkan situasi pasar, perkembangan teknologi, dan umpan balik komunitas. Kami selalu berdedikasi untuk membangun platform yang aman dan inovatif, serta berpusat pada kebutuhan pengguna."
+                },
+                "audit": {
+                    "title": "5.3 Audit",
+                    "content": "(※ Section ini akan diperbarui sesuai dengan waktu penyelesaian audit.)"
+                },
+                "terms": {
+                    "title": "5.4 Syarat & Ketentuan",
+                    "lastUpdate": "Tanggal Pembaruan Terakhir: 7 Juni 2025",
+                    "sections": [
+                        {
+                            "title": "1. Persetujuan Syarat & Ketentuan",
+                            "content": "Dengan mengakses MEMEPUMP (di bawah 'Platform'), Anda dianggap telah menyetujui syarat dan ketentuan ini secara hukum. Jika tidak setuju, jangan menggunakan platform."
+                        },
+                        {
+                            "title": "Kualifikasi Pengguna",
+                            "items": [
+                                "Harus berusia 18 tahun atau lebih (atau berusia 18 tahun atau lebih di wilayah Anda).",
+                                "Dilarang menggunakan layanan jika Anda tinggal di negara yang tercantum di item 4."
+                            ]
+                        },
+                        {
+                            "title": "2. Layanan Platform",
+                            "content": "MEMEPUMP menyediakan layanan berikut:",
+                            "items": [
+                                "Trading Meme Coin: Swap token melalui DEX terintegrasi seperti Uniswap, Jupiter, dll.",
+                                "Pelacakan Portofolio: Melacak posisi aset berbasis blockchain",
+                                "Staking: Menyimpan token dan mendapatkan reward (kondisi dapat berubah)",
+                                "AI Tools: Analisis, deteksi skimming, notifikasi tren, dll."
+                            ],
+                            "disclaimer": "Kami hanya menyediakan antarmuka pengguna. Interaksi nyata dilakukan melalui kontrak pintar. Kami tidak memiliki kendali atas protokol eksternal (dompet, DEX, dll)."
+                        },
+                        {
+                            "title": "3. Penggunaan Token (MMPP)",
+                            "items": [
+                                "Partisipasi dalam pengaturan: Hak untuk memilih platform yang akan diupgrade",
+                                "Staking Reward: Mendapatkan reward dari likuiditas dan MMPP saat staking",
+                                "Fitur Premium: Akses ke alat analitik dan fitur tingkat lanjut dengan staking"
+                            ]
+                        },
+                        {
+                            "title": "4. Area Terbatas dan Pengguna",
+                            "items": [
+                                "Negara Terbatas: AS, UK, China, Singapore, FATF Blacklist",
+                                "Target Terbatas: Orang yang dicurigai, anak-anak, organisasi yang melanggar hukum, dll."
+                            ]
+                        },
+                        {
+                            "title": "5. Tanggung Jawab Pengguna",
+                            "items": [
+                                "Keamanan: Anda harus menyimpan kunci dompet secara aman.",
+                                "Ketaatan hukum: Anda harus mematuhi semua hukum yang berlaku di negara tempat Anda tinggal.",
+                                "Pemeriksaan: Anda harus melakukan penelitian yang cukup sebelum bertransaksi."
+                            ],
+                            "prohibited": "Tindakan Terlarang: Penipuan, manipulasi pasar (misalnya: Pump & Dump), tindakan ilegal (penyucian uang, pendanaan teroris, dll.), penggunaan kelemahan platform"
+                        },
+                        {
+                            "title": "6. Risiko dan Penyangkalan",
+                            "items": [
+                                "Volatilitas Pasar: Nilai token dapat turun 100% dalam waktu singkat.",
+                                "Tidak Ada Jaminan: Platform ini disediakan 'as is' dan tidak menjamin keakuratan atau operasionalitas.",
+                                "Risiko Vendor: Risiko kesalahan atau hacking dari vendor eksternal seperti dompet, DEX, oracle, dll."
+                            ],
+                            "liability": "Liability: Kami tidak bertanggung jawab atas: hacking, penipuan, kerugian aset karena kesalahan pengguna, kerugian tidak langsung (misalnya: kerugian pendapatan)."
+                        },
+                        {
+                            "title": "7. Hak Cipta",
+                            "content": "Semua konten di platform (logo, kode, UI, dll.) adalah milik MEMEPUMP. Diberikan izin penggunaan terbatas untuk tujuan pribadi dan non-komersial."
+                        },
+                        {
+                            "title": "8. Pembatalan Layanan",
+                            "content": "Platform dapat menghentikan akses layanan atau menghapus akun tanpa pemberitahuan sebelumnya jika pengguna melanggar syarat dan ketentuan."
+                        },
+                        {
+                            "title": "9. Penanganan Konflik",
+                            "items": [
+                                "Mediasi: Semua konflik akan diselesaikan melalui prosedur mediasi BVI (British Virgin Islands), dan tidak ada toleransi terhadap kelompok klaim.",
+                                "Jurisdiksi: Perjanjian ini mengikuti hukum BVI."
+                            ]
+                        },
+                        {
+                            "title": "10. Perubahan Syarat & Ketentuan",
+                            "content": "Platform dapat mengubah syarat dan ketentuan kapan saja, dan penggunaan setelah perubahan dianggap persetujuan terhadap perubahan tersebut."
+                        },
+                        {
+                            "title": "Kontak",
+                            "content": "Jika ada pertanyaan, silakan hubungi: memepump@gmail.com"
+                        }
+                    ],
+                    "improvements": {
+                        "title": "Improvements",
+                        "items": [
+                            "Struktur yang lebih sederhana: Bagian yang jelas dan poin bertanda",
+                            "Bahasa yang berpusat pada pengguna: Penggunaan istilah hukum yang minimal",
+                            "Peringatan risiko yang lebih kuat: Penjelasan risiko khusus untuk token memepump",
+                            "Penguatan pengawasan hukum: Penegasan secara eksplisit tentang isu hukum terkait DeFi"
+                        ]
+                    }
+                },
+                "privacy": {
+                    "title": "5.5 Kebijakan Privasi",
+                    "overview": "Kami memprioritaskan privasi dan keamanan data pengguna. Kebijakan ini menjelaskan bagaimana platform mengikuti standar global dalam pengumpulan, penggunaan, dan perlindungan data pengguna.",
+                    "sections": [
+                        {
+                            "title": "1. Pengumpulan Data",
+                            "onchain": {
+                                "title": "Data On-Chain:",
+                                "content": "Transaksi, alamat dompet, dan saldo token dicatat di blockchain. Data ini terbuka tetapi anonim, dan tidak dapat diubah."
+                            },
+                            "offchain": {
+                                "title": "Data Off-Chain:",
+                                "content": "Data yang dapat dikumpulkan dari pengguna yang terdaftar di whitelist seperti provider likuiditas, dll. Data ini diperlukan untuk memverifikasi identitas pengguna dan mematuhi regulasi KYC/AML (Customer Identity Verification/Anti-Money Laundering)."
+                            },
+                            "analytics": {
+                                "title": "Data Analitik Pengguna:",
+                                "content": "Data analitik pengguna yang digunakan untuk meningkatkan pengalaman pengguna dan mengoptimalkan platform."
+                            }
+                        },
+                        {
+                            "title": "2. Penggunaan Data",
+                            "items": [
+                                "Penggunaan untuk keamanan platform dan pengawasan hukum: Data yang dikumpulkan digunakan untuk memelihara keamanan platform, memverifikasi identitas pengguna jika diperlukan, dan mematuhi persyaratan regulasi yang relevan.",
+                                "Peningkatan layanan: Data pengguna digunakan untuk menyesuaikan layanan, memecahkan masalah, dan meningkatkan fitur umum, sambil memastikan perlindungan data pribadi.",
+                                "Komunikasi: Jika disetujui oleh pengguna, data kontak yang dikumpulkan dapat digunakan untuk memberikan informasi pembaruan utama, pemberitahuan platform, dan dukungan pelanggan."
+                            ]
+                        },
+                        {
+                            "title": "3. Perlindungan Data",
+                            "items": [
+                                "Enkripsi dan penyimpanan aman: Data sensitif off-chain dienkripsi dan disimpan dengan aman, dengan pembatasan akses hanya untuk pihak yang disetujui.",
+                                "Pengelolaan aset terpisah: Data on-chain dan off-chain dikelola melalui multi-signature wallet dan kendali akses yang ketat, dengan perlindungan kuat terhadap akses tidak sah.",
+                                "Ketaatan regulasi: MEMEPUMP mematuhi regulasi data pribadi global seperti GDPR, dan melindungi hak dan integritas data pengguna."
+                            ]
+                        },
+                        {
+                            "title": "4. Hak Pengguna dan Penyimpanan Data",
+                            "items": [
+                                "Pemeriksaan dan pembaruan: Pengguna dapat meminta akses ke data pribadi yang kami miliki, dan meminta pembaruan jika diperlukan.",
+                                "Penyimpanan: Data pribadi disimpan hanya untuk tujuan yang ditentukan dalam kebijakan ini, dan akan dihapus dengan aman jika tidak lagi diperlukan.",
+                                "Perubahan kebijakan: Kebijakan privasi ini dapat diperbarui secara berkala, dan perubahan penting akan diumumkan melalui saluran resmi."
+                            ]
+                        }
+                    ],
+                    "contact": "Dengan menggunakan platform MEMEPUMP, pengguna dianggap telah menyetujui isi kebijakan privasi ini. Untuk pertanyaan lebih lanjut atau kontak, silakan hubungi: support@memepump.com"
+                },
+                "faq": {
+                    "title": "5.6 Pertanyaan yang Sering Diajukan (FAQ)",
+                    "questions": [
+                        {
+                            "question": "Apakah siapa saja dapat memintal atau membakar MMPP token?",
+                            "answer": "Tidak. Minting dan burning MMPP token hanya dapat dilakukan oleh **Whitelisted Liquidity Providers (WLP)** yang telah disetujui. WLP harus menyelesaikan proses KYC dan KYB untuk memastikan kesetaraan dan integritas platform. Pengguna biasa dapat membeli dan bertransaksi MMPP token secara bebas di exchange resmi selama 24 jam."
+                        },
+                        {
+                            "question": "Saya ingin membeli MMPP token dalam jumlah besar, adakah cara lain selain dari exchange resmi?",
+                            "answer": "Ya. Jika Anda ingin melakukan transaksi dalam jumlah besar, silakan hubungi kami melalui email: 📧 vip@memepump.com Kami akan memberikan opsi transaksi yang sesuai dengan kebutuhan Anda."
+                        },
+                        {
+                            "question": "Bagaimana aset dasar platform kami dilindungi?",
+                            "answer": "Semua aset yang mendukung ekosistem MEMEPUMP dilindungi melalui kerjasama dengan **custodians** yang memiliki lisensi teratur dan **multi-signature wallet provider** dengan tingkat keamanan tinggi. Mereka memisahkan operasional dari dana dan mengimplementasikan struktur keamanan multi-signature untuk memastikan isolasi dan perlindungan aset."
+                        },
+                        {
+                            "question": "Bagaimana perubahan pada aset dasar platform mempengaruhi MMPP token?",
+                            "answer": "Perubahan dalam komposisi aset dasar platform, seperti rebalancing likuiditas atau penyesuaian berat badan, akan secara otomatis diperbarui dalam mekanisme token MMPP. Perubahan ini biasanya dilakukan secara rutin setiap bulan, dan pengguna tidak perlu melakukan tindakan tambahan. Platform tetap stabil dan fleksibel dalam menangani perubahan."
+                        },
+                        {
+                            "question": "Bagaimana biaya layanan dihitung?",
+                            "answer": "Protokol MEMEPUMP mengenakan biaya layanan sebesar 0.01% per hari berdasarkan nilai aset dasar. Biaya ini dihitung secara otomatis setiap hari oleh smart contract, dan pengguna dapat memeriksa struktur biaya kapan saja untuk memastikan transparansi penuh."
+                        },
+                        {
+                            "question": "Apakah ada pertanyaan lebih lanjut atau masalah yang ingin ditanyakan?",
+                            "answer": "Silakan merujuk ke dokumen resmi MEMEPUMP untuk informasi lebih lanjut, dan jika ada pertanyaan tambahan, silakan hubungi: support@memepump.com"
+                        }
+                    ]
+                }
+            }
+        }
+    }
+}
