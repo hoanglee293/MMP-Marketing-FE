@@ -11,6 +11,8 @@ import Header from "@/components/Header";
 import VideoBackground from "@/components/bg-video";
 import { NotifyProvider } from "@/components/notify";
 import { useRouter, useSearchParams, usePathname } from "next/navigation";
+import { useAnalytics } from "@/hooks/useAnalytics";
+import { GA_TRACKING_ID } from "@/libs/gtag";
 
 const gothicA1 = Gothic_A1({
   subsets: ["latin"],
@@ -42,12 +44,27 @@ export default function RootLayout({
   }));
 
   const pathname = usePathname();
+  useAnalytics();
 
   return (
     <html suppressHydrationWarning className="dark">
       <head>
         <title>{process.env.NEXT_PUBLIC_APP_NAME}</title>
         <link rel="icon" href="/favicon.png" type="image/png" />
+        <script
+          async
+          src={`https://www.googletagmanager.com/gtag/js?id=${GA_TRACKING_ID}`}
+        />
+        <script
+          dangerouslySetInnerHTML={{
+            __html: `
+              window.dataLayer = window.dataLayer || [];
+              function gtag(){dataLayer.push(arguments);}
+              gtag('js', new Date());
+              gtag('config', '${GA_TRACKING_ID}');
+            `,
+          }}
+        />
       </head>
       <body className={`antialiased min-h-screen flex flex-col bg-white dark:bg-black overflow-x-hidden  ${gothicA1.variable} ${tektur.variable}`}>
        
