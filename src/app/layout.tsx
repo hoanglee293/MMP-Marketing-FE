@@ -6,12 +6,11 @@ import "@/styles/globals.scss";
 import { LangProvider } from "@/lang";
 import { ToastContainer } from "react-toastify";
 import "react-toastify/dist/ReactToastify.css";
-import { useState } from "react";
+import { useState, Suspense } from "react";
 import Header from "@/components/Header";
 import VideoBackground from "@/components/bg-video";
 import { NotifyProvider } from "@/components/notify";
-import { useRouter, useSearchParams, usePathname } from "next/navigation";
-import { useAnalytics } from "@/hooks/useAnalytics";
+import { usePathname } from "next/navigation";
 import { GA_TRACKING_ID } from "@/libs/gtag";
 
 const gothicA1 = Gothic_A1({
@@ -27,6 +26,14 @@ const tektur = Tektur({
   display: "swap",
   variable: "--font-tektur",
 });
+
+// Client component for analytics
+function AnalyticsWrapper() {
+  const pathname = usePathname();
+  const { useAnalytics } = require("@/hooks/useAnalytics");
+  useAnalytics();
+  return null;
+}
 
 export default function RootLayout({
   children,
@@ -44,7 +51,6 @@ export default function RootLayout({
   }));
 
   const pathname = usePathname();
-  useAnalytics();
 
   const checkPathname = () => {
     if (pathname === '/overview' || pathname === '/mmp-info') {
@@ -78,6 +84,9 @@ export default function RootLayout({
         <QueryClientProvider client={queryClient}>
           <LangProvider>
             <NotifyProvider>
+              <Suspense fallback={null}>
+                <AnalyticsWrapper />
+              </Suspense>
               <div className="min-h-screen bg-[#747474] dark:bg-gray-950 transition-colors duration-300 font-gothic-a1 flex flex-col">
                 <Header />
                 {checkPathname() && <VideoBackground />}
