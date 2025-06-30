@@ -19,7 +19,7 @@ const BorderPrimary = ({ children }: { children: React.ReactNode }) => {
     return (
         <div className="relative w-[100%] h-auto aspect-[417/261] group transition-all duration-300 ease-in-out hover:scale-[1.02] hover:shadow-lg">
             {/* Top decorative SVG - responsive positioning */}
-            <svg xmlns="http://www.w3.org/2000/svg" width="199" height="52" viewBox="0 0 199 52" fill="none" className="transition-all duration-300 ease-in-out group-hover:drop-shadow-lg">
+            <svg xmlns="http://www.w3.org/2000/svg" width="199" height="52" viewBox="0 0 199 52" fill="none" className="transition-all  duration-300 ease-in-out group-hover:drop-shadow-lg">
                 <g filter="url(#filter0_d_473_1846)">
                     <path d="M7.9587 19.029L36.0332 2.59581C37.2592 1.87823 38.654 1.5 40.0745 1.5H187C191.418 1.5 195 5.08173 195 9.5V21.3785C195 24.2919 193.416 26.975 190.865 28.3827L163.464 43.5042C162.281 44.1574 160.951 44.5 159.599 44.5H12C7.58172 44.5 4 40.9183 4 36.5V25.9332C4 23.0921 5.50679 20.4642 7.9587 19.029Z" fill="url(#paint0_linear_473_1846)" className="transition-all duration-300 ease-in-out group-hover:brightness-110" />
                 </g>

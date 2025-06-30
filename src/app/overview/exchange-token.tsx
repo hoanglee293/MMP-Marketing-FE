@@ -1,10 +1,12 @@
 import { useIntersectionObserver } from '@/hooks/useIntersectionObserver';
 import { ArrowRightIcon } from 'lucide-react';
 import React from 'react'
+import { useLang } from '@/lang/useLang'
+import { useRouter } from 'next/navigation';
 
 const BorderExchangeToken = ({ children }: { children: React.ReactNode }) => {
   return (
-    <div className='w-full h-full relative max-w-[335px] xl:max-w-[400px] lg:max-w-[380px] md:max-w-[360px] max-h-[49px] xl:max-h-[60px] lg:max-h-[55px] md:max-h-[52px] aspect-[335/49] xl:aspect-[400/60] lg:aspect-[380/55] md:aspect-[360/52]'>
+    <div className='w-full h-full relative max-w-[150px] sm:max-w-[300px] xl:max-w-[400px] lg:max-w-[380px] md:max-w-[360px] max-h-[45px] sm:max-h-[49px] xl:max-h-[60px] lg:max-h-[55px] md:max-h-[52px] aspect-[280/45] sm:aspect-[300/49] xl:aspect-[400/60] lg:aspect-[380/55] md:aspect-[360/52]'>
       <svg 
         xmlns="http://www.w3.org/2000/svg" 
         width="100%" 
@@ -36,37 +38,10 @@ const BorderExchangeToken = ({ children }: { children: React.ReactNode }) => {
 
 
 const ExchangeToken = () => {
+  const router = useRouter();
+  const { t } = useLang();
+  
   const { elementRef: titleRef, isIntersecting: titleInView } = useIntersectionObserver<HTMLHeadingElement>({
-    threshold: 0.3,
-    rootMargin: '-50px'
-  });
-
-  const { elementRef: title2Ref, isIntersecting: title2InView } = useIntersectionObserver<HTMLHeadingElement>({
-    threshold: 0.3,
-    rootMargin: '-50px'
-  });
-
-  const { elementRef: imageRef, isIntersecting: imageInView } = useIntersectionObserver<HTMLDivElement>({
-    threshold: 0.2,
-    rootMargin: '-50px'
-  });
-
-  const { elementRef: feature1Ref, isIntersecting: feature1InView } = useIntersectionObserver<HTMLDivElement>({
-    threshold: 0.3,
-    rootMargin: '-50px'
-  });
-
-  const { elementRef: feature2Ref, isIntersecting: feature2InView } = useIntersectionObserver<HTMLDivElement>({
-    threshold: 0.3,
-    rootMargin: '-50px'
-  });
-
-  const { elementRef: feature3Ref, isIntersecting: feature3InView } = useIntersectionObserver<HTMLDivElement>({
-    threshold: 0.3,
-    rootMargin: '-50px'
-  });
-
-  const { elementRef: feature4Ref, isIntersecting: feature4InView } = useIntersectionObserver<HTMLDivElement>({
     threshold: 0.3,
     rootMargin: '-50px'
   });
@@ -106,7 +81,7 @@ const ExchangeToken = () => {
   });
 
   return (
-    <div className='bg-feature bg-[#020616BD]/60 z-50 w-full h-svh flex items-center justify-center relative pt-20 overflow-hidden'>
+    <div className='bg-feature bg-[#020616BD]/60 z-50 w-full xl:h-svh flex items-center justify-center relative xl:pt-20 pt-10 overflow-hidden'>
       <div className='absolute top-0 right-0 w-full h-full bg-[#0f121ad6] backdrop-blur-lg' />
       <div className='eclipse-box absolute bottom-[10%] left-[10%] w-[375px] h-[375px] z-20' style={{background: '#0090ff57'}}/>
       <div className='eclipse-box absolute top-[10%] right-[10%] w-[254px] h-[254px] z-20' style={{background: '#15dffd63', filter: 'blur(50px)'}}/>
@@ -114,9 +89,9 @@ const ExchangeToken = () => {
         <div className='flex flex-col items-center justify-center gap-4 relative h-[50px]'>
           <h2
             ref={titleRef}
-            className={`title-feature text-[32px] xl:text-[40px] bg-clip-text absolute top-0 left-0 w-full h-full text-center animate-fade-in-up ${titleInView ? 'in-view' : ''}`}
+            className={`title-feature text-[30px] xl:text-[40px] bg-clip-text absolute top-0 left-0 w-full h-full text-center animate-fade-in-up ${titleInView ? 'in-view' : ''}`}
           >
-            Exchange token
+            {t('exchangeToken.title')}
           </h2>
           {/* <h3
             ref={title2Ref}
@@ -125,37 +100,37 @@ const ExchangeToken = () => {
             Exchange token
           </h3> */}
         </div>
-        <div className='flex flex-col items-center justify-center gap-4 relative h-[50px] mt-10'>
+        <div className='flex flex-col items-center justify-center gap-4 relative h-[50px] xl:mt-10 mt-5'>
           <p
             ref={descRef}
-            className={`text-neutral text-center text-sm  xl:max-w-[950px] max-w-[500px]  animate-fade-in-up-delayed ${descInView ? 'in-view' : ''}`}
+            className={`text-neutral text-center text-xs sm:text-sm  xl:max-w-[950px] max-w-[500px]  animate-fade-in-up-delayed ${descInView ? 'in-view' : ''}`}
           >
-            MMP and MPB are two pioneering exchange-issued coins that represent a breakthrough in the world of Web3 and decentralized platforms. Built on Solana, they are not just liquidity tokens but also tools for creating value and opportunities for the community, aiming to establish a sustainable and powerful ecosystem.
+            {t('exchangeToken.description')}
           </p>
         </div>
-        <div className='flex w-full items-center justify-evenly relative mt-[5%]'>
+        <div className='flex w-full items-center justify-evenly relative xl:mt-[5%] mt-10'>
           <div className='w-1/2 max-w-[280px] flex flex-col items-center justify-center gap-10'>
             <img 
               ref={mmpImageRef}
               src="/MMP-hex.png" 
               alt="exchange-token" 
-              className={`w-full max-w-[280px] h-auto object-cover animate-fade-in-up ${mmpImageInView ? 'in-view' : ''}`} 
+              className={`w-full xl:max-w-[280px] max-w-[150px] h-auto object-cover animate-fade-in-up ${mmpImageInView ? 'in-view' : ''}`} 
             />
             <div 
               ref={mmpTextRef}
               className={`flex flex-col items-center justify-center gap-1 animate-fade-in-up-delayed ${mmpTextInView ? 'in-view' : ''}`}
             >
-              <span className='text-white text-center text-base'>MMP</span>
-              <span className='text-white text-center text-base'>Meme Meta Pump </span>
+              <span className='text-white text-center text-xs sm:text-base'>{t('exchangeToken.mmp.symbol')}</span>
+              <span className='text-white text-center text-xs sm:text-base'>{t('exchangeToken.mmp.name')}</span>
             </div>
          
             <div 
               ref={mmpButtonRef}
               className={`animate-fade-in-up-delayed ${mmpButtonInView ? 'in-view' : ''}`}
             >
-              <BorderExchangeToken>
-                <div className='text-white text-center text-base w-full flex items-center justify-center gap-3'>
-                  Explore <ArrowRightIcon className='w-4 h-4' />
+              <BorderExchangeToken >
+                <div className='text-white text-center text-xs sm:text-base w-full flex items-center justify-center gap-3 cursor-pointer' onClick={() => router.push('/mmp-info')}>
+                  {t('exchangeToken.mmp.explore')} <ArrowRightIcon className='w-4 h-4' />
                 </div>
               </BorderExchangeToken>
             </div>
@@ -165,23 +140,22 @@ const ExchangeToken = () => {
               ref={mpbImageRef}
               src="/MPB-hex.png" 
               alt="exchange-token" 
-              className={`w-full max-w-[280px] h-auto object-cover animate-fade-in-up ${mpbImageInView ? 'in-view' : ''}`} 
+              className={`w-full xl:max-w-[280px] max-w-[150px] h-auto object-cover animate-fade-in-up ${mpbImageInView ? 'in-view' : ''}`} 
             />
             <div 
               ref={mpbTextRef}
               className={`flex flex-col items-center justify-center gap-1 animate-fade-in-up-delayed ${mpbTextInView ? 'in-view' : ''}`}
             >
-              <span className='text-white text-center text-base'>MPB</span>
-              <span className='text-white text-center text-base'>Meme Pump Boost
-              </span>
+              <span className='text-white text-center text-xs sm:text-base'>{t('exchangeToken.mpb.symbol')}</span>
+              <span className='text-white text-center text-xs sm:text-base'>{t('exchangeToken.mpb.name')}</span>
             </div>
             <div 
               ref={mpbButtonRef}
               className={`animate-fade-in-up-delayed ${mpbButtonInView ? 'in-view' : ''}`}
             >
               <BorderExchangeToken>
-                <div className='text-white text-center text-base w-full flex items-center justify-center gap-3'>
-                  Explore <ArrowRightIcon className='w-4 h-4' />
+                <div className='text-white text-center text-xs sm:text-base w-full flex items-center justify-center gap-3'>
+                  {t('exchangeToken.mpb.explore')} <ArrowRightIcon className='w-4 h-4' />
                 </div>
               </BorderExchangeToken>
             </div>

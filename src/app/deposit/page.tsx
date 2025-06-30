@@ -115,6 +115,9 @@ const DepositPage = () => {
                                     </div>
                                 )}
                             </div>
+                            <p className='text-yellow-500 m-0 text-xs sm:text-sm text-center'>
+                                {t('deposit.supportedTokens')}
+                            </p>
 
                             {/* Address Display */}
                             <div className="space-y-2 sm:space-y-3">

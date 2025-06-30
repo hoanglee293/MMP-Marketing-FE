@@ -31,7 +31,137 @@
         "selectLanguage": "Select Language",
         "deposit": "Deposit",
         "withdraw": "Withdraw",
-        "whitePaper": "White Paper"
+        "whitePaper": "White Paper",
+        "mmpInfo": "MMP Info"
+    },
+    "overview": {
+        "title": "MEMEPUMP",
+        "description": "MEMEPUMP is a community-driven memecoin platform on Solana, offering a groundbreaking trading and earning experience through DeFi incentives and decentralized governance.",
+        "joinUs": "Join us"
+    },
+    "features": {
+        "title": "Key Features",
+        "hybridDefi": {
+            "title": "Hybrid DeFi + Simulated Trading",
+            "description": "A unique ecosystem combining real trading with risk-free simulation markets."
+        },
+        "globalExpansion": {
+            "title": "Global Expansion Focus",
+            "description": "Aggressive marketing and partnerships to ensure long-term growth."
+        },
+        "communityRewards": {
+            "title": "55% Community Rewards",
+            "description": "The largest share of tokens goes directly to users via trading incentives, staking, and engagement."
+        },
+        "daoGovernance": {
+            "title": "DAO-Ready Governance",
+            "description": "A portion of reserves is allocated for future decentralized decision-making."
+        }
+    },
+    "exchangeToken": {
+        "title": "Exchange token",
+        "description": "MMP and MPB are two pioneering exchange-issued coins that represent a breakthrough in the world of Web3 and decentralized platforms. Built on Solana, they are not just liquidity tokens but also tools for creating value and opportunities for the community, aiming to establish a sustainable and powerful ecosystem.",
+        "mmp": {
+            "symbol": "MMP",
+            "name": "Meme Meta Pump",
+            "explore": "Explore"
+        },
+        "mpb": {
+            "symbol": "MPB",
+            "name": "Meme Profit Bank",
+            "explore": "Explore"
+        }
+    },
+    "tokenomics": {
+        "title": "TOKENOMICS",
+        "description": "MMP and MPB represent the next generation of exchange-issued tokens, pioneering a revolutionary approach to Web3 and decentralized finance. Built on Solana's lightning-fast blockchain, these tokens transcend traditional liquidity roles to become powerful catalysts for community-driven value creation. They serve as the foundation for a comprehensive ecosystem that rewards early adopters, incentivizes long-term participation, and establishes sustainable growth mechanisms through innovative DeFi protocols and community governance.",
+        "liquidityFund": "Liquidity & Investment Fund",
+        "communityRewards": "Community Rewards",
+        "marketingPartnership": "Marketing & Partnerships",
+        "operationalCosts": "Operational Costs / Team",
+        "reserveFund": "Reserve Fund",
+        "seedRound": "Seed Round",
+        "seedRoundDescription": "Used for platform development and initial investment activities.",
+        "communityRewardsDescription": "Distributed through airdrops, promotional activities, and rewards for participants.",
+        "liquidityFundDescription": "Used to collaborate with Pump.fun to provide liquidity and develop investment strategies.",
+        "marketingPartnershipDescription": "10 billion tokens allocated for marketing strategy and partner development.",
+        "operationalCostsDescription": "5 billion tokens allocated for operational costs of the development team (locked for 2 years).",
+        "reserveFundDescription": "Retained for DAO activities to ensure flexibility and long-term development of the platform.",
+        "items": {
+            "communityRewards": {
+                "title": "Community Rewards",
+                "description": "Rewards distributed to active community members"
+            },
+            "liquidityPool": {
+                "title": "Liquidity Pool",
+                "description": "Reserved for maintaining token liquidity"
+            },
+            "developmentFund": {
+                "title": "Development Fund",
+                "description": "Funding for ongoing development and improvements"
+            },
+            "marketing": {
+                "title": "Marketing",
+                "description": "Marketing and promotional activities"
+            },
+            "teamAllocation": {
+                "title": "Team Allocation",
+                "description": "Team incentives and development"
+            },
+            "ecosystemFund": {
+                "title": "Ecosystem Fund",
+                "description": "Supporting ecosystem growth and partnerships"
+            }
+        }
+    },
+    "roadmap": {
+        "title": "Road Map",
+        "description": "The MEMEPUMP project is structured around a dynamic, phased roadmap designed to ensure a steady expansion of our ecosystem while consistently integrating community feedback and promoting innovation. Below is an outline of our planned milestones",
+        "phases": {
+            "phase1": {
+                "title": "Phase 1",
+                "subtitle": "Foundation & Launch (Q2 2025)",
+                "items": [
+                    "Product Finalization",
+                    "White Paper & Community Building",
+                    "Pre-Launch Token Distribution"
+                ]
+            },
+            "phase2": {
+                "title": "Phase 2",
+                "subtitle": "Official Launch & Early Growth (Q3 2025)",
+                "items": [
+                    "Mainnet Launch",
+                    "Token Distribution",
+                    "Initial Market Integration"
+                ]
+            },
+            "phase3": {
+                "title": "Phase 3",
+                "subtitle": "Ecosystem Expansion & Feature Development (Q4 2025 - Q1 2026)",
+                "items": [
+                    "Enhanced Liquidity & Simulation Modules",
+                    "Stake & Premium Services Launch",
+                    "Global Outreach"
+                ]
+            },
+            "phase4": {
+                "title": "Phase 4",
+                "subtitle": "Decentralized Governance & Long-Term Innovation (Q2 2026 and Beyond)",
+                "items": [
+                    "DAO Transition",
+                    "Cross-Chain Integrations",
+                    "Continuous Feature Enhancements",
+                    "Community Initiatives"
+                ]
+            }
+        }
+    },
+    "footer": {
+        "swapNow": "Swap Now",
+        "leadFuture": "Lead the Future",
+        "swapDescription": "Join the MEMEPUMP community in making breakthrough swaps – trade fast, earn rewards instantly, and unlock limitless profit opportunities!",
+        "communityDescription": "Join the MEMEPUMP community to seize DeFi opportunities and unlock exclusive rewards — connect with us now via Telegram, Facebook, and Twitter on our official website!"
     },
     "withdraw_page": {
         "withdraw_successful": "Withdrawal successful!",
@@ -103,7 +233,7 @@
         "submit": "Submit"
     },
     "deposit": {
-        "title": "Deposit MMP",
+        "title": "Deposit",
         "connectWalletToDeposit": "Connect Wallet to Deposit",
         "connectWallet": "Connect Wallet",
         "myWalletAddress": "My Wallet Address",
@@ -111,7 +241,8 @@
         "downloadQRCode": "Download QR Code",
         "addressCopied": "Address copied to clipboard!",
         "failedToCopyAddress": "Failed to copy address",
-        "loading": "Loading..."
+        "loading": "Loading...",
+        "supportedTokens": "Supports depositing SOL, USDT, USDC"
     },
     "swap": {
         "swapHistory": "Swap History",
@@ -1065,6 +1196,61 @@
             }
         }
     },
+    "ourTeam": {
+        "title": "OUR TEAM",
+        "members": [
+            {
+                "name": "ROBIN",
+                "role": "CTO",
+                "description": "Chief Technology Officer, responsible for technical architecture design and implementation."
+            },
+            {
+                "name": "TIGER P.K",
+                "role": "Backend Developer",
+                "description": "Backend development specialist, responsible for server-side architecture and implementation."
+            },
+            {
+                "name": "Qi SNAKE",
+                "role": "Blockchain Developer",
+                "description": "Web3 application development, feature building and blockchain interaction management."
+            },
+            {
+                "name": "HLEES",
+                "role": "Frontend Developer",
+                "description": "User interface (UI/UX) development expert, creating friendly and easy-to-use interfaces."
+            },
+            {
+                "name": "WILD",
+                "role": "Frontend Developer",
+                "description": "User interface development support and ensuring compatibility across various devices."
+            },
+            {
+                "name": "Hunter",
+                "role": "Frontend Developer",
+                "description": "User interface performance optimization and dynamic feature implementation."
+            },
+            {
+                "name": "REISHI",
+                "role": "UI/UX Designer",
+                "description": "User interface (UI/UX) design expert, creating friendly and easy-to-use interfaces."
+            },
+            {
+                "name": "ALAN",
+                "role": "MKT & Community Manager",
+                "description": "Marketing strategy development and project community development management."
+            },
+            {
+                "name": "POOH",
+                "role": "MKT & Community Manager",
+                "description": "Promotional campaign management, partnerships and community development."
+            },
+            {
+                "name": "B.A.O",
+                "role": "MKT & Community Manager",
+                "description": "Partner and user relationship management, creating marketing opportunities through events."
+            }
+        ]
+    },
     "services": {
         "errors": {
             "phantomNotInstalled": "Phantom wallet is not installed",
@@ -1080,5 +1266,32 @@
             "errorGetMyWallet": "Error getting my wallet information",
             "errorGetGoogleUserInfo": "Error getting Google user information"
         }
+    },
+    "mmp_info": {
+        "title": "MMP Information",
+        "projectOverview": "Project Overview",
+        "tokenomics": "Tokenomics",
+        "roadmap": "Roadmap",
+        "team": "Team",
+        "faq": "FAQ",
+        "contact": "Contact"
+    },
+    "mmpInfo": {
+        "tokenName": "Token name",
+        "tokenFullName": "Meme Meta Pump",
+        "totalSupply": "Total Supply",
+        "tokenAmount": "100 billion tokens",
+        "introductionTitle": "Introduction to the",
+        "projectName": "MemePump Project (MMP)",
+        "introductionDescription": "The MemePump (MMP) project is a groundbreaking initiative in the world of cryptocurrency, particularly in the Web3 space and decentralized platforms, aimed at introducing a new type of liquidity token. MMP is not just a cryptocurrency; it is a tool for creating value and opportunities for the community, with the goal of building a sustainable and robust ecosystem. Developed on the Solana platform, MemePump seeks to transform how users interact and engage in the cryptocurrency space."
+    },
+    "navigation": {
+        "intro": "Intro",
+        "highlights": "Highlights",
+        "coins": "Coins",
+        "tokenomics": "Tokenomics",
+        "teams": "Teams",
+        "roadmap": "RoadMap",
+        "footer": "Footer"
     }
 }

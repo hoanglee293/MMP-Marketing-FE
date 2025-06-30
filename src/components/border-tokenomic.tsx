@@ -33,7 +33,7 @@ const BorderTokenomic = ({
     }, []);
 
     return (
-        <div className="relative aspect-[417/261]">
+        <div className="relative aspect-[417/261] ">
             {/* Tag hiển thị số phía trên border */}
             {tag && (
                 <div
@@ -69,7 +69,7 @@ const BorderTokenomic = ({
             </svg>
 
             {/* Content container - responsive padding */}
-            <div className="flex flex-col xl:gap-4 gap-1 top-[35px] left-5 absolute z-10 ">
+            <div className="flex flex-col xl:gap-4 gap-1 top-[35px] left-[10%] absolute z-10 items-center justify-center w-[75%]">
                 {children}
             </div>
         </div>

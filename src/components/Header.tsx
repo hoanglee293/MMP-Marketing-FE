@@ -27,6 +27,7 @@ const Header = () => {
 
   const tabs = [
     { id: 'overview', href: '/overview', label: t('header.overview'), icon: '📊', isActive: true },
+    { id: 'mmp-info', href: '/mmp-info', label: t('header.mmpInfo'), icon: '📊', isActive: true },
     { id: 'swap', href: '/swap', label: t('header.swap'), icon: <ArrowDownUp className='w-3 h-3 sm:w-4 sm:h-4' />, isActive: true },
     { id: 'deposit', href: '/deposit', label: t('header.deposit'), icon: '💰', isActive: isAuthenticated },
     { id: 'withdraw', href: '/withdraw', label: t('header.withdraw'), icon: '💰', isActive: isAuthenticated && loginMethod != "phantom" },
@@ -297,7 +298,7 @@ const Header = () => {
             {/* Mobile Language Selector */}
             <div className="px-4 py-2 border-b border-gray-100">
               <div className="text-xs text-neutral mb-2">{t('header.selectLanguage')}</div>
-              <div className="flex gap-2 justify-between">
+              <div className="flex gap-2 justify-between flex-wrap">
                 {langConfig.listLangs.map((language) => (
                   <button
                     key={language.code}
@@ -339,7 +340,7 @@ const Header = () => {
             {!isAuthenticated && (
               <div className="px-4 py-2 border-t border-gray-100">
                 <div className="text-xs text-neutral mb-2">{t('header.joinUs')}</div>
-                <div className="flex gap-2 justify-between">
+                <div className="flex gap-2 justify-between flex-wrap">
                   <button
                     className="flex items-center gap-2 px-4 py-2 bg-black/40 border-none rounded-lg text-xs text-white"
                     onClick={() => window.open(`${process.env.NEXT_PUBLIC_TELEGRAM_BOT_URL}=${Cookies.get("ref") || null}`, "_blank")}

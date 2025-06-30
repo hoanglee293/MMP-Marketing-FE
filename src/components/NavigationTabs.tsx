@@ -1,5 +1,6 @@
 'use client'
 import React, { useState, useEffect } from 'react'
+import { useLang } from '@/lang/useLang'
 
 interface NavigationTabsProps {
     activeSection: string
@@ -7,6 +8,7 @@ interface NavigationTabsProps {
 
 const NavigationTabs: React.FC<NavigationTabsProps> = ({ activeSection }) => {
     const [isVisible, setIsVisible] = useState(false)
+    const { t } = useLang()
 
     useEffect(() => {
         const handleScroll = () => {
@@ -29,13 +31,13 @@ const NavigationTabs: React.FC<NavigationTabsProps> = ({ activeSection }) => {
     }
 
     const navigationItems = [
-        { id: 'join-us', label: 'Intro' },
-        { id: 'features', label: 'Highlights'},
-        { id: 'exchange-token', label: 'Coins'},
-        { id: 'tokenomics', label: 'Tokenomics'},
-        { id: 'our-team', label: 'Teams'},
-        { id: 'road-map', label: 'RoadMap'},
-        { id: 'footer', label: 'Footer'}
+        { id: 'join-us', label: t('navigation.intro') },
+        { id: 'features', label: t('navigation.highlights')},
+        { id: 'exchange-token', label: t('navigation.coins')},
+        { id: 'tokenomics', label: t('navigation.tokenomics')},
+        { id: 'our-team', label: t('navigation.teams')},
+        { id: 'road-map', label: t('navigation.roadmap')},
+        { id: 'footer', label: t('navigation.footer')}
     ]
 
     return (

@@ -1,6 +1,6 @@
 import React, { useState, useEffect } from 'react';
 
-const BoxFeauture = ({ children }: { children: React.ReactNode }) => {
+const BoxBenefit = ({ children }: { children: React.ReactNode }) => {
     const [windowWidth, setWindowWidth] = useState(0);
     const [isClient, setIsClient] = useState(false);
 
@@ -17,9 +17,9 @@ const BoxFeauture = ({ children }: { children: React.ReactNode }) => {
     }, []);
 
     return (
-        <div className="relative w-[90%] h-auto aspect-[417/261]">
+        <div className="relative w-[90%] max-h-[240px] aspect-[417/261]">
             {/* Top decorative SVG - responsive positioning */}
-            <svg className={`absolute top-0 right-[8%] z-50 ${isClient && windowWidth < 1280 ? 'w-[20%] max-w-[80px]' : 'w-[146px]'} h-auto`} xmlns="http://www.w3.org/2000/svg" width="248" height="14" viewBox="0 0 248 14" fill="none">
+            <svg className={`absolute top-0 right-[5%] z-50 ${isClient && windowWidth < 1280 ? 'w-[20%] max-w-[80px]' : 'w-[146px]'} h-auto`} xmlns="http://www.w3.org/2000/svg" width="248" height="14" viewBox="0 0 248 14" fill="none">
                 <path d="M23.5468 13.2639L0.525391 0.779845H15.873L38.8944 13.2639L23.5468 13.2639Z" fill="url(#paint0_linear_521_2143)" />
                 <path d="M53.372 13.2639L30.3506 0.779845H45.6982L68.7196 13.2639L53.372 13.2639Z" fill="url(#paint1_linear_521_2143)" />
                 <path d="M83.1982 13.2639L60.1768 0.779845H75.5244L98.5458 13.2639L83.1982 13.2639Z" fill="url(#paint2_linear_521_2143)" />
@@ -63,70 +63,21 @@ const BoxFeauture = ({ children }: { children: React.ReactNode }) => {
                     </linearGradient>
                 </defs>
             </svg>
-            
-            {/* Main border SVG - responsive */}
-            <svg
-                className="w-full h-full"
-                xmlns="http://www.w3.org/2000/svg"
-                viewBox={`0 0 ${isClient && windowWidth < 1280 ? 300 : 417} ${isClient && windowWidth < 1280 ? 200 : 261}`}
-                fill="none"
-                preserveAspectRatio="xMidYMid meet"
-            >
 
-                <foreignObject
-                    x={isClient && windowWidth < 1280 ? "-18" : "-24"}
-                    y={isClient && windowWidth < 1280 ? "-18" : "-24"}
-                    width={isClient && windowWidth < 1280 ? "336" : "465"}
-                    height={isClient && windowWidth < 1280 ? "236" : "309"}
-                >
-                    <div style={{ backdropFilter: 'blur(12px)', clipPath: 'url(#bgblur_0_391_1181_clip_path)', height: '100%', width: '100%' }}></div>
-                </foreignObject>
-                <path
-                    data-figma-bg-blur-radius="24"
-                    d={isClient && windowWidth < 1280
-                        ? "M299 59L278.534 19H77.372L59.4007 1H13.4789L1 14.5V187L12.9807 200H62.3971L80.368 181H209.15L229.622 200H287.019L299 187V59Z"
-                        : "M416 77L387.534 25H107.372L83.4007 1H18.4789L1 18.5V244L16.9807 260H86.3971L110.368 236H291.15L314.622 260H400.019L416 244V77Z"
-                    }
-                    fill="#3352FF"
-                    fill-opacity="0.12"
-                    stroke="#00C0FF"
-                    stroke-width="2"
-                />
+            <svg xmlns="http://www.w3.org/2000/svg" width="712" height="242" viewBox="0 0 712 242" fill="none">
+                <foreignObject x="-24" y="-24" width="760" height="290"><div style={{ backdropFilter: 'blur(12px)', clipPath: 'url(#bgblur_0_521_2139_clip_path)', height: '100%', width: '100%' }}></div></foreignObject>
+                <path data-figma-bg-blur-radius="24" d="M711 71.4247L662.3 23.2394H182.986L141.975 1H30.9037L1 17.2162V226.174L28.3406 241H147.101L188.112 218.761H497.402L537.558 241H683.659L711 226.174V71.4247Z" fill="#3352FF" fill-opacity="0.12" stroke="#00C0FF" stroke-width="2" />
                 <defs>
-                    <clipPath id="bgblur_0_391_1181_clip_path" transform={isClient && windowWidth < 1280 ? "translate(18 18)" : "translate(24 24)"}>
-                        <path d={isClient && windowWidth < 1280
-                            ? "M299 59L278.534 19H77.372L59.4007 1H13.4789L1 14.5V187L12.9807 200H62.3971L80.368 181H209.15L229.622 200H287.019L299 187V59Z"
-                            : "M416 77L387.534 25H107.372L83.4007 1H18.4789L1 18.5V244L16.9807 260H86.3971L110.368 236H291.15L314.622 260H400.019L416 244V77Z"
-                        } />
-                    </clipPath>
-                </defs>
-            </svg>
-
-            {/* Bottom decorative SVG - responsive positioning */}
-            <svg
-                className="absolute bottom-0 left-[22.7%] z-10 w-[51%] max-w-[214px] h-auto"
-                xmlns="http://www.w3.org/2000/svg"
-                viewBox="0 0 214 19"
-                fill="none"
-                preserveAspectRatio="xMidYMid meet"
-            >
-                <foreignObject x="-99.1133" y="-100" width="412.244" height="218.5">
-                    <div style={{ backdropFilter: 'blur(50px)', clipPath: 'url(#bgblur_0_391_1180_clip_path)', height: '100%', width: '100%' }}></div>
-                </foreignObject>
-                <path data-figma-bg-blur-radius="100" d="M19.3645 0L0.886719 18.5H213.131L195.153 0H19.3645Z" fill="#00C0FF" fill-opacity="0.3" />
-                <defs>
-                    <clipPath id="bgblur_0_391_1180_clip_path" transform="translate(99.1133 100)">
-                        <path d="M19.3645 0L0.886719 18.5H213.131L195.153 0H19.3645Z" />
-                    </clipPath>
-                </defs>
+                    <clipPath id="bgblur_0_521_2139_clip_path" transform="translate(24 24)"><path d="M711 71.4247L662.3 23.2394H182.986L141.975 1H30.9037L1 17.2162V226.174L28.3406 241H147.101L188.112 218.761H497.402L537.558 241H683.659L711 226.174V71.4247Z" />
+                    </clipPath></defs>
             </svg>
 
             {/* Content container - responsive padding */}
-            <div className="flex flex-col xl:gap-4 gap-1 justify-center h-full top-0 left-0 absolute z-10 xl:mx-6 mx-2 px-2 py-4">
+            <div className="flex flex-col xl:gap-4 gap-1  top-10 left-0 absolute z-10 xl:mx-6 mx-2 px-2 py-4">
                 {children}
             </div>
         </div>
     );
 };
 
-export default BoxFeauture;
+export default BoxBenefit;

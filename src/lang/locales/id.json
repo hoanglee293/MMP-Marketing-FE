@@ -19,19 +19,20 @@
         "overview": "Ikhtisar",
         "swap": "Tukar",
         "stake": "Staking",
-        "referral": "Program Referral",
-        "joinUs": "Bergabung",
+        "referral": "Referral",
+        "joinUs": "Bergabung dengan kami",
         "telegramLogin": "Login Telegram",
         "googleLogin": "Login Google",
         "phantomLogin": "Login Phantom",
-        "unknownLogin": "Tidak Diketahui",
+        "unknownLogin": "Tidak diketahui",
         "walletAddress": "Alamat Dompet:",
         "logout": "Keluar",
         "language": "Bahasa",
         "selectLanguage": "Pilih Bahasa",
-        "deposit": "Deposit",
-        "withdraw": "Tarik Dana",
-        "whitePaper": "Whitepaper"
+        "deposit": "Setoran",
+        "withdraw": "Penarikan",
+        "whitePaper": "Dokumen Putih",
+        "mmpInfo": "MMP Info"
     },
     "withdraw_page": {
         "enter_amount_to_send": "Masukkan jumlah yang akan dikirim",
@@ -104,7 +105,7 @@
         "submit": "Kirim"
     },
     "deposit": {
-        "title": "Deposit MMP",
+        "title": "Deposit",
         "connectWalletToDeposit": "Hubungkan dompet untuk deposit",
         "connectWallet": "Hubungkan Dompet",
         "myWalletAddress": "Alamat Dompet Saya",
@@ -112,7 +113,8 @@
         "downloadQRCode": "Unduh QR Code",
         "addressCopied": "Alamat telah disalin ke clipboard!",
         "failedToCopyAddress": "Gagal menyalin alamat",
-        "loading": "Memuat..."
+        "loading": "Memuat...",
+        "supportedTokens": "Mendukung deposit SOL, USDT, USDC"
     },
     "swap": {
         "swapHistory": "Riwayat Tukar",
@@ -443,32 +445,126 @@
         "stakeError": "Gagal membuat stake. Silakan coba lagi."
     },
     "overview": {
-        "title": "Ikhtisar MMP",
-        "welcome": "Selamat datang di MemePump",
-        "description": "Platform meme coin revolusioner yang dibangun di atas blockchain Solana",
-        "features": {
-            "title": "Fitur Utama",
-            "trading": "Perdagangan Aman",
-            "staking": "Staking Menguntungkan",
-            "rewards": "Sistem Hadiah",
-            "community": "Komunitas Kuat"
+        "title": "MEMEPUMP",
+        "description": "MEMEPUMP adalah platform memecoin berbasis komunitas di Solana yang menawarkan pengalaman trading dan penghasilan yang revolusioner melalui insentif DeFi dan tata kelola terdesentralisasi.",
+        "joinUs": "Bergabung dengan kami"
+    },
+    "features": {
+        "title": "Fitur Utama",
+        "hybridDefi": {
+            "title": "DeFi Hibrida + Trading Simulasi",
+            "description": "Ekosistem unik yang menggabungkan trading nyata dengan pasar simulasi bebas risiko."
         },
-        "tokenomics": {
-            "title": "Tokenomics",
-            "totalSupply": "Total Pasokan: 100 Miliar Token",
-            "distribution": "Distribusi yang Adil",
-            "community": "55% Komunitas",
-            "liquidity": "18% Likuiditas",
-            "marketing": "10% Pemasaran",
-            "team": "5% Tim",
-            "reserve": "6% Cadangan",
-            "seed": "6% Seed"
+        "globalExpansion": {
+            "title": "Fokus Ekspansi Global",
+            "description": "Pemasaran dan kemitraan yang agresif untuk memastikan pertumbuhan jangka panjang."
         },
-        "roadmap": {
-            "title": "Roadmap",
-            "phase1": "Fase 1: Peluncuran Platform",
-            "phase2": "Fase 2: Ekspansi Fitur",
-            "phase3": "Fase 3: Pertumbuhan Global"
+        "communityRewards": {
+            "title": "55% Hadiah Komunitas",
+            "description": "Bagian terbesar token didistribusikan langsung kepada pengguna melalui insentif trading, staking, dan keterlibatan."
+        },
+        "daoGovernance": {
+            "title": "Tata Kelola Siap DAO",
+            "description": "Sebagian cadangan dialokasikan untuk pengambilan keputusan terdesentralisasi di masa depan."
+        }
+    },
+    "exchangeToken": {
+        "title": "Token pertukaran",
+        "description": "MMP dan MPB adalah dua koin perintis yang diterbitkan oleh bursa yang mewakili terobosan dalam dunia Web3 dan platform terdesentralisasi. Dibangun di atas Solana, mereka bukan hanya token likuiditas tetapi juga alat untuk menciptakan nilai dan peluang bagi komunitas, bertujuan untuk membangun ekosistem yang berkelanjutan dan kuat.",
+        "mmp": {
+            "symbol": "MMP",
+            "name": "Meme Meta Pump",
+            "explore": "Jelajahi"
+        },
+        "mpb": {
+            "symbol": "MPB",
+            "name": "Meme Pump Boost",
+            "explore": "Jelajahi"
+        }
+    },
+    "tokenomics": {
+        "title": "TOKENOMICS",
+        "description": "MMP dan MPB mewakili generasi berikutnya dari token yang diterbitkan bursa, mempelopori pendekatan revolusioner terhadap Web3 dan keuangan terdesentralisasi. Dibangun di atas blockchain Solana yang secepat kilat, token-token ini melampaui peran likuiditas tradisional untuk menjadi katalisator kuat bagi penciptaan nilai yang digerakkan komunitas. Mereka berfungsi sebagai fondasi untuk ekosistem komprehensif yang memberi penghargaan kepada pengadopsi awal, mendorong partisipasi jangka panjang, dan menetapkan mekanisme pertumbuhan berkelanjutan melalui protokol DeFi yang inovatif dan tata kelola komunitas.",
+        "liquidityFund": "Dana Likuiditas & Investasi",
+        "communityRewards": "Hadiah Komunitas",
+        "marketingPartnership": "Pemasaran & Kemitraan",
+        "operationalCosts": "Biaya Operasional / Tim",
+        "reserveFund": "Dana Cadangan",
+        "seedRound": "Putaran Benih",
+        "seedRoundDescription": "Digunakan untuk pengembangan platform dan aktivitas investasi awal.",
+        "communityRewardsDescription": "Didistribusikan melalui airdrop, aktivitas promosi, dan hadiah untuk peserta.",
+        "liquidityFundDescription": "Digunakan untuk berkolaborasi dengan Pump.fun untuk menyediakan likuiditas dan mengembangkan strategi investasi.",
+        "marketingPartnershipDescription": "10 miliar token dialokasikan untuk strategi pemasaran dan pengembangan mitra.",
+        "operationalCostsDescription": "5 miliar token dialokasikan untuk biaya operasional tim pengembangan (dikunci selama 2 tahun).",
+        "reserveFundDescription": "Dipertahankan untuk aktivitas DAO untuk memastikan fleksibilitas dan pengembangan jangka panjang platform.",
+        "items": {
+            "communityRewards": {
+                "title": "Hadiah Komunitas",
+                "description": "Hadiah yang didistribusikan kepada anggota komunitas yang aktif"
+            },
+            "liquidityPool": {
+                "title": "Pool Likuiditas",
+                "description": "Dicadangkan untuk mempertahankan likuiditas token"
+            },
+            "developmentFund": {
+                "title": "Dana Pengembangan",
+                "description": "Pendanaan untuk pengembangan dan perbaikan berkelanjutan"
+            },
+            "marketing": {
+                "title": "Pemasaran",
+                "description": "Kegiatan pemasaran dan promosi"
+            },
+            "teamAllocation": {
+                "title": "Alokasi Tim",
+                "description": "Insentif dan pengembangan tim"
+            },
+            "ecosystemFund": {
+                "title": "Dana Ekosistem",
+                "description": "Mendukung pertumbuhan ekosistem dan kemitraan"
+            }
+        }
+    },
+    "roadmap": {
+        "title": "Peta Jalan",
+        "description": "Proyek MEMEPUMP disusun di sekitar peta jalan bertahap yang dinamis yang dirancang untuk memastikan ekspansi ekosistem yang stabil sambil secara konsisten mengintegrasikan umpan balik komunitas dan mempromosikan inovasi. Di bawah ini adalah garis besar milestone yang direncanakan kami",
+        "phases": {
+            "phase1": {
+                "title": "Fase 1",
+                "subtitle": "Fondasi & Peluncuran (Q2 2025)",
+                "items": [
+                    "Finalisasi Produk",
+                    "Buku Putih & Pembangunan Komunitas",
+                    "Distribusi Token Pra-Peluncuran"
+                ]
+            },
+            "phase2": {
+                "title": "Fase 2",
+                "subtitle": "Peluncuran Resmi & Pertumbuhan Awal (Q3 2025)",
+                "items": [
+                    "Peluncuran Mainnet",
+                    "Distribusi Token",
+                    "Integrasi Pasar Awal"
+                ]
+            },
+            "phase3": {
+                "title": "Fase 3",
+                "subtitle": "Ekspansi Ekosistem & Pengembangan Fitur (Q4 2025 - Q1 2026)",
+                "items": [
+                    "Modul Likuiditas & Simulasi yang Ditingkatkan",
+                    "Peluncuran Layanan Stake & Premium",
+                    "Jangkauan Global"
+                ]
+            },
+            "phase4": {
+                "title": "Fase 4",
+                "subtitle": "Tata Kelola Terdesentralisasi & Inovasi Jangka Panjang (Q2 2026 dan Seterusnya)",
+                "items": [
+                    "Transisi DAO",
+                    "Integrasi Cross-Chain",
+                    "Peningkatan Fitur Berkelanjutan",
+                    "Inisiatif Komunitas"
+                ]
+            }
         }
     },
     "mmp_info": {
@@ -1139,5 +1235,84 @@
                 }
             }
         }
+    },
+    "footer": {
+        "swapNow": "Tukar Sekarang",
+        "leadFuture": "Memimpin Masa Depan",
+        "swapDescription": "Bergabunglah dengan komunitas MEMEPUMP dalam membuat swap terobosan – berdagang cepat, dapatkan hadiah secara instan, dan buka peluang keuntungan tak terbatas!",
+        "communityDescription": "Bergabunglah dengan komunitas MEMEPUMP untuk meraih peluang DeFi dan membuka hadiah eksklusif — hubungi kami sekarang melalui Telegram, Facebook, dan Twitter di situs web resmi kami!"
+    },
+    "ourTeam": {
+        "title": "TIM KAMI",
+        "members": [
+            {
+                "name": "ROBIN",
+                "role": "CTO",
+                "description": "Chief Technology Officer, bertanggung jawab atas desain dan implementasi arsitektur teknis."
+            },
+            {
+                "name": "TIGER P.K",
+                "role": "Backend Developer",
+                "description": "Spesialis pengembangan Backend, bertanggung jawab atas arsitektur dan implementasi sisi server."
+            },
+            {
+                "name": "Qi SNAKE",
+                "role": "Blockchain Developer",
+                "description": "Pengembangan aplikasi Web3, membangun fitur dan mengelola interaksi dengan blockchain."
+            },
+            {
+                "name": "HLEES",
+                "role": "Frontend Developer",
+                "description": "Ahli pengembangan antarmuka pengguna (UI/UX), menciptakan antarmuka yang ramah dan mudah digunakan."
+            },
+            {
+                "name": "WILD",
+                "role": "Frontend Developer",
+                "description": "Dukungan pengembangan antarmuka pengguna dan memastikan kompatibilitas di berbagai perangkat."
+            },
+            {
+                "name": "Hunter",
+                "role": "Frontend Developer",
+                "description": "Optimasi kinerja antarmuka pengguna dan implementasi fitur dinamis."
+            },
+            {
+                "name": "REISHI",
+                "role": "UI/UX Designer",
+                "description": "Ahli desain antarmuka pengguna (UI/UX), menciptakan antarmuka yang ramah dan mudah digunakan."
+            },
+            {
+                "name": "ALAN",
+                "role": "MKT & Community Manager",
+                "description": "Pengembangan strategi pemasaran dan pengelolaan pengembangan komunitas proyek."
+            },
+            {
+                "name": "POOH",
+                "role": "MKT & Community Manager",
+                "description": "Pengelolaan kampanye promosi, kemitraan dan pengembangan komunitas."
+            },
+            {
+                "name": "B.A.O",
+                "role": "MKT & Community Manager",
+                "description": "Pengelolaan hubungan dengan mitra dan pengguna, menciptakan peluang pemasaran melalui acara."
+            }
+        ]
+    },
+    "mmpInfo": {
+        "tokenName": "Nama token",
+        "tokenFullName": "Meme Meta Pump",
+        "totalSupply": "Total Pasokan",
+        "tokenAmount": "100 miliar token",
+        "introductionTitle": "Pengenalan",
+        "projectName": "Proyek MemePump (MMP)",
+        "introductionDescription": "Proyek MemePump (MMP) adalah inisiatif revolusioner di dunia kripto, terutama di ruang Web3 dan platform terdesentralisasi, yang bertujuan untuk memperkenalkan jenis token likuiditas baru. MMP bukan hanya kripto; ini adalah alat untuk menciptakan nilai dan peluang bagi komunitas, dengan tujuan membangun ekosistem yang berkelanjutan dan kuat. Dikembangkan di platform Solana, MemePump berusaha mengubah cara pengguna berinteraksi dan terlibat dalam ruang kripto."
+    },
+    "navigation": {
+        "intro": "Pengenalan",
+        "highlights": "Sorotan",
+        "coins": "Koin",
+        "tokenomics": "Tokenomik",
+        "teams": "Tim",
+        "roadmap": "Peta Jalan",
+        "footer": "Footer"
     }
 }

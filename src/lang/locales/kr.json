@@ -19,7 +19,7 @@
         "overview": "개요",
         "swap": "스왑",
         "stake": "스테이킹",
-        "referral": "추천 리워드 이벤트",
+        "referral": "추천",
         "joinUs": "참여하기",
         "telegramLogin": "텔레그램 로그인",
         "googleLogin": "구글 로그인",
@@ -31,7 +31,131 @@
         "selectLanguage": "언어 선택",
         "deposit": "입금",
         "withdraw": "출금",
-        "whitePaper": "백서"
+        "whitePaper": "백서",
+        "mmpInfo": "MMP 정보"
+    },
+    "overview": {
+        "title": "MEMEPUMP",
+        "description": "MEMEPUMP는 Solana 기반의 커뮤니티 중심 밈코인 플랫폼으로, DeFi 인센티브와 탈중앙화 거버넌스를 통해 혁신적인 거래 및 수익 창출 경험을 제공합니다.",
+        "joinUs": "참여하기"
+    },
+    "features": {
+        "title": "주요 기능",
+        "hybridDefi": {
+            "title": "하이브리드 DeFi + 시뮬레이션 거래",
+            "description": "실제 거래와 무위험 시뮬레이션 시장을 결합한 독특한 생태계."
+        },
+        "globalExpansion": {
+            "title": "글로벌 확장 중심",
+            "description": "장기적 성장을 보장하기 위한 적극적인 마케팅과 파트너십."
+        },
+        "communityRewards": {
+            "title": "55% 커뮤니티 보상",
+            "description": "토큰의 가장 큰 부분이 거래 인센티브, 스테이킹, 참여를 통해 사용자에게 직접 분배됩니다."
+        },
+        "daoGovernance": {
+            "title": "DAO 준비 거버넌스",
+            "description": "예비 자금의 일부가 미래의 탈중앙화 의사결정을 위해 할당됩니다."
+        }
+    },
+    "exchangeToken": {
+        "title": "거래 토큰",
+        "description": "MMP와 MPB는 Web3와 탈중앙화 플랫폼의 세계에서 돌파구를 나타내는 두 개의 선구적인 거래소 발행 코인입니다. Solana 위에 구축된 이들은 단순한 유동성 토큰이 아니라 커뮤니티를 위한 가치와 기회를 창출하는 도구이며, 지속 가능하고 강력한 생태계를 구축하는 것을 목표로 합니다.",
+        "mmp": {
+            "symbol": "MMP",
+            "name": "Meme Meta Pump",
+            "explore": "탐색"
+        },
+        "mpb": {
+            "symbol": "MPB",
+            "name": "Meme Profit Bank",
+            "explore": "탐색"
+        }
+    },
+    "tokenomics": {
+        "title": "토큰노믹스",
+        "description": "MMP와 MPB는 Web3와 탈중앙화 금융에 대한 혁신적인 접근 방식을 선도하는 차세대 거래소 발행 토큰을 대표합니다. 번개처럼 빠른 Solana 블록체인 위에 구축된 이 토큰들은 전통적인 유동성 역할을 넘어서 커뮤니티 주도 가치 창출의 강력한 촉매제가 됩니다. 이들은 초기 채택자에게 보상을 제공하고, 장기 참여를 장려하며, 혁신적인 DeFi 프로토콜과 커뮤니티 거버넌스를 통해 지속 가능한 성장 메커니즘을 구축하는 포괄적인 생태계의 기반 역할을 합니다.",
+        "liquidityFund": "유동성 & 투자 펀드",
+        "communityRewards": "커뮤니티 보상",
+        "marketingPartnership": "마케팅 & 파트너십",
+        "operationalCosts": "운영 비용 / 팀",
+        "reserveFund": "준비금",
+        "seedRound": "시드 라운드",
+        "seedRoundDescription": "플랫폼 개발 및 초기 투자 활동에 사용됩니다.",
+        "communityRewardsDescription": "에어드롭, 프로모션 활동 및 참가자 보상을 통해 배포됩니다.",
+        "liquidityFundDescription": "Pump.fun과 협력하여 유동성을 제공하고 투자 전략을 개발하는 데 사용됩니다.",
+        "marketingPartnershipDescription": "마케팅 전략 및 파트너 개발을 위해 100억 토큰이 할당됩니다.",
+        "operationalCostsDescription": "개발팀의 운영 비용을 위해 50억 토큰이 할당됩니다 (2년간 잠금).",
+        "reserveFundDescription": "플랫폼의 유연성과 장기 개발을 보장하기 위해 DAO 활동을 위해 보유됩니다.",
+        "items": {
+            "communityRewards": {
+                "title": "커뮤니티 보상",
+                "description": "활발한 커뮤니티 멤버들에게 배포되는 보상"
+            },
+            "liquidityPool": {
+                "title": "유동성 풀",
+                "description": "토큰 유동성 유지를 위해 예약됨"
+            },
+            "developmentFund": {
+                "title": "개발 펀드",
+                "description": "지속적인 개발과 개선을 위한 자금"
+            },
+            "marketing": {
+                "title": "마케팅",
+                "description": "마케팅 및 프로모션 활동"
+            },
+            "teamAllocation": {
+                "title": "팀 배분",
+                "description": "팀 인센티브 및 개발"
+            },
+            "ecosystemFund": {
+                "title": "생태계 펀드",
+                "description": "생태계 성장 및 파트너십 지원"
+            }
+        }
+    },
+    "roadmap": {
+        "title": "로드맵",
+        "description": "MEMEPUMP 프로젝트는 커뮤니티 피드백을 지속적으로 통합하고 혁신을 촉진하면서 생태계의 안정적인 확장을 보장하도록 설계된 동적 단계별 로드맵을 중심으로 구성되어 있습니다. 아래는 우리의 계획된 마일스톤 개요입니다",
+        "phases": {
+            "phase1": {
+                "title": "1단계",
+                "subtitle": "기반 구축 & 런칭 (2025년 2분기)",
+                "items": [
+                    "제품 완성",
+                    "백서 & 커뮤니티 구축",
+                    "사전 런칭 토큰 배포"
+                ]
+            },
+            "phase2": {
+                "title": "2단계",
+                "subtitle": "공식 런칭 & 초기 성장 (2025년 3분기)",
+                "items": [
+                    "메인넷 런칭",
+                    "토큰 배포",
+                    "초기 시장 통합"
+                ]
+            },
+            "phase3": {
+                "title": "3단계",
+                "subtitle": "생태계 확장 & 기능 개발 (2025년 4분기 - 2026년 1분기)",
+                "items": [
+                    "향상된 유동성 & 시뮬레이션 모듈",
+                    "스테이킹 & 프리미엄 서비스 런칭",
+                    "글로벌 확장"
+                ]
+            },
+            "phase4": {
+                "title": "4단계",
+                "subtitle": "탈중앙화 거버넌스 & 장기 혁신 (2026년 2분기 및 그 이후)",
+                "items": [
+                    "DAO 전환",
+                    "크로스체인 통합",
+                    "지속적인 기능 개선",
+                    "커뮤니티 이니셔티브"
+                ]
+            }
+        }
     },
     "withdraw_page": {
         "enter_amount_to_send": "보낼 금액을 입력하세요",
@@ -104,7 +228,7 @@
         "submit": "제출"
     },
     "deposit": {
-        "title": "MMP 입금",
+        "title": "입금",
         "connectWalletToDeposit": "입금을 위해 지갑 연결",
         "connectWallet": "지갑 연결",
         "myWalletAddress": "내 지갑 주소",
@@ -112,7 +236,8 @@
         "downloadQRCode": "QR 코드 다운로드",
         "addressCopied": "주소가 클립보드에 복사되었습니다!",
         "failedToCopyAddress": "주소 복사에 실패했습니다",
-        "loading": "로딩 중..."
+        "loading": "로딩 중...",
+        "supportedTokens": "SOL, USDT, USDC 입금 지원"
     },
     "swap": {
         "swapHistory": "스왑 기록",
@@ -1100,5 +1225,84 @@
         "invalidStakePeriod": "유효하지 않은 스테이크 기간",
         "stakeSuccess": "스테이크가 성공적으로 생성되었습니다!",
         "stakeError": "스테이크 생성에 실패했습니다. 다시 시도해 주세요."
+    },
+    "footer": {
+        "swapNow": "지금 스왑",
+        "leadFuture": "미래를 선도",
+        "swapDescription": "MEMEPUMP 커뮤니티에 참여하여 혁신적인 스왑을 만들어보세요 – 빠른 거래, 즉시 보상 획득, 무한한 수익 기회를 잠금 해제하세요!",
+        "communityDescription": "MEMEPUMP 커뮤니티에 참여하여 DeFi 기회를 포착하고 독점 보상을 잠금 해제하세요 — 공식 웹사이트에서 Telegram, Facebook, Twitter를 통해 지금 연결하세요!"
+    },
+    "ourTeam": {
+        "title": "우리 팀",
+        "members": [
+            {
+                "name": "ROBIN",
+                "role": "CTO",
+                "description": "기술 이사, 기술 아키텍처 설계 및 구현 담당."
+            },
+            {
+                "name": "TIGER P.K",
+                "role": "Backend Developer",
+                "description": "백엔드 개발 전문가, 서버 측 아키텍처 및 구현 담당."
+            },
+            {
+                "name": "Qi SNAKE",
+                "role": "Blockchain Developer",
+                "description": "Web3 애플리케이션 개발, 기능 구축 및 블록체인과의 상호작용 담당."
+            },
+            {
+                "name": "HLEES",
+                "role": "Frontend Developer",
+                "description": "사용자 인터페이스(UI/UX) 개발 전문가, 친숙하고 사용하기 쉬운 인터페이스 제작."
+            },
+            {
+                "name": "WILD",
+                "role": "Frontend Developer",
+                "description": "사용자 인터페이스 개발 지원 및 다양한 디바이스 호환성 보장."
+            },
+            {
+                "name": "Hunter",
+                "role": "Frontend Developer",
+                "description": "사용자 인터페이스 성능 최적화 및 동적 기능 구현."
+            },
+            {
+                "name": "REISHI",
+                "role": "UI/UX Designer",
+                "description": "사용자 인터페이스(UI/UX) 디자인 전문가, 친숙하고 사용하기 쉬운 인터페이스 제작."
+            },
+            {
+                "name": "ALAN",
+                "role": "MKT & Community Manager",
+                "description": "마케팅 전략 수립 및 프로젝트 커뮤니티 개발 담당."
+            },
+            {
+                "name": "POOH",
+                "role": "MKT & Community Manager",
+                "description": "홍보 캠페인 관리, 파트너십 및 커뮤니티 개발 담당."
+            },
+            {
+                "name": "B.A.O",
+                "role": "MKT & Community Manager",
+                "description": "파트너 및 사용자와의 관계 관리, 이벤트를 통한 마케팅 기회 창출 담당."
+            }
+        ]
+    },
+    "mmpInfo": {
+        "tokenName": "토큰 이름",
+        "tokenFullName": "Meme Meta Pump",
+        "totalSupply": "총 공급량",
+        "tokenAmount": "1000억 토큰",
+        "introductionTitle": "소개",
+        "projectName": "MemePump 프로젝트 (MMP)",
+        "introductionDescription": "MemePump (MMP) 프로젝트는 특히 Web3 공간과 탈중앙화 플랫폼에서 새로운 유형의 유동성 토큰을 도입하는 것을 목표로 하는 암호화폐 세계의 획기적인 이니셔티브입니다. MMP는 단순한 암호화폐가 아닙니다. 지속 가능하고 강력한 생태계를 구축하는 것을 목표로 커뮤니티를 위한 가치와 기회를 창출하는 도구입니다. Solana 플랫폼에서 개발된 MemePump는 사용자가 암호화폐 공간에서 상호작용하고 참여하는 방식을 변화시키려고 합니다."
+    },
+    "navigation": {
+        "intro": "소개",
+        "highlights": "하이라이트",
+        "coins": "코인",
+        "tokenomics": "토크노믹스",
+        "teams": "팀",
+        "roadmap": "로드맵",
+        "footer": "푸터"
     }
 }

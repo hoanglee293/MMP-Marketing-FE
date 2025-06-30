@@ -18,20 +18,144 @@
     "header": {
         "overview": "概要",
         "swap": "スワップ",
-        "stake": "ステーク",
+        "stake": "ステーキング",
         "referral": "紹介",
         "joinUs": "参加する",
-        "telegramLogin": "Telegramログイン",
-        "googleLogin": "Googleログイン",
-        "phantomLogin": "Phantomログイン",
+        "telegramLogin": "テレグラムログイン",
+        "googleLogin": "グーグルログイン",
+        "phantomLogin": "ファントムログイン",
         "unknownLogin": "不明",
         "walletAddress": "ウォレットアドレス:",
         "logout": "ログアウト",
         "language": "言語",
-        "selectLanguage": "言語を選択",
-        "deposit": "預金",
+        "selectLanguage": "言語選択",
+        "deposit": "入金",
         "withdraw": "出金",
-        "whitePaper": "ホワイトペーパー"
+        "whitePaper": "ホワイトペーパー",
+        "mmpInfo": "MMP情報"
+    },
+    "overview": {
+        "title": "MEMEPUMP",
+        "description": "MEMEPUMPはSolanaベースのコミュニティ主導型ミームコインプラットフォームで、DeFiインセンティブと分散型ガバナンスを通じて革新的な取引と収益体験を提供します。",
+        "joinUs": "参加する"
+    },
+    "features": {
+        "title": "主要機能",
+        "hybridDefi": {
+            "title": "ハイブリッドDeFi + シミュレーション取引",
+            "description": "実際の取引とリスクフリーのシミュレーション市場を組み合わせたユニークなエコシステム。"
+        },
+        "globalExpansion": {
+            "title": "グローバル拡張重視",
+            "description": "長期的な成長を確保するための積極的なマーケティングとパートナーシップ。"
+        },
+        "communityRewards": {
+            "title": "55%コミュニティ報酬",
+            "description": "トークンの最大シェアが取引インセンティブ、ステーキング、エンゲージメントを通じてユーザーに直接配布されます。"
+        },
+        "daoGovernance": {
+            "title": "DAO対応ガバナンス",
+            "description": "準備金の一部が将来の分散型意思決定のために割り当てられています。"
+        }
+    },
+    "exchangeToken": {
+        "title": "取引トークン",
+        "description": "MMPとMPBは、Web3と分散型プラットフォームの世界におけるブレークスルーを代表する2つの先駆的な取引所発行コインです。Solana上に構築されたこれらは、単なる流動性トークンではなく、コミュニティのための価値と機会を創出するツールでもあり、持続可能で強力なエコシステムの確立を目指しています。",
+        "mmp": {
+            "symbol": "MMP",
+            "name": "Meme Meta Pump",
+            "explore": "探索"
+        },
+        "mpb": {
+            "symbol": "MPB",
+            "name": "Meme Profit Bank",
+            "explore": "探索"
+        }
+    },
+    "tokenomics": {
+        "title": "トークノミクス",
+        "description": "MMPとMPBは、Web3と分散型金融に対する革新的なアプローチを先導する次世代取引所発行トークンを代表しています。稲妻のように高速なSolanaブロックチェーン上に構築されたこれらのトークンは、従来の流動性の役割を超えて、コミュニティ主導の価値創造の強力な触媒となります。これらは、初期採用者に報酬を提供し、長期的な参加を促進し、革新的なDeFiプロトコルとコミュニティガバナンスを通じて持続可能な成長メカニズムを確立する包括的なエコシステムの基盤として機能します。",
+        "liquidityFund": "流動性 & 投資ファンド",
+        "liquidityFundDescription": "Pump.funと協力して流動性を提供し、投資戦略を開発するために使用されます。",
+        "communityRewards": "コミュニティ報酬",
+        "communityRewardsDescription": "エアドロップ、プロモーション活動、参加者への報酬を通じて配布されます。",
+        "marketingPartnership": "マーケティング & パートナーシップ",
+        "marketingPartnershipDescription": "マーケティング戦略とパートナー開発のために100億トークンが割り当てられます。",
+        "operationalCosts": "運営コスト / チーム",
+        "operationalCostsDescription": "開発チームの運営コストのために50億トークンが割り当てられます（2年間ロック）。",
+        "reserveFund": "準備金",
+        "reserveFundDescription": "プラットフォームの柔軟性と長期的な開発を確保するためにDAO活動のために保持されます。",
+        "seedRound": "シードラウンド",
+        "seedRoundDescription": "プラットフォーム開発と初期投資活動に使用されます。",
+        "items": {
+            "communityRewards": {
+                "title": "コミュニティ報酬",
+                "description": "アクティブなコミュニティメンバーに配布される報酬"
+            },
+            "liquidityPool": {
+                "title": "流動性プール",
+                "description": "トークンの流動性維持のために確保"
+            },
+            "developmentFund": {
+                "title": "開発ファンド",
+                "description": "継続的な開発と改善のための資金"
+            },
+            "marketing": {
+                "title": "マーケティング",
+                "description": "マーケティングとプロモーション活動"
+            },
+            "teamAllocation": {
+                "title": "チーム配分",
+                "description": "チームのインセンティブと開発"
+            },
+            "ecosystemFund": {
+                "title": "エコシステムファンド",
+                "description": "エコシステムの成長とパートナーシップの支援"
+            }
+        }
+    },
+    "roadmap": {
+        "title": "ロードマップ",
+        "description": "MEMEPUMPプロジェクトは、コミュニティのフィードバックを継続的に統合し、イノベーションを促進しながら、エコシステムの着実な拡大を確保するように設計された動的段階的ロードマップを中心に構成されています。以下は、私たちの計画されたマイルストーンの概要です",
+        "phases": {
+            "phase1": {
+                "title": "フェーズ1",
+                "subtitle": "基盤構築 & ローンチ (2025年第2四半期)",
+                "items": [
+                    "製品完成",
+                    "ホワイトペーパー & コミュニティ構築",
+                    "プレローンチトークン配布"
+                ]
+            },
+            "phase2": {
+                "title": "フェーズ2",
+                "subtitle": "公式ローンチ & 初期成長 (2025年第3四半期)",
+                "items": [
+                    "メインネットローンチ",
+                    "トークン配布",
+                    "初期市場統合"
+                ]
+            },
+            "phase3": {
+                "title": "フェーズ3",
+                "subtitle": "エコシステム拡張 & 機能開発 (2025年第4四半期 - 2026年第1四半期)",
+                "items": [
+                    "強化された流動性 & シミュレーションモジュール",
+                    "ステーキング & プレミアムサービスローンチ",
+                    "グローバル展開"
+                ]
+            },
+            "phase4": {
+                "title": "フェーズ4",
+                "subtitle": "分散型ガバナンス & 長期イノベーション (2026年第2四半期以降)",
+                "items": [
+                    "DAO移行",
+                    "クロスチェーン統合",
+                    "継続的な機能強化",
+                    "コミュニティイニシアチブ"
+                ]
+            }
+        }
     },
     "withdraw_page": {
         "enter_amount_to_send": "送信する金額を入力してください",
@@ -103,7 +227,7 @@
         "submit": "送信"
     },
     "deposit": {
-        "title": "MMP入金",
+        "title": "入金",
         "connectWalletToDeposit": "入金するためにウォレットを接続",
         "connectWallet": "ウォレット接続",
         "myWalletAddress": "私のウォレットアドレス",
@@ -111,7 +235,8 @@
         "downloadQRCode": "QRコードをダウンロード",
         "addressCopied": "アドレスをクリップボードにコピーしました！",
         "failedToCopyAddress": "アドレスのコピーに失敗しました",
-        "loading": "読み込み中..."
+        "loading": "読み込み中...",
+        "supportedTokens": "SOL、USDT、USDCの入金に対応"
     },
     "swap": {
         "swapHistory": "スワップ履歴",
@@ -735,7 +860,7 @@
                     "items": [
                         "紹介ステーキング: 友人紹介ボーナス: ユーザーが友人を招待してステーキングに参加させると、紹介者は紹介されたユーザーの報酬の5～10%を追加で受け取れます。この方式はユーザーネットワークを拡大し、コミュニティ参加を促進します。",
                         "リーダーボードとミニゲーム: ステーカーリーダーボード: ステーキング金額と期間に基づくランキングシステムを運営し、上位ステーカーには週次または月次で報酬が与えられます（例: 1位は1,000 $MMP受領）。",
-                        "ミニゲーム「ラッキースピン」: 1,000トークンをステーキングまたはロック解除時、ユーザーはルーレットを回すチャンスを得てランダム報酬を受け取れます。"
+                        "ミニゲーム「ラッキースピン」: 1,000トークンをステーキングまたはロック解除時、ユーザーはランダムな賞品を獲得するためにホイールを回すチャンスを得てランダム報酬を受け取れます。"
                     ],
                     "summary": "ステーキングプログラムは高いAPY利率だけでなく、紹介やインタラクティブな活動を通じて活気あるエコシステムを形成します。多様な報酬方式と革新的なマーケティング戦略を組み合わせ、忠実なコミュニティを構築しプラットフォームの長期成長を支援します。"
                 }
@@ -1100,5 +1225,84 @@
         "invalidStakePeriod": "無効なステーク期間",
         "stakeSuccess": "ステークが正常に作成されました！",
         "stakeError": "ステークの作成に失敗しました。もう一度お試しください。"
+    },
+    "footer": {
+        "swapNow": "今すぐスワップ",
+        "leadFuture": "未来をリード",
+        "swapDescription": "MEMEPUMPコミュニティに参加して革新的なスワップを実現しましょう – 高速取引、即座に報酬を獲得、無限の利益機会をアンロック！",
+        "communityDescription": "MEMEPUMPコミュニティに参加してDeFi機会を掴み、独占報酬をアンロックしましょう — 公式ウェブサイトでTelegram、Facebook、Twitterを通じて今すぐ接続してください！"
+    },
+    "ourTeam": {
+        "title": "私たちのチーム",
+        "members": [
+            {
+                "name": "ROBIN",
+                "role": "CTO",
+                "description": "最高技術責任者、技術アーキテクチャの設計と実装を担当。"
+            },
+            {
+                "name": "TIGER P.K",
+                "role": "Backend Developer",
+                "description": "バックエンド開発専門家、サーバーサイドアーキテクチャと実装を担当。"
+            },
+            {
+                "name": "Qi SNAKE",
+                "role": "Blockchain Developer",
+                "description": "Web3アプリケーション開発、機能構築とブロックチェーンとの相互作用管理を担当。"
+            },
+            {
+                "name": "HLEES",
+                "role": "Frontend Developer",
+                "description": "ユーザーインターフェース（UI/UX）開発専門家、親しみやすく使いやすいインターフェースを作成。"
+            },
+            {
+                "name": "WILD",
+                "role": "Frontend Developer",
+                "description": "ユーザーインターフェース開発サポートと様々なデバイスでの互換性確保を担当。"
+            },
+            {
+                "name": "Hunter",
+                "role": "Frontend Developer",
+                "description": "ユーザーインターフェースのパフォーマンス最適化と動的機能の実装を担当。"
+            },
+            {
+                "name": "REISHI",
+                "role": "UI/UX Designer",
+                "description": "ユーザーインターフェース（UI/UX）デザイン専門家、親しみやすく使いやすいインターフェースを作成。"
+            },
+            {
+                "name": "ALAN",
+                "role": "MKT & Community Manager",
+                "description": "マーケティング戦略の策定とプロジェクトコミュニティ開発の管理を担当。"
+            },
+            {
+                "name": "POOH",
+                "role": "MKT & Community Manager",
+                "description": "プロモーションキャンペーンの管理、パートナーシップとコミュニティ開発を担当。"
+            },
+            {
+                "name": "B.A.O",
+                "role": "MKT & Community Manager",
+                "description": "パートナーとユーザーとの関係管理、イベントを通じたマーケティング機会の創出を担当。"
+            }
+        ]
+    },
+    "mmpInfo": {
+        "tokenName": "トークン名",
+        "tokenFullName": "Meme Meta Pump",
+        "totalSupply": "総供給量",
+        "tokenAmount": "1000億トークン",
+        "introductionTitle": "紹介",
+        "projectName": "MemePumpプロジェクト (MMP)",
+        "introductionDescription": "MemePump (MMP) プロジェクトは、特にWeb3空間と分散型プラットフォームで新しいタイプの流動性トークンを導入することを目的とした暗号通貨世界の画期的なイニシアチブです。MMPは単なる暗号通貨ではありません。持続可能で強力なエコシステムを構築することを目的として、コミュニティのための価値と機会を創出するツールです。Solanaプラットフォームで開発されたMemePumpは、ユーザーが暗号通貨空間で相互作用し、参加する方法を変革しようとしています。"
+    },
+    "navigation": {
+        "intro": "紹介",
+        "highlights": "ハイライト",
+        "coins": "コイン",
+        "tokenomics": "トークノミクス",
+        "teams": "チーム",
+        "roadmap": "ロードマップ",
+        "footer": "フッター"
     }
 }

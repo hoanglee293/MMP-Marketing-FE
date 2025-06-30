@@ -29,9 +29,133 @@
         "logout": "Đăng xuất",
         "language": "Ngôn ngữ",
         "selectLanguage": "Chọn ngôn ngữ",
-        "deposit": "Nạp",
-        "withdraw": "Rút",
-        "whitePaper": "Sách trắng"
+        "deposit": "Nạp tiền",
+        "withdraw": "Rút tiền",
+        "whitePaper": "Sách trắng",
+        "mmpInfo": "Thông tin MMP"
+    },
+    "overview": {
+        "title": "MEMEPUMP",
+        "description": "MEMEPUMP là nền tảng memecoin hướng cộng đồng trên Solana, mang đến trải nghiệm giao dịch và kiếm tiền đột phá thông qua các ưu đãi DeFi và quản trị phi tập trung.",
+        "joinUs": "Tham gia cùng chúng tôi"
+    },
+    "features": {
+        "title": "Tính Năng Chính",
+        "hybridDefi": {
+            "title": "DeFi Kết Hợp + Giao Dịch Mô Phỏng",
+            "description": "Hệ sinh thái độc đáo kết hợp giao dịch thực với thị trường mô phỏng không rủi ro."
+        },
+        "globalExpansion": {
+            "title": "Tập Trung Mở Rộng Toàn Cầu",
+            "description": "Tiếp thị và hợp tác mạnh mẽ để đảm bảo tăng trưởng dài hạn."
+        },
+        "communityRewards": {
+            "title": "55% Phần Thưởng Cộng Đồng",
+            "description": "Phần lớn token được phân phối trực tiếp cho người dùng thông qua ưu đãi giao dịch, staking và tham gia."
+        },
+        "daoGovernance": {
+            "title": "Quản Trị Sẵn Sàng DAO",
+            "description": "Một phần dự trữ được phân bổ cho việc ra quyết định phi tập trung trong tương lai."
+        }
+    },
+    "exchangeToken": {
+        "title": "Token giao dịch",
+        "description": "MMP và MPB là hai đồng coin tiên phong được phát hành bởi sàn giao dịch, đại diện cho bước đột phá trong thế giới Web3 và các nền tảng phi tập trung. Được xây dựng trên Solana, chúng không chỉ là token thanh khoản mà còn là công cụ tạo ra giá trị và cơ hội cho cộng đồng, nhằm thiết lập một hệ sinh thái bền vững và mạnh mẽ.",
+        "mmp": {
+            "symbol": "MMP",
+            "name": "Meme Meta Pump",
+            "explore": "Khám phá"
+        },
+        "mpb": {
+            "symbol": "MPB",
+            "name": "Meme Profit Bank",
+            "explore": "Khám phá"
+        }
+    },
+    "tokenomics": {
+        "title": "TOKENOMICS",
+        "description": "MMP và MPB đại diện cho thế hệ tiếp theo của token được phát hành bởi sàn giao dịch, tiên phong trong cách tiếp cận cách mạng đối với Web3 và tài chính phi tập trung. Được xây dựng trên blockchain Solana với tốc độ nhanh như chớp, những token này vượt xa vai trò thanh khoản truyền thống để trở thành chất xúc tác mạnh mẽ cho việc tạo ra giá trị do cộng đồng thúc đẩy. Chúng phục vụ như nền tảng cho một hệ sinh thái toàn diện, thưởng cho những người tham gia sớm, khuyến khích sự tham gia dài hạn và thiết lập các cơ chế tăng trưởng bền vững thông qua các giao thức DeFi sáng tạo và quản trị cộng đồng.",
+        "liquidityFund": "Quỹ Thanh khoản & Đầu tư",
+        "communityRewards": "Phần Thưởng Cộng đồng",
+        "marketingPartnership": "Tiếp thị & Đối tác",
+        "operationalCosts": "Chi phí Vận hành / Đội ngũ",
+        "reserveFund": "Quỹ Dự trữ",
+        "seedRound": "Vòng Gieo hạt",
+        "seedRoundDescription": "Sử dụng cho việc phát triển nền tảng và các hoạt động đầu tư ban đầu.",
+        "communityRewardsDescription": "Phân phối thông qua airdrop, hoạt động quảng cáo và phần thưởng cho người tham gia.",
+        "liquidityFundDescription": "Sử dụng để hợp tác với Pump.fun để cung cấp thanh khoản và phát triển chiến lược đầu tư.",
+        "marketingPartnershipDescription": "10 tỷ token được phân bổ cho chiến lược tiếp thị và phát triển đối tác.",
+        "operationalCostsDescription": "5 tỷ token được phân bổ cho chi phí vận hành của đội ngũ phát triển (khóa trong 2 năm).",
+        "reserveFundDescription": "Giữ lại cho các hoạt động DAO để đảm bảo tính linh hoạt và phát triển dài hạn của nền tảng.",
+        "items": {
+            "communityRewards": {
+                "title": "Phần Thưởng Cộng đồng",
+                "description": "Phần thưởng phân phối cho các thành viên cộng đồng tích cực"
+            },
+            "liquidityPool": {
+                "title": "Quỹ Thanh khoản",
+                "description": "Dành riêng cho việc duy trì thanh khoản token"
+            },
+            "developmentFund": {
+                "title": "Quỹ Phát triển",
+                "description": "Tài trợ cho việc phát triển và cải tiến liên tục"
+            },
+            "marketing": {
+                "title": "Tiếp thị",
+                "description": "Hoạt động tiếp thị và quảng cáo"
+            },
+            "teamAllocation": {
+                "title": "Phân bổ Đội ngũ",
+                "description": "Khuyến khích và phát triển đội ngũ"
+            },
+            "ecosystemFund": {
+                "title": "Quỹ Hệ sinh thái",
+                "description": "Hỗ trợ tăng trưởng hệ sinh thái và đối tác"
+            }
+        }
+    },
+    "roadmap": {
+        "title": "Lộ Trình",
+        "description": "Dự án MEMEPUMP được xây dựng xung quanh một lộ trình động, theo giai đoạn được thiết kế để đảm bảo sự mở rộng ổn định của hệ sinh thái trong khi liên tục tích hợp phản hồi cộng đồng và thúc đẩy đổi mới. Dưới đây là phác thảo các cột mốc đã lên kế hoạch của chúng tôi",
+        "phases": {
+            "phase1": {
+                "title": "Giai đoạn 1",
+                "subtitle": "Nền tảng & Ra mắt (Q2 2025)",
+                "items": [
+                    "Hoàn thiện Sản phẩm",
+                    "Sách trắng & Xây dựng Cộng đồng",
+                    "Phân phối Token Trước khi ra mắt"
+                ]
+            },
+            "phase2": {
+                "title": "Giai đoạn 2",
+                "subtitle": "Ra mắt Chính thức & Tăng trưởng Sớm (Q3 2025)",
+                "items": [
+                    "Ra mắt Mainnet",
+                    "Phân phối Token",
+                    "Tích hợp Thị trường Ban đầu"
+                ]
+            },
+            "phase3": {
+                "title": "Giai đoạn 3",
+                "subtitle": "Mở rộng Hệ sinh thái & Phát triển Tính năng (Q4 2025 - Q1 2026)",
+                "items": [
+                    "Mô-đun Thanh khoản & Mô phỏng Nâng cao",
+                    "Ra mắt Dịch vụ Stake & Premium",
+                    "Tiếp cận Toàn cầu"
+                ]
+            },
+            "phase4": {
+                "title": "Giai đoạn 4",
+                "subtitle": "Quản trị Phi tập trung & Đổi mới Dài hạn (Q2 2026 và Xa hơn)",
+                "items": [
+                    "Chuyển đổi DAO",
+                    "Tích hợp Đa chuỗi",
+                    "Cải tiến Tính năng Liên tục",
+                    "Sáng kiến Cộng đồng"
+                ]
+            }
+        }
     },
     "withdraw_page": {
         "withdraw_successful": "Rút tiền thành công!",
@@ -104,7 +228,7 @@
         "submit": "Gửi"
     },
     "deposit": {
-        "title": "Nạp MMP",
+        "title": "Nạp",
         "connectWalletToDeposit": "Kết nối Ví để Nạp",
         "connectWallet": "Kết nối Ví",
         "myWalletAddress": "Địa chỉ Ví của tôi",
@@ -112,7 +236,8 @@
         "downloadQRCode": "Tải xuống Mã QR",
         "addressCopied": "Đã sao chép địa chỉ vào clipboard!",
         "failedToCopyAddress": "Không thể sao chép địa chỉ",
-        "loading": "Đang tải..."
+        "loading": "Đang tải...",
+        "supportedTokens": "Hỗ trợ nạp SOL, USDT, USDC"
     },
     "swap": {
         "swapHistory": "Lịch sử hoán đổi",
@@ -1093,5 +1218,78 @@
         "invalidStakePeriod": "Thời gian stake không hợp lệ",
         "stakeSuccess": "Tạo stake thành công!",
         "stakeError": "Không thể tạo stake. Vui lòng thử lại."
+    },
+    "ourTeam": {
+        "title": "ĐỘI NGŨ CỦA CHÚNG TÔI",
+        "members": [
+            {
+                "name": "ROBIN",
+                "role": "CTO",
+                "description": "Giám đốc Công nghệ, chịu trách nhiệm thiết kế và triển khai kiến trúc kỹ thuật."
+            },
+            {
+                "name": "TIGER P.K",
+                "role": "Backend Developer",
+                "description": "Chuyên gia phát triển Backend, chịu trách nhiệm kiến trúc và triển khai phía máy chủ."
+            },
+            {
+                "name": "Qi SNAKE",
+                "role": "Blockchain Developer",
+                "description": "Phát triển ứng dụng Web3, xây dựng tính năng và quản lý tương tác với blockchain."
+            },
+            {
+                "name": "HLEES",
+                "role": "Frontend Developer",
+                "description": "Chuyên gia phát triển giao diện người dùng (UI/UX), tạo ra các giao diện thân thiện và dễ sử dụng."
+            },
+            {
+                "name": "WILD",
+                "role": "Frontend Developer",
+                "description": "Hỗ trợ phát triển giao diện người dùng và đảm bảo tương thích trên nhiều thiết bị khác nhau."
+            },
+            {
+                "name": "Hunter",
+                "role": "Frontend Developer",
+                "description": "Tối ưu hóa hiệu suất giao diện người dùng và triển khai các tính năng động."
+            },
+            {
+                "name": "REISHI",
+                "role": "UI/UX Designer",
+                "description": "Chuyên gia thiết kế giao diện người dùng (UI/UX), tạo ra các giao diện thân thiện và dễ sử dụng."
+            },
+            {
+                "name": "ALAN",
+                "role": "MKT & Community Manager",
+                "description": "Phát triển chiến lược marketing và quản lý phát triển cộng đồng dự án."
+            },
+            {
+                "name": "POOH",
+                "role": "MKT & Community Manager",
+                "description": "Quản lý chiến dịch quảng cáo, đối tác và phát triển cộng đồng."
+            },
+            {
+                "name": "B.A.O",
+                "role": "MKT & Community Manager",
+                "description": "Quản lý mối quan hệ với đối tác và người dùng, tạo cơ hội marketing thông qua các sự kiện."
+            }
+        ]
+    },
+    "mmpInfo": {
+        "tokenName": "Tên token",
+        "tokenFullName": "Meme Meta Pump",
+        "totalSupply": "Tổng cung",
+        "tokenAmount": "100 tỷ token",
+        "introductionTitle": "Giới thiệu về",
+        "projectName": "Dự án MemePump (MMP)",
+        "introductionDescription": "Dự án MemePump (MMP) là một sáng kiến đột phá trong thế giới tiền điện tử, đặc biệt là trong không gian Web3 và các nền tảng phi tập trung, nhằm giới thiệu một loại token thanh khoản mới. MMP không chỉ là một loại tiền điện tử; nó là một công cụ để tạo ra giá trị và cơ hội cho cộng đồng, với mục tiêu xây dựng một hệ sinh thái bền vững và mạnh mẽ. Được phát triển trên nền tảng Solana, MemePump tìm cách thay đổi cách người dùng tương tác và tham gia vào không gian tiền điện tử."
+    },
+    "navigation": {
+        "intro": "Giới thiệu",
+        "highlights": "Điểm nổi bật",
+        "coins": "Đồng coin",
+        "tokenomics": "Tokenomics",
+        "teams": "Đội ngũ",
+        "roadmap": "Lộ trình",
+        "footer": "Chân trang"
     }
 }

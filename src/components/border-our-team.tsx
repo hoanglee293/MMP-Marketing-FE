@@ -100,7 +100,7 @@ const BorderOurTeam = ({ children, className }: { children: React.ReactNode, cla
                     </linearGradient>
                 </defs>
             </svg>
-            <svg xmlns="http://www.w3.org/2000/svg" width="14" height="145" viewBox="0 0 14 145" fill="none" className='absolute bottom-8 right-3 h-[70%] mx-auto z-10'>
+            <svg xmlns="http://www.w3.org/2000/svg" width="14" height="145" viewBox="0 0 14 145" fill="none" className='absolute bottom-8 xl:right-3 right-1 h-[70%] mx-auto z-10'>
                 <path d="M0 13.4562L13.4724 0L13.4724 8.97079L0 22.427L0 13.4562Z" fill="url(#paint0_linear_453_3058)" />
                 <path d="M0 30.8893L13.4724 17.4331L13.4724 26.4039L0 39.8601L0 30.8893Z" fill="url(#paint1_linear_453_3058)" />
                 <path d="M0 48.3224L13.4724 34.8662L13.4724 43.837L0 57.2932L0 48.3224Z" fill="url(#paint2_linear_453_3058)" />
@@ -146,7 +146,7 @@ const BorderOurTeam = ({ children, className }: { children: React.ReactNode, cla
             </svg>
 
             {/* Content container - responsive padding */}
-            <div className="flex flex-col items-center justify-center  gap-1  top-0 left-0 absolute z-10 xl:mx-6 mx-2 px-2 py-4 h-[90%]">
+            <div className="flex flex-col items-center justify-center  gap-1  top-0 left-0 absolute z-10 xl:mx-6 mx-2 px-2 py-4 xl:h-[90%] h-full">
                 {children}
             </div>
         </div>

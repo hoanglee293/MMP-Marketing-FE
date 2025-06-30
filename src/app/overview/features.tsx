@@ -2,8 +2,10 @@
 import BoxFeauture from '@/components/border'
 import React, { useState, useEffect } from 'react'
 import { useIntersectionObserver } from '@/hooks/useIntersectionObserver'
+import { useLang } from '@/lang/useLang'
 
 const features = () => {
+    const { t } = useLang();
     const [windowWidth, setWindowWidth] = useState(0);
     const [isClient, setIsClient] = useState(false);
 
@@ -55,12 +57,12 @@ const features = () => {
     });
 
     return (
-        <div className='bg-feature bg-[#020616BD]/60 z-50 w-full min-h-screen sm:h-svh flex items-center justify-center relative pt-10 sm:pt-16 md:pt-20 overflow-hidden'>
+        <div className='bg-feature bg-[#020616BD]/60 z-50 w-full min-h-screen sm:h-svh flex items-center justify-center relative pt-10 sm:pt-16 md:pt-20 pb-6 xl:pb-0 overflow-hidden'>
             <div className='absolute top-0 right-0 w-full h-full bg-[#0f121ad6] backdrop-blur-lg' />
             <div className='eclipse-box absolute top-[10%] right-[10%] w-[150px] h-[150px] sm:w-[200px] sm:h-[200px] md:w-[254px] md:h-[254px] z-20' style={{background: '#15dffd63', filter: 'blur(30px) sm:blur(40px) md:blur(50px)'}}/>
             
             {/* Responsive decorative elements - hidden on mobile */}
-            <div className='hidden md:block h-[50vh] flex items-center justify-center border-l-2 border-r-0 border-t-0 border-b-0 border-gray-500 border-solid absolute bottom-0 right-[27%] z-10 animate-pulse-slow'>
+            <div className='md:block h-[50vh] flex items-center justify-center border-l-2 border-r-0 border-t-0 border-b-0 border-gray-500 border-solid absolute bottom-0 right-[27%] z-10 animate-pulse-slow'>
                 <svg style={{ marginTop: '9vh', marginLeft: '10px' }} xmlns="http://www.w3.org/2000/svg" width="19" height="156" viewBox="0 0 19 156" fill="none">
                     <path d="M0.5 18L18.5 0V12L0.5 30V18Z" fill="url(#paint0_linear_391_1118)" />
                     <path d="M0.5 36L18.5 18V30L0.5 48V36Z" fill="url(#paint1_linear_391_1118)" />
@@ -109,7 +111,7 @@ const features = () => {
             <div className='hidden md:block h-[10vh] w-[2px] bg-gray-500 absolute top-[47%] right-[22%] z-10 animate-pulse'>
                 <div className={"w-2 h-2 rounded-full bg-gray-500 absolute top-0 left-[-3px] z-10 animate-ping"} />
             </div>
-            <div className='hidden md:block absolute top-0 left-[22%] z-10 '>
+            <div className='block absolute top-0 left-[22%] z-10 '>
                 <svg xmlns="http://www.w3.org/2000/svg" width="90" height="551" viewBox="0 0 90 551" fill="none">
                     <path d="M1 0L34.5 33.5V255.5L89 310V550.5" stroke="white" stroke-opacity="0.4" />
                 </svg>
@@ -117,12 +119,12 @@ const features = () => {
             </div>
             
             <div className='h-full mx-4 sm:mx-8 md:mx-16 lg:mx-36 py-4 sm:py-6 md:py-8 relative z-20 flex flex-col justify-around'>
-                <div className='flex flex-col items-center justify-center gap-2 sm:gap-4 relative h-[40px] sm:h-[50px]'>
+                <div className='flex flex-col items-center justify-center gap-2 sm:gap-4 relative h-[40px] sm:h-[58px]'>
                     <h2
                         ref={titleRef}
                         className={`title-feature text-[24px] sm:text-[28px] md:text-[36px] xl:text-[48px] bg-clip-text absolute top-0 left-0 w-full h-full text-center animate-fade-in-up ${titleInView ? 'in-view' : ''}`}
                     >
-                        Key Features
+                        {t('features.title')}
                     </h2>
                 </div>
                 
@@ -130,7 +132,7 @@ const features = () => {
                 <div className='md:hidden flex flex-col gap-6 sm:gap-8'>
                     <div
                         ref={imageRef}
-                        className={`animate-fade-in-left animate-float ${imageInView ? 'in-view' : ''}`}
+                        className={`xl:animate-fade-in-left xl:animate-float ${imageInView ? 'in-view' : ''}`}
                     >
                         <img src="/layout-features.png" alt="feature-1" className='max-h-[300px] sm:max-h-[400px] w-full h-auto object-cover' />
                     </div>
@@ -138,48 +140,48 @@ const features = () => {
                     <div className='flex flex-col gap-4 sm:gap-6'>
                         <div
                             ref={feature1Ref}
-                            className={`animate-fade-in-up-delayed hover:scale-105 transition-transform duration-300 ${feature1InView ? 'in-view' : ''}`}
+                            className={`xl:animate-fade-in-up-delayed hover:scale-105 transition-transform duration-300 ${feature1InView ? 'in-view' : ''}`}
                         >
                             <BoxFeauture>
-                                <div className='text-neutral font-medium bg-gradient-to-t from-white to-[#00C0FF] bg-clip-text text-sm sm:text-base'>Hybrid DeFi + Simulated Trading</div>
+                                <div className='text-neutral font-medium bg-gradient-to-t from-white to-[#00C0FF] bg-clip-text text-sm sm:text-base'>{t('features.hybridDefi.title')}</div>
                                 <div className='text-neutral text-xs sm:text-sm mt-1'>
-                                    A unique ecosystem combining real trading with risk-free simulation markets.
+                                    {t('features.hybridDefi.description')}
                                 </div>
                             </BoxFeauture>
                         </div>
                         
                         <div
                             ref={feature2Ref}
-                            className={`animate-fade-in-up-delayed hover:scale-105 transition-transform duration-300 ${feature2InView ? 'in-view' : ''}`}
+                            className={`xl:animate-fade-in-up-delayed hover:scale-105 transition-transform duration-300 ${feature2InView ? 'in-view' : ''}`}
                         >
                             <BoxFeauture>
-                                <div className='text-neutral font-medium bg-gradient-to-t from-white to-[#00C0FF] bg-clip-text text-sm sm:text-base'>Global Expansion Focus</div>
+                                <div className='text-neutral font-medium bg-gradient-to-t from-white to-[#00C0FF] bg-clip-text text-sm sm:text-base'>{t('features.globalExpansion.title')}</div>
                                 <div className='text-neutral text-xs sm:text-sm mt-1'>
-                                    Aggressive marketing and partnerships to ensure long-term growth.
+                                    {t('features.globalExpansion.description')}
                                 </div>
                             </BoxFeauture>
                         </div>
                         
                         <div
                             ref={feature3Ref}
-                            className={`animate-fade-in-up-delayed hover:scale-105 transition-transform duration-300 ${feature3InView ? 'in-view' : ''}`}
+                            className={`xl:animate-fade-in-up-delayed hover:scale-105 transition-transform duration-300 ${feature3InView ? 'in-view' : ''}`}
                         >
                             <BoxFeauture>
-                                <div className='text-neutral font-medium bg-gradient-to-t from-white to-[#00C0FF] bg-clip-text text-sm sm:text-base'>55% Community Rewards</div>
+                                <div className='text-neutral font-medium bg-gradient-to-t from-white to-[#00C0FF] bg-clip-text text-sm sm:text-base'>{t('features.communityRewards.title')}</div>
                                 <div className='text-neutral text-xs sm:text-sm mt-1'>
-                                    The largest share of tokens goes directly to users via trading incentives, staking, and engagement.
+                                    {t('features.communityRewards.description')}
                                 </div>
                             </BoxFeauture>
                         </div>
                         
                         <div
                             ref={feature4Ref}
-                            className={`animate-fade-in-up-delayed hover:scale-105 transition-transform duration-300 ${feature4InView ? 'in-view' : ''}`}
+                            className={`xl:animate-fade-in-up-delayed hover:scale-105 transition-transform duration-300 ${feature4InView ? 'in-view' : ''}`}
                         >
                             <BoxFeauture>
-                                <div className='text-neutral font-medium bg-gradient-to-t from-white to-[#00C0FF] bg-clip-text text-sm sm:text-base'>DAO-Ready Governance</div>
+                                <div className='text-neutral font-medium bg-gradient-to-t from-white to-[#00C0FF] bg-clip-text text-sm sm:text-base'>{t('features.daoGovernance.title')}</div>
                                 <div className='text-neutral text-xs sm:text-sm mt-1'>
-                                    A portion of reserves is allocated for future decentralized decision-making.
+                                    {t('features.daoGovernance.description')}
                                 </div>
                             </BoxFeauture>
                         </div>
@@ -202,9 +204,9 @@ const features = () => {
                                 className={`animate-fade-in-up-delayed hover:scale-105 transition-transform duration-300 ${feature1InView ? 'in-view' : ''}`}
                             >
                                 <BoxFeauture>
-                                    <div className={`text-neutral font-medium bg-gradient-to-t from-white to-[#00C0FF] bg-clip-text ${isClient && windowWidth < 1600 ? 'text-sm' : 'text-lg'}`}>Hybrid DeFi + Simulated Trading</div>
+                                    <div className={`text-neutral font-medium bg-gradient-to-t from-white to-[#00C0FF] bg-clip-text ${isClient && windowWidth < 1600 ? 'text-sm' : 'text-lg'}`}>{t('features.hybridDefi.title')}</div>
                                     <div className={`text-neutral ${isClient && windowWidth < 1600 ? 'text-xs' : 'text-sm'} mt-1`}>
-                                        A unique ecosystem combining real trading with risk-free simulation markets.
+                                        {t('features.hybridDefi.description')}
                                     </div>
                                 </BoxFeauture>
                             </div>
@@ -213,9 +215,9 @@ const features = () => {
                                 className={`animate-fade-in-up-more-delayed hover:scale-105 transition-transform duration-300 ${feature2InView ? 'in-view' : ''}`}
                             >
                                 <BoxFeauture>
-                                    <div className='text-neutral text-sm font-medium bg-gradient-to-t from-white to-[#00C0FF] bg-clip-text'>Global Expansion Focus</div>
+                                    <div className='text-neutral text-sm font-medium bg-gradient-to-t from-white to-[#00C0FF] bg-clip-text'>{t('features.globalExpansion.title')}</div>
                                     <div className='text-neutral text-xs mt-1'>
-                                        Aggressive marketing and partnerships to ensure long-term growth.
+                                        {t('features.globalExpansion.description')}
                                     </div>
                                 </BoxFeauture>
                             </div>
@@ -228,9 +230,9 @@ const features = () => {
                                 className={`animate-fade-in-up-delayed hover:scale-105 transition-transform duration-300 ${feature3InView ? 'in-view' : ''}`}
                             >
                                 <BoxFeauture>
-                                    <div className='text-neutral text-sm font-medium bg-gradient-to-t from-white to-[#00C0FF] bg-clip-text'>55% Community Rewards</div>
+                                    <div className='text-neutral text-sm font-medium bg-gradient-to-t from-white to-[#00C0FF] bg-clip-text'>{t('features.communityRewards.title')}</div>
                                     <div className='text-neutral text-xs mt-1'>
-                                        The largest share of tokens goes directly to users via trading incentives, staking, and engagement.
+                                        {t('features.communityRewards.description')}
                                     </div>
                                 </BoxFeauture>
                             </div>
@@ -239,9 +241,9 @@ const features = () => {
                                 className={`animate-fade-in-up-more-delayed hover:scale-105 transition-transform duration-300 ${feature4InView ? 'in-view' : ''}`}
                             >
                                 <BoxFeauture>
-                                    <div className='text-neutral text-sm font-medium bg-gradient-to-t from-white to-[#00C0FF] bg-clip-text'>DAO-Ready Governance</div>
+                                    <div className='text-neutral text-sm font-medium bg-gradient-to-t from-white to-[#00C0FF] bg-clip-text'>{t('features.daoGovernance.title')}</div>
                                     <div className='text-neutral text-xs mt-1'>
-                                        A portion of reserves is allocated for future decentralized decision-making.
+                                        {t('features.daoGovernance.description')}
                                     </div>
                                 </BoxFeauture>
                             </div>

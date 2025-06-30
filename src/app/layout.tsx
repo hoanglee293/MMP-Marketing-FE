@@ -46,6 +46,13 @@ export default function RootLayout({
   const pathname = usePathname();
   useAnalytics();
 
+  const checkPathname = () => {
+    if (pathname === '/overview' || pathname === '/mmp-info') {
+      return false;
+    }
+    return true;
+  }
+
   return (
     <html suppressHydrationWarning className="dark">
       <head>
@@ -73,7 +80,7 @@ export default function RootLayout({
             <NotifyProvider>
               <div className="min-h-screen bg-[#747474] dark:bg-gray-950 transition-colors duration-300 font-gothic-a1 flex flex-col">
                 <Header />
-                {pathname !== '/overview' && <VideoBackground />}
+                {checkPathname() && <VideoBackground />}
                 <main className="overflow-x-hidden flex-1 z-30 relative w-full flex flex-col">{children}</main>
               </div>
               <ToastContainer theme="dark" />

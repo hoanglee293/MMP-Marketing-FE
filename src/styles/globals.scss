@@ -73,9 +73,11 @@ body {
   background-size: cover;
   background-position: center;
   background-repeat: no-repeat;
-  background-color: rgba(14, 9, 62, 0.6); /* màu nền bán trong suốt */
-  backdrop-filter: blur(10px);            /* làm mờ nền phía sau */
-  -webkit-backdrop-filter: blur(10px);   
+  background-color: rgba(14, 9, 62, 0.6);
+  /* màu nền bán trong suốt */
+  backdrop-filter: blur(10px);
+  /* làm mờ nền phía sau */
+  -webkit-backdrop-filter: blur(10px);
   // background-color: rgba(2, 6, 22, 0.74);
 }
 
@@ -103,7 +105,7 @@ body {
   text-align: center;
   /* Black text with gradient border */
   color: #000;
-  
+
   -webkit-text-stroke-width: 2px;
   -webkit-text-stroke-color: transparent;
   background: linear-gradient(90deg, #F70FFF -0.1%, #12D6DF 92.2%);
@@ -112,7 +114,7 @@ body {
   -webkit-text-fill-color: transparent;
 
   font-family: Kanit;
-  
+
   font-style: normal;
   font-weight: 700;
   line-height: normal;
@@ -129,12 +131,22 @@ body {
   filter: blur(131.85223388671875px);
 }
 
+.eclipse-box-section {
+  background: linear-gradient(180deg, #15DFFD 0%, #2c1c5f 100%);
+  stroke-width: 3px;
+  stroke: var(--background_light, #15DFFD);
+  border-radius: 50%;
+  width: 178px;
+  height: 42px;
+}
+
 /* Custom Animations */
 @keyframes fadeInUp {
   from {
     opacity: 0;
     transform: translateY(30px);
   }
+
   to {
     opacity: 1;
     transform: translateY(0);
@@ -146,10 +158,12 @@ body {
     opacity: 0;
     transform: translateY(30px);
   }
+
   50% {
     opacity: 0;
     transform: translateY(30px);
   }
+
   100% {
     opacity: 1;
     transform: translateY(0);
@@ -161,10 +175,12 @@ body {
     opacity: 0;
     transform: translateY(30px);
   }
+
   70% {
     opacity: 0;
     transform: translateY(30px);
   }
+
   100% {
     opacity: 1;
     transform: translateY(0);
@@ -176,6 +192,7 @@ body {
     opacity: 0;
     transform: translateX(-30px);
   }
+
   to {
     opacity: 1;
     transform: translateX(0);
@@ -187,6 +204,7 @@ body {
     opacity: 0;
     transform: translateX(30px);
   }
+
   to {
     opacity: 1;
     transform: translateX(0);
@@ -194,27 +212,36 @@ body {
 }
 
 @keyframes float {
-  0%, 100% {
+
+  0%,
+  100% {
     transform: translateY(0px);
   }
+
   50% {
     transform: translateY(-10px);
   }
 }
 
 @keyframes floatDelayed {
-  0%, 100% {
+
+  0%,
+  100% {
     transform: translateY(0px);
   }
+
   50% {
     transform: translateY(-15px);
   }
 }
 
 @keyframes pulseSlow {
-  0%, 100% {
+
+  0%,
+  100% {
     opacity: 0.6;
   }
+
   50% {
     opacity: 1;
   }
@@ -225,6 +252,7 @@ body {
     opacity: 0;
     transform: scale(0.8);
   }
+
   to {
     opacity: 1;
     transform: scale(1);
@@ -321,11 +349,11 @@ body {
     background-position: center;
     background-repeat: no-repeat;
   }
-  
+
   .mobile-text-shadow {
     text-shadow: 0px 0px 2px rgba(51, 252, 255, 0.3);
   }
-  
+
   .mobile-safe-area {
     padding-top: env(safe-area-inset-top);
     padding-bottom: env(safe-area-inset-bottom);
@@ -345,12 +373,12 @@ body {
     padding-left: 1rem;
     padding-right: 1rem;
   }
-  
+
   .mobile-text {
     font-size: 0.875rem;
     line-height: 1.25rem;
   }
-  
+
   .mobile-title {
     font-size: 2.5rem;
     line-height: 1;
@@ -362,12 +390,12 @@ body {
     padding-left: 1.5rem;
     padding-right: 1.5rem;
   }
-  
+
   .mobile-text {
     font-size: 1rem;
     line-height: 1.5rem;
   }
-  
+
   .mobile-title {
     font-size: 3.75rem;
     line-height: 1;
@@ -380,23 +408,23 @@ body {
     flex-direction: column;
     gap: 1.5rem;
   }
-  
+
   .features-mobile-image {
     max-height: 300px;
     width: 100%;
     object-fit: cover;
   }
-  
+
   .features-mobile-title {
     font-size: 1.5rem;
     line-height: 1.2;
   }
-  
+
   .features-mobile-text {
     font-size: 0.875rem;
     line-height: 1.4;
   }
-  
+
   .features-mobile-card {
     padding: 1rem;
     margin-bottom: 1rem;
@@ -407,11 +435,11 @@ body {
   .features-tablet-layout {
     gap: 2rem;
   }
-  
+
   .features-tablet-image {
     max-height: 500px;
   }
-  
+
   .features-tablet-title {
     font-size: 2rem;
   }
