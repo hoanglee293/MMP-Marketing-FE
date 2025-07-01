@@ -93,12 +93,6 @@ const ExchangeToken = () => {
           >
             {t('exchangeToken.title')}
           </h2>
-          {/* <h3
-            ref={title2Ref}
-            className={`text-[#DFE0EF] text-[32px] xl:text-[40px] webkit-text-stroke-1 font-bold bg-black/60 xl:min-w-[440px] min-w-[300px] h-full text-center z-10 leading-none animate-fade-in-up-delayed ${title2InView ? 'in-view' : ''}`}
-          >
-            Exchange token
-          </h3> */}
         </div>
         <div className='flex flex-col items-center justify-center gap-4 relative h-[50px] xl:mt-10 mt-5'>
           <p

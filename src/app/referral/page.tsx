@@ -30,31 +30,71 @@ const StatsCardSkeleton = () => (
 
 const ReferralCardSkeleton = () => (
   <div className="bg-dark-300 rounded-lg border border-gray/30 p-3">
-    <div className="flex items-center justify-between mb-2">
-      <div className="flex items-center gap-1">
-        <LoadingSkeleton className="w-8 h-8 rounded-full mr-3" />
-        <LoadingSkeleton className="h-4 w-20" />
+    {/* User Info Row */}
+    <div className="flex items-center justify-between mb-3">
+      <div className="flex items-center gap-2">
+        <LoadingSkeleton className="w-8 h-8 rounded-full" />
+        <div className="flex items-center gap-1">
+          <LoadingSkeleton className="h-4 w-20" />
+          <LoadingSkeleton className="w-6 h-6 rounded" />
+        </div>
       </div>
       <LoadingSkeleton className="h-4 w-12" />
     </div>
-    <div className="grid grid-cols-2 gap-2">
-      <LoadingSkeleton className="h-3 w-16" />
-      <LoadingSkeleton className="h-3 w-12" />
-      <LoadingSkeleton className="h-3 w-14 col-span-2" />
+
+    {/* Join Date */}
+    <LoadingSkeleton className="h-3 w-24 mb-3" />
+
+    {/* Total Earnings */}
+    <div className="mb-3">
+      <LoadingSkeleton className="h-3 w-20 mb-2" />
+      <div className="flex flex-col gap-1">
+        <div className="flex items-center justify-between">
+          <LoadingSkeleton className="h-3 w-8" />
+          <LoadingSkeleton className="h-3 w-16" />
+        </div>
+        <div className="flex items-center justify-between">
+          <LoadingSkeleton className="h-3 w-8" />
+          <LoadingSkeleton className="h-3 w-16" />
+        </div>
+      </div>
+    </div>
+
+    {/* Received Earnings */}
+    <div>
+      <LoadingSkeleton className="h-3 w-16 mb-2" />
+      <div className="flex flex-col gap-1">
+        <div className="flex items-center justify-between">
+          <LoadingSkeleton className="h-3 w-8" />
+          <LoadingSkeleton className="h-3 w-12" />
+        </div>
+        <div className="flex items-center justify-between">
+          <LoadingSkeleton className="h-3 w-8" />
+          <LoadingSkeleton className="h-3 w-12" />
+        </div>
+      </div>
     </div>
   </div>
 )
 
 const TableRowSkeleton = () => (
-  <div className="grid grid-cols-6 gap-2 sm:gap-4 text-white text-xs sm:text-sm py-2 sm:py-3 border-b border-slate-700/50">
+  <div className="grid grid-cols-5 gap-2 sm:gap-4 text-white text-xs sm:text-sm py-2 sm:py-3 border-b border-slate-700/50">
     <div className="flex items-center col-span-2">
       <LoadingSkeleton className="w-6 h-6 sm:w-8 sm:h-8 rounded-full mr-2 sm:mr-3" />
       <LoadingSkeleton className="h-4 w-20" />
     </div>
     <LoadingSkeleton className="h-4 w-16" />
-    <LoadingSkeleton className="h-4 w-12" />
-    <LoadingSkeleton className="h-4 w-16" />
-    <LoadingSkeleton className="h-4 w-12" />
+    <div className="flex flex-col items-center justify-center gap-1">
+      <LoadingSkeleton className="h-3 w-12" />
+      <LoadingSkeleton className="h-3 w-10" />
+    </div>
+    <div className="flex flex-col items-center justify-center gap-1">
+      <LoadingSkeleton className="h-3 w-8" />
+      <LoadingSkeleton className="h-3 w-10" />
+    </div>
+    <div className="flex items-center justify-center">
+      <LoadingSkeleton className="h-4 w-12" />
+    </div>
   </div>
 )
 
@@ -80,6 +120,10 @@ interface ReferralUser {
   total_reward_sol: number;
   total_reward_mmp: number;
   total_reward_mpb: number;
+  pending_reward_sol: number;
+  pending_reward_mmp: number;
+  wait_balance_reward_sol: number;
+  wait_balance_reward_mmp: number;
   status: string;
 }
 
@@ -111,6 +155,97 @@ const getLocaleFromLang = (lang: string): string => {
     'jp': 'ja-JP'
   };
   return localeMap[lang] || 'en-US';
+};
+
+/**
+ * Fix floating-point precision issues in JavaScript
+ * @param num - Number to fix
+ * @param decimals - Number of decimal places (default: 8)
+ * @returns Fixed number
+ */
+const fixFloatingPoint = (num: number, decimals: number = 8): number => {
+  const result = parseFloat(num.toFixed(decimals));
+
+  // Test case: 0.00004 + 0.00005 + 0.00005 should equal 0.00014, not 0.00014000000000000001
+  if (Math.abs(num - 0.00014) < 0.000001) {
+    console.log('Fixed floating-point precision issue:', { original: num, fixed: result });
+  }
+
+  return result;
+};
+
+/**
+ * Calculate total SOL rewards for a referral user
+ * Total = Đã nhận (total_reward_sol) + Đang chờ (pending_reward_sol) + Chờ balance (wait_balance_reward_sol)
+ * 
+ * Note: Uses fixFloatingPoint() to prevent JavaScript floating-point precision issues
+ * Example: 0.00004 + 0.00005 + 0.00005 = 0.00014 (not 0.00014000000000000001)
+ * 
+ * @param user - ReferralUser object containing reward data
+ * @returns Total SOL rewards as number
+ */
+const calculateTotalSolRewards = (user: ReferralUser): number => {
+  if (!validateUserData(user)) {
+    return 0;
+  }
+
+  // Fix floating-point precision issue
+  const total = fixFloatingPoint(user.total_reward_sol + user.pending_reward_sol + user.wait_balance_reward_sol);
+
+  console.log(`SOL Calculation for ${user.sol_address}:`, {
+    total_reward_sol: user.total_reward_sol,
+    pending_reward_sol: user.pending_reward_sol,
+    wait_balance_reward_sol: user.wait_balance_reward_sol,
+    total: total
+  });
+  return total;
+};
+
+/**
+ * Calculate total MMP rewards for a referral user
+ * Total = Đã nhận (total_reward_mmp) + Đang chờ (pending_reward_mmp) + Chờ balance (wait_balance_reward_mmp)
+ * 
+ * Note: Uses fixFloatingPoint() to prevent JavaScript floating-point precision issues
+ * 
+ * @param user - ReferralUser object containing reward data
+ * @returns Total MMP rewards as number
+ */
+const calculateTotalMmpRewards = (user: ReferralUser): number => {
+  if (!validateUserData(user)) {
+    return 0;
+  }
+
+  // Fix floating-point precision issue
+  const total = fixFloatingPoint(user.total_reward_mmp + user.pending_reward_mmp + user.wait_balance_reward_mmp);
+
+  console.log(`MMP Calculation for ${user.sol_address}:`, {
+    total_reward_mmp: user.total_reward_mmp,
+    pending_reward_mmp: user.pending_reward_mmp,
+    wait_balance_reward_mmp: user.wait_balance_reward_mmp,
+    total: total
+  });
+  return total;
+};
+
+// Helper function to validate user data
+const validateUserData = (user: ReferralUser): boolean => {
+  const hasValidSolRewards = typeof user.total_reward_sol === 'number' &&
+    typeof user.pending_reward_sol === 'number' &&
+    typeof user.wait_balance_reward_sol === 'number';
+
+  const hasValidMmpRewards = typeof user.total_reward_mmp === 'number' &&
+    typeof user.pending_reward_mmp === 'number' &&
+    typeof user.wait_balance_reward_mmp === 'number';
+
+  if (!hasValidSolRewards || !hasValidMmpRewards) {
+    console.error(`Invalid data for user ${user.sol_address}:`, {
+      sol: { total: user.total_reward_sol, pending: user.pending_reward_sol, wait: user.wait_balance_reward_sol },
+      mmp: { total: user.total_reward_mmp, pending: user.pending_reward_mmp, wait: user.wait_balance_reward_mmp }
+    });
+    return false;
+  }
+
+  return true;
 };
 
 export default function ReferralDashboard() {
@@ -278,10 +413,10 @@ export default function ReferralDashboard() {
                     <p className="text-neutral text-sm sm:text-base mb-1">{t('referral.totalEarnings')}</p>
                     <div className="flex flex-col sm:flex-row gap-1 sm:gap-2 justify-around">
                       <p className="text-xs sm:text-sm xl:text-base font-medium text-white">
-                        SOL: {referralStatistics?.total_reward_sol || 0}
+                        SOL: {fixFloatingPoint(referralStatistics?.total_reward_sol + referralStatistics?.total_wait_balance_reward_sol + referralStatistics?.total_pending_reward_sol)}
                       </p>
                       <p className="text-xs sm:text-sm xl:text-base font-medium text-white">
-                        MMP: {referralStatistics?.total_reward_mmp || 0}
+                        MMP: {fixFloatingPoint(referralStatistics?.total_reward_mmp + referralStatistics?.total_wait_balance_reward_mmp + referralStatistics?.total_pending_reward_mmp)}
                       </p>
                     </div>
                   </Card>
@@ -334,32 +469,67 @@ export default function ReferralDashboard() {
                   ) : referralStatistics && referralStatistics.referred_wallets.length > 0 ? (
                     <div className="overflow-y-scroll space-y-3">
                       {referralStatistics.referred_wallets.map((user: ReferralUser) => (
-                        <div key={user.wallet_id} className="bg-dark-300 rounded-lg  border border-gray/30">
-                          <div className="flex items-center justify-between mb-2">
-                            <div className="flex items-center gap-1"> <div className="w-8 h-8 bg-gradient-to-r from-purple to-cyan rounded-full flex items-center justify-center text-xs font-bold mr-3 shrink-0">
-                              {user.sol_address.charAt(0).toUpperCase()}
+                        <div key={user.wallet_id} className="bg-dark-300 rounded-lg border border-gray/30 p-3">
+                          {/* User Info Row */}
+                          <div className="flex items-center justify-between mb-3">
+                            <div className="flex items-center gap-2">
+                              <div className="w-8 h-8 bg-gradient-to-r from-purple to-cyan rounded-full flex items-center justify-center text-xs font-bold shrink-0">
+                                {user.sol_address.charAt(0).toUpperCase()}
+                              </div>
+                              <div className="flex items-center gap-1">
+                                <span className="font-medium text-sm truncate text-neutral">{truncateString(user.sol_address, 12)}</span>
+                                <Button
+                                  onClick={() => handleCopyAddress(user.sol_address)}
+                                  variant="ghost"
+                                  size="sm"
+                                  className="text-neutral hover:text-white bg-transparent border-none cursor-pointer p-1 shrink-0"
+                                >
+                                  {copied ? (
+                                    <Check className="w-3 h-3 text-green-500" />
+                                  ) : (
+                                    <Copy className="w-3 h-3" />
+                                  )}
+                                </Button>
+                              </div>
                             </div>
-                              <span className="font-medium text-sm truncate text-neutral">{truncateString(user.sol_address, 12)}</span></div>
-                            <div className="flex flex-col items-end justify-center font-medium">
-                              <div className="text-yellow-500 cursor-pointer hover:underline transition-colors" onClick={() => openDetailModal(user)}>{t('referral.detail')}</div>
+                            <div className="text-yellow-500 cursor-pointer hover:underline transition-colors text-sm" onClick={() => openDetailModal(user)}>
+                              {t('referral.detail')}
                             </div>
                           </div>
-                          <div className="grid grid-cols-2 gap-2 text-xs">
-                            <div className="text-slate-300">
-                              <span className="text-neutral">Join: </span>
-                              {new Date(user.created_at).toLocaleDateString(currentLocale, {
-                                year: 'numeric',
-                                month: 'short',
-                                day: 'numeric'
-                              })}
+
+                          {/* Join Date */}
+                          <div className="text-slate-300 text-xs mb-3">
+                            <span className="text-neutral">{t('referral.joinDate')}: </span>
+                            {new Date(user.created_at).toLocaleDateString(currentLocale, {
+                              year: 'numeric',
+                              month: 'short',
+                              day: 'numeric'
+                            })}
+                          </div>
+
+                          {/* Total Earnings */}
+                          <div className="mb-3 flex justify-between">
+                            <div className="text-neutral text-xs mb-2">{t('referral.totalEarnings')}:</div>
+                            <div className="flex gap-3">
+                              <span className="font-bold text-green-500">
+                                {calculateTotalSolRewards(user)} <span className="text-xs text-purple-500 ml-1">SOL</span>
+                              </span>
+                              <span className="font-bold text-green-500">
+                                {calculateTotalMmpRewards(user)} <span className="text-xs text-primary ml-1">MMP</span>
+                              </span>
                             </div>
-                            <div className="text-right">
-                              <span className="text-neutral">SOL: </span>
-                              <span className="font-bold text-green-500">{user.total_reward_sol.toFixed(2)}</span>
-                            </div>
-                            <div className="text-right col-span-2">
-                              <span className="text-neutral">MMP: </span>
-                              <span className="font-bold text-green-500">{user.total_reward_mmp}</span>
+                          </div>
+
+                          {/* Received Earnings */}
+                          <div className="flex justify-between">
+                            <div className="text-neutral text-xs mb-2">{t('referral.receivedEarnings')}:</div>
+                            <div className="flex gap-3">
+                              <span className="font-semibold text-green-500">
+                                {user.total_reward_sol} <span className="text-xs text-purple-500 ml-1">SOL</span>
+                              </span>
+                              <span className="font-semibold text-green-500">
+                                {user.total_reward_mmp} <span className="text-xs text-primary ml-1">MMP</span>
+                              </span>
                             </div>
                           </div>
                         </div>
@@ -374,12 +544,11 @@ export default function ReferralDashboard() {
 
                 {/* Desktop Table Layout */}
                 <div className="hidden sm:flex flex-col border border-solid border-gray/30 rounded-xl p-2 sm:p-4">
-                  <div className="grid grid-cols-7 gap-2 sm:gap-4 text-neutral text-xs sm:text-sm font-medium border-b border-t-0 border-l-0 border-r-0 border-solid border-gray/30 p-2 sm:p-4 pt-0">
+                  <div className="grid grid-cols-6 gap-2 sm:gap-4 text-neutral text-xs sm:text-sm font-medium border-b border-t-0 border-l-0 border-r-0 border-solid border-gray/30 p-2 sm:p-4 pt-0">
                     <div className="text-neutral col-span-2">{t('referral.user')}</div>
                     <div className="text-neutral">{t('referral.joinDate')}</div>
-                    <div className="text-neutral text-right">{t('referral.earnings')} (SOL)</div>
-                    <div className="text-neutral text-right">{t('referral.earnings')} (MMP)</div>
-
+                    <div className="text-neutral text-center">{t('referral.totalEarnings')}</div>
+                    <div className="text-neutral text-center">{t('referral.receivedEarnings')}</div>
                   </div>
 
                   {/* Table Data */}
@@ -392,7 +561,7 @@ export default function ReferralDashboard() {
                   ) : referralStatistics && referralStatistics.referred_wallets.length > 0 ? (
                     <div className="space-y-2 sm:space-y-3">
                       {referralStatistics.referred_wallets.map((user: ReferralUser) => (
-                        <div key={user.wallet_id} className="grid grid-cols-7 gap-2 sm:gap-4 text-white text-xs sm:text-sm py-2 sm:py-3 border-b border-slate-700/50 hover:bg-slate-700/20 rounded-lg px-1 sm:px-2 transition-colors last:border-b-0">
+                        <div key={user.wallet_id} className="grid grid-cols-6 gap-2 sm:gap-4 text-white text-xs sm:text-sm py-2 sm:py-3 border-b border-slate-700/50 hover:bg-slate-700/20 rounded-lg px-1 sm:px-2 transition-colors last:border-b-0">
                           <div className="flex items-center col-span-2">
                             <div className="w-6 h-6 sm:w-8 sm:h-8 bg-gradient-to-r from-purple to-cyan rounded-full flex items-center justify-center text-xs font-bold mr-2 sm:mr-3 shrink-0">
                               {user.sol_address.charAt(0).toUpperCase()}
@@ -417,13 +586,46 @@ export default function ReferralDashboard() {
                               day: 'numeric'
                             })}
                           </div>
-                          <div className="flex items-center justify-end lg:mr-[5%] font-bold text-green-500">
-                            {user.total_reward_sol}
+                          <div className="flex flex-col items-center justify-center font-bold text-green-500">
+                            <TooltipProvider>
+                              <Tooltip>
+                                <TooltipTrigger asChild>
+                                  <span className="cursor-help">
+                                    {calculateTotalSolRewards(user)} <span className="text-xs text-purple-500 ml-1">SOL</span>
+                                  </span>
+                                </TooltipTrigger>
+                                <TooltipContent className="bg-gray-900 border-gray-700 text-white max-w-xs">
+                                  <p className="text-xs text-gray-300 mt-1">
+                                    {t('referral.received')}: {user.total_reward_sol} SOL<br />
+                                    {t('referral.unqualified')}: {user.pending_reward_sol} SOL<br />
+                                    {t('referral.pending')}: {user.wait_balance_reward_sol} SOL
+                                  </p>
+                                </TooltipContent>
+                              </Tooltip>
+                            </TooltipProvider>
+                            <TooltipProvider>
+                              <Tooltip>
+                                <TooltipTrigger asChild>
+                                  <span className="cursor-help">
+                                    {calculateTotalMmpRewards(user)} <span className="text-xs text-primary ml-1">MMP</span>
+                                  </span>
+                                </TooltipTrigger>
+                                <TooltipContent className="bg-gray-900 border-gray-700 text-white max-w-xs">
+                                  <p className="text-xs text-gray-300 mt-1">
+                                    {t('referral.received')}: {user.total_reward_mmp} MMP<br />
+                                    {t('referral.unqualified')}: {user.pending_reward_mmp} MMP<br />
+                                    {t('referral.pending')}: {user.wait_balance_reward_mmp} MMP
+                                  </p>
+                                </TooltipContent>
+                              </Tooltip>
+                            </TooltipProvider>
                           </div>
-                          <div className="flex flex-col items-end justify-center font-bold">
-                            <div className="text-green-500">{user.total_reward_mmp ?? 0} <span className="text-xs text-neutral">MMP</span></div>
+
+                          <div className="flex flex-col items-center justify-center font-bold text-green-500">
+                            <div>{user.total_reward_sol} <span className="text-xs text-purple-500 ml-1">SOL</span></div>
+                            <div>{user.total_reward_mmp} <span className="text-xs text-primary ml-1">MMP</span></div>
                           </div>
-                          <div className="flex flex-col items-end justify-center font-medium">
+                          <div className="flex flex-col items-center justify-center font-medium">
                             <div className="text-yellow-500 cursor-pointer hover:underline transition-colors" onClick={() => openDetailModal(user)}>{t('referral.detail')}</div>
                           </div>
                         </div>
@@ -446,7 +648,7 @@ export default function ReferralDashboard() {
         <DialogContent className="bg-dark-200 border-gray/30 max-w-4xl max-h-[80vh] overflow-y-auto mx-2 sm:mx-auto">
           <DialogHeader>
             <DialogTitle className="text-neutral text-lg font-medium flex items-center justify-between">
-              <span>{t('referral.referralDetail') || 'Referral Detail'}</span>
+              <span>{t('referral.referralDetail')}</span>
             </DialogTitle>
           </DialogHeader>
 
@@ -489,7 +691,7 @@ export default function ReferralDashboard() {
 
               {/* Referral History */}
               <div className="bg-dark-300 rounded-lg py-3 sm:py-4 border border-gray/30">
-                <h3 className="text-neutral font-medium mb-3 px-3 sm:px-0">{t('referral.referralHistory') || 'Referral History'}</h3>
+                <h3 className="text-neutral font-medium mb-3 px-3 sm:px-0">{t('referral.referralHistory')}</h3>
 
                 {isLoadingReferralDetail ? (
                   <div className="space-y-3 sm:space-y-0">
@@ -527,20 +729,20 @@ export default function ReferralDashboard() {
                       {referralDetail.data.map((item: any) => (
                         <div key={item.id} className="bg-gray-900/60 rounded-lg p-3 mb-3 border border-gray/20">
                           <div className="grid grid-cols-2 gap-2 text-xs sm:text-sm">
-                            <div className="text-neutral">{t('referral.reward') || 'Reward'}:</div>
+                            <div className="text-neutral">{t('referral.reward')}:</div>
                             <div className="text-white font-medium">{item.reward_amount}</div>
 
-                            <div className="text-neutral">{t('referral.token') || 'Token'}:</div>
+                            <div className="text-neutral">{t('referral.token')}:</div>
                             <div className={`text-white font-medium ${item.reward_token === 'SOL' ? 'text-purple-500' : 'text-primary-100'}`}>
                               {item.reward_token}
                             </div>
 
-                            <div className="text-neutral">{t('referral.txHash') || 'Tx Hash'}:</div>
+                            <div className="text-neutral">{t('referral.txHash')}:</div>
                             <div className="text-white font-mono text-xs break-all">
                               {truncateString(item.tx_hash, 20)}
                             </div>
-                            <div className="text-neutral">{t('referral.status') || 'Status'}:</div>
-                            <div className="text-neutral">{t('referral.date') || 'Date'}:</div>
+                            <div className="text-neutral">{t('referral.status')}:</div>
+                            <div className="text-neutral">{t('referral.date')}:</div>
                             <div className="text-neutral text-xs">
                               {new Date(item.created_at).toLocaleDateString(currentLocale, {
                                 year: 'numeric',
@@ -560,17 +762,17 @@ export default function ReferralDashboard() {
                       <table className="min-w-full text-sm">
                         <thead>
                           <tr className="text-neutral border-b border-gray/30">
-                            <th className="py-2 px-3 text-left">{t('referral.reward') || 'Reward'}</th>
-                            <th className="py-2 px-3 text-left">{t('referral.token') || 'Token'}</th>
-                            <th className="py-2 px-3 text-left">{t('referral.txHash') || 'Transaction Hash'}</th>
-                            <th className="py-2 px-3 text-left">{t('referral.status') || 'Status'}</th>
-                            <th className="py-2 px-3 text-left">{t('referral.date') || 'Date'}</th>
+                            <th className="py-2 px-3 text-left">{t('referral.reward')}</th>
+                            <th className="py-2 px-3 text-left">{t('referral.token')}</th>
+                            <th className="py-2 px-3 text-left">{t('referral.txHash')}</th>
+                            <th className="py-2 px-3 text-left">{t('referral.status')}</th>
+                            <th className="py-2 px-3 text-left">{t('referral.date')}</th>
                           </tr>
                         </thead>
                         <tbody>
                           {referralDetail.data.map((item: any) => (
                             <tr key={item.id} className="border-b border-gray/20 hover:bg-slate-700/10">
-                              <td className="py-2 px-3 text-white">{item.reward_amount}</td>
+                              <td className="py-2 px-3 text-white">{Number(item.reward_amount).toFixed(5)}</td>
                               <td className={`py-2 px-3 text-white ${item.reward_token === 'SOL' ? 'text-purple-500' : 'text-primary-100'}`}>{item.reward_token}</td>
                               <td className="py-2 px-3 text-white font-mono text-xs">
                                 {truncateString(item.tx_hash, 15)}
@@ -605,7 +807,7 @@ export default function ReferralDashboard() {
                   </div>
                 ) : (
                   <div className="text-center py-8 text-neutral px-3 sm:px-0">
-                    {t('referral.noHistory') || 'No referral history found'}
+                    {t('referral.noHistory')}
                   </div>
                 )}
               </div>

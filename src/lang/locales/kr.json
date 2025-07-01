@@ -442,6 +442,10 @@
         "copied": "클립보드에 복사되었습니다!",
         "totalReferrals": "총 참여 인원",
         "totalEarnings": "총 수익",
+        "receivedEarnings": "수령된 수익",
+        "totalCalculation": "총계 = 수령 + 대기 + 잔액 대기",
+        "received": "수령",
+        "waitBalance": "잔액 대기",
         "activeReferrals": "활성 레퍼럴",
         "bjReferrals": "BJ 레퍼럴",
         "normalReferrals": "일반 레퍼럴",
@@ -485,6 +489,8 @@
             "level7": "레벨 7"
         },
         "structure": {
+            "regular_customer": "일반 고객",
+            "bj_influencer": "BJ / 인플루언서",
             "your_reward": "당신의 보상",
             "total_commission": "총 수수료",
             "paid_in": "으로 지급",
@@ -493,7 +499,8 @@
             "when_downline_buys_mpb": "당신의 하위 유저가 MPB를 구매할 때",
             "when_downline_buys_mmp": "당신의 하위 유저가 MMP를 구매할 때"
         },
-        "noReferredUsers": "아직 추천된 사용자가 없습니다."
+        "noReferredUsers": "아직 추천된 사용자가 없습니다.",
+        "noHistory": "추천 내역을 찾을 수 없습니다"
     },
     "referral_page": {
         "title": "Referral"

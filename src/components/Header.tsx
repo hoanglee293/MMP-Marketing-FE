@@ -27,7 +27,7 @@ const Header = () => {
 
   const tabs = [
     { id: 'overview', href: '/overview', label: t('header.overview'), icon: '📊', isActive: true },
-    // { id: 'mmp-info', href: '/mmp-info', label: t('header.mmpInfo'), icon: '📊', isActive: true },
+    { id: 'mmp-info', href: '/mmp-info', label: t('header.mmpInfo'), icon: '📊', isActive: true },
     { id: 'swap', href: '/swap', label: t('header.swap'), icon: <ArrowDownUp className='w-3 h-3 sm:w-4 sm:h-4' />, isActive: true },
     { id: 'deposit', href: '/deposit', label: t('header.deposit'), icon: '💰', isActive: isAuthenticated },
     { id: 'withdraw', href: '/withdraw', label: t('header.withdraw'), icon: '💰', isActive: isAuthenticated && loginMethod != "phantom" },
@@ -170,7 +170,7 @@ const Header = () => {
           </Link>
 
           {/* Desktop Navigation Tabs */}
-          <nav className="hidden md:flex flex-1 gap-4 lg:gap-8 xl:gap-[100px] justify-center items-center">
+          <nav className="hidden md:flex flex-1 gap-4 lg:gap-8 xl:gap-[10vh] justify-center items-center">
             {tabs.filter((tab) => tab.isActive).map((tab) => (
               <Link
                 className={cn(

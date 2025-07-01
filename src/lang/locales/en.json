@@ -485,6 +485,10 @@
         "copied": "Copied to clipboard!",
         "totalReferrals": "Total Referrals",
         "totalEarnings": "Total Earnings",
+        "receivedEarnings": "Received Earnings",
+        "totalCalculation": "Total = Received + Pending + Wait Balance",
+        "received": "Received",
+        "waitBalance": "Wait Balance",
         "activeReferrals": "Active Referrals",
         "bjReferrals": "BJ Referrals",
         "normalReferrals": "Normal Referrals",
@@ -538,7 +542,8 @@
             "regular_customer": "Regular Customer",
             "bj_influencer": "BJ / Influencer"
         },
-        "noReferredUsers": "No referred users yet."
+        "noReferredUsers": "No referred users yet.",
+        "noHistory": "No referral history found"
     },
     "whitePaper": {
         "title": "MEMEPUMP Whitepaper",

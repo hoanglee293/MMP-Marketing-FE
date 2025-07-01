@@ -439,6 +439,10 @@
         "copied": "Đã sao chép vào clipboard!",
         "totalReferrals": "Tổng số lượt giới thiệu",
         "totalEarnings": "Tổng thu nhập",
+        "receivedEarnings": "Đã nhận",
+        "totalCalculation": "Tổng = Đã nhận + Đang chờ + Chờ balance",
+        "received": "Đã nhận",
+        "waitBalance": "Chờ balance",
         "activeReferrals": "Lượt giới thiệu đang hoạt động",
         "bjReferrals": "Lượt giới thiệu BJ",
         "normalReferrals": "Lượt giới thiệu thường",
@@ -492,7 +496,8 @@
             "when_downline_buys_mpb": "Khi cấp dưới của bạn mua MPB",
             "when_downline_buys_mmp": "Khi cấp dưới của bạn mua MMP"
         },
-        "noReferredUsers": "Chưa có người dùng nào được giới thiệu."
+        "noReferredUsers": "Chưa có người dùng nào được giới thiệu.",
+        "noHistory": "Không tìm thấy lịch sử giới thiệu"
     },
     "referral_page": {
         "title": "Referral"
@@ -1293,5 +1298,11 @@
         "teams": "Đội ngũ",
         "roadmap": "Lộ trình",
         "footer": "Chân trang"
+    },
+    "footer": {
+        "swapNow": "Đổi ngay",
+        "leadFuture": "Dẫn đầu tư",
+        "swapDescription": "Tham gia cộng đồng MEMEPUMP để tạo ra các giao dịch sáng tạo - giao dịch nhanh chóng, nhận thưởng ngay lập tức, và khai thác cơ hội kiếm lợi nhuận vô tận!",
+        "communityDescription": "Tham gia cộng đồng MEMEPUMP để bắt đầu đầu tư DeFi - kết nối với cộng đồng chính thức thông qua Telegram, Facebook, Twitter ngay hôm nay!"
     }
 }

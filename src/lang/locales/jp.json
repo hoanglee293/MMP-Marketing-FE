@@ -438,6 +438,10 @@
         "copied": "クリップボードにコピーしました！",
         "totalReferrals": "総紹介数",
         "totalEarnings": "総収益",
+        "receivedEarnings": "受取済み収益",
+        "totalCalculation": "合計 = 受取済み + 保留中 + 残高待機",
+        "received": "受取済み",
+        "waitBalance": "残高待機",
         "activeReferrals": "アクティブな紹介",
         "bjReferrals": "BJ紹介",
         "normalReferrals": "通常、リファラー",
@@ -491,7 +495,8 @@
             "when_downline_buys_mpb": "ダウンラインがMPBを購入する場合",
             "when_downline_buys_mmp": "ダウンラインがMMPを購入する場合"
         },
-        "noReferredUsers": "まだ紹介されたユーザーがいません。"
+        "noReferredUsers": "まだ紹介されたユーザーがいません。",
+        "noHistory": "紹介履歴が見つかりません"
     },
     "referral_page": {
         "title": "Referral"

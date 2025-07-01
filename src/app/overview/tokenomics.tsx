@@ -133,8 +133,8 @@ const Tokenomics = () => {
 
                 {/* Desktop Tokenomics Chart */}
                 <div className='hidden xl:flex items-center justify-center flex-1 relative z-10 w-full h-full'>
-                    <img src="/tokenomics.png" alt="tokenomics" className={` ${isClient && windowWidth < 2049 ? 'max-w-[500px]' : 'max-w-[700px]'} h-full object-contain`} />
-                    <div className={`absolute hidden xl:flex items-end justify-center gap-4 ${isClient && windowWidth < 1800 ? 'top-[7%] left-[27%]' : 'top-[8%] left-[26%]'}`}>
+                    <img src="/tokenomics.png" alt="tokenomics" className={`overflow-hidden z-20 relative ${isClient && windowWidth < 2049 ? 'max-w-[500px]' : 'max-w-[700px]'} h-full object-contain`} />
+                    <div className={`absolute hidden xl:flex items-end justify-center gap-4 z-10 ${isClient && windowWidth < 1800 ? 'top-[7%] left-[27%]' : 'top-[8%] left-[26%]'}`}>
                         <BorderTokenomic primaryColor='#3AB3D9' secondaryColor='#3AB3D9' tag='18%' tagTextColor='#3AB3D9'>
                             <div className='flex flex-col items-center justify-center gap-4 relative'>
                                 <p

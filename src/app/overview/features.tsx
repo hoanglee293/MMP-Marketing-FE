@@ -57,7 +57,7 @@ const features = () => {
     });
 
     return (
-        <div className='bg-feature bg-[#020616BD]/60 z-50 w-full min-h-screen sm:h-svh flex items-center justify-center relative pt-10 sm:pt-16 md:pt-20 pb-6 xl:pb-0 overflow-hidden'>
+        <div className='bg-feature bg-[#020616BD]/60 z-50 w-full min-h-screen sm:h-svh flex items-center justify-center relative pt-10 sm:pt-14  pb-6 xl:pb-0 overflow-hidden'>
             <div className='absolute top-0 right-0 w-full h-full bg-[#0f121ad6] backdrop-blur-lg' />
             <div className='eclipse-box absolute top-[10%] right-[10%] w-[150px] h-[150px] sm:w-[200px] sm:h-[200px] md:w-[254px] md:h-[254px] z-20' style={{ background: '#15dffd63', filter: 'blur(30px) sm:blur(40px) md:blur(50px)' }} />
 

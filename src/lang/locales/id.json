@@ -319,6 +319,10 @@
         "copied": "Telah disalin ke clipboard!",
         "totalReferrals": "Total Peserta",
         "totalEarnings": "Total Pendapatan",
+        "receivedEarnings": "Pendapatan Diterima",
+        "totalCalculation": "Total = Diterima + Menunggu + Tunggu Saldo",
+        "received": "Diterima",
+        "waitBalance": "Tunggu Saldo",
         "activeReferrals": "Referral Aktif",
         "bjReferrals": "Referral BJ",
         "normalReferrals": "Referral Normal",
@@ -362,6 +366,8 @@
             "level7": "Level 7"
         },
         "structure": {
+            "regular_customer": "Pelanggan Biasa",
+            "bj_influencer": "BJ / Influencer",
             "your_reward": "Hadiah Anda",
             "total_commission": "Total Komisi",
             "paid_in": "dibayarkan dalam",
@@ -370,7 +376,8 @@
             "when_downline_buys_mpb": "Ketika pengguna downline Anda membeli MPB",
             "when_downline_buys_mmp": "Ketika pengguna downline Anda membeli MMP"
         },
-        "noReferredUsers": "Belum ada pengguna yang direferensikan."
+        "noReferredUsers": "Belum ada pengguna yang direferensikan.",
+        "noHistory": "Tidak ada riwayat referral yang ditemukan"
     },
     "referral_page": {
         "title": "Referral"

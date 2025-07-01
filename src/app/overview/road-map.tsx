@@ -65,9 +65,9 @@ const RoadMap = () => {
 
 
                         {/* Phases */}
-                        <div className="xl:flex inline-block">
+                        <div className="sm:flex inline-block">
                             {phases.map((phase, index) => (
-                                <div key={index} className="relative flex-1">
+                                <div key={index} className="relative flex-1 sm:basis-1/2 xl:basis-1/4">
                                     {/* Phase Card */}
                                     <div className="bg-transparent backdrop-blur-sm border-t border-b-0 border-l-0 border-r-0 border-white border-solid xl:pt-10 pt-5 p-6 pl-0  transition-all duration-300 hover:border-cyan-500/30">
                                         <h3 className="text-2xl xl:text-3xl font-bold bg-gradient-to-t from-[#1366FF] to-[#00C0FF] bg-clip-text mb-2">{phase.title}</h3>
