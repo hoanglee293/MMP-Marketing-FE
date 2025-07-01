@@ -57,6 +57,18 @@ const getNestedArray = (translations: Translations, key: string): string[] => {
   return Array.isArray(result) ? result : [];
 };
 
+// Hàm hỗ trợ lấy object từ object lồng nhau
+const getNestedObject = (translations: Translations, key: string): any => {
+  const result = key.split('.').reduce((obj: any, k) => {
+    if (typeof obj === 'object' && obj !== null && k in obj) {
+      return obj[k];
+    }
+    return undefined;
+  }, translations as Translations);
+  
+  return typeof result === 'object' && result !== null ? result : {};
+};
+
 // Export the translation function that takes language as a parameter
 export const getTranslation = (lang: LangCodes) => (key: string) => {
   const translations = langConfig.langsApp[lang] || {};
@@ -67,6 +79,12 @@ export const getTranslation = (lang: LangCodes) => (key: string) => {
 export const getArrayTranslation = (lang: LangCodes) => (key: string) => {
   const translations = langConfig.langsApp[lang] || {};
   return getNestedArray(translations, key);
+};
+
+// Export the object translation function
+export const getObjectTranslation = (lang: LangCodes) => (key: string) => {
+  const translations = langConfig.langsApp[lang] || {};
+  return getNestedObject(translations, key);
 };
 
 // Re-export useLang and LangProvider

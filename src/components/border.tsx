@@ -20,49 +20,49 @@ const BoxFeauture = ({ children }: { children: React.ReactNode }) => {
         <div className="relative w-[90%] h-auto aspect-[417/261]">
             {/* Top decorative SVG - responsive positioning */}
             <svg className={`absolute top-[0px] right-[8%] z-50 ${isClient && windowWidth < 1280 ? 'w-[20%] max-w-[80px]' : 'w-[146px]'} h-auto`} xmlns="http://www.w3.org/2000/svg" width="146" height="14" viewBox="0 0 146 14" fill="none">
-                                <path d="M14.1652 13.4724L0.708984 1.90735e-05H9.67977L23.136 13.4724L14.1652 13.4724Z" fill="url(#paint0_linear_412_2619)" />
-                                <path d="M31.5978 13.4724L18.1416 1.90735e-05H27.1124L40.5686 13.4724L31.5978 13.4724Z" fill="url(#paint1_linear_412_2619)" />
-                                <path d="M49.0314 13.4724L35.5752 1.90735e-05H44.546L58.0022 13.4724L49.0314 13.4724Z" fill="url(#paint2_linear_412_2619)" />
-                                <path d="M66.464 13.4724L53.0078 1.90735e-05H61.9786L75.4348 13.4724L66.464 13.4724Z" fill="url(#paint3_linear_412_2619)" />
-                                <path d="M83.8976 13.4724L70.4414 1.90735e-05H79.4122L92.8684 13.4724L83.8976 13.4724Z" fill="url(#paint4_linear_412_2619)" />
-                                <path d="M101.33 13.4724L87.874 1.90735e-05H96.8448L110.301 13.4724L101.33 13.4724Z" fill="url(#paint5_linear_412_2619)" />
-                                <path d="M118.764 13.4724L105.308 1.90735e-05H114.278L127.735 13.4724L118.764 13.4724Z" fill="url(#paint6_linear_412_2619)" />
-                                <path d="M136.196 13.4724L122.74 1.90735e-05H131.711L145.167 13.4724L136.196 13.4724Z" fill="url(#paint7_linear_412_2619)" />
-                                <defs>
-                                    <linearGradient id="paint0_linear_412_2619" x1="7.22003" y1="13.5241" x2="7.2739" y2="0.991515" gradientUnits="userSpaceOnUse">
-                                        <stop stop-color="white" />
-                                        <stop offset="1" stop-color="#005EFF" />
-                                    </linearGradient>
-                                    <linearGradient id="paint1_linear_412_2619" x1="24.6526" y1="13.5241" x2="24.7065" y2="0.991515" gradientUnits="userSpaceOnUse">
-                                        <stop stop-color="white" />
-                                        <stop offset="1" stop-color="#005EFF" />
-                                    </linearGradient>
-                                    <linearGradient id="paint2_linear_412_2619" x1="42.0862" y1="13.5241" x2="42.1401" y2="0.991515" gradientUnits="userSpaceOnUse">
-                                        <stop stop-color="white" />
-                                        <stop offset="1" stop-color="#005EFF" />
-                                    </linearGradient>
-                                    <linearGradient id="paint3_linear_412_2619" x1="59.5189" y1="13.5241" x2="59.5727" y2="0.991515" gradientUnits="userSpaceOnUse">
-                                        <stop stop-color="white" />
-                                        <stop offset="1" stop-color="#005EFF" />
-                                    </linearGradient>
-                                    <linearGradient id="paint4_linear_412_2619" x1="76.9525" y1="13.5241" x2="77.0063" y2="0.991515" gradientUnits="userSpaceOnUse">
-                                        <stop stop-color="white" />
-                                        <stop offset="1" stop-color="#005EFF" />
-                                    </linearGradient>
-                                    <linearGradient id="paint5_linear_412_2619" x1="94.3851" y1="13.5241" x2="94.4389" y2="0.991515" gradientUnits="userSpaceOnUse">
-                                        <stop stop-color="white" />
-                                        <stop offset="1" stop-color="#005EFF" />
-                                    </linearGradient>
-                                    <linearGradient id="paint6_linear_412_2619" x1="111.819" y1="13.5241" x2="111.873" y2="0.991515" gradientUnits="userSpaceOnUse">
-                                        <stop stop-color="white" />
-                                        <stop offset="1" stop-color="#005EFF" />
-                                    </linearGradient>
-                                    <linearGradient id="paint7_linear_412_2619" x1="129.251" y1="13.5241" x2="129.305" y2="0.991515" gradientUnits="userSpaceOnUse">
-                                        <stop stop-color="white" />
-                                        <stop offset="1" stop-color="#005EFF" />
-                                    </linearGradient>
-                                </defs>
-                            </svg>
+                <path d="M14.1652 13.4724L0.708984 1.90735e-05H9.67977L23.136 13.4724L14.1652 13.4724Z" fill="url(#paint0_linear_412_2619)" />
+                <path d="M31.5978 13.4724L18.1416 1.90735e-05H27.1124L40.5686 13.4724L31.5978 13.4724Z" fill="url(#paint1_linear_412_2619)" />
+                <path d="M49.0314 13.4724L35.5752 1.90735e-05H44.546L58.0022 13.4724L49.0314 13.4724Z" fill="url(#paint2_linear_412_2619)" />
+                <path d="M66.464 13.4724L53.0078 1.90735e-05H61.9786L75.4348 13.4724L66.464 13.4724Z" fill="url(#paint3_linear_412_2619)" />
+                <path d="M83.8976 13.4724L70.4414 1.90735e-05H79.4122L92.8684 13.4724L83.8976 13.4724Z" fill="url(#paint4_linear_412_2619)" />
+                <path d="M101.33 13.4724L87.874 1.90735e-05H96.8448L110.301 13.4724L101.33 13.4724Z" fill="url(#paint5_linear_412_2619)" />
+                <path d="M118.764 13.4724L105.308 1.90735e-05H114.278L127.735 13.4724L118.764 13.4724Z" fill="url(#paint6_linear_412_2619)" />
+                <path d="M136.196 13.4724L122.74 1.90735e-05H131.711L145.167 13.4724L136.196 13.4724Z" fill="url(#paint7_linear_412_2619)" />
+                <defs>
+                    <linearGradient id="paint0_linear_412_2619" x1="7.22003" y1="13.5241" x2="7.2739" y2="0.991515" gradientUnits="userSpaceOnUse">
+                        <stop stop-color="white" />
+                        <stop offset="1" stop-color="#005EFF" />
+                    </linearGradient>
+                    <linearGradient id="paint1_linear_412_2619" x1="24.6526" y1="13.5241" x2="24.7065" y2="0.991515" gradientUnits="userSpaceOnUse">
+                        <stop stop-color="white" />
+                        <stop offset="1" stop-color="#005EFF" />
+                    </linearGradient>
+                    <linearGradient id="paint2_linear_412_2619" x1="42.0862" y1="13.5241" x2="42.1401" y2="0.991515" gradientUnits="userSpaceOnUse">
+                        <stop stop-color="white" />
+                        <stop offset="1" stop-color="#005EFF" />
+                    </linearGradient>
+                    <linearGradient id="paint3_linear_412_2619" x1="59.5189" y1="13.5241" x2="59.5727" y2="0.991515" gradientUnits="userSpaceOnUse">
+                        <stop stop-color="white" />
+                        <stop offset="1" stop-color="#005EFF" />
+                    </linearGradient>
+                    <linearGradient id="paint4_linear_412_2619" x1="76.9525" y1="13.5241" x2="77.0063" y2="0.991515" gradientUnits="userSpaceOnUse">
+                        <stop stop-color="white" />
+                        <stop offset="1" stop-color="#005EFF" />
+                    </linearGradient>
+                    <linearGradient id="paint5_linear_412_2619" x1="94.3851" y1="13.5241" x2="94.4389" y2="0.991515" gradientUnits="userSpaceOnUse">
+                        <stop stop-color="white" />
+                        <stop offset="1" stop-color="#005EFF" />
+                    </linearGradient>
+                    <linearGradient id="paint6_linear_412_2619" x1="111.819" y1="13.5241" x2="111.873" y2="0.991515" gradientUnits="userSpaceOnUse">
+                        <stop stop-color="white" />
+                        <stop offset="1" stop-color="#005EFF" />
+                    </linearGradient>
+                    <linearGradient id="paint7_linear_412_2619" x1="129.251" y1="13.5241" x2="129.305" y2="0.991515" gradientUnits="userSpaceOnUse">
+                        <stop stop-color="white" />
+                        <stop offset="1" stop-color="#005EFF" />
+                    </linearGradient>
+                </defs>
+            </svg>
             {/* Main border SVG - responsive */}
             <svg
                 className="w-full h-full"

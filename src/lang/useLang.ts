@@ -1,7 +1,7 @@
 'use client';
 import { useContext, useMemo } from 'react';
 import { LangContext } from './LangProvider';
-import { getTranslation, getArrayTranslation, LangCodes } from './index';
+import { getTranslation, getArrayTranslation, getObjectTranslation, LangCodes } from './index';
 
 export const useLang = () => {
   const context = useContext(LangContext);
@@ -11,10 +11,12 @@ export const useLang = () => {
   
   const translation = useMemo(() => getTranslation(context.lang as LangCodes), [context.lang]);
   const arrayTranslation = useMemo(() => getArrayTranslation(context.lang as LangCodes), [context.lang]);
+  const objectTranslation = useMemo(() => getObjectTranslation(context.lang as LangCodes), [context.lang]);
   
   return {
     ...context,
     t: translation,
-    tArray: arrayTranslation
+    tArray: arrayTranslation,
+    tObject: objectTranslation
   };
 };

@@ -17,9 +17,19 @@ const BoxBenefit = ({ children }: { children: React.ReactNode }) => {
     }, []);
 
     return (
-        <div className="relative w-[90%] max-h-[240px] aspect-[417/261]">
-            {/* Top decorative SVG - responsive positioning */}
-            <svg className={`absolute top-0 right-[5%] z-50 ${isClient && windowWidth < 1280 ? 'w-[20%] max-w-[80px]' : 'w-[146px]'} h-auto`} xmlns="http://www.w3.org/2000/svg" width="248" height="14" viewBox="0 0 248 14" fill="none">
+        <div className="relative w-full sm:w-[95%] md:w-[90%] max-h-[240px] xl:aspect-[417/261] ">
+            {/* Top decorative SVG - improved responsive positioning */}
+            <svg 
+                className={`absolute top-0 right-[3%] sm:right-[5%] z-50 
+                    ${isClient && windowWidth < 640 ? 'w-[15%] max-w-[60px]' : 
+                      isClient && windowWidth < 1280 ? 'w-[18%] max-w-[100px]' : 'w-[146px]'} 
+                    h-auto`} 
+                xmlns="http://www.w3.org/2000/svg" 
+                width="248" 
+                height="14" 
+                viewBox="0 0 248 14" 
+                fill="none"
+            >
                 <path d="M23.5468 13.2639L0.525391 0.779845H15.873L38.8944 13.2639L23.5468 13.2639Z" fill="url(#paint0_linear_521_2143)" />
                 <path d="M53.372 13.2639L30.3506 0.779845H45.6982L68.7196 13.2639L53.372 13.2639Z" fill="url(#paint1_linear_521_2143)" />
                 <path d="M83.1982 13.2639L60.1768 0.779845H75.5244L98.5458 13.2639L83.1982 13.2639Z" fill="url(#paint2_linear_521_2143)" />
@@ -64,16 +74,36 @@ const BoxBenefit = ({ children }: { children: React.ReactNode }) => {
                 </defs>
             </svg>
 
-            <svg xmlns="http://www.w3.org/2000/svg" width="712" height="242" viewBox="0 0 712 242" fill="none">
-                <foreignObject x="-24" y="-24" width="760" height="290"><div style={{ backdropFilter: 'blur(12px)', clipPath: 'url(#bgblur_0_521_2139_clip_path)', height: '100%', width: '100%' }}></div></foreignObject>
-                <path data-figma-bg-blur-radius="24" d="M711 71.4247L662.3 23.2394H182.986L141.975 1H30.9037L1 17.2162V226.174L28.3406 241H147.101L188.112 218.761H497.402L537.558 241H683.659L711 226.174V71.4247Z" fill="#3352FF" fill-opacity="0.12" stroke="#00C0FF" stroke-width="2" />
+            {/* Main border SVG - responsive sizing */}
+            <svg 
+                className="w-full h-full" 
+                xmlns="http://www.w3.org/2000/svg" 
+                width="712" 
+                height="242" 
+                viewBox="0 0 712 242" 
+                fill="none"
+                preserveAspectRatio="xMidYMid meet"
+            >
+                <foreignObject x="-24" y="-24" width="760" height="290">
+                    <div style={{ backdropFilter: 'blur(12px)', clipPath: 'url(#bgblur_0_521_2139_clip_path)', height: '100%', width: '100%' }}></div>
+                </foreignObject>
+                <path 
+                    data-figma-bg-blur-radius="24" 
+                    d="M711 71.4247L662.3 23.2394H182.986L141.975 1H30.9037L1 17.2162V226.174L28.3406 241H147.101L188.112 218.761H497.402L537.558 241H683.659L711 226.174V71.4247Z" 
+                    fill="#3352FF" 
+                    fill-opacity="0.12" 
+                    stroke="#00C0FF" 
+                    stroke-width="2" 
+                />
                 <defs>
-                    <clipPath id="bgblur_0_521_2139_clip_path" transform="translate(24 24)"><path d="M711 71.4247L662.3 23.2394H182.986L141.975 1H30.9037L1 17.2162V226.174L28.3406 241H147.101L188.112 218.761H497.402L537.558 241H683.659L711 226.174V71.4247Z" />
-                    </clipPath></defs>
+                    <clipPath id="bgblur_0_521_2139_clip_path" transform="translate(24 24)">
+                        <path d="M711 71.4247L662.3 23.2394H182.986L141.975 1H30.9037L1 17.2162V226.174L28.3406 241H147.101L188.112 218.761H497.402L537.558 241H683.659L711 226.174V71.4247Z" />
+                    </clipPath>
+                </defs>
             </svg>
 
-            {/* Content container - responsive padding */}
-            <div className="flex flex-col xl:gap-4 gap-1  top-10 left-0 absolute z-10 xl:mx-6 mx-2 px-2 py-4">
+            {/* Content container - improved responsive padding and positioning */}
+            <div className="flex flex-col gap-1 sm:gap-3 xl:gap-4 top-3 sm:top-10 left-0 absolute z-10 mx-3 sm:mx-4 xl:mx-6 px-2 sm:px-3 py-2 sm:py-4 w-[95%]">
                 {children}
             </div>
         </div>

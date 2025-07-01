@@ -108,13 +108,10 @@ body {
 
   -webkit-text-stroke-width: 2px;
   -webkit-text-stroke-color: transparent;
-  background: linear-gradient(90deg, #F70FFF -0.1%, #12D6DF 92.2%);
+  background: linear-gradient(90deg, #5558FF  -0.1%, #00C0FF  92.2%);
   -webkit-background-clip: text;
   background-clip: text;
   -webkit-text-fill-color: transparent;
-
-  font-family: Kanit;
-
   font-style: normal;
   font-weight: 700;
   line-height: normal;
@@ -140,6 +137,13 @@ body {
   height: 100%;
   max-width: 11rem;
   max-height: 2.7rem;
+}
+
+@media (max-width: 1024px) {
+  .eclipse-box-section {
+    max-width: 8rem;
+    max-height: 1.7rem;
+  }
 }
 
 /* Custom Animations */

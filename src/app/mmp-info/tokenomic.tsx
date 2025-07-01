@@ -64,27 +64,45 @@ const TokenomicMMP = () => {
     ]
 
     return (
-        <div className='bg-feature bg-[#020616BD]/60 z-50 w-full xl:h-svh flex  justify-center relative  overflow-hidden'>
+        <div className='bg-footer bg-[#020616BD]/60 z-50 w-full xl:h-svh flex  justify-center relative  overflow-hidden xl:mt-0 mt-10'>
             <div className='absolute top-0 right-0 w-full h-full bg-[#0f121ad6] backdrop-blur-lg' />
-            <div className='eclipse-box absolute bottom-[10%] left-[10%] w-[375px] h-[375px] z-20' style={{ background: '#0090ff57' }} />
-            <div className='eclipse-box absolute top-[10%] right-[10%] w-[254px] h-[254px] z-20' style={{ background: '#15dffd63', filter: 'blur(50px)' }} />
-            <div className='px-4 w-full relative flex flex-col items-center justify-center xl:gap-[3vh] '>
+            
+            {/* Background decorative elements - responsive positioning */}
+            <div className='eclipse-box absolute bottom-[5%] left-[5%] w-[200px] h-[200px] md:w-[300px] md:h-[300px] lg:w-[375px] lg:h-[375px] z-20' style={{ background: '#0090ff57' }} />
+            <div className='eclipse-box absolute top-[5%] right-[5%] w-[150px] h-[150px] md:w-[200px] md:h-[200px] lg:w-[254px] lg:h-[254px] z-20' style={{ background: '#15dffd63', filter: 'blur(50px)' }} />
+            
+            <div className='px-4 md:px-6 lg:px-8 w-full relative flex flex-col items-center justify-center py-8 md:py-12 lg:py-16 gap-6 md:gap-8 lg:gap-[3vh]'>
                 <h2
                     ref={titleRef}
-                    className={`title-feature text-[36px] xl:text-[43px] bg-clip-text  text-center animate-fade-in-up ${titleInView ? 'in-view' : ''}`}
+                    className={`bg-gradient-purple-cyan uppercase text-[28px] sm:text-[32px] md:text-[36px] lg:text-[40px] xl:text-[43px] bg-clip-text text-center animate-fade-in-up ${titleInView ? 'in-view' : ''}`}
                 >
                     {t('tokenomics.title')}
                 </h2>
-                <div className='flex flex-col items-center justify-center gap-4 relative mb-10'>
+                
+                <div className='flex flex-col items-center justify-center gap-4 relative mb-6 md:mb-8 lg:mb-10'>
                     <p
                         ref={descRef}
-                        className={`text-neutral text-center text-sm  xl:max-w-[1050px] max-w-[460px]  animate-fade-in-up-delayed ${descInView ? 'in-view' : ''}`}
+                        className={`text-neutral xl:text-center text-xs sm:text-sm md:text-base lg:text-lg xl:max-w-[1050px] max-w-[370px] sm:max-w-[460px] md:max-w-[600px] lg:max-w-[800px] animate-fade-in-up-delayed ${descInView ? 'in-view' : ''}`}
                     >
                         {t('tokenomics.description')}
                     </p>
-
                 </div>
-                <div className='flex items-center justify-between gap-[10%] pr-10 mr-[8.33%] w-full max-w-[1440px]'>
+                {/* Mobile Layout - Single Column */}
+                {windowWidth < 700 && <div className='w-full max-w-[1440px] md:hidden flex'>
+                    <div className='grid grid-cols-2 gap-4 sm:gap-6'>
+                        {infoTokenomic.map((item, index) => (
+                            <OverLayBoxMMP key={index}>
+                                <h3 className='text-base sm:text-lg text-center text-[#00C0FF] font-semibold'>
+                                    {item.title}
+                                </h3>
+                                <p className='text-xs sm:text-sm z-30 text-center text-neutral max-w-none px-2'>
+                                    {item.description}
+                                </p>
+                            </OverLayBoxMMP>
+                        ))}
+                    </div>
+                </div>}
+                <div className='xl:flex hidden items-center justify-between gap-[10%] pr-10 mr-[8.33%] w-full max-w-[1440px]'>
                     {infoTokenomic.slice(0, 3).map((item, index) => (
                         <OverLayBoxMMP key={index}>
                             <h3 className='text-lg text-center text-[#00C0FF]'>
@@ -96,7 +114,7 @@ const TokenomicMMP = () => {
                         </OverLayBoxMMP>
                     ))}
                 </div>
-                <div className='flex items-center justify-between gap-[10%] pl-10 ml-[8.33%] w-full max-w-[1440px]'>
+                <div className='xl:flex hidden items-center justify-between gap-[10%] pl-10 ml-[8.33%] w-full max-w-[1440px]'>
                     {infoTokenomic.slice(3, 6).map((item, index) => (
                         <OverLayBoxMMP key={index}>
                             <h3 className='text-lg text-center text-[#00C0FF]'>

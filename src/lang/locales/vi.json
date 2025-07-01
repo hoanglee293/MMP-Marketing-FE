@@ -1286,9 +1286,78 @@
         "tokenFullName": "Meme Meta Pump",
         "totalSupply": "Tổng cung",
         "tokenAmount": "100 tỷ token",
+        "goals": "MỤC TIÊU",
+        "goalsDescription": "Đạt 10 triệu người dùng vào tháng 7 năm 2027",
+        "officialLaunch": "RA MẮT CHÍNH THỨC",
+        "officialLaunchDescription": "Dự kiến vào tháng 7 năm 2025 (hiện đang trong giai đoạn beta và nhận được sự quan tâm lớn từ cộng đồng)",
         "introductionTitle": "Giới thiệu về",
         "projectName": "Dự án MemePump (MMP)",
-        "introductionDescription": "Dự án MemePump (MMP) là một sáng kiến đột phá trong thế giới tiền điện tử, đặc biệt là trong không gian Web3 và các nền tảng phi tập trung, nhằm giới thiệu một loại token thanh khoản mới. MMP không chỉ là một loại tiền điện tử; nó là một công cụ để tạo ra giá trị và cơ hội cho cộng đồng, với mục tiêu xây dựng một hệ sinh thái bền vững và mạnh mẽ. Được phát triển trên nền tảng Solana, MemePump tìm cách thay đổi cách người dùng tương tác và tham gia vào không gian tiền điện tử."
+        "introductionDescription": "Dự án MemePump (MMP) là một sáng kiến đột phá trong thế giới tiền điện tử, đặc biệt là trong không gian Web3 và các nền tảng phi tập trung, nhằm giới thiệu một loại token thanh khoản mới. MMP không chỉ là một loại tiền điện tử; nó là một công cụ để tạo ra giá trị và cơ hội cho cộng đồng, với mục tiêu xây dựng một hệ sinh thái bền vững và mạnh mẽ. Được phát triển trên nền tảng Solana, MemePump tìm cách thay đổi cách người dùng tương tác và tham gia vào không gian tiền điện tử.",
+        "footerDescription": "MMP không chỉ là một loại tiền điện tử mà còn là một phần thiết yếu của hệ sinh thái Web3 và meme coin. Với chiến lược đầu tư rõ ràng và tiềm năng tăng trưởng bền vững, MMP dự kiến sẽ đạt giá trị 3,28 tỷ USD vào năm 2028. Đầu tư vào MMP mang lại cơ hội tham gia vào sự tăng trưởng thị trường trong khi trở thành một phần của cộng đồng đang phát triển nhanh chóng.",
+        "benefits": {
+            "title": "Lợi ích khi đầu tư vào MMP",
+            "description": "MMP sẽ tối đa hóa tiềm năng của thị trường tiền điện tử, đặc biệt là trong lĩnh vực phần thưởng cộng đồng. Dự kiến đến năm 2025, lĩnh vực này sẽ chiếm 55% tổng giá trị giao dịch, và MemePump sẽ đóng vai trò quan trọng trong sự tăng trưởng đó.",
+            "items": [
+                {
+                    "title": "Tiềm năng tăng trưởng mạnh",
+                    "description": "Giá trị của MMP dự kiến sẽ tăng từ $0.001/token lên $0.328/token, mang lại cơ hội lợi nhuận đặc biệt. Nếu khối lượng giao dịch hàng ngày đạt từ 10 triệu đến 300 triệu đô la, giá trị của MMP có thể tăng 328 lần."
+                },
+                {
+                    "title": "Thân thiện với người mới",
+                    "description": "MMP được thiết kế với giao diện thân thiện với người dùng, phù hợp cho những người mới tham gia thị trường tiền điện tử. Sự tích hợp với hệ sinh thái Solana và các công cụ như TradingView giúp người dùng dễ dàng truy cập và sử dụng hiệu quả."
+                },
+                {
+                    "title": "Đầu tư linh hoạt",
+                    "description": "Bạn có thể bắt đầu chỉ với $0.001/token, phù hợp cho cả những nhà đầu tư nhỏ."
+                },
+                {
+                    "title": "Lợi ích Airdrop",
+                    "description": "Người nắm giữ MPB (MemePump Bonus) sẽ nhận được 1.5% hàng tháng và 18% hàng năm trong hai năm thông qua Airdrop."
+                }
+            ]
+        },
+        "investmentOpportunity": {
+            "title": "Cơ hội đầu tư",
+            "description": "MMP sẽ tối đa hóa tiềm năng của thị trường tiền điện tử, đặc biệt là trong lĩnh vực phần thưởng cộng đồng. Dự kiến đến năm 2025, lĩnh vực này sẽ chiếm 55% tổng giá trị giao dịch, và MemePump sẽ đóng vai trò quan trọng trong sự tăng trưởng đó.",
+            "priceFirstSale": "Giá 0.001 USD",
+            "untilDate": "cho đến 31/07/2025.",
+            "firstSaleRound": "Đợt bán đầu tiên",
+            "fromPrice": "từ 0.002 USD",
+            "andAbove": "trở lên",
+            "round2": "Đợt 2",
+            "seedRoundDescription": "Vòng gieo hạt 3 triệu USD – cơ hội tuyệt vời cho các nhà đầu tư sớm.",
+            "potentialTitle": "Tiềm năng tăng giá token",
+            "potentialDescription": "Khi áp dụng hệ thống MPB, giá của MMP có thể tăng từ 0.001 USD/token lên 0.328 USD/token, mang lại cơ hội lợi nhuận lớn cho các nhà đầu tư sớm. (Ví dụ: Với khoản đầu tư 1.000 USD, bạn có thể mua 1 triệu token MMP. Nếu tổng doanh thu từ việc bán MMP đạt 300 triệu USD, bạn có thể kiếm được lợi nhuận đáng kể từ khoản đầu tư ban đầu.)"
+        }
+    },
+    "mpbInfo": {
+        "benefits": {
+            "title": "Lợi ích",
+            "description": "Lợi ích đầu tư: MemePump mang lại cơ hội đầu tư độc đáo với lợi nhuận cao.",
+            "items": [
+                {
+                    "title": "Cổ tức dự kiến",
+                    "description": "Tùy thuộc vào số lượng coin nắm giữ, các nhà đầu tư có thể nhận từ 1% mỗi năm lên đến tối đa 2.190% lợi nhuận nếu đạt được mục tiêu doanh thu 300 triệu USD.",
+                    "image": "/BTC-image.jpg"
+                },
+                {
+                    "title": "Đầu tư linh hoạt",
+                    "description": "Bắt đầu chỉ với 1 USD và có thể tăng dựa trên nhu cầu.",
+                    "image": "/sol-bg-image.jpg"
+                },
+                {
+                    "title": "Airdrop MMP Coin",
+                    "description": "Bằng cách nắm giữ MPB Coin, các nhà đầu tư có cơ hội nhận airdrop hàng tháng của MMP Coin với lãi suất 1.5% và tiền thưởng hàng năm 18%.",
+                    "image": "/airdrop-mmp.jpg"
+                }
+            ]
+        },
+        "growOpportunity": {
+            "title": "Cơ hội tăng trưởng",
+            "description": "MemePump không chỉ là một dự án tiền điện tử mà còn là một nền tảng Web3 phi tập trung mạnh mẽ được xây dựng trên công nghệ blockchain Solana. Mục tiêu doanh thu đến năm 2028 là 300 triệu USD, và MPB Coin sẽ đóng vai trò trung tâm, mang lại lợi nhuận đáng kể cho các nhà đầu tư.",
+            "potentialTitle": "Tiềm năng tăng giá token",
+            "potentialDescription": "Khi áp dụng hệ thống MPB, giá của MMP có thể tăng từ 0.001 USD/token lên 0.328 USD/token, mang lại cơ hội lợi nhuận lớn cho các nhà đầu tư sớm. (Ví dụ: Với khoản đầu tư 1.000 USD, bạn có thể mua 1 triệu token MMP. Nếu tổng doanh thu từ việc bán MMP đạt 300 triệu USD, bạn có thể kiếm được lợi nhuận đáng kể từ khoản đầu tư ban đầu.)"
+        }
     },
     "navigation": {
         "intro": "Giới thiệu",

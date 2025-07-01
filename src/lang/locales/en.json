@@ -1288,9 +1288,78 @@
         "tokenFullName": "Meme Meta Pump",
         "totalSupply": "Total Supply",
         "tokenAmount": "100 billion tokens",
+        "goals": "GOALS",
+        "goalsDescription": "Reach 10 million users by July 2027",
+        "officialLaunch": "OFFICIAL LAUNCH",
+        "officialLaunchDescription": "Expected in July 2025 (currently in beta phase and receiving significant interest from the community)",
         "introductionTitle": "Introduction to the",
         "projectName": "MemePump Project (MMP)",
-        "introductionDescription": "The MemePump (MMP) project is a groundbreaking initiative in the world of cryptocurrency, particularly in the Web3 space and decentralized platforms, aimed at introducing a new type of liquidity token. MMP is not just a cryptocurrency; it is a tool for creating value and opportunities for the community, with the goal of building a sustainable and robust ecosystem. Developed on the Solana platform, MemePump seeks to transform how users interact and engage in the cryptocurrency space."
+        "introductionDescription": "The MemePump (MMP) project is a groundbreaking initiative in the world of cryptocurrency, particularly in the Web3 space and decentralized platforms, aimed at introducing a new type of liquidity token. MMP is not just a cryptocurrency; it is a tool for creating value and opportunities for the community, with the goal of building a sustainable and robust ecosystem. Developed on the Solana platform, MemePump seeks to transform how users interact and engage in the cryptocurrency space.",
+        "footerDescription": "MMP is not just a cryptocurrency but an essential part of the Web3 ecosystem and meme coin. With a clear investment strategy and sustainable growth potential, MMP is expected to reach a value of $3.28 billion by 2028. Investing in MMP offers the opportunity to participate in market growth while becoming part of a rapidly growing community.",
+        "benefits": {
+            "title": "Benefits of investing in MMP",
+            "description": "MMP will maximize the potential of the cryptocurrency market, especially in the area of community rewards. It is expected that by 2025, this sector will account for 55% of the total transaction value, and MemePump will play a key role in that growth.",
+            "items": [
+                {
+                    "title": "Strong growth potential",
+                    "description": "The value of MMP is expected to rise from $0.001/token to $0.328/token, presenting an exceptional profit opportunity. If the daily trading volume reaches between $10 million and $300 million, the value of MMP could increase by 328 times."
+                },
+                {
+                    "title": "User-friendly for newcomers",
+                    "description": "MMP is designed with a user-friendly interface, suitable for newcomers to the cryptocurrency market. Its integration with the Solana ecosystem and tools like TradingView makes it easy for users to access and use effectively."
+                },
+                {
+                    "title": "Flexible investment",
+                    "description": "You can start with just $0.001/token, making it suitable for small investors as well."
+                },
+                {
+                    "title": "Airdrop benefits",
+                    "description": "Holders of MPB (MemePump Bonus) will receive 1.5% monthly and 18% annually for two years through Airdrop."
+                }
+            ]
+        },
+        "investmentOpportunity": {
+            "title": "Investment opportunity",
+            "description": "MMP will maximize the potential of the cryptocurrency market, especially in the area of community rewards. It is expected that by 2025, this sector will account for 55% of the total transaction value, and MemePump will play a key role in that growth.",
+            "priceFirstSale": "Price 0.001 USD",
+            "untilDate": "until 31/07/2025.",
+            "firstSaleRound": "First sale round",
+            "fromPrice": "from 0.002 USD",
+            "andAbove": "and above",
+            "round2": "Round 2",
+            "seedRoundDescription": "Seed round of 3 million USD – a great opportunity for early investors.",
+            "potentialTitle": "Potential for token price increase",
+            "potentialDescription": "When applying the MPB system, the price of MMP could rise from 0.001 USD/token to 0.328 USD/token, providing a huge profit opportunity for early investors. (For example: With an investment of 1,000 USD, you could purchase 1 million MMP tokens. If total revenue from MMP sales reaches 300 million USD, you could earn substantial profits from your initial investment.)"
+        }
+    },
+    "mpbInfo": {
+        "benefits": {
+            "title": "Benefits",
+            "description": "Investment benefits: MemePump offers a unique investment opportunity with high returns.",
+            "items": [
+                {
+                    "title": "Expected dividends",
+                    "description": "Depending on the amount of coins held, investors can receive from 1% per year up to a maximum of 2,190% returns if the revenue target of 300 million USD is achieved.",
+                    "image": "/BTC-image.jpg"
+                },
+                {
+                    "title": "Flexible investment",
+                    "description": "Starting from just 1 USD and can increase based on demand.",
+                    "image": "/sol-bg-image.jpg"
+                },
+                {
+                    "title": "Airdrop MMP Coin",
+                    "description": "By holding MPB Coin, investors have the opportunity to receive monthly airdrops of MMP Coin with an interest rate of 1.5% and an annual bonus of 18%.",
+                    "image": "/airdrop-mmp.jpg"
+                }
+            ]
+        },
+        "growOpportunity": {
+            "title": "Growth opportunity",
+            "description": "MemePump is not just a cryptocurrency project but also a powerful decentralized Web3 platform built on Solana's blockchain technology. The revenue target by 2028 is 300 million USD, and MPB Coin will play a central role, providing significant returns for investors.",
+            "potentialTitle": "Potential for token price increase",
+            "potentialDescription": "When applying the MPB system, the price of MMP could rise from 0.001 USD/token to 0.328 USD/token, providing a huge profit opportunity for early investors. (For example: With an investment of 1,000 USD, you could purchase 1 million MMP tokens. If total revenue from MMP sales reaches 300 million USD, you could earn substantial profits from your initial investment.)"
+        }
     },
     "navigation": {
         "intro": "Intro",

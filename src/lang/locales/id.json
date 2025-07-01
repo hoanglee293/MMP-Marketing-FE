@@ -1311,9 +1311,78 @@
         "tokenFullName": "Meme Meta Pump",
         "totalSupply": "Total Pasokan",
         "tokenAmount": "100 miliar token",
+        "goals": "TUJUAN",
+        "goalsDescription": "Mencapai 10 juta pengguna pada Juli 2027",
+        "officialLaunch": "PELUNCURAN RESMI",
+        "officialLaunchDescription": "Diharapkan pada Juli 2025 (saat ini dalam fase beta dan menerima minat besar dari komunitas)",
         "introductionTitle": "Pengenalan",
         "projectName": "Proyek MemePump (MMP)",
-        "introductionDescription": "Proyek MemePump (MMP) adalah inisiatif revolusioner di dunia kripto, terutama di ruang Web3 dan platform terdesentralisasi, yang bertujuan untuk memperkenalkan jenis token likuiditas baru. MMP bukan hanya kripto; ini adalah alat untuk menciptakan nilai dan peluang bagi komunitas, dengan tujuan membangun ekosistem yang berkelanjutan dan kuat. Dikembangkan di platform Solana, MemePump berusaha mengubah cara pengguna berinteraksi dan terlibat dalam ruang kripto."
+        "introductionDescription": "Proyek MemePump (MMP) adalah inisiatif revolusioner di dunia kripto, terutama di ruang Web3 dan platform terdesentralisasi, yang bertujuan untuk memperkenalkan jenis token likuiditas baru. MMP bukan hanya kripto; ini adalah alat untuk menciptakan nilai dan peluang bagi komunitas, dengan tujuan membangun ekosistem yang berkelanjutan dan kuat. Dikembangkan di platform Solana, MemePump berusaha mengubah cara pengguna berinteraksi dan terlibat dalam ruang kripto.",
+        "footerDescription": "MMP bukan hanya kripto tetapi bagian penting dari ekosistem Web3 dan meme coin. Dengan strategi investasi yang jelas dan potensi pertumbuhan berkelanjutan, MMP diperkirakan akan mencapai nilai $3,28 miliar pada 2028. Berinvestasi di MMP menawarkan kesempatan untuk berpartisipasi dalam pertumbuhan pasar sambil menjadi bagian dari komunitas yang berkembang pesat.",
+        "benefits": {
+            "title": "Manfaat Berinvestasi di MMP",
+            "description": "MMP akan memaksimalkan potensi pasar kripto, terutama di bidang hadiah komunitas. Diperkirakan pada tahun 2025, sektor ini akan menyumbang 55% dari total nilai transaksi, dan MemePump akan memainkan peran kunci dalam pertumbuhan tersebut.",
+            "items": [
+                {
+                    "title": "Potensi pertumbuhan yang kuat",
+                    "description": "Nilai MMP diperkirakan akan naik dari $0.001/token menjadi $0.328/token, memberikan peluang keuntungan yang luar biasa. Jika volume perdagangan harian mencapai antara $10 juta dan $300 juta, nilai MMP bisa meningkat 328 kali lipat."
+                },
+                {
+                    "title": "Ramah untuk pendatang baru",
+                    "description": "MMP dirancang dengan antarmuka yang ramah pengguna, cocok untuk pendatang baru di pasar kripto. Integrasinya dengan ekosistem Solana dan alat seperti TradingView memudahkan pengguna untuk mengakses dan menggunakan secara efektif."
+                },
+                {
+                    "title": "Investasi yang fleksibel",
+                    "description": "Anda dapat memulai hanya dengan $0.001/token, membuatnya cocok untuk investor kecil juga."
+                },
+                {
+                    "title": "Manfaat airdrop",
+                    "description": "Pemegang MPB (MemePump Bonus) akan menerima 1.5% bulanan dan 18% tahunan selama dua tahun melalui Airdrop."
+                }
+            ]
+        },
+        "investmentOpportunity": {
+            "title": "Peluang investasi",
+            "description": "MMP akan memaksimalkan potensi pasar kripto, terutama di bidang reward komunitas. Diperkirakan pada tahun 2025, sektor ini akan menyumbang 55% dari total nilai transaksi, dan MemePump akan memainkan peran kunci dalam pertumbuhan tersebut.",
+            "priceFirstSale": "Harga 0.001 USD",
+            "untilDate": "hingga 31/07/2025.",
+            "firstSaleRound": "Putaran penjualan pertama",
+            "fromPrice": "dari 0.002 USD",
+            "andAbove": "ke atas",
+            "round2": "Putaran 2",
+            "seedRoundDescription": "Putaran seed 3 juta USD – peluang besar bagi investor awal.",
+            "potentialTitle": "Potensi kenaikan harga token",
+            "potentialDescription": "Ketika menerapkan sistem MPB, harga MMP dapat naik dari 0.001 USD/token menjadi 0.328 USD/token, memberikan peluang keuntungan besar bagi investor awal. (Contoh: Dengan investasi 1.000 USD, Anda dapat membeli 1 juta token MMP. Jika total pendapatan dari penjualan MMP mencapai 300 juta USD, Anda dapat memperoleh keuntungan substansial dari investasi awal Anda.)"
+        }
+    },
+    "mpbInfo": {
+        "benefits": {
+            "title": "Manfaat",
+            "description": "Manfaat investasi: MemePump menawarkan peluang investasi unik dengan pengembalian tinggi.",
+            "items": [
+                {
+                    "title": "Dividen yang diharapkan",
+                    "description": "Tergantung pada jumlah koin yang dimiliki, investor dapat menerima dari 1% per tahun hingga maksimal 2.190% pengembalian jika target pendapatan 300 juta USD tercapai.",
+                    "image": "/BTC-image.jpg"
+                },
+                {
+                    "title": "Investasi fleksibel",
+                    "description": "Mulai dari hanya 1 USD dan dapat meningkat berdasarkan permintaan.",
+                    "image": "/sol-bg-image.jpg"
+                },
+                {
+                    "title": "Airdrop MMP Coin",
+                    "description": "Dengan memegang MPB Coin, investor memiliki kesempatan untuk menerima airdrop bulanan MMP Coin dengan tingkat bunga 1.5% dan bonus tahunan 18%.",
+                    "image": "/airdrop-mmp.jpg"
+                }
+            ]
+        },
+        "growOpportunity": {
+            "title": "Peluang pertumbuhan",
+            "description": "MemePump bukan hanya proyek kripto tetapi juga platform Web3 terdesentralisasi yang kuat yang dibangun di atas teknologi blockchain Solana. Target pendapatan hingga 2028 adalah 300 juta USD, dan MPB Coin akan memainkan peran sentral, memberikan pengembalian signifikan kepada investor.",
+            "potentialTitle": "Potensi kenaikan harga token",
+            "potentialDescription": "Ketika menerapkan sistem MPB, harga MMP dapat naik dari 0.001 USD/token menjadi 0.328 USD/token, memberikan peluang keuntungan besar bagi investor awal. (Contoh: Dengan investasi 1.000 USD, Anda dapat membeli 1 juta token MMP. Jika total pendapatan dari penjualan MMP mencapai 300 juta USD, Anda dapat memperoleh keuntungan substansial dari investasi awal Anda.)"
+        }
     },
     "navigation": {
         "intro": "Pengenalan",

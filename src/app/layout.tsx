@@ -53,7 +53,7 @@ export default function RootLayout({
   const pathname = usePathname();
 
   const checkPathname = () => {
-    if (pathname === '/overview' || pathname === '/mmp-info') {
+    if (pathname === '/overview' || pathname === '/mmp-info' || pathname === '/mpb-info') {
       return false;
     }
     return true;

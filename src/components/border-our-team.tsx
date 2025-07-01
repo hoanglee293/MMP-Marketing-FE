@@ -146,7 +146,7 @@ const BorderOurTeam = ({ children, className }: { children: React.ReactNode, cla
             </svg>
 
             {/* Content container - responsive padding */}
-            <div className="flex flex-col items-center justify-center  gap-1  top-0 left-0 absolute z-10 xl:mx-6 mx-2 px-2 py-4 xl:h-[90%] h-full">
+            <div className="flex flex-col items-center justify-center gap-1  top-0 left-0 absolute z-10 xl:mx-6 mx-2 px-2 py-4 xl:h-[90%] h-full w-[85%]">
                 {children}
             </div>
         </div>
