@@ -28,19 +28,19 @@ const InvestmentOpportunity = () => {
         rootMargin: '-50px'
     });
     return (
-        <div className='bg-footer bg-[#020616BD]/60 z-50 w-full min-h-screen xl:h-svh relative pt-8 sm:pt-[4%] xl:pt-[6%] overflow-hidden'>
+        <div className='bg-footer bg-[#020616BD]/60 z-50 w-full min-h-screen xl:h-svh relative pt-8 sm:pt-[4%] xl:pt-[4%] overflow-hidden'>
             <div className='absolute top-0 right-0 w-full h-full bg-[#0f121ad6] backdrop-blur-lg' />
             <div className='eclipse-box absolute bottom-[10%] left-[10%] w-[200px] h-[200px] sm:w-[300px] sm:h-[300px] xl:w-[375px] xl:h-[375px] z-20' style={{ background: '#0090ff57' }} />
             <div className='eclipse-box absolute top-[10%] right-[10%] w-[150px] h-[150px] sm:w-[200px] sm:h-[200px] xl:w-[254px] xl:h-[254px] z-20' style={{ background: '#15dffd63', filter: 'blur(50px)' }} />
             <div className='container mx-auto h-full flex flex-col'>
-                <div className='flex flex-col items-center justify-center gap-6 sm:gap-8 xl:gap-10 relative'>
+                <div className='flex flex-col items-center justify-center gap-6 sm:gap-8 relative'>
                     <h2
                         ref={titleRef}
                         className={`bg-gradient-purple-cyan uppercase text-[24px] sm:text-[28px] md:text-[32px] xl:text-[43px] bg-clip-text w-full h-full text-center animate-fade-in-up ${titleInView ? 'in-view' : ''}`}
                     >
                         {t('mmpInfo.investmentOpportunity.title')}
                     </h2>
-                    <div className='flex flex-col items-center justify-center gap-3 sm:gap-4 relative mb-6 sm:mb-8 xl:mb-10'>
+                    <div className='flex flex-col items-center justify-center gap-3 sm:gap-4 relative mb-6'>
                         <p
                             ref={descRef}
                             className={`text-neutral text-center text-xs sm:text-sm xl:max-w-[1050px] max-w-[460px] px-4 sm:px-0 animate-fade-in-up-delayed ${descInView ? 'in-view' : ''}`}
@@ -52,7 +52,7 @@ const InvestmentOpportunity = () => {
                 </div>
                 <div className='flex-1 flex flex-col lg:flex-row items-center justify-center p-4 sm:p-6 xl:p-10 gap-6 lg:gap-10'>
                     {/* Investment Cards Section */}
-                    <div className='flex flex-col items-center justify-center z-20 gap-4 sm:gap-6 xl:gap-10 w-full lg:basis-1/3 order-2 lg:order-1'>
+                    <div className='flex flex-col items-center justify-center z-20 gap-4 sm:gap-6 w-full lg:basis-1/3 order-2 lg:order-1'>
                         <div className='flex flex-col items-center justify-center gap-1 w-full max-w-[280px] sm:max-w-[300px] z-20'>
                             <BorderOurTeam className='w-full'>
                                 <p className='text-neutral font-bold bg-gradient-to-t from-white to-[#00C0FF] bg-clip-text text-xs sm:text-sm md:text-xl text-center uppercase px-2 sm:px-0'>

@@ -85,7 +85,7 @@ const MmpInfo = () => {
                                     </div>
                                 </BorderTokenomic>
                             </div>
-                            <div className={`absolute hidden xl:flex items-end justify-center gap-4 z-10 ${isClient && windowWidth < 1800 ? 'top-[7%] left-[7%]' : 'top-[8%] left-[15%]'}`}>
+                            <div className={`absolute hidden xl:flex items-end justify-center gap-4 z-10 ${isClient && windowWidth < 1800 ? 'top-[7%] left-[12%]' : 'top-[8%] left-[15%]'}`}>
                                 <BorderTokenomic primaryColor='#3AB3D9' secondaryColor='#3AB3D9' tag={t('mmpInfo.tokenName')} tagTextColor='#3AB3D9'>
                                     <div className='flex flex-col items-center justify-center gap-4 relative'>
                                         <p

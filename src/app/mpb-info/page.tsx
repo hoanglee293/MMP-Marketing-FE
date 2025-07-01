@@ -46,27 +46,27 @@ const MmbInfo = () => {
 
     return (
         <div className='flex flex-col'>
-            <div className='bg-overview bg-blue-200 z-50 w-full h-auto min-h-[50vh] sm:h-svh flex items-center justify-center relative overflow-hidden pb-10'>
+            <div className='bg-overview bg-blue-200 z-50 w-full h-auto min-h-[50vh] sm:h-svh flex items-center justify-center relative overflow-hidden pb-6 sm:pb-10'>
                 <div className='absolute top-0 right-0 w-full h-full bg-[#0f121ad6] backdrop-blur-lg' />
-                <div className='eclipse-box absolute bottom-[0%] left-[10%] w-[375px] h-[375px] z-20' style={{ background: '#0090ff57' }} />
-                <div className='eclipse-box absolute top-[10%] right-[10%] w-[254px] h-[254px] z-20' style={{ background: '#15dffd63', filter: 'blur(50px)' }} />
-                <div className='eclipse-box absolute top-[10%] left-[10%] w-[254px] h-[254px] z-20' style={{ background: '#15dffd63', filter: 'blur(50px)' }} />
+                <div className='eclipse-box absolute bottom-[0%] left-[10%] w-[200px] h-[200px] sm:w-[375px] sm:h-[375px] z-20' style={{ background: '#0090ff57' }} />
+                <div className='eclipse-box absolute top-[10%] right-[10%] w-[150px] h-[150px] sm:w-[254px] sm:h-[254px] z-20' style={{ background: '#15dffd63', filter: 'blur(50px)' }} />
+                <div className='eclipse-box absolute top-[10%] left-[10%] w-[150px] h-[150px] sm:w-[254px] sm:h-[254px] z-20' style={{ background: '#15dffd63', filter: 'blur(50px)' }} />
 
-                <div className='container mx-auto h-full'>
-                    <div className="flex flex-col items-center justify-center gap-3 h-full">
+                <div className='container mx-auto h-full px-4 sm:px-0'>
+                    <div className="flex flex-col items-center justify-center gap-2 sm:gap-3 h-full">
                         <h1
                             ref={titleRef}
-                            className={`text-[40px] sm:text-[60px] md:text-[80px] lg:text-[100px] 2xl:text-[120px] orbitron-font tracking-[0.1em] font-bold text-center text-white uppercase bg-gradient-purple-cyan bg-clip-text animate-fade-in-up mobile-text-shadow ${titleInView ? 'in-view' : ''}`}
+                            className={`text-[32px] sm:text-[60px] md:text-[80px] lg:text-[100px] 2xl:text-[120px] orbitron-font tracking-[0.1em] font-bold text-center text-white uppercase bg-gradient-purple-cyan bg-clip-text animate-fade-in-up mobile-text-shadow ${titleInView ? 'in-view' : ''}`}
                         >
                             MPB
                         </h1>
-                        <div className='w-full xl:min-h-[400px] flex flex-col items-center justify-center  overflow-hidden flex-1 max-h-[52%] relative'>
+                        <div className='w-full xl:min-h-[400px] flex flex-col items-center justify-center overflow-hidden flex-1 max-h-[52%] relative px-2 sm:px-0'>
                             <div className='relative w-full xl:h-fit flex flex-col items-center xl:justify-center'>
                                 <img
                                     ref={mmpImageRef}
                                     src="/MPB-hex.png"
                                     alt="exchange-token"
-                                    className={`w-full xl:max-w-[280px] max-w-[200px] h-auto object-cover animate-fade-in-up z-20 ${mmpImageInView ? 'in-view' : ''}`}
+                                    className={`w-full xl:max-w-[280px] max-w-[150px] sm:max-w-[200px] h-auto object-cover animate-fade-in-up z-20 ${mmpImageInView ? 'in-view' : ''}`}
                                 />
                                 <div className={`absolute hidden xl:flex items-end justify-center gap-4 z-10 ${isClient && windowWidth < 1800 ? 'top-[0%] left-[10%]' : 'top-[0%] left-[14%]'}`}>
                                     <BorderTokenomic primaryColor='#3AB3D9' secondaryColor='#3AB3D9' tag={t('mmpInfo.tokenName')} tagTextColor='#3AB3D9'>
@@ -152,20 +152,20 @@ const MmbInfo = () => {
 
                             </div>
                         </div>
-                        <div className='flex items-center justify-center h-[180px] bg-gradient-to-l from-[#0b4343]/70 to-[#014185]/70 w-full backdrop-blur-lg rounded-lg overflow-hidden'>
-                            <div className="border-4 rounded-l-lg border-r-0 border-solid border-[#33FCFF] h-full w-16" />
-                            <div className='flex items-center justify-around flex-1 h-[100%] overflow-hidden '>
-                                <div className='flex flex-col items-center justify-center gap-4'>
-                                    <div className='flex items-center gap-2'>
-                                        <h3 className='text-neutral text-4xl font-bold bg-transparent'>Market potential
-                                        </h3><span className=" text-4xl font-bold bg-gradient-to-t from-[#33FCFF] to-[#2492FE] bg-clip-text">of MPB</span>
+                        <div className='flex items-center justify-center h-[120px] sm:h-[180px] bg-gradient-to-l from-[#0b4343]/70 to-[#014185]/70 w-full backdrop-blur-lg rounded-lg overflow-hidden mx-2 sm:mx-0'>
+                            <div className="border-4 rounded-l-lg border-r-0 border-solid border-[#33FCFF] h-full w-8 sm:w-16" />
+                            <div className='flex items-center justify-around flex-1 h-[100%] overflow-hidden px-2 sm:px-0'>
+                                <div className='flex flex-col items-center justify-center gap-2 sm:gap-4'>
+                                    <div className='flex items-center gap-1 sm:gap-2 flex-wrap justify-center'>
+                                        <h3 className='text-neutral text-xl sm:text-4xl font-bold bg-transparent text-center'>Market potential
+                                        </h3><span className="text-xl sm:text-4xl font-bold bg-gradient-to-t from-[#33FCFF] to-[#2492FE] bg-clip-text">of MPB</span>
                                     </div>
-                                    <p className='text-neutral text-base px-10 text-center'>
+                                    <p className='text-neutral text-xs sm:text-base px-2 sm:px-10 text-center'>
                                         {t('mpbInfo.growOpportunity.description')}
                                     </p>
                                 </div>
                             </div>
-                            <div className="border-4 rounded-r-lg border-l-0 border-solid border-[#33FCFF] h-full w-16" />
+                            <div className="border-4 rounded-r-lg border-l-0 border-solid border-[#33FCFF] h-full w-8 sm:w-16" />
                         </div>
                     </div>
                 </div>
