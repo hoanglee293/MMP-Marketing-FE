@@ -511,6 +511,8 @@
         "detail": "Detail",
         "referralHistory": "Referral History",
         "referralDetail": "Referral Detail",
+        "unqualified": "Unqualified",
+        "unqualifiedTooltip": "You need to perform an MMP swap transaction with a minimum value of $5 to be eligible for rewards",
         "userInfo": "User Information",
         "date": "Date",
         "failed": "Failed",

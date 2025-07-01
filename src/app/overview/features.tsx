@@ -12,11 +12,11 @@ const features = () => {
     useEffect(() => {
         setIsClient(true);
         setWindowWidth(window.innerWidth);
-        
+
         const handleResize = () => {
             setWindowWidth(window.innerWidth);
         };
-        
+
         window.addEventListener('resize', handleResize);
         return () => window.removeEventListener('resize', handleResize);
     }, []);
@@ -59,8 +59,8 @@ const features = () => {
     return (
         <div className='bg-feature bg-[#020616BD]/60 z-50 w-full min-h-screen sm:h-svh flex items-center justify-center relative pt-10 sm:pt-16 md:pt-20 pb-6 xl:pb-0 overflow-hidden'>
             <div className='absolute top-0 right-0 w-full h-full bg-[#0f121ad6] backdrop-blur-lg' />
-            <div className='eclipse-box absolute top-[10%] right-[10%] w-[150px] h-[150px] sm:w-[200px] sm:h-[200px] md:w-[254px] md:h-[254px] z-20' style={{background: '#15dffd63', filter: 'blur(30px) sm:blur(40px) md:blur(50px)'}}/>
-            
+            <div className='eclipse-box absolute top-[10%] right-[10%] w-[150px] h-[150px] sm:w-[200px] sm:h-[200px] md:w-[254px] md:h-[254px] z-20' style={{ background: '#15dffd63', filter: 'blur(30px) sm:blur(40px) md:blur(50px)' }} />
+
             {/* Responsive decorative elements - hidden on mobile */}
             <div className='md:block h-[50vh] flex items-center justify-center border-l-2 border-r-0 border-t-0 border-b-0 border-gray-500 border-solid absolute bottom-0 right-[27%] z-10 animate-pulse-slow'>
                 <svg style={{ marginTop: '9vh', marginLeft: '10px' }} xmlns="http://www.w3.org/2000/svg" width="19" height="156" viewBox="0 0 19 156" fill="none">
@@ -117,17 +117,15 @@ const features = () => {
                 </svg>
                 <div className='w-1 h-4 bg-gray-500 absolute top-[15%] left-[36%] z-10 animate-pulse' />
             </div>
-            
+
             <div className='h-full mx-4 sm:mx-8 md:mx-16 lg:mx-36 py-4 sm:py-6 md:py-8 relative z-20 flex flex-col justify-around'>
-                <div className='flex flex-col items-center justify-center gap-2 sm:gap-4 relative h-[40px] sm:h-[58px]'>
-                    <h2
-                        ref={titleRef}
-                        className={`title-feature text-[24px] sm:text-[28px] md:text-[36px] xl:text-[48px] bg-clip-text absolute top-0 left-0 w-full h-full text-center animate-fade-in-up ${titleInView ? 'in-view' : ''}`}
-                    >
-                        {t('features.title')}
-                    </h2>
-                </div>
-                
+                <h2
+                    ref={titleRef}
+                    className={`title-feature text-[24px] sm:text-[28px] md:text-[36px] xl:text-[48px] bg-clip-text  w-full h-full text-center animate-fade-in-up ${titleInView ? 'in-view' : ''}`}
+                >
+                    {t('features.title')}
+                </h2>
+
                 {/* Mobile Layout */}
                 <div className='md:hidden flex flex-col gap-6 sm:gap-8'>
                     <div
@@ -136,7 +134,7 @@ const features = () => {
                     >
                         <img src="/layout-features.png" alt="feature-1" className='max-h-[300px] sm:max-h-[400px] w-full h-auto object-cover' />
                     </div>
-                    
+
                     <div className='flex flex-col gap-4 sm:gap-6'>
                         <div
                             ref={feature1Ref}
@@ -149,7 +147,7 @@ const features = () => {
                                 </div>
                             </BoxFeauture>
                         </div>
-                        
+
                         <div
                             ref={feature2Ref}
                             className={`xl:animate-fade-in-up-delayed hover:scale-105 transition-transform duration-300 ${feature2InView ? 'in-view' : ''}`}
@@ -161,7 +159,7 @@ const features = () => {
                                 </div>
                             </BoxFeauture>
                         </div>
-                        
+
                         <div
                             ref={feature3Ref}
                             className={`xl:animate-fade-in-up-delayed hover:scale-105 transition-transform duration-300 ${feature3InView ? 'in-view' : ''}`}
@@ -173,7 +171,7 @@ const features = () => {
                                 </div>
                             </BoxFeauture>
                         </div>
-                        
+
                         <div
                             ref={feature4Ref}
                             className={`xl:animate-fade-in-up-delayed hover:scale-105 transition-transform duration-300 ${feature4InView ? 'in-view' : ''}`}
@@ -187,7 +185,7 @@ const features = () => {
                         </div>
                     </div>
                 </div>
-                
+
                 {/* Desktop Layout */}
                 <div className='hidden md:flex justify-between items-center xl:mx-10 mx-20'>
                     <div

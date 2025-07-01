@@ -3,7 +3,7 @@
 import { useEffect, useState } from "react"
 import { Card, CardContent, CardHeader, CardTitle } from "@/ui/card"
 import { Input } from "@/ui/input"
-import { Copy, ChevronDown, User, Star, X, Check } from "lucide-react"
+import { Copy, ChevronDown, User, Star, X, Check, AlertCircle } from "lucide-react"
 import { toast } from "react-toastify"
 import ReferralStructure from "./referral-structure"
 import { useLang } from "@/lang/useLang"
@@ -14,6 +14,7 @@ import { truncateString } from "@/utils/format"
 import { ProtectedRoute } from "@/components/ProtectedRoute"
 import { Dialog, DialogContent, DialogHeader, DialogTitle } from "@/ui/dialog"
 import { Button } from "@/ui/button"
+import { Tooltip, TooltipContent, TooltipProvider, TooltipTrigger } from "@/ui/tooltip"
 
 // Loading Skeleton Components
 const LoadingSkeleton = ({ className = "" }: { className?: string }) => (
@@ -79,6 +80,7 @@ interface ReferralUser {
   total_reward_sol: number;
   total_reward_mmp: number;
   total_reward_mpb: number;
+  status: string;
 }
 
 interface ReferralHistory {
@@ -142,6 +144,8 @@ export default function ReferralDashboard() {
     enabled: !!myWallet?.wallet_type,
   })
 
+  console.log("referralStatistics", referralStatistics)
+
   const { data: historyReferral, isLoading: isLoadingHistoryReferral } = useQuery({
     queryKey: ['historyReferral'],
     queryFn: () => getHistoryReferral(),
@@ -192,6 +196,29 @@ export default function ReferralDashboard() {
     }
   }
 
+  const handleStatus = (status: string) => {
+    if (status === "paid") {
+      return <span className="text-green-500">{t('referral.completed')}</span>
+    } else if (status === "pending") {
+      return (
+        <TooltipProvider>
+          <Tooltip>
+            <TooltipTrigger asChild>
+              <span className="text-red-500 cursor-help flex items-center gap-1">
+                {t('referral.unqualified')}
+                <AlertCircle className="w-3 h-3 text-red-500" />
+              </span>
+            </TooltipTrigger>
+            <TooltipContent className="bg-gray-900 border-gray-700 text-white max-w-xs">
+              <p>{t('referral.unqualifiedTooltip')}</p>
+            </TooltipContent>
+          </Tooltip>
+        </TooltipProvider>
+      )
+    } else if (status === "wait_balance") {
+      return <span className="text-yellow-500">{t('referral.pending')}</span>
+    }
+  }
   return (
     <ProtectedRoute>
       <div className="h-svh relative xl:overflow-hidden flex flex-1 flex-col w-full justify-center">
@@ -347,7 +374,7 @@ export default function ReferralDashboard() {
 
                 {/* Desktop Table Layout */}
                 <div className="hidden sm:flex flex-col border border-solid border-gray/30 rounded-xl p-2 sm:p-4">
-                  <div className="grid grid-cols-6 gap-2 sm:gap-4 text-neutral text-xs sm:text-sm font-medium border-b border-t-0 border-l-0 border-r-0 border-solid border-gray/30 p-2 sm:p-4 pt-0">
+                  <div className="grid grid-cols-7 gap-2 sm:gap-4 text-neutral text-xs sm:text-sm font-medium border-b border-t-0 border-l-0 border-r-0 border-solid border-gray/30 p-2 sm:p-4 pt-0">
                     <div className="text-neutral col-span-2">{t('referral.user')}</div>
                     <div className="text-neutral">{t('referral.joinDate')}</div>
                     <div className="text-neutral text-right">{t('referral.earnings')} (SOL)</div>
@@ -365,7 +392,7 @@ export default function ReferralDashboard() {
                   ) : referralStatistics && referralStatistics.referred_wallets.length > 0 ? (
                     <div className="space-y-2 sm:space-y-3">
                       {referralStatistics.referred_wallets.map((user: ReferralUser) => (
-                        <div key={user.wallet_id} className="grid grid-cols-6 gap-2 sm:gap-4 text-white text-xs sm:text-sm py-2 sm:py-3 border-b border-slate-700/50 hover:bg-slate-700/20 rounded-lg px-1 sm:px-2 transition-colors last:border-b-0">
+                        <div key={user.wallet_id} className="grid grid-cols-7 gap-2 sm:gap-4 text-white text-xs sm:text-sm py-2 sm:py-3 border-b border-slate-700/50 hover:bg-slate-700/20 rounded-lg px-1 sm:px-2 transition-colors last:border-b-0">
                           <div className="flex items-center col-span-2">
                             <div className="w-6 h-6 sm:w-8 sm:h-8 bg-gradient-to-r from-purple to-cyan rounded-full flex items-center justify-center text-xs font-bold mr-2 sm:mr-3 shrink-0">
                               {user.sol_address.charAt(0).toUpperCase()}
@@ -512,7 +539,7 @@ export default function ReferralDashboard() {
                             <div className="text-white font-mono text-xs break-all">
                               {truncateString(item.tx_hash, 20)}
                             </div>
-
+                            <div className="text-neutral">{t('referral.status') || 'Status'}:</div>
                             <div className="text-neutral">{t('referral.date') || 'Date'}:</div>
                             <div className="text-neutral text-xs">
                               {new Date(item.created_at).toLocaleDateString(currentLocale, {
@@ -536,6 +563,7 @@ export default function ReferralDashboard() {
                             <th className="py-2 px-3 text-left">{t('referral.reward') || 'Reward'}</th>
                             <th className="py-2 px-3 text-left">{t('referral.token') || 'Token'}</th>
                             <th className="py-2 px-3 text-left">{t('referral.txHash') || 'Transaction Hash'}</th>
+                            <th className="py-2 px-3 text-left">{t('referral.status') || 'Status'}</th>
                             <th className="py-2 px-3 text-left">{t('referral.date') || 'Date'}</th>
                           </tr>
                         </thead>
@@ -559,6 +587,7 @@ export default function ReferralDashboard() {
                                   )}
                                 </Button>
                               </td>
+                              <td className="py-2 px-3 text-white ">{handleStatus(item.status)}</td>
                               <td className="py-2 px-3 text-neutral">
                                 {new Date(item.created_at).toLocaleDateString(currentLocale, {
                                   year: 'numeric',

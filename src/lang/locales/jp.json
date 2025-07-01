@@ -468,6 +468,8 @@
         "pending": "保留中",
         "completed": "完了",
         "failed": "失敗",
+        "unqualified": "不合格",
+        "unqualifiedTooltip": "報酬を受け取る資格を得るには、最低5ドル相当のMMPスワップ取引を実行する必要があります",
         "levels": {
             "all": "すべて",
             "level1": "レベル1",

@@ -450,6 +450,8 @@
         "yourReferrals": "보상 내역",
         "referredUsers": "추천된 사용자",
         "levelReferral": "레벨별 레퍼럴",
+        "unqualified": "미합격",
+        "unqualifiedTooltip": "보상을 받으려면 최소 5달러 상당의 MMP 스왑 거래를 수행해야 합니다",
         "normal": "일반",
         "bj": "BG",
         "history": "내역",

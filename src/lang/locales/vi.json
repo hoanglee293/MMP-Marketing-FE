@@ -458,6 +458,8 @@
         "completed": "Đã hoàn thành",
         "failed": "Thất bại",
         "referralHistory": "Lịch sử giới thiệu",
+        "unqualified": "Không đủ điều kiện",
+        "unqualifiedTooltip": "Bạn cần thực hiện giao dịch swap MMP với giá trị tối thiểu là 5$ để đủ điều kiện nhận thưởng",
         "referralDetail": "Chi tiết giới thiệu",
         "userInfo": "Thông tin người dùng",
         "detail": "Chi tiết",

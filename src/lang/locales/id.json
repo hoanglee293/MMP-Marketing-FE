@@ -349,6 +349,8 @@
         "pending": "Menunggu",
         "completed": "Selesai",
         "failed": "Gagal",
+        "unqualified": "Tidak Layak",
+        "unqualifiedTooltip": "Anda perlu melakukan transaksi swap MMP dengan nilai minimum $5 untuk memenuhi syarat menerima hadiah",
         "levels": {
             "all": "Semua",
             "level1": "Level 1",
