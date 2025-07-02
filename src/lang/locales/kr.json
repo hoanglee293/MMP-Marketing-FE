@@ -1370,10 +1370,41 @@
             ]
         },
         "growOpportunity": {
+            "price": "가격",
+            "until": "까지",
             "title": "성장 기회",
-            "description": "MemePump는 단순한 암호화폐 프로젝트가 아닌 Solana의 블록체인 기술을 기반으로 한 강력한 분산형 Web3 플랫폼입니다. 2028년까지의 수익 목표는 3억 USD이며, MPB 코인은 중심적인 역할을 하여 투자자에게 상당한 수익을 제공합니다.",
+            "firstSaleRound": "1차 판매 라운드",
+            "from": "부터",
+            "andAbove": "이상",
+            "round2": "2차 라운드",
+            "million": "백만",
+            "description": "MemePump는 단순한 암호화폐 프로젝트가 아닌 Solana의 블록체인 기술을 기반으로 한 강력한 분산형 Web3 플랫폼입니다. 2028년까지의 수익 목표는 3억 USD이며, MPB 코인은 혁신적인 토크노믹스와 커뮤니티 주도 성장 전략을 통해 투자자에게 상당한 수익을 제공하는 중심적인 역할을 합니다.",
             "potentialTitle": "토큰 가격 상승 잠재력",
-            "potentialDescription": "MPB 시스템을 적용하면 MMP의 가격은 0.001 USD/토큰에서 0.328 USD/토큰까지 상승할 수 있으며, 초기 투자자에게 큰 수익 기회를 제공합니다. (예: 1,000 USD 투자로 100만 MMP 토큰을 구매할 수 있습니다. MMP 판매의 총 수익이 3억 USD에 도달하면 초기 투자에서 상당한 수익을 얻을 수 있습니다.)"
+            "potentialDescription": "MPB 시스템을 적용하면 MMP의 가격은 0.001 USD/토큰에서 0.328 USD/토큰까지 상승할 수 있으며, 초기 투자자에게 32,800%의 엄청난 수익 기회를 제공합니다. (예: 1,000 USD 투자로 100만 MMP 토큰을 구매할 수 있습니다. MMP 판매의 총 수익이 3억 USD에 도달하면 우리의 혁신적인 보상 시스템을 통해 초기 투자에서 상당한 수익을 얻을 수 있습니다.)",
+            "investmentOpportunity": {
+                "title": "투자 기회",
+                "flexibleInvestment": {
+                    "title": "유연한 투자",
+                    "description": "1 USD부터 시작"
+                },
+                "longTermGrowth": {
+                    "title": "장기 성장",
+                    "description": "MPB 코인은 플랫폼 개발과 함께 가치가 크게 증가할 것으로 예상됩니다."
+                },
+                "attractiveReturns": {
+                    "title": "매력적인 수익",
+                    "description": "최대 2,190% 배당과 MPB 에어드롭 수령 기회."
+                },
+                "highLiquidity": {
+                    "title": "높은 유동성",
+                    "description": "MPB 코인은 블록체인 플랫폼에서 쉽게 거래할 수 있어 투자자가 자금을 유연하게 인출할 수 있습니다."
+                }
+            },
+            "statistics": {
+                "revenueTarget2028": "2028년 수익 목표",
+                "expectedValueMPB": "MPB 코인의 예상 가치",
+                "projectedRevenue2025": "2025년 예상 수익"
+            }
         },
         "issuanceSchedule": "발행 일정",
         "officialLaunchDescription": "2025년 7월 예정 (현재 베타 단계이며 커뮤니티로부터 큰 관심을 받고 있음)",

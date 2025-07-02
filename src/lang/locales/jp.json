@@ -1367,10 +1367,41 @@
             ]
         },
         "growOpportunity": {
+            "price": "価格",
+            "until": "まで",
             "title": "成長機会",
-            "description": "MemePumpは単なる暗号通貨プロジェクトではなく、Solanaのブロックチェーン技術を基盤とした強力な分散型Web3プラットフォームです。2028年までの収益目標は3億USDで、MPBコインは中心的な役割を果たし、投資家に大きな収益をもたらします。",
+            "firstSaleRound": "1次販売ラウンド",
+            "from": "から",
+            "andAbove": "以上",
+            "round2": "2次販売ラウンド",
+            "million": "百万",
+            "description": "MemePumpは単なる暗号通貨プロジェクトではなく、Solanaのブロックチェーン技術を基盤とした強力な分散型Web3プラットフォームです。2028年までの収益目標は3億USDで、MPBコインは革新的なトークノミクスとコミュニティ主導の成長戦略を通じて投資家に大きな収益をもたらす中心的な役割を果たします。",
             "potentialTitle": "トークン価格上昇の可能性",
-            "potentialDescription": "MPBシステムを適用すると、MMPの価格は0.001 USD/トークンから0.328 USD/トークンまで上昇する可能性があり、初期投資家に大きな収益機会を提供します。（例：1,000 USDの投資で100万MMPトークンを購入できます。MMP販売の総収益が3億USDに達した場合、初期投資から相当な収益を得ることができます。）"
+            "potentialDescription": "MPBシステムを適用すると、MMPの価格は0.001 USD/トークンから0.328 USD/トークンまで上昇する可能性があり、初期投資家に32,800%の莫大な収益機会を提供します。（例：1,000 USDの投資で100万MMPトークンを購入できます。MMP販売の総収益が3億USDに達した場合、私たちの革新的な報酬システムを通じて初期投資から相当な収益を得ることができます。）",
+            "investmentOpportunity": {
+                "title": "投資機会",
+                "flexibleInvestment": {
+                    "title": "柔軟な投資",
+                    "description": "1 USDから開始"
+                },
+                "longTermGrowth": {
+                    "title": "長期成長",
+                    "description": "MPBコインはプラットフォームの開発とともに価値が大幅に増加することが期待されています。"
+                },
+                "attractiveReturns": {
+                    "title": "魅力的な収益",
+                    "description": "最大2,190%の配当とMPBエアドロップを受ける機会。"
+                },
+                "highLiquidity": {
+                    "title": "高い流動性",
+                    "description": "MPBコインはブロックチェーンプラットフォームで簡単に取引でき、投資家が資金を柔軟に引き出すことができます。"
+                }
+            },
+            "statistics": {
+                "revenueTarget2028": "2028年の収益目標",
+                "expectedValueMPB": "MPBコインの期待価値",
+                "projectedRevenue2025": "2025年の予想収益"
+            }
         },
         "issuanceSchedule": "発行スケジュール",
         "officialLaunchDescription": "2025年7月に予定（現在ベータフェーズで、コミュニティから大きな関心を受けている）",

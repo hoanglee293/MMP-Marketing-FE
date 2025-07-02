@@ -1379,10 +1379,41 @@
             ]
         },
         "growOpportunity": {
-            "title": "Peluang pertumbuhan",
-            "description": "MemePump bukan hanya proyek kripto tetapi juga platform Web3 terdesentralisasi yang kuat yang dibangun di atas teknologi blockchain Solana. Target pendapatan hingga 2028 adalah 300 juta USD, dan MPB Coin akan memainkan peran sentral, memberikan pengembalian signifikan kepada investor.",
-            "potentialTitle": "Potensi kenaikan harga token",
-            "potentialDescription": "Ketika menerapkan sistem MPB, harga MMP dapat naik dari 0.001 USD/token menjadi 0.328 USD/token, memberikan peluang keuntungan besar bagi investor awal. (Contoh: Dengan investasi 1.000 USD, Anda dapat membeli 1 juta token MMP. Jika total pendapatan dari penjualan MMP mencapai 300 juta USD, Anda dapat memperoleh keuntungan substansial dari investasi awal Anda.)"
+            "price": "Harga",
+            "until": "hingga",
+            "title": "Peluang Pertumbuhan",
+            "firstSaleRound": "Putaran penjualan pertama",
+            "from": "dari",
+            "andAbove": "ke atas",
+            "round2": "Putaran 2",
+            "million": "juta",
+            "description": "MemePump bukan hanya proyek kripto tetapi juga platform Web3 terdesentralisasi yang kuat yang dibangun di atas teknologi blockchain Solana. Target pendapatan hingga 2028 adalah 300 juta USD, dan MPB Coin akan memainkan peran sentral, memberikan pengembalian signifikan kepada investor melalui tokenomik inovatif dan strategi pertumbuhan yang digerakkan komunitas.",
+            "potentialTitle": "Potensi Kenaikan Harga Token",
+            "potentialDescription": "Ketika menerapkan sistem MPB, harga MMP dapat naik dari 0.001 USD/token menjadi 0.328 USD/token, memberikan peluang keuntungan besar 32.800% bagi investor awal. (Contoh: Dengan investasi 1.000 USD, Anda dapat membeli 1 juta token MMP. Jika total pendapatan dari penjualan MMP mencapai 300 juta USD, Anda dapat memperoleh keuntungan substansial dari investasi awal Anda melalui sistem hadiah inovatif kami.)",
+            "investmentOpportunity": {
+                "title": "Peluang Investasi",
+                "flexibleInvestment": {
+                    "title": "Investasi fleksibel",
+                    "description": "Dari 1 USD ke atas"
+                },
+                "longTermGrowth": {
+                    "title": "Pertumbuhan jangka panjang",
+                    "description": "MPB Coin diperkirakan akan meningkat secara signifikan dalam nilai seiring dengan pengembangan platform."
+                },
+                "attractiveReturns": {
+                    "title": "Pengembalian yang menarik",
+                    "description": "Hingga 2.190% dividen dan kesempatan untuk menerima airdrop MPB."
+                },
+                "highLiquidity": {
+                    "title": "Likuiditas tinggi",
+                    "description": "MPB Coin dapat dengan mudah diperdagangkan di platform blockchain, memungkinkan investor untuk menarik dana secara fleksibel."
+                }
+            },
+            "statistics": {
+                "revenueTarget2028": "Target pendapatan 2028",
+                "expectedValueMPB": "Nilai yang diharapkan dari MPB Coin",
+                "projectedRevenue2025": "Pendapatan yang diproyeksikan untuk 2025"
+            }
         },
         "issuanceSchedule": "Jadwal penerbitan",
         "officialLaunchDescription": "Diharapkan pada Juli 2025 (saat ini dalam fase beta dan menerima minat besar dari komunitas)",

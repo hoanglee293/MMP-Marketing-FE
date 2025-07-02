@@ -1356,10 +1356,41 @@
             ]
         },
         "growOpportunity": {
-            "title": "Growth opportunity",
-            "description": "MemePump is not just a cryptocurrency project but also a powerful decentralized Web3 platform built on Solana's blockchain technology. The revenue target by 2028 is 300 million USD, and MPB Coin will play a central role, providing significant returns for investors.",
-            "potentialTitle": "Potential for token price increase",
-            "potentialDescription": "When applying the MPB system, the price of MMP could rise from 0.001 USD/token to 0.328 USD/token, providing a huge profit opportunity for early investors. (For example: With an investment of 1,000 USD, you could purchase 1 million MMP tokens. If total revenue from MMP sales reaches 300 million USD, you could earn substantial profits from your initial investment.)"
+            "price": "Price",
+            "until": "until",
+            "title": "Growth Opportunity",
+            "firstSaleRound": "First sale round",
+            "from": "from",
+            "andAbove": "and above",
+            "round2": "Round 2",
+            "million": "million",
+            "description": "MemePump is not just a cryptocurrency project but also a powerful decentralized Web3 platform built on Solana's blockchain technology. The revenue target by 2028 is 300 million USD, and MPB Coin will play a central role, providing significant returns for investors through innovative tokenomics and community-driven growth strategies.",
+            "potentialTitle": "Potential for Token Price Increase",
+            "potentialDescription": "When applying the MPB system, the price of MMP could rise from 0.001 USD/token to 0.328 USD/token, providing a massive 32,800% profit opportunity for early investors. (For example: With an investment of 1,000 USD, you could purchase 1 million MMP tokens. If total revenue from MMP sales reaches 300 million USD, you could earn substantial profits from your initial investment through our innovative reward system.)",
+            "investmentOpportunity": {
+                "title": "Investment Opportunity",
+                "flexibleInvestment": {
+                    "title": "Flexible investment",
+                    "description": "From 1 USD and above"
+                },
+                "longTermGrowth": {
+                    "title": "Long-term growth",
+                    "description": "MPB Coin is expected to increase significantly in value alongside the platform's development."
+                },
+                "attractiveReturns": {
+                    "title": "Attractive returns",
+                    "description": "Up to 2,190% dividends and the opportunity to receive MPB airdrops."
+                },
+                "highLiquidity": {
+                    "title": "High liquidity",
+                    "description": "MPB Coin can be easily traded on blockchain platforms, allowing investors to withdraw funds flexibly."
+                }
+            },
+            "statistics": {
+                "revenueTarget2028": "Revenue target for 2028",
+                "expectedValueMPB": "Expected value of MPB Coin",
+                "projectedRevenue2025": "Projected revenue for 2025"
+            }
         },
         "issuanceSchedule": "Issuance schedule",
         "officialLaunchDescription": "Expected in July 2025 (currently in beta phase and receiving significant interest from the community)",

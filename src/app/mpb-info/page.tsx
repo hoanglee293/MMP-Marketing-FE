@@ -5,7 +5,8 @@ import BorderTokenomic from '@/components/border-tokenomic'
 import FooterComp from '@/components/footer'
 import { useLang } from '@/lang/useLang'
 import BenefitsMPB from './benefits'
-import GrowOpportunity from './grow-opportunity'
+import InvestmentOpportunityMPB from './investment-opportunity'
+import GrowOpportunityMpb from './grow-opportunity'
 
 const MmbInfo = () => {
     const { t } = useLang();
@@ -55,9 +56,6 @@ const MmbInfo = () => {
                         >
                             MPB
                         </h1>
-
-
-
                         <div className='w-full xl:min-h-[400px] flex flex-col items-center justify-center overflow-hidden flex-1 max-h-[45%] sm:max-h-[52%] relative px-2 sm:px-0'>
                             <div className='relative w-full xl:h-fit flex flex-col items-center xl:justify-center'>
                                 <img
@@ -215,7 +213,8 @@ const MmbInfo = () => {
                 </div>
             </div>
             <BenefitsMPB />
-            <GrowOpportunity />
+            <GrowOpportunityMpb />
+            <InvestmentOpportunityMPB />
             <FooterComp>
                 {t('mpbInfo.footerDescription')}
             </FooterComp>

@@ -1354,10 +1354,41 @@
             ]
         },
         "growOpportunity": {
-            "title": "Cơ hội tăng trưởng",
-            "description": "MemePump không chỉ là một dự án tiền điện tử mà còn là một nền tảng Web3 phi tập trung mạnh mẽ được xây dựng trên công nghệ blockchain Solana. Mục tiêu doanh thu đến năm 2028 là 300 triệu USD, và MPB Coin sẽ đóng vai trò trung tâm, mang lại lợi nhuận đáng kể cho các nhà đầu tư.",
-            "potentialTitle": "Tiềm năng tăng giá token",
-            "potentialDescription": "Khi áp dụng hệ thống MPB, giá của MMP có thể tăng từ 0.001 USD/token lên 0.328 USD/token, mang lại cơ hội lợi nhuận lớn cho các nhà đầu tư sớm. (Ví dụ: Với khoản đầu tư 1.000 USD, bạn có thể mua 1 triệu token MMP. Nếu tổng doanh thu từ việc bán MMP đạt 300 triệu USD, bạn có thể kiếm được lợi nhuận đáng kể từ khoản đầu tư ban đầu.)"
+            "price": "Giá",
+            "until": "cho đến",
+            "title": "Cơ Hội Tăng Trưởng",
+            "firstSaleRound": "Đợt bán đầu tiên",
+            "from": "từ",
+            "andAbove": "trở lên",
+            "round2": "Đợt 2",
+            "million": "triệu",
+            "description": "MemePump không chỉ là một dự án tiền điện tử mà còn là một nền tảng Web3 phi tập trung mạnh mẽ được xây dựng trên công nghệ blockchain Solana. Mục tiêu doanh thu đến năm 2028 là 300 triệu USD, và MPB Coin sẽ đóng vai trò trung tâm, mang lại lợi nhuận đáng kể cho các nhà đầu tư thông qua tokenomics sáng tạo và chiến lược tăng trưởng dựa trên cộng đồng.",
+            "potentialTitle": "Tiềm Năng Tăng Giá Token",
+            "potentialDescription": "Khi áp dụng hệ thống MPB, giá của MMP có thể tăng từ 0.001 USD/token lên 0.328 USD/token, mang lại cơ hội lợi nhuận khổng lồ 32.800% cho các nhà đầu tư sớm. (Ví dụ: Với khoản đầu tư 1.000 USD, bạn có thể mua 1 triệu token MMP. Nếu tổng doanh thu từ việc bán MMP đạt 300 triệu USD, bạn có thể kiếm được lợi nhuận đáng kể từ khoản đầu tư ban đầu thông qua hệ thống phần thưởng sáng tạo của chúng tôi.)",
+            "investmentOpportunity": {
+                "title": "Cơ Hội Đầu Tư",
+                "flexibleInvestment": {
+                    "title": "Đầu tư linh hoạt",
+                    "description": "Từ 1 USD trở lên"
+                },
+                "longTermGrowth": {
+                    "title": "Tăng trưởng dài hạn",
+                    "description": "MPB Coin dự kiến sẽ tăng đáng kể về giá trị cùng với sự phát triển của nền tảng."
+                },
+                "attractiveReturns": {
+                    "title": "Lợi nhuận hấp dẫn",
+                    "description": "Lên đến 2.190% cổ tức và cơ hội nhận airdrop MPB."
+                },
+                "highLiquidity": {
+                    "title": "Thanh khoản cao",
+                    "description": "MPB Coin có thể dễ dàng giao dịch trên các nền tảng blockchain, cho phép các nhà đầu tư rút tiền một cách linh hoạt."
+                }
+            },
+            "statistics": {
+                "revenueTarget2028": "Mục tiêu doanh thu năm 2028",
+                "expectedValueMPB": "Giá trị dự kiến của MPB Coin",
+                "projectedRevenue2025": "Doanh thu dự kiến năm 2025"
+            }
         },
         "issuanceSchedule": "Lịch trình phát hành",
         "officialLaunchDescription": "Dự kiến vào tháng 7 năm 2025 (hiện đang trong giai đoạn beta và nhận được sự quan tâm lớn từ cộng đồng)",

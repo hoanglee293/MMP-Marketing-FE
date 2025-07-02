@@ -123,7 +123,7 @@ const ExchangeToken = () => {
               className={`animate-fade-in-up-delayed ${mmpButtonInView ? 'in-view' : ''}`}
             >
               <BorderExchangeToken >
-                <div className='text-white text-center text-xs sm:text-base w-full flex items-center justify-center gap-3 cursor-pointer' onClick={() => router.push('/mmp-info')}>
+                <div className='text-white text-center text-xs sm:text-base w-full flex items-center justify-center gap-3 cursor-pointer hover:text-blue-600' onClick={() => router.push('/mmp-info')}>
                   {t('exchangeToken.mmp.explore')} <ArrowRightIcon className='w-4 h-4' />
                 </div>
               </BorderExchangeToken>
@@ -148,7 +148,7 @@ const ExchangeToken = () => {
               className={`animate-fade-in-up-delayed ${mpbButtonInView ? 'in-view' : ''}`}
             >
               <BorderExchangeToken>
-                <div className='text-white text-center text-xs sm:text-base w-full flex items-center justify-center gap-3'>
+                <div className='text-white text-center text-xs sm:text-base w-full flex items-center justify-center gap-3 hover:text-blue-600 cursor-pointer' onClick={() => router.push('/mpb-info')}>
                   {t('exchangeToken.mpb.explore')} <ArrowRightIcon className='w-4 h-4' />
                 </div>
               </BorderExchangeToken>

@@ -26,14 +26,17 @@ const Header = () => {
   const [copied, setCopied] = useState(false)
 
   const tabs = [
-    { id: 'overview', href: '/overview', label: t('header.overview'), icon: '📊', isActive: true },
-    { id: 'mmp-info', href: '/mmp-info', label: t('header.mmpInfo'), icon: '📊', isActive: true },
-    { id: 'mpb-info', href: '/mpb-info', label: t('header.mpbInfo'), icon: '📊', isActive: true },
+    {
+      id: 'overview', href: '/overview', label: t('header.overview'), icon: '📊', isActive: true, dropdown: [
+        { id: 'mmp-info', href: '/mmp-info', label: t('header.mmpInfo'), icon: '📊' },
+        { id: 'mpb-info', href: '/mpb-info', label: t('header.mpbInfo'), icon: '📊' },
+      ]
+    },
     { id: 'swap', href: '/swap', label: t('header.swap'), icon: <ArrowDownUp className='w-3 h-3 sm:w-4 sm:h-4' />, isActive: true },
     { id: 'deposit', href: '/deposit', label: t('header.deposit'), icon: '💰', isActive: isAuthenticated },
-    { id: 'withdraw', href: '/withdraw', label: t('header.withdraw'), icon: '💰', isActive: isAuthenticated && loginMethod != "phantom" },
+    { id: 'withdraw', href: '/withdraw', label: t('header.withdraw'), icon: '💰', isActive: isAuthenticated },
     { id: 'stake', href: '/stake', label: t('header.stake'), icon: '🔒', isActive: isAuthenticated },
-    { id: 'referral', href: '/referral', label: t('header.referral'), icon: '👥', isActive: isAuthenticated && loginMethod != "phantom" },
+    { id: 'referral', href: '/referral', label: t('header.referral'), icon: '👥', isActive: isAuthenticated },
     { id: 'white-paper', href: '/white-paper', label: t('header.whitePaper'), icon: '📄', isActive: true },
   ]
 
@@ -149,13 +152,13 @@ const Header = () => {
     if (!myWallet?.sol_address) return
 
     try {
-        await navigator.clipboard.writeText(myWallet?.sol_address)
-        setCopied(true)
-        setTimeout(() => setCopied(false), 2000)
+      await navigator.clipboard.writeText(myWallet?.sol_address)
+      setCopied(true)
+      setTimeout(() => setCopied(false), 2000)
     } catch (err) {
-        toast.error(t('deposit.failedToCopyAddress'))
+      toast.error(t('deposit.failedToCopyAddress'))
     }
-}
+  }
 
   return (
     <header className="w-full bg-overlay backdrop-blur-sm border-b border-gray-200 sticky top-0 z-50">
@@ -171,18 +174,36 @@ const Header = () => {
           </Link>
 
           {/* Desktop Navigation Tabs */}
-          <nav className="hidden md:flex flex-1 gap-4 lg:gap-8 xl:gap-[6vh] justify-around items-center">
+          <nav className="hidden md:flex flex-1 gap-4 lg:gap-8 xl:gap-[6vh] justify-center items-center">
             {tabs.filter((tab) => tab.isActive).map((tab) => (
-              <Link
-                className={cn(
-                  'text-xs sm:text-sm text-neutral font-medium cursor-pointer hover:opacity-80 transition-opacity rounded-lg px-2 py-1',
-                  pathname === tab.href && 'bg-gradient-purple-cyan bg-clip-text'
+              <div key={tab.id} className={cn('relative', tab.dropdown && 'group hover:z-50')}>
+                <Link
+                  className={cn(
+                    'text-xs sm:text-sm text-neutral font-medium cursor-pointer hover:opacity-80 transition-opacity rounded-lg px-2 py-1 flex justify-center items-center gap-1',
+                    pathname === tab.href && 'bg-gradient-purple-cyan bg-clip-text'
+                  )}
+                  href={tab.href}
+                >
+                  {tab.label}
+                  {tab.dropdown && <ChevronDown className={cn("w-3 h-3 sm:w-4 sm:h-4 group-hover:rotate-180", pathname === tab.href && "text-primary")} />}
+                </Link>
+                {tab.dropdown && (
+                  <div className="absolute left-0 top-[100%] group-hover:opacity-100 opacity-0 mt-2 w-36 bg-dark-100 rounded-xl shadow-lg border border-gray-200 overflow-hidden z-50 transition-all duration-200 ease-in-out">
+                    {tab.dropdown.map((dropdownItem) => (
+                      <Link
+                        key={dropdownItem.id}
+                        href={dropdownItem.href}
+                        className={cn(
+                          'flex items-center gap-2 w-full px-3 py-1.5 text-xs sm:text-sm text-neutral hover:bg-gray-100/10 transition-colors first:rounded-t-xl last:rounded-b-xl',
+                          pathname === dropdownItem.href && 'text-primary font-medium'
+                        )}
+                      >
+                        {dropdownItem.label}
+                      </Link>
+                    ))}
+                  </div>
                 )}
-                href={tab.href}
-                key={tab.id}
-              >
-                {tab.label}
-              </Link>
+              </div>
             ))}
           </nav>
 

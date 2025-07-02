@@ -17,7 +17,7 @@ const BorderOurTeam = ({ children, className }: { children: React.ReactNode, cla
     }, []);
 
     return (
-        <div className={`relative w-[100%] h-auto aspect-[417/261] ${isClient && windowWidth < 1600 ? 'aspect-[310/198]' : 'aspect-[417/261]'} ${className}`}>
+        <div className={`relative w-[100%] flex z-20 h-auto aspect-[417/261] ${isClient && windowWidth < 1600 ? 'aspect-[310/198]' : 'aspect-[417/261]'} ${className}`}>
             {/* Top decorative SVG - responsive positioning */}
             <svg xmlns="http://www.w3.org/2000/svg" width="310" height="198" viewBox="0 0 310 198" fill="none" className='absolute top-0 left-0 w-full h-full'>
                 <g filter="url(#filter0_d_453_2931)">
