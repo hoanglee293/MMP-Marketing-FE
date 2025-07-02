@@ -32,7 +32,8 @@
         "deposit": "Deposit",
         "withdraw": "Withdraw",
         "whitePaper": "White Paper",
-        "mmpInfo": "MMP Info"
+        "mmpInfo": "MMP Info",
+        "mpbInfo": "MPB Info"
     },
     "overview": {
         "title": "MEMEPUMP",
@@ -1359,7 +1360,17 @@
             "description": "MemePump is not just a cryptocurrency project but also a powerful decentralized Web3 platform built on Solana's blockchain technology. The revenue target by 2028 is 300 million USD, and MPB Coin will play a central role, providing significant returns for investors.",
             "potentialTitle": "Potential for token price increase",
             "potentialDescription": "When applying the MPB system, the price of MMP could rise from 0.001 USD/token to 0.328 USD/token, providing a huge profit opportunity for early investors. (For example: With an investment of 1,000 USD, you could purchase 1 million MMP tokens. If total revenue from MMP sales reaches 300 million USD, you could earn substantial profits from your initial investment.)"
-        }
+        },
+        "issuanceSchedule": "Issuance schedule",
+        "officialLaunchDescription": "Expected in July 2025 (currently in beta phase and receiving significant interest from the community)",
+        "issuanceRate": "Issuance rate",
+        "issuanceRateDescription": "30% (3 million USD allocated for dividends to investors)",
+        "totalValue": "Total value: 10 million USD",
+        "goal": "Goal: raise 3 million USD",
+        "marketPotential": "Market potential",
+        "marketPotentialOf": "of MPB",
+        "totalValueMPB": "10 billion MPB",
+        "footerDescription": "MemePump (MPB) is an innovative project in the decentralized Web3 ecosystem, built on the Solana platform. The project aims to provide high returns for investors while offering dividends and income through MPB Coin – a promising cryptocurrency for strong future growth."
     },
     "navigation": {
         "intro": "Intro",

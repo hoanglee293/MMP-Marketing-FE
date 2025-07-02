@@ -32,7 +32,8 @@
         "deposit": "Setoran",
         "withdraw": "Penarikan",
         "whitePaper": "Dokumen Putih",
-        "mmpInfo": "MMP Info"
+        "mmpInfo": "MMP Info",
+        "mpbInfo": "MPB Info"
     },
     "withdraw_page": {
         "enter_amount_to_send": "Masukkan jumlah yang akan dikirim",
@@ -1382,7 +1383,17 @@
             "description": "MemePump bukan hanya proyek kripto tetapi juga platform Web3 terdesentralisasi yang kuat yang dibangun di atas teknologi blockchain Solana. Target pendapatan hingga 2028 adalah 300 juta USD, dan MPB Coin akan memainkan peran sentral, memberikan pengembalian signifikan kepada investor.",
             "potentialTitle": "Potensi kenaikan harga token",
             "potentialDescription": "Ketika menerapkan sistem MPB, harga MMP dapat naik dari 0.001 USD/token menjadi 0.328 USD/token, memberikan peluang keuntungan besar bagi investor awal. (Contoh: Dengan investasi 1.000 USD, Anda dapat membeli 1 juta token MMP. Jika total pendapatan dari penjualan MMP mencapai 300 juta USD, Anda dapat memperoleh keuntungan substansial dari investasi awal Anda.)"
-        }
+        },
+        "issuanceSchedule": "Jadwal penerbitan",
+        "officialLaunchDescription": "Diharapkan pada Juli 2025 (saat ini dalam fase beta dan menerima minat besar dari komunitas)",
+        "issuanceRate": "Tingkat penerbitan",
+        "issuanceRateDescription": "30% (3 juta USD dialokasikan untuk dividen kepada investor)",
+        "totalValue": "Total nilai: 10 juta USD",
+        "goal": "Tujuan: mengumpulkan 3 juta USD",
+        "marketPotential": "Potensi pasar",
+        "marketPotentialOf": "MPB",
+        "totalValueMPB": "10 miliar MPB",
+        "footerDescription": "MemePump (MPB) adalah proyek inovatif dalam ekosistem Web3 terdesentralisasi yang dibangun di atas platform Solana. Proyek ini bertujuan untuk memberikan pengembalian tinggi kepada investor sambil menawarkan dividen dan pendapatan melalui MPB Coin – kripto yang menjanjikan untuk pertumbuhan masa depan yang kuat."
     },
     "navigation": {
         "intro": "Pengenalan",

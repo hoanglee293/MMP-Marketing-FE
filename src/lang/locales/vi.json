@@ -32,7 +32,8 @@
         "deposit": "Nạp tiền",
         "withdraw": "Rút tiền",
         "whitePaper": "Sách trắng",
-        "mmpInfo": "Thông tin MMP"
+        "mmpInfo": "Thông tin MMP",
+        "mpbInfo": "Thông tin MPB"
     },
     "overview": {
         "title": "MEMEPUMP",
@@ -1357,7 +1358,17 @@
             "description": "MemePump không chỉ là một dự án tiền điện tử mà còn là một nền tảng Web3 phi tập trung mạnh mẽ được xây dựng trên công nghệ blockchain Solana. Mục tiêu doanh thu đến năm 2028 là 300 triệu USD, và MPB Coin sẽ đóng vai trò trung tâm, mang lại lợi nhuận đáng kể cho các nhà đầu tư.",
             "potentialTitle": "Tiềm năng tăng giá token",
             "potentialDescription": "Khi áp dụng hệ thống MPB, giá của MMP có thể tăng từ 0.001 USD/token lên 0.328 USD/token, mang lại cơ hội lợi nhuận lớn cho các nhà đầu tư sớm. (Ví dụ: Với khoản đầu tư 1.000 USD, bạn có thể mua 1 triệu token MMP. Nếu tổng doanh thu từ việc bán MMP đạt 300 triệu USD, bạn có thể kiếm được lợi nhuận đáng kể từ khoản đầu tư ban đầu.)"
-        }
+        },
+        "issuanceSchedule": "Lịch trình phát hành",
+        "officialLaunchDescription": "Dự kiến vào tháng 7 năm 2025 (hiện đang trong giai đoạn beta và nhận được sự quan tâm lớn từ cộng đồng)",
+        "issuanceRate": "Tỷ lệ phát hành",
+        "issuanceRateDescription": "30% (3 triệu USD được phân bổ cho cổ tức cho các nhà đầu tư)",
+        "totalValue": "Tổng giá trị: 10 triệu USD",
+        "goal": "Mục tiêu: huy động 3 triệu USD",
+        "marketPotential": "Tiềm năng thị trường",
+        "marketPotentialOf": "của MPB",
+        "totalValueMPB": "10 tỷ MPB",
+        "footerDescription": "MemePump (MPB) là một dự án sáng tạo trong hệ sinh thái Web3 phi tập trung, được xây dựng trên nền tảng Solana. Dự án nhằm mục đích cung cấp lợi nhuận cao cho các nhà đầu tư đồng thời mang lại cổ tức và thu nhập thông qua MPB Coin – một loại tiền điện tử hứa hẹn cho sự tăng trưởng mạnh mẽ trong tương lai."
     },
     "navigation": {
         "intro": "Giới thiệu",

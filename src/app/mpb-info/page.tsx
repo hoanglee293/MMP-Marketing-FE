@@ -1,12 +1,7 @@
 'use client'
-import BoxFeauture from '@/components/border'
 import React, { useState, useEffect } from 'react'
 import { useIntersectionObserver } from '@/hooks/useIntersectionObserver'
-import BorderPrimary from '@/components/border-primary'
-import TokenomicMMP from '../mmp-info/tokenomic'
-import Benefits from '../mmp-info/benefits'
 import BorderTokenomic from '@/components/border-tokenomic'
-import InvestmentOpportunity from '../mmp-info/investment-opportunity'
 import FooterComp from '@/components/footer'
 import { useLang } from '@/lang/useLang'
 import BenefitsMPB from './benefits'
@@ -46,28 +41,33 @@ const MmbInfo = () => {
 
     return (
         <div className='flex flex-col'>
-            <div className='bg-overview bg-blue-200 z-50 w-full h-auto min-h-[50vh] sm:h-svh flex items-center justify-center relative overflow-hidden pb-6 sm:pb-10'>
+            <div className='bg-overview bg-blue-200 z-50 w-full h-auto min-h-[60vh] sm:min-h-[50vh] sm:h-svh flex items-center justify-center relative overflow-hidden pb-8 sm:pb-10'>
                 <div className='absolute top-0 right-0 w-full h-full bg-[#0f121ad6] backdrop-blur-lg' />
                 <div className='eclipse-box absolute bottom-[0%] left-[10%] w-[200px] h-[200px] sm:w-[375px] sm:h-[375px] z-20' style={{ background: '#0090ff57' }} />
                 <div className='eclipse-box absolute top-[10%] right-[10%] w-[150px] h-[150px] sm:w-[254px] sm:h-[254px] z-20' style={{ background: '#15dffd63', filter: 'blur(50px)' }} />
                 <div className='eclipse-box absolute top-[10%] left-[10%] w-[150px] h-[150px] sm:w-[254px] sm:h-[254px] z-20' style={{ background: '#15dffd63', filter: 'blur(50px)' }} />
 
-                <div className='container mx-auto h-full px-4 sm:px-0'>
-                    <div className="flex flex-col items-center justify-center gap-2 sm:gap-3 h-full">
+                <div className='container mx-auto h-full px-6 sm:px-0'>
+                    <div className="flex flex-col items-center justify-center gap-3 sm:gap-4 h-full">
                         <h1
                             ref={titleRef}
-                            className={`text-[32px] sm:text-[60px] md:text-[80px] lg:text-[100px] 2xl:text-[120px] orbitron-font tracking-[0.1em] font-bold text-center text-white uppercase bg-gradient-purple-cyan bg-clip-text animate-fade-in-up mobile-text-shadow ${titleInView ? 'in-view' : ''}`}
+                            className={`text-[40px] sm:text-[60px] md:text-[80px] lg:text-[100px] 2xl:text-[120px] orbitron-font tracking-[0.1em] font-bold text-center text-white uppercase bg-gradient-purple-cyan bg-clip-text animate-fade-in-up mobile-text-shadow ${titleInView ? 'in-view' : ''}`}
                         >
                             MPB
                         </h1>
-                        <div className='w-full xl:min-h-[400px] flex flex-col items-center justify-center overflow-hidden flex-1 max-h-[52%] relative px-2 sm:px-0'>
+
+
+
+                        <div className='w-full xl:min-h-[400px] flex flex-col items-center justify-center overflow-hidden flex-1 max-h-[45%] sm:max-h-[52%] relative px-2 sm:px-0'>
                             <div className='relative w-full xl:h-fit flex flex-col items-center xl:justify-center'>
                                 <img
                                     ref={mmpImageRef}
                                     src="/MPB-hex.png"
                                     alt="exchange-token"
-                                    className={`w-full xl:max-w-[280px] max-w-[150px] sm:max-w-[200px] h-auto object-cover animate-fade-in-up z-20 ${mmpImageInView ? 'in-view' : ''}`}
+                                    className={`w-full xl:max-w-[280px] max-w-[180px] sm:max-w-[200px] h-auto object-cover animate-fade-in-up z-20 ${mmpImageInView ? 'in-view' : ''}`}
                                 />
+
+                                {/* Desktop Layout - Hidden on Mobile */}
                                 <div className={`absolute hidden xl:flex items-end justify-center gap-4 z-10 ${isClient && windowWidth < 1800 ? 'top-[0%] left-[10%]' : 'top-[0%] left-[14%]'}`}>
                                     <BorderTokenomic primaryColor='#3AB3D9' secondaryColor='#3AB3D9' tag={t('mmpInfo.tokenName')} tagTextColor='#3AB3D9'>
                                         <div className='flex flex-col items-center justify-center gap-4 relative'>
@@ -101,16 +101,16 @@ const MmbInfo = () => {
                                                 ref={descRef}
                                                 className={`text-neutral text-center text-sm  xl:max-w-[950px] max-w-[500px]  animate-fade-in-up-delayed ${descInView ? 'in-view' : ''}`}
                                             >
-                                                10 billion MPB
+                                                {t('mpbInfo.totalValueMPB')}
                                             </p>
                                         </div>
                                     </BorderTokenomic>
                                 </div>
                                 <div className={`absolute hidden xl:flex items-end justify-center gap-4 ${isClient && windowWidth < 1800 ? 'bottom-[12%] left-[14%]' : 'bottom-[5%] left-[13%]'}`}>
                                     <div className='flex flex-col  gap-2'>
-                                        <div className='text-[#3bc2eb] font-bold text-base flex gap-1 items-center'><div className='w-6 h-4 bg-gradient-to-r from-[#3AB3D9] to-[#3AB3D9]/0 uppercase' />Issuance schedule</div>
+                                        <div className='text-[#3bc2eb] font-bold text-base flex gap-1 items-center'><div className='w-6 h-4 bg-gradient-to-r from-[#3AB3D9] to-[#3AB3D9]/0 uppercase' />{t('mpbInfo.issuanceSchedule')}</div>
                                         <div className='text-neutral text-sm border-l-3 border-primary border-y-0 border-r-0 border-solid pl-2  max-w-[220px]'>
-                                            {t('mmpInfo.officialLaunchDescription')}
+                                            {t('mpbInfo.officialLaunchDescription')}
                                         </div>
                                     </div>
                                     <div style={{ marginBottom: '10px' }}>
@@ -130,9 +130,9 @@ const MmbInfo = () => {
                                         </svg>
                                     </div>
                                     <div className='flex flex-col  gap-2'>
-                                        <div className='text-[#3bc2eb] font-bold text-base flex gap-1 items-center'><div className='w-6 h-4 bg-gradient-to-r from-[#3AB3D9] to-[#3AB3D9]/0 uppercase' />Issuance rate</div>
+                                        <div className='text-[#3bc2eb] font-bold text-base flex gap-1 items-center'><div className='w-6 h-4 bg-gradient-to-r from-[#3AB3D9] to-[#3AB3D9]/0 uppercase' />{t('mpbInfo.issuanceRate')}</div>
                                         <div className='text-neutral text-sm border-l-3 border-primary border-y-0 border-r-0 border-solid pl-2  max-w-[250px]'>
-                                            30% (3 million USD allocated for dividends to investors)
+                                            {t('mpbInfo.issuanceRateDescription')}
                                         </div>
                                     </div>
                                 </div>
@@ -146,26 +146,70 @@ const MmbInfo = () => {
                                     </svg>
                                 </div>
                                 <div className='flex flex-col  gap-2'>
-                                    <div className='text-[#3bc2eb] font-bold text-base flex gap-1 items-center'><div className='w-6 h-4 bg-gradient-to-r from-[#3AB3D9] to-[#3AB3D9]/0 uppercase' />Total value: 10 million USD</div>
-                                    <div className='text-[#3bc2eb] font-bold text-base flex gap-1 items-center'><div className='w-6 h-4 bg-gradient-to-r from-[#3AB3D9] to-[#3AB3D9]/0 uppercase' />Goal: raise 3 million USD</div>
+                                    <div className='text-[#3bc2eb] font-bold text-base flex gap-1 items-center'><div className='w-6 h-4 bg-gradient-to-r from-[#3AB3D9] to-[#3AB3D9]/0 uppercase' />{t('mpbInfo.totalValue')}</div>
+                                    <div className='text-[#3bc2eb] font-bold text-base flex gap-1 items-center'><div className='w-6 h-4 bg-gradient-to-r from-[#3AB3D9] to-[#3AB3D9]/0 uppercase' />{t('mpbInfo.goal')}</div>
                                 </div>
 
                             </div>
                         </div>
-                        <div className='flex items-center justify-center h-[120px] sm:h-[180px] bg-gradient-to-l from-[#0b4343]/70 to-[#014185]/70 w-full backdrop-blur-lg rounded-lg overflow-hidden mx-2 sm:mx-0'>
-                            <div className="border-4 rounded-l-lg border-r-0 border-solid border-[#33FCFF] h-full w-8 sm:w-16" />
-                            <div className='flex items-center justify-around flex-1 h-[100%] overflow-hidden px-2 sm:px-0'>
+                        {/* Mobile Token Info Cards */}
+                        <div className='flex flex-col gap-4 w-full max-w-md sm:hidden mb-4'>
+                            <div className='bg-gradient-to-r from-[#0b4343]/80 to-[#014185]/80 backdrop-blur-lg rounded-lg p-4 border border-[#3AB3D9]/30'>
+                                <div className='text-[#3bc2eb] font-bold text-sm mb-2 flex items-center gap-2'>
+                                    <div className='w-4 h-3 bg-gradient-to-r from-[#3AB3D9] to-[#3AB3D9]/0' />
+                                    {t('mmpInfo.tokenName')}
+                                </div>
+                                <p className='text-neutral text-xs leading-relaxed'>
+                                    {t('exchangeToken.mpb.name')}
+                                </p>
+                            </div>
+
+                            <div className='bg-gradient-to-r from-[#0b4343]/80 to-[#014185]/80 backdrop-blur-lg rounded-lg p-4 border border-[#3AB3D9]/30'>
+                                <div className='text-[#3bc2eb] font-bold text-sm mb-2 flex items-center gap-2'>
+                                    <div className='w-4 h-3 bg-gradient-to-r from-[#3AB3D9] to-[#3AB3D9]/0' />
+                                    {t('mmpInfo.totalSupply')}
+                                </div>
+                                <p className='text-neutral text-xs leading-relaxed'>
+                                    {t('mpbInfo.totalValueMPB')}
+                                </p>
+                            </div>
+
+                            <div className='bg-gradient-to-r from-[#0b4343]/80 to-[#014185]/80 backdrop-blur-lg rounded-lg p-4 border border-[#3AB3D9]/30'>
+                                <div className='text-[#3bc2eb] font-bold text-sm mb-2 flex items-center gap-2'>
+                                    <div className='w-4 h-3 bg-gradient-to-r from-[#3AB3D9] to-[#3AB3D9]/0' />
+                                    {t('mpbInfo.issuanceSchedule')}
+                                </div>
+                                <p className='text-neutral text-xs leading-relaxed'>
+                                    {t('mpbInfo.officialLaunchDescription')}
+                                </p>
+                            </div>
+
+                            <div className='bg-gradient-to-r from-[#0b4343]/80 to-[#014185]/80 backdrop-blur-lg rounded-lg p-4 border border-[#3AB3D9]/30'>
+                                <div className='text-[#3bc2eb] font-bold text-sm mb-2 flex items-center gap-2'>
+                                    <div className='w-4 h-3 bg-gradient-to-r from-[#3AB3D9] to-[#3AB3D9]/0' />
+                                    {t('mpbInfo.issuanceRate')}
+                                </div>
+                                <p className='text-neutral text-xs leading-relaxed'>
+                                    {t('mpbInfo.issuanceRateDescription')}
+                                </p>
+                            </div>
+                        </div>
+
+                        {/* Mobile Market Potential Card */}
+                        <div className='flex items-center justify-center sm:h-[180px] bg-gradient-to-l from-[#0b4343]/70 to-[#014185]/70 w-full backdrop-blur-lg rounded-lg overflow-hidden mx-2 sm:mx-0'>
+                            <div className="hidden sm:block border-4 rounded-l-lg border-r-0 border-solid border-[#33FCFF] h-full w-8 sm:w-16" />
+                            <div className='flex items-center justify-around flex-1 h-[100%] overflow-hidden px-3 sm:px-0 p-4'>
                                 <div className='flex flex-col items-center justify-center gap-2 sm:gap-4'>
                                     <div className='flex items-center gap-1 sm:gap-2 flex-wrap justify-center'>
-                                        <h3 className='text-neutral text-xl sm:text-4xl font-bold bg-transparent text-center'>Market potential
-                                        </h3><span className="text-xl sm:text-4xl font-bold bg-gradient-to-t from-[#33FCFF] to-[#2492FE] bg-clip-text">of MPB</span>
+                                        <h3 className='text-neutral text-2xl sm:text-4xl font-bold bg-transparent text-center'>{t('mpbInfo.marketPotential')}
+                                        </h3><span className="text-2xl sm:text-4xl font-bold bg-gradient-to-t from-[#33FCFF] to-[#2492FE] bg-clip-text">{t('mpbInfo.marketPotentialOf')}</span>
                                     </div>
-                                    <p className='text-neutral text-xs sm:text-base px-2 sm:px-10 text-center'>
+                                    <p className='text-neutral text-sm sm:text-base px-2 sm:px-10 text-center leading-relaxed'>
                                         {t('mpbInfo.growOpportunity.description')}
                                     </p>
                                 </div>
                             </div>
-                            <div className="border-4 rounded-r-lg border-l-0 border-solid border-[#33FCFF] h-full w-8 sm:w-16" />
+                            <div className="hidden sm:block border-4 rounded-r-lg border-l-0 border-solid border-[#33FCFF] h-full w-8 sm:w-16" />
                         </div>
                     </div>
                 </div>
@@ -173,7 +217,7 @@ const MmbInfo = () => {
             <BenefitsMPB />
             <GrowOpportunity />
             <FooterComp>
-                {t('mpbProjectDescription')}
+                {t('mpbInfo.footerDescription')}
             </FooterComp>
         </div>
     )

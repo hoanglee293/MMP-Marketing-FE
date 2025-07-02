@@ -32,7 +32,8 @@
         "deposit": "입금",
         "withdraw": "출금",
         "whitePaper": "백서",
-        "mmpInfo": "MMP 정보"
+        "mmpInfo": "MMP 정보",
+        "mpbInfo": "MPB 정보"
     },
     "overview": {
         "title": "MEMEPUMP",
@@ -1373,7 +1374,17 @@
             "description": "MemePump는 단순한 암호화폐 프로젝트가 아닌 Solana의 블록체인 기술을 기반으로 한 강력한 분산형 Web3 플랫폼입니다. 2028년까지의 수익 목표는 3억 USD이며, MPB 코인은 중심적인 역할을 하여 투자자에게 상당한 수익을 제공합니다.",
             "potentialTitle": "토큰 가격 상승 잠재력",
             "potentialDescription": "MPB 시스템을 적용하면 MMP의 가격은 0.001 USD/토큰에서 0.328 USD/토큰까지 상승할 수 있으며, 초기 투자자에게 큰 수익 기회를 제공합니다. (예: 1,000 USD 투자로 100만 MMP 토큰을 구매할 수 있습니다. MMP 판매의 총 수익이 3억 USD에 도달하면 초기 투자에서 상당한 수익을 얻을 수 있습니다.)"
-        }
+        },
+        "issuanceSchedule": "발행 일정",
+        "officialLaunchDescription": "2025년 7월 예정 (현재 베타 단계이며 커뮤니티로부터 큰 관심을 받고 있음)",
+        "issuanceRate": "발행률",
+        "issuanceRateDescription": "30% (투자자 배당을 위해 300만 USD 할당)",
+        "totalValue": "총 가치: 1000만 USD",
+        "goal": "목표: 300만 USD 모금",
+        "marketPotential": "시장 잠재력",
+        "marketPotentialOf": "MPB의",
+        "totalValueMPB": "10억 MPB",
+        "footerDescription": "MemePump (MPB)는 Solana 플랫폼을 기반으로 한 분산형 Web3 생태계의 혁신적인 프로젝트입니다. 이 프로젝트는 투자자에게 높은 수익을 제공하고, MPB 코인을 통해 배당과 수익을 제공하여 강력한 미래 성장을 위한 유망한 암호화폐입니다."
     },
     "navigation": {
         "intro": "소개",

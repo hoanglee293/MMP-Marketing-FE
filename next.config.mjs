@@ -14,14 +14,32 @@ const nextConfig = {
       domains: [
           'coin-images.coingecko.com',
       ],
-      unoptimized: true,
+      unoptimized: false,
+      formats: ['image/webp', 'image/avif'],
+      deviceSizes: [640, 750, 828, 1080, 1200, 1920, 2048, 3840],
+      imageSizes: [16, 32, 48, 64, 96, 128, 256, 384],
+      minimumCacheTTL: 60 * 60 * 24 * 30,
     },
-    // React Compiler is still experimental, disabling for now
-    // experimental: {
-    //   reactCompiler: {
-    //     compilationMode: 'annotation',
-    //   },
-    // },
+    experimental: {
+      optimizeCss: true,
+      optimizePackageImports: ['@tanstack/react-query', 'react-toastify'],
+    },
+    compiler: {
+      removeConsole: process.env.NODE_ENV === 'production',
+    },
+    async headers() {
+      return [
+        {
+          source: '/:all*(svg|jpg|jpeg|png|webp|avif)',
+          headers: [
+            {
+              key: 'Cache-Control',
+              value: 'public, max-age=31536000, immutable',
+            },
+          ],
+        },
+      ];
+    },
   };
   
 export default nextConfig;
