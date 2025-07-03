@@ -21,11 +21,8 @@ function HomeContent() {
       Cookies.set('ref', codeParam, { expires: 1 });
       axiosClient.post('/referral-clicks', { referral_code: codeParam });
     }
-    
-    // Only redirect if user is authenticated
-    if (isAuthenticated) {
-      router.push('/swap');
-    }
+
+    router.push('/swap');
   }, [router, searchParams, isAuthenticated]);
 
   return (
