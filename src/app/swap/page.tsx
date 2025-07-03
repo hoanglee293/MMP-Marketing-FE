@@ -281,7 +281,7 @@ export default function SwapInterface() {
       linkYoutube = "https://www.youtube.com/embed/pb5cIxvI6mQ"
       break;
     case "kr":
-      linkYoutube = "https://www.youtube.com/embed/gczNhJ5G7Co"
+      linkYoutube = "https://www.youtube.com/embed/5cHVRwsJ-LE"
       break;
     case "jp":
       linkYoutube = "https://www.youtube.com/embed/rmmJsStmSaM"
@@ -342,8 +342,7 @@ export default function SwapInterface() {
       case "guild":
         return (
           <div className="flex gap-2 flex-col justify-between flex-1">
-            <h2 className="bg-gradient-purple-cyan bg-clip-text text-xl lg:text-3xl font-bold leading-7  text-center mb-6">{t("swap.swapGuide")}</h2>
-
+            <h2 className="bg-gradient-purple-cyan bg-clip-text text-xl lg:text-3xl font-bold leading-7  text-center mb-4">{t("swap.swapGuide")}</h2>
             <div className="flex-1 flex flex-col justify-around ">
               <div className=" rounded-xl lg:px-4 pb-4">
                 <ul className=" leading-6 flex flex-col gap-3">
@@ -665,7 +664,7 @@ export default function SwapInterface() {
       <div className="flex-1 flex items-center justify-center p-4 md:p-4 z-20 container mx-auto ">
         <div className="relative flex flex-col lg:flex-row  items-start justify-center gap-4 lg:gap-8 w-full">
           <div className="w-full lg:flex-1 flex lg:flex-col flex-col-reverse gap-4 lg:gap-8 rounded-xl order-2 lg:order-1">
-            <Card className="w-full border-[#d7d7d7]/20 p-3 md:p-6 bg-black/60 min-h-[400px] lg:min-h-[70.5vh] flex flex-col">
+            <Card className="w-full border-[#d7d7d7]/20 p-3 md:p-6 bg-black/60 min-h-[400px] lg:min-h-[80vh] flex flex-col">
               <AnimatePresence mode="wait">
                 <motion.div
                   key={activeTab}
