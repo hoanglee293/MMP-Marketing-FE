@@ -179,7 +179,7 @@ const Header = () => {
               <div key={tab.id} className={cn('relative', tab.dropdown && 'group hover:z-50')}>
                 <Link
                   className={cn(
-                    'text-xs sm:text-sm text-neutral font-medium cursor-pointer hover:opacity-80 transition-opacity rounded-lg px-2 py-1 flex justify-center items-center gap-1',
+                    'text-xs sm:text-sm text-neutral font-medium cursor-pointer hover:!text-primary hover:opacity-80 transition-opacity rounded-lg px-2 py-1 flex justify-center items-center gap-1',
                     pathname === tab.href && 'bg-gradient-purple-cyan bg-clip-text'
                   )}
                   href={tab.href}
