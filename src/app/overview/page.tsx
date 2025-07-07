@@ -55,7 +55,7 @@ const page = () => {
                         >
                             {t('overview.description')}
                         </p>
-                        <button
+                        {/* <button
                             ref={buttonRef}
                             className={`border-none relative xl:w-[197px] w-[130px] bg-transparent h-[47px] aspect-[417/261] cursor-pointer animate-fade-in-up-more-delayed transition-transform duration-300  touch-manipulation ${buttonInView ? 'in-view' : ''}`}
                         >
@@ -65,7 +65,7 @@ const page = () => {
                             <span className='flex flex-col xl:gap-4 gap-1 justify-center items-center h-full top-0 text-center w-full absolute z-10 px-2 py-4 text-xs xl:text-sm text-white'>
                                 {t('overview.joinUs')}
                             </span>
-                        </button>
+                        </button> */}
 
                     </div>
 
