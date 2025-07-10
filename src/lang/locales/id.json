@@ -295,7 +295,7 @@
         },
         "specialOpportunity": {
             "title": "Peluang Khusus",
-            "message": "Penjualan awal MMP/MPB sedang berlangsung <br/> Penjualan pertama: 0.001 $ (hingga 31 Juli) <br/> Penjualan kedua: 0.002 $ (jadwal akan diumumkan)"
+            "message": "Penjualan awal MMP/MPB sedang berlangsung <br/> Penjualan pertama: 0.001 $ (hingga 31 Juli) <br/> Penjualan kedua: 0.002 $ (jadwal akan diumumkan) <br/> Harga mungkin berubah dan penjualan mungkin lebih awal dari jadwal."
         }
     },
     "services": {
