@@ -15,7 +15,7 @@ function GoogleLoginContent() {
 
     useEffect(() => {
         if (isAuthenticated) {
-            window.location.href = '/swap';
+            window.location.href = '/overview';
         } else if (code) {
             handleGoogleLogin();
         } else {
@@ -29,7 +29,7 @@ function GoogleLoginContent() {
             // Gọi API để xác thực Google code
             const response = await GoogleAuthService.login({ code, ref_code: Cookies.get("ref") || "" });
             login('google');
-            window.location.href = '/swap';
+            window.location.href = '/overview';
 
         } catch (error: any) {
             console.log(error);

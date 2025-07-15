@@ -22,7 +22,7 @@ function HomeContent() {
       axiosClient.post('/referral-clicks', { referral_code: codeParam });
     }
 
-    router.push('/swap');
+    router.push('/overview');
   }, [router, searchParams, isAuthenticated]);
 
   return (
@@ -39,7 +39,7 @@ function HomeContent() {
             </p>
           </div>
           <button
-            onClick={() => router.push('/swap')}
+            onClick={() => router.push('/overview')}
             className="bg-gradient-to-r from-purple-600 to-cyan-600 hover:from-purple-700 hover:to-cyan-700 text-white font-medium py-3 px-6 rounded-lg transition-all duration-300 transform hover:scale-105"
           >
             {t('protectedRoute.connectWallet')}

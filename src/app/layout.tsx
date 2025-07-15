@@ -12,6 +12,7 @@ import VideoBackground from "@/components/bg-video";
 import { NotifyProvider } from "@/components/notify";
 import { usePathname } from "next/navigation";
 import { GA_TRACKING_ID } from "@/libs/gtag";
+import WelcomeModal from "@/components/WelcomeModal";
 
 const gothicA1 = Gothic_A1({
   subsets: ["latin"],
@@ -89,6 +90,7 @@ export default function RootLayout({
               </Suspense>
               <div className="min-h-screen bg-[#747474] dark:bg-gray-950 transition-colors duration-300 font-gothic-a1 flex flex-col">
                 <Header />
+                <WelcomeModal />
                 {checkPathname() && <VideoBackground />}
                 <main className="overflow-x-hidden flex-1 z-30 relative w-full flex flex-col">{children}</main>
               </div>

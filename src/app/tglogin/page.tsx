@@ -38,7 +38,7 @@ function TelegramLoginContent() {
 
     useEffect(() => {
         if (isAuthenticated) {
-            window.location.href = '/swap';
+            window.location.href = '/overview';
         }else if (telegramId && code){
             handleLogin();
         }
@@ -50,7 +50,7 @@ function TelegramLoginContent() {
             const res = await TelegramWalletService.login(data);
             if(res.success){
                 login('telegram');
-                window.location.href = '/swap';
+                window.location.href = '/overview';
             }
 
         } catch (error: any) {
@@ -80,7 +80,7 @@ function TelegramLoginContent() {
             const res = await TelegramWalletService.login(data);
             if(res.status === 200) {
                 login('telegram');
-                window.location.href = '/swap';
+                window.location.href = '/overview';
             }
         } catch (error: any) {
             console.log(error);

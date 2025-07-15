@@ -32,7 +32,7 @@ const Header = () => {
         { id: 'mpb-info', href: '/mpb-info', label: t('header.mpbInfo'), icon: '📊', isActive: true },
       ]
     },
-    { id: 'swap', href: '/swap', label: t('header.swap'), icon: <ArrowDownUp className='w-3 h-3 sm:w-4 sm:h-4' />, isActive: true },
+    // { id: 'swap', href: '/swap', label: t('header.swap'), icon: <ArrowDownUp className='w-3 h-3 sm:w-4 sm:h-4' />, isActive: true },
     { id: 'deposit', href: '/deposit', label: t('header.deposit'), icon: '💰', isActive: isAuthenticated },
     { id: 'withdraw', href: '/withdraw', label: t('header.withdraw'), icon: '💰', isActive: isAuthenticated },
     { id: 'stake', href: '/stake', label: t('header.stake'), icon: '🔒', isActive: isAuthenticated },

@@ -17,7 +17,7 @@ function PhantomLoginContent() {
 
     useEffect(() => {
         if (isAuthenticated) {
-            window.location.href = '/swap';
+            window.location.href = '/overview';
         } else if (signature && message) {
             handleLogin();
         } else {
@@ -35,7 +35,7 @@ function PhantomLoginContent() {
             });
             if (res.success) {
                 login('phantom');
-                window.location.href = '/swap';
+                window.location.href = '/overview';
             } else {
                 toast.error(t('connectWalletModal.phantomAuthFailed'));
                 window.location.href = '/';
@@ -78,7 +78,7 @@ function PhantomLoginContent() {
            localStorage.setItem("login_method", "phantom");
            localStorage.setItem("publicKey", walletPublicKey);
            login('phantom');
-           window.location.href = '/swap';
+           window.location.href = '/overview';
         } catch (error: any) {
             console.log("error", error);
             toast.error(t('connectWalletModal.phantomAuthFailed'));
